@@ -1,0 +1,82 @@
+{
+	"name": "@morev/stylelint-config",
+	"description": "Strict shareable Stylelint configuration that I personally use",
+	"version": "0.0.0",
+	"private": false,
+	"engines": {
+		"node": "^12.20.0 || ^14.13.1 || ^15.0.0 || >=16.0.0"
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"author": {
+		"name": "Maxim Morev",
+		"email": "max.seainside@gmail.com"
+	},
+	"homepage": "https://github.com/MorevM/stylelint-config#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MorevM/stylelint-config"
+	},
+	"keywords": [
+		"stylelint",
+		"stylelintconfig",
+		"config",
+		"codestyle",
+		"more"
+	],
+	"files": [
+		"build"
+	],
+	"exports": {
+		".": "./build/configurations/scss.js",
+		"./css": "./build/configurations/css.js",
+		"./css/warn-autofixable": "./build/configurations/css-warn-autofixable.js",
+		"./css/off-autofixable": "./build/configurations/css-off-autofixable.js",
+		"./scss": "./build/configurations/scss.js",
+		"./scss/warn-autofixable": "./build/configurations/scss-warn-autofixable.js",
+		"./scss/off-autofixable": "./build/configurations/scss-off-autofixable.js"
+	},
+	"main": "./build/configurations/scss.js",
+	"scripts": {
+		"prepare": "husky install ./.husky",
+		"vscode-settings": "cp .vscode/settings.template.json .vscode/settings.json",
+		"build": "node utils/build.js",
+		"test": "jest",
+		"lint": "eslint \"**/*.{js,json,json5,jsonc,yml,yaml}\"",
+		"lint:fix": "eslint \"**/*.{js,json,json5,jsonc,yml,yaml}\" --fix",
+		"release": "release-it --disable-metrics"
+	},
+	"peerDependencies": {
+		"stylelint": "^14.3.0"
+	},
+	"dependencies": {
+		"lodash.mergewith": "^4.6.2",
+		"postcss": "^8.4.6",
+		"postcss-scss": "^4.0.3",
+		"stylelint-8-point-grid": "^2.1.0",
+		"stylelint-at-rule-no-children": "^0.3.1",
+		"stylelint-declaration-block-no-ignored-properties": "^2.5.0",
+		"stylelint-high-performance-animation": "^1.6.0",
+		"stylelint-no-nested-media": "^0.1.0",
+		"stylelint-order": "^5.0.0",
+		"stylelint-scss": "^4.1.0",
+		"stylelint-selector-no-empty": "^1.0.8",
+		"stylelint-selector-tag-no-without-class": "^2.0.5",
+		"stylelint-use-nesting": "^3.0.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^16.1.0",
+		"@morev/eslint-config": "^3.1.4",
+		"@release-it/conventional-changelog": "^4.1.0",
+		"@types/jest": "^27.4.0",
+		"eslint": "^8.7.0",
+		"husky": "^7.0.4",
+		"jest": "^27.4.7",
+		"lint-staged": "^12.2.2",
+		"release-it": "^14.12.3",
+		"stylelint": "^14.3.0"
+	}
+}
