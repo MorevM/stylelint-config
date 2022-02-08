@@ -159,7 +159,7 @@ module.exports = {
 
 		// Specify a pattern for Sass-like variables
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-pattern/README.md
-		'scss/dollar-variable-pattern': KEBAB_CASE_ALLOW_FIRST_UNDERSCORE,
+		'scss/dollar-variable-pattern': /^(?:-{0,2}|_)?([a-z][\da-z]*)(-{1,2}[\da-z]+)*$/, // eslint-disable-line unicorn/no-unsafe-regex
 
 		// Specify a pattern for `%`-placeholders
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/percent-placeholder-pattern/README.md
