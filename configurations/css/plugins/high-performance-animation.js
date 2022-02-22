@@ -5,6 +5,7 @@ module.exports = {
 	rules: {
 		'plugin/no-low-performance-animation-properties': [true, {
 			ignore: 'paint-properties',
+			ignoreProperties: ['text-shadow'],
 			severity: WARN,
 		}],
 	},
