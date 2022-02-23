@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/MorevM/stylelint-config/compare/v0.1.1...v0.1.2) (2022-02-23)
+
+
+### Bug Fixes
+
+* **order:** Separate block and blockess mixins ([4af8055](https://github.com/MorevM/stylelint-config/commit/4af80559e8923155ef1f59a9d1dbd4ac3ae02e65))
+
 ## [0.1.1](https://github.com/MorevM/stylelint-config/compare/v0.1.0...v0.1.1) (2022-02-22)
 
 
