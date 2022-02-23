@@ -717,6 +717,15 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.9"
 
+"@morev/commitlint-config@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@morev/commitlint-config/-/commitlint-config-0.1.0.tgz#c6dec5c3495dca41a990e25569311a710ea49423"
+  integrity sha512-4qlFqRSqkmFaQDMXG3ezRCfazHxkMC1+BnEsOxfxM0VP/dJCF5nDoc4I0Sy/cuIQQwuVjdQmwMmbwC6kPJlfYg==
+  dependencies:
+    "@commitlint/cli" "^16.1.0"
+    conventional-changelog-conventionalcommits "^4.6.3"
+    lodash.clonedeep "^4.5.0"
+
 "@morev/eslint-config@^3.1.4":
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/@morev/eslint-config/-/eslint-config-3.1.5.tgz#7d33e7835f6485f4494189cf9c916e0c7f3244d7"
@@ -1869,7 +1878,7 @@ conventional-changelog-codemirror@^2.0.8:
   dependencies:
     q "^1.5.1"
 
-conventional-changelog-conventionalcommits@^4.5.0:
+conventional-changelog-conventionalcommits@^4.5.0, conventional-changelog-conventionalcommits@^4.6.3:
   version "4.6.3"
   resolved "https://registry.yarnpkg.com/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-4.6.3.tgz#0765490f56424b46f6cb4db9135902d6e5a36dc2"
   integrity sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==

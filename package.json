@@ -68,7 +68,7 @@
 		"stylelint-use-nesting": "^3.0.0"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^16.1.0",
+		"@morev/commitlint-config": "^0.1.0",
 		"@morev/eslint-config": "^3.1.4",
 		"@release-it/conventional-changelog": "^4.1.0",
 		"@types/jest": "^27.4.0",
