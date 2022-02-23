@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape -- Reports wrong */
-/* eslint-disable unicorn/no-array-push-push -- Needed for readability */
+/* eslint-disable no-autofix/unicorn/no-array-push-push, unicorn/no-array-push-push -- Needed for readability */
 const rules = [];
 
 // Functions related to block (e.g. some helper functions) should be on top
@@ -20,7 +20,7 @@ rules.push([
 // Extends & mixins
 rules.push([
 	{ type: 'at-rule', name: 'extend' },
-	{ type: 'at-rule', name: 'include' },
+	{ type: 'at-rule', name: 'include', hasBlock: false },
 ]);
 
 // Properties
@@ -68,6 +68,10 @@ rules.push([
 	{ type: 'rule', selector: '^& \\+ &' },
 	{ type: 'rule', selector: '^& \\>' },
 	{ type: 'rule', selector: '^&\\.' },
+]);
+
+rules.push([
+	{ type: 'at-rule', name: 'include', hasBlock: true },
 ]);
 
 // Media queries in right order
