@@ -1,4 +1,4 @@
-const { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE } = require('../../../utils/constants');
+const { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE } = require('../../../utils/constants.js');
 
 module.exports = {
 	plugins: ['stylelint-scss'],

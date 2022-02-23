@@ -1,4 +1,4 @@
-const { KEBAB_CASE } = require('../../../utils/constants');
+const { KEBAB_CASE } = require('../../../utils/constants.js');
 
 module.exports = {
 	rules: {

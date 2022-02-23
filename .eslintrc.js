@@ -1,13 +1,12 @@
 module.exports = {
 	root: true,
 	extends: [
-		'@morev/eslint-config/preset/common/warn-autofixable',
+		'@morev/eslint-config/preset/common',
 	],
 	overrides: [
 		{
 			files: '*.js',
 			rules: {
-				'node/global-require': 'off',
 				'import/no-dynamic-require': 'off',
 			},
 		},

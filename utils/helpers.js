@@ -1,5 +1,5 @@
 const _mergeWith = require('lodash.mergewith');
-const { WARN } = require('./constants');
+const { WARN } = require('./constants.js');
 
 const mergeWithArrayComparer = (ov, sv) =>
 	(Array.isArray(ov) ? [...new Set([...sv || [], ...ov || []])] : undefined);
