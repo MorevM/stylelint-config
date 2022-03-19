@@ -135,6 +135,10 @@ module.exports = {
 		// Note: well, maybe in next life
 		'declaration-no-important': null,
 
+		// Limit the number of values for a list of properties within declarations
+		// https://stylelint.io/user-guide/rules/list/declaration-property-max-values/
+		'declaration-property-max-values': null,
+
 		// Specify a list of allowed property and unit pairs within declarations
 		// https://stylelint.io/user-guide/rules/list/declaration-property-unit-allowed-list/
 		'declaration-property-unit-allowed-list': null,
