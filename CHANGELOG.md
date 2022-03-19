@@ -1,6 +1,32 @@
 
 
-### [0.1.3](https://github.com/MorevM/stylelint-config/compare/v0.1.2...v0.1.3) (2022-03-12)
+## [1.0.0](https://github.com/MorevM/stylelint-config/compare/v0.1.3...v1.0.0) (2022-03-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* Exports changed.
+
+### Features
+
+* Add `declaration-property-max-values` rule declaration ([03800fd](https://github.com/MorevM/stylelint-config/commit/03800fda23e64e375ef378de3b541c0acfc4e1e1))
+* Add `function-no-unknown` rule ([e6977a9](https://github.com/MorevM/stylelint-config/commit/e6977a9f6e1f74f6dd70b9cdb6e79c011363b536))
+* **scss:** Add `scss/function-no-unknown` rule ([a4861ff](https://github.com/MorevM/stylelint-config/commit/a4861ff35af677cf28cdb15195c310ad6e66df99))
+
+
+### Refactoring
+
+* Change configurations naming convention ([931e407](https://github.com/MorevM/stylelint-config/commit/931e40734fd4a16f22df2a0b2ef53520ebf26383))
+
+
+### Chores
+
+* bump lint-staged from 12.3.5 to 12.3.7 ([#12](https://github.com/MorevM/stylelint-config/issues/12)) ([ef7d896](https://github.com/MorevM/stylelint-config/commit/ef7d896164a8b47d025499088d8ff2d0c83dcf75))
+* bump postcss from 8.4.8 to 8.4.12 ([#10](https://github.com/MorevM/stylelint-config/issues/10)) ([f04cc2a](https://github.com/MorevM/stylelint-config/commit/f04cc2ad29752afb11fdef1722129dd9bfb86374))
+* bump stylelint from 14.5.3 to 14.6.0 ([#13](https://github.com/MorevM/stylelint-config/issues/13)) ([9158f4c](https://github.com/MorevM/stylelint-config/commit/9158f4c1eb6d26fd64fbb2366ed95f6a4ae6744c))
+* bump stylelint-scss from 4.1.0 to 4.2.0 ([#11](https://github.com/MorevM/stylelint-config/issues/11)) ([7c47b80](https://github.com/MorevM/stylelint-config/commit/7c47b80da7001e576f28a5f87b65bb8cdc86c27c))
+* Set correct perrDependency stylelint version ([5de96ed](https://github.com/MorevM/stylelint-config/commit/5de96ed3241a0ddf20aa9a04e18070976749cf83))
+* Upgrade `release-it` ([3a48b03](https://github.com/MorevM/stylelint-config/commit/3a48b033bc572d34bf01ec5fdf62c0d71806d85a))### [0.1.3](https://github.com/MorevM/stylelint-config/compare/v0.1.2...v0.1.3) (2022-03-12)
 
 
 ### Chores
