@@ -31,28 +31,23 @@ const toExports = (source) =>
 	`module.exports = ${util.inspect(source, { maxArrayLength: 9999, depth: 999 })}`
 		.replace(/["'](require\(.*\))["']/g, '$1'); // unwrap require call
 
-const getNames = ({ name }, autofixable) => {
-	const filename = (autofixable === 'bypass')
-		? `${name}.js`
-		: `${name}-${autofixable}-autofixable.js`;
-
-	const exportsName = (autofixable === 'bypass')
-		? `./${name}`
-		: `./${name}/${autofixable}-autofixable`;
+const getNames = ({ name }, mode) => {
+	const filename = (mode === 'default') ? `${name}.js` : `${name}-${mode}.js`;
+	const exportsName = (mode === 'default') ? `./${name}` : `./${name}/${mode}`;
 
 	return { filename, exportsName };
 };
 
 (async () => {
 	await configurations.forEach(async (config) => {
-		await ['bypass', 'warn', 'off'].forEach(async (autofixable) => {
+		await ['default', 'strict', 'quiet'].forEach(async (mode) => {
 			const extend = config.extend
-				? `./${getNames({ name: config.extend }, autofixable).filename}`
+				? `./${getNames({ name: config.extend }, mode).filename}`
 				: null;
-			let configSource = makeConfig([{ ...config, extend, autofixable }]);
+			let configSource = makeConfig([{ ...config, extend, mode }]);
 			configSource = toExports(configSource);
 
-			const { filename, exportsName } = getNames(config, autofixable);
+			const { filename, exportsName } = getNames(config, mode);
 			exportsField[exportsName] = `${CONFIGS_DIR_REL}${filename}`;
 
 			fs.writeFileSync(`${CONFIGS_DIR}/${filename}`, configSource);

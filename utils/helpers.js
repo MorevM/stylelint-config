@@ -20,19 +20,19 @@ const autofixableRulesToOff = (rules, autofixableList) => Object.fromEntries(
 		.map(([rule, value]) => [rule, autofixableList.includes(rule) ? null : value]),
 );
 
-const getProcessedRules = ({ autofixable, base, rules }) => {
-	if (autofixable === 'bypass') return rules;
+const getProcessedRules = ({ mode, base, rules }) => {
+	if (mode === 'strict') return rules;
 
 	const autofixableRules = Object.entries(base.rules)
 		.filter(([key]) => key.startsWith('+'))
 		.map(([key]) => key.slice(1));
 
-	return autofixable === 'warn'
+	return mode === 'default'
 		? autofixableRulesToWarn(rules, autofixableRules)
-		: autofixableRulesToOff(rules, autofixableRules);
+		: autofixableRulesToOff(rules, autofixableRules); // assume `quiet`
 };
 
-const processExports = ({ autofixable, base, parts }) => {
+const processExports = ({ mode, base, parts }) => {
 	const mergedParts = _mergeWith(
 		{},
 		{ ...base },
@@ -54,7 +54,7 @@ const processExports = ({ autofixable, base, parts }) => {
 			}, []),
 	);
 
-	const processedRules = getProcessedRules({ autofixable, base: mergedParts, rules });
+	const processedRules = getProcessedRules({ mode, base: mergedParts, rules });
 
 	return _mergeWith(
 		{ ...mergedParts, rules: processedRules },

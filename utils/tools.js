@@ -15,9 +15,9 @@ const makeConfig = (_configs) => {
 
 	let result = {};
 
-	configs.forEach(({ name, autofixable, overrides, extend }) => {
+	configs.forEach(({ name, mode, overrides, extend }) => {
 		const configFactory = require(resolve(CONFIGS_PATH, name));
-		let processed = configFactory(autofixable);
+		let processed = configFactory(mode);
 
 		if (extend) {
 			processed = {

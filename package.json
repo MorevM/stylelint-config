@@ -33,11 +33,11 @@
 	"exports": {
 		".": "./build/configurations/scss.js",
 		"./css": "./build/configurations/css.js",
-		"./css/warn-autofixable": "./build/configurations/css-warn-autofixable.js",
-		"./css/off-autofixable": "./build/configurations/css-off-autofixable.js",
+		"./css/strict": "./build/configurations/css-strict.js",
+		"./css/quiet": "./build/configurations/css-quiet.js",
 		"./scss": "./build/configurations/scss.js",
-		"./scss/warn-autofixable": "./build/configurations/scss-warn-autofixable.js",
-		"./scss/off-autofixable": "./build/configurations/scss-off-autofixable.js"
+		"./scss/strict": "./build/configurations/scss-strict.js",
+		"./scss/quiet": "./build/configurations/scss-quiet.js"
 	},
 	"main": "./build/configurations/scss.js",
 	"scripts": {
