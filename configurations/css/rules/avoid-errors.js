@@ -26,6 +26,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/function-linear-gradient-no-nonstandard-direction/
 		'function-linear-gradient-no-nonstandard-direction': true,
 
+		// Disallow unknown functions
+		// https://stylelint.io/user-guide/rules/list/function-no-unknown
+		'function-no-unknown': true,
+
 		// Disallow (unescaped) newlines in strings
 		// https://stylelint.io/user-guide/rules/list/string-no-newline/
 		'string-no-newline': true,
