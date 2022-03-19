@@ -207,6 +207,14 @@ module.exports = {
 		// Note: don't think it's a good idea
 		'scss/function-color-relative': null,
 
+		// Disallow unknown functions
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-no-unknown/README.md
+		// Note: setup to fit `more-sass` package
+		'function-no-unknown': null,
+		'scss/function-no-unknown': [true, {
+			ignoreFunctions: ['shade', 'social-color', 'tint', 'column', 'offset', 'get-char'],
+		}],
+
 		// Disallow quoted strings inside the quote function (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-quote-no-quoted-strings-inside/README.md
 		'+scss/function-quote-no-quoted-strings-inside': true,
