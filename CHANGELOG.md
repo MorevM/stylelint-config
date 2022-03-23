@@ -1,6 +1,11 @@
 
 
-### [1.0.1](https://github.com/MorevM/stylelint-config/compare/v1.0.0...v1.0.1) (2022-03-23)
+### [1.0.2](https://github.com/MorevM/stylelint-config/compare/v1.0.1...v1.0.2) (2022-03-23)
+
+
+### Chores
+
+* Update `stylelint-scss` entry in `package.json` ([6c79f90](https://github.com/MorevM/stylelint-config/commit/6c79f90d174a25f97a0c9d54c8ee759ffab9ac1e))### [1.0.1](https://github.com/MorevM/stylelint-config/compare/v1.0.0...v1.0.1) (2022-03-23)
 
 
 ### Chores
