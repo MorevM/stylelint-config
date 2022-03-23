@@ -1,6 +1,11 @@
 
 
-## [1.0.0](https://github.com/MorevM/stylelint-config/compare/v0.1.3...v1.0.0) (2022-03-19)
+### [1.0.1](https://github.com/MorevM/stylelint-config/compare/v1.0.0...v1.0.1) (2022-03-23)
+
+
+### Chores
+
+* Deps update ([f90ff6f](https://github.com/MorevM/stylelint-config/commit/f90ff6f630acd7abe3a98c3866893ae99ab0dc8c))## [1.0.0](https://github.com/MorevM/stylelint-config/compare/v0.1.3...v1.0.0) (2022-03-19)
 
 
 ### ⚠ BREAKING CHANGES
