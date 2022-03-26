@@ -1,6 +1,14 @@
 
 
-### [1.0.2](https://github.com/MorevM/stylelint-config/compare/v1.0.1...v1.0.2) (2022-03-23)
+### [1.0.3](https://github.com/MorevM/stylelint-config/compare/v1.0.2...v1.0.3) (2022-03-26)
+
+
+### Chores
+
+* bump @morev/eslint-config from 10.0.2 to 10.0.3 ([#16](https://github.com/MorevM/stylelint-config/issues/16)) ([c8e92f2](https://github.com/MorevM/stylelint-config/commit/c8e92f23f6d3ad5a7defca9d48a79a14ff910a5c))
+* bump eslint from 8.11.0 to 8.12.0 ([#15](https://github.com/MorevM/stylelint-config/issues/15)) ([f53a9ba](https://github.com/MorevM/stylelint-config/commit/f53a9ba2ab168f844359656b89ade58f8aa2d05a))
+* bump stylelint from 14.6.0 to 14.6.1 ([#14](https://github.com/MorevM/stylelint-config/issues/14)) ([a4ed3b8](https://github.com/MorevM/stylelint-config/commit/a4ed3b891cc78309a575258946e6f3b50c96fd1e))
+* Update `dependabot` settings ([a46dcd1](https://github.com/MorevM/stylelint-config/commit/a46dcd12078a9addcdb0b5336daf771518c31b70))### [1.0.2](https://github.com/MorevM/stylelint-config/compare/v1.0.1...v1.0.2) (2022-03-23)
 
 
 ### Chores
