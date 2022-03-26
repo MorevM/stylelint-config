@@ -737,9 +737,9 @@
     lodash.clonedeep "^4.5.0"
 
 "@morev/eslint-config@^10.0.2":
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/@morev/eslint-config/-/eslint-config-10.0.2.tgz#bce26bb447e2eb6b3f477d34b84660476de74cd0"
-  integrity sha512-2Ur/DjrsxqSe709Gdb6OC2cDt0vIBIC41+5/gmhsSO6bzSnbkI5hM4NR1ae6GG7ecVLnbARdaU4M+nEV5fzs4A==
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/@morev/eslint-config/-/eslint-config-10.0.3.tgz#7406989e4f3ce4aedff64f022511b8be0312c68a"
+  integrity sha512-DCn6otsF5HVgN2zqTETIQBshXTLq8LnqkrjIeanTnFtkbB74sqHIH1akAPvjdn42PVNcz2VrlCFtmc+CZaKtng==
   dependencies:
     "@babel/core" "^7.16.12"
     "@babel/eslint-parser" "^7.16.5"
@@ -6208,7 +6208,7 @@ stylelint-order@^5.0.0:
     postcss "^8.3.11"
     postcss-sorting "^7.0.1"
 
-stylelint-scss@^4.1.0:
+stylelint-scss@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-4.2.0.tgz#e25fd390ee38a7e89fcfaec2a8f9dce2ec6ddee8"
   integrity sha512-HHHMVKJJ5RM9pPIbgJ/XA67h9H0407G68Rm69H4fzFbFkyDMcTV1Byep3qdze5+fJ3c0U7mJrbj6S0Fg072uZA==
