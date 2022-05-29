@@ -50,7 +50,7 @@
 		"release": "release-it --disable-metrics"
 	},
 	"peerDependencies": {
-		"stylelint": "^14.5.3"
+		"stylelint": "^14.8.5"
 	},
 	"dependencies": {
 		"lodash.mergewith": "^4.6.2",
@@ -77,6 +77,6 @@
 		"jest": "^28.1.0",
 		"lint-staged": "^12.4.2",
 		"release-it": "^15.0.0",
-		"stylelint": "^14.5.3"
+		"stylelint": "^14.8.5"
 	}
 }
