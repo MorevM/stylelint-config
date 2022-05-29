@@ -52,6 +52,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/keyframe-declaration-no-important/
 		'keyframe-declaration-no-important': true,
 
+		// Disallow duplicate selectors within `keyframe` blocks.
+		// https://stylelint.io/user-guide/rules/list/keyframe-block-no-duplicate-selectors/
+		'keyframe-block-no-duplicate-selectors': true,
+
 		// Disallow duplicate custom properties within declaration blocks
 		// https://stylelint.io/user-guide/rules/list/declaration-block-no-duplicate-custom-properties/
 		'declaration-block-no-duplicate-custom-properties': true,
