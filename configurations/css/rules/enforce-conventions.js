@@ -249,6 +249,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/selector-no-vendor-prefix/
 		'+selector-no-vendor-prefix': true,
 
+		// Specify simple or complex notation for `:not()` pseudo-classes (autofixable)
+		// https://stylelint.io/user-guide/rules/list/selector-not-notation/
+		'+selector-not-notation': 'complex',
+
 		// Specify a list of allowed pseudo-class selectors
 		// https://stylelint.io/user-guide/rules/list/selector-pseudo-class-allowed-list/
 		'selector-pseudo-class-allowed-list': null,
