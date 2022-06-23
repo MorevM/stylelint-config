@@ -247,7 +247,9 @@ module.exports = {
 
 		// Disallow vendor prefixes for selectors (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-no-vendor-prefix/
-		'+selector-no-vendor-prefix': true,
+		'+selector-no-vendor-prefix': [true, {
+			ignoreSelectors: ['::-ms-input-placeholder'],
+		}],
 
 		// Specify simple or complex notation for `:not()` pseudo-classes (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-not-notation/
