@@ -1,5 +1,31 @@
 
 
+## [1.2.0](https://github.com/MorevM/stylelint-config/compare/v1.1.0...v1.2.0) (2022-06-23)
+
+
+### Features
+
+* Add `import-notation` rule ([9cd795a](https://github.com/MorevM/stylelint-config/commit/9cd795ae1b34ba38d4199c19e7fc8de7d3a286a2))
+
+
+### Chores
+
+* bump @morev/eslint-config from 12.0.0 to 12.1.1 ([#54](https://github.com/MorevM/stylelint-config/issues/54)) ([2428a1f](https://github.com/MorevM/stylelint-config/commit/2428a1f7796d181e7fb8690166d9755f73eb70e9))
+* bump @morev/eslint-config from 12.1.1 to 12.2.0 ([#55](https://github.com/MorevM/stylelint-config/issues/55)) ([c30e90a](https://github.com/MorevM/stylelint-config/commit/c30e90a7895463211f5607badacfe4a68220ae8f))
+* bump @morev/eslint-config from 12.2.0 to 12.3.0 ([#60](https://github.com/MorevM/stylelint-config/issues/60)) ([77bc6ae](https://github.com/MorevM/stylelint-config/commit/77bc6ae48c0f3ce9f9f7c3b0956c5f37c89b4884))
+* bump @types/jest from 27.5.1 to 28.1.0 ([#52](https://github.com/MorevM/stylelint-config/issues/52)) ([cdafd3f](https://github.com/MorevM/stylelint-config/commit/cdafd3f112197d9cdc242b7349dcba5bb4744f9a))
+* bump eslint from 8.16.0 to 8.17.0 ([#51](https://github.com/MorevM/stylelint-config/issues/51)) ([6c2cd61](https://github.com/MorevM/stylelint-config/commit/6c2cd613495b93c272e99fc747c223761eb021e4))
+* bump eslint from 8.17.0 to 8.18.0 ([#59](https://github.com/MorevM/stylelint-config/issues/59)) ([e3dc98a](https://github.com/MorevM/stylelint-config/commit/e3dc98a0b7c482cc256d7b5e820213eb4868e6c5))
+* bump jest and @types/jest ([#57](https://github.com/MorevM/stylelint-config/issues/57)) ([75a5016](https://github.com/MorevM/stylelint-config/commit/75a5016d7596fe09ff50d92a0c2523e49ecc3840))
+* bump lint-staged from 12.4.2 to 13.0.0 ([#53](https://github.com/MorevM/stylelint-config/issues/53)) ([4f2cef5](https://github.com/MorevM/stylelint-config/commit/4f2cef51da9a89abb23db0cd2046e3ebf07499f1))
+* bump lint-staged from 13.0.0 to 13.0.2 ([#61](https://github.com/MorevM/stylelint-config/issues/61)) ([47b4e62](https://github.com/MorevM/stylelint-config/commit/47b4e62cff52165d709ab5f556cba11e37be2c72))
+* Deps update ([8eec568](https://github.com/MorevM/stylelint-config/commit/8eec5685e41a685e71954c7fc18f2f8d208dc038))
+
+
+### Bug fixes
+
+* Ignore prefixed `-ms-input-placeholder` ([671bdf0](https://github.com/MorevM/stylelint-config/commit/671bdf0929b068b360bbf50debc4b5a3a07330dd))
+
 ## [1.1.0](https://github.com/MorevM/stylelint-config/compare/v1.0.3...v1.1.0) (2022-05-29)
 
 
