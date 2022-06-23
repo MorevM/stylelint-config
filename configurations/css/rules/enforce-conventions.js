@@ -76,6 +76,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/function-url-scheme-disallowed-list/
 		'function-url-scheme-disallowed-list': null,
 
+		// Specify string or URL notation for `@import` rules (autofixable)
+		// https://stylelint.io/user-guide/rules/list/import-notation
+		'+import-notation': 'string',
+
 		// Specify a pattern for keyframe names
 		// https://stylelint.io/user-guide/rules/list/keyframes-name-pattern/
 		'keyframes-name-pattern': [KEBAB_CASE, {
