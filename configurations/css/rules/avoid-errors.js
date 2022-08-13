@@ -1,5 +1,9 @@
 module.exports = {
 	rules: {
+		// Disallow unknown annotations
+		// https://stylelint.io/user-guide/rules/list/annotation-no-unknown/
+		'annotation-no-unknown': true,
+
 		// Disallow invalid hex colors
 		// https://stylelint.io/user-guide/rules/list/color-no-invalid-hex/
 		'color-no-invalid-hex': true,
