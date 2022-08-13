@@ -63,7 +63,7 @@ rules.push([
 // Selectors which increases specificity
 rules.push([
 	{ type: 'rule', selector: '^&\\[' },
-	{ type: 'rule', selector: '^@at-root' },
+	{ type: 'at-rule', selector: 'at-root' },
 	{ type: 'rule', selector: '#{' },
 	{ type: 'rule', selector: '^& \\+ &' },
 	{ type: 'rule', selector: '^& \\>' },
@@ -76,20 +76,20 @@ rules.push([
 
 // Media queries in right order
 rules.push([
-	{ type: 'rule', name: 'media', parameter: '\(--phone-small\)' }, // >= 320
-	{ type: 'rule', name: 'media', parameter: '\(--phone-standard\)' }, // same as above, legacy option
-	{ type: 'rule', name: 'media', parameter: '\(--phone-portrait\)' }, // >= 360
-	{ type: 'rule', name: 'media', parameter: '\(--phone-landscape\)' }, // >= 480
-	{ type: 'rule', name: 'media', parameter: '\(--tablet-portrait\)' }, // >= 768
-	{ type: 'rule', name: 'media', parameter: '\(--tablet-standard\)' }, // same as above, legacy option
-	{ type: 'rule', name: 'media', parameter: '\(--tablet-landscape\)' }, // >= 1024
-	{ type: 'rule', name: 'media', parameter: '\(--laptop\)' }, // >= 1280
-	{ type: 'rule', name: 'media', parameter: '\(--desktop-middle\)' }, // > >= 1440, legacy option
-	{ type: 'rule', name: 'media', parameter: '\(--desktop\)' }, // > >= 1660px
-	{ type: 'rule', name: 'media', parameter: '\(--desktop-wide\)' }, // same as above, legacy option
-	{ type: 'rule', name: 'media', parameter: '\(--desktop-2k\)' }, // > 1921
-	{ type: 'rule', name: 'media', parameter: '\(--desktop-4k\)' }, // > 2561
-	{ type: 'rule', name: 'media' }, // rest
+	{ type: 'at-rule', name: 'media', parameter: '\(--phone-small\)' }, // >= 320
+	{ type: 'at-rule', name: 'media', parameter: '\(--phone-standard\)' }, // same as above, legacy option
+	{ type: 'at-rule', name: 'media', parameter: '\(--phone-portrait\)' }, // >= 360
+	{ type: 'at-rule', name: 'media', parameter: '\(--phone-landscape\)' }, // >= 480
+	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-portrait\)' }, // >= 768
+	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-standard\)' }, // same as above, legacy option
+	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-landscape\)' }, // >= 1024
+	{ type: 'at-rule', name: 'media', parameter: '\(--laptop\)' }, // >= 1280
+	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-middle\)' }, // > >= 1440, legacy option
+	{ type: 'at-rule', name: 'media', parameter: '\(--desktop\)' }, // > >= 1660px
+	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-wide\)' }, // same as above, legacy option
+	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-2k\)' }, // > 1921
+	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-4k\)' }, // > 2561
+	{ type: 'at-rule', name: 'media' }, // rest
 ]);
 
 // BEM
