@@ -1,5 +1,49 @@
 
 
+## [2.0.0](https://github.com/MorevM/stylelint-config/compare/v1.2.0...v2.0.0) (2022-08-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* New `annotation-no-unknown` rule has the `error` severity, so it can break builds.
+
+### Features
+
+* Add `annotation-no-unknown` rule ([74f186e](https://github.com/MorevM/stylelint-config/commit/74f186e5d39523c890bf9620e4ff31e521f84304))
+* Add `keyframe-selector-notation` rule ([160a955](https://github.com/MorevM/stylelint-config/commit/160a955503038c8ba32c161d27403e7976716f26))
+
+
+### Chores
+
+* Add `node 18` to `engines` field of `package.json` ([8c4f23a](https://github.com/MorevM/stylelint-config/commit/8c4f23a71f79faec08a524ab4b0ac5aaaa419b5f))
+* bump @morev/eslint-config from 12.3.0 to 13.0.0 ([#68](https://github.com/MorevM/stylelint-config/issues/68)) ([775ca48](https://github.com/MorevM/stylelint-config/commit/775ca48e33d029ede302339836c58749d079ff09))
+* bump @morev/eslint-config from 13.0.0 to 15.0.0 ([#70](https://github.com/MorevM/stylelint-config/issues/70)) ([2bb811b](https://github.com/MorevM/stylelint-config/commit/2bb811bbf4fd8941ba699bcc50a69d7f52789927))
+* bump @morev/eslint-config from 15.0.0 to 15.1.0 ([#75](https://github.com/MorevM/stylelint-config/issues/75)) ([efeec13](https://github.com/MorevM/stylelint-config/commit/efeec1374d6e36a1acd9a190c3e052fd38364f6f))
+* bump @morev/eslint-config from 15.1.0 to 15.2.0 ([#78](https://github.com/MorevM/stylelint-config/issues/78)) ([b83e385](https://github.com/MorevM/stylelint-config/commit/b83e385931b0ae20d11fc588bfe33bca80e2b371))
+* bump @morev/eslint-config from 15.2.0 to 15.3.0 ([#83](https://github.com/MorevM/stylelint-config/issues/83)) ([20aa406](https://github.com/MorevM/stylelint-config/commit/20aa40600ee494285d6981bdb15c3e90a6d2f10e))
+* bump eslint from 8.18.0 to 8.19.0 ([#64](https://github.com/MorevM/stylelint-config/issues/64)) ([740e5ae](https://github.com/MorevM/stylelint-config/commit/740e5ae2c18b0a1c207f234bc454f22978583c22))
+* bump eslint from 8.19.0 to 8.20.0 ([#74](https://github.com/MorevM/stylelint-config/issues/74)) ([17893f2](https://github.com/MorevM/stylelint-config/commit/17893f25d1b5d667715895925ea6da5d29383f2e))
+* bump eslint from 8.20.0 to 8.21.0 ([#79](https://github.com/MorevM/stylelint-config/issues/79)) ([4d80678](https://github.com/MorevM/stylelint-config/commit/4d806781a4c903d056f69fd74ca62e29fd56e0a0))
+* bump jest and @types/jest ([#65](https://github.com/MorevM/stylelint-config/issues/65)) ([a3c2c52](https://github.com/MorevM/stylelint-config/commit/a3c2c52b31fac78092d31f3c8d57c91875a8741e))
+* bump jest and @types/jest ([#72](https://github.com/MorevM/stylelint-config/issues/72)) ([ba1f9cb](https://github.com/MorevM/stylelint-config/commit/ba1f9cbcfddba5800e6405a7e47f2d8e2fe5e66a))
+* bump lint-staged from 13.0.2 to 13.0.3 ([#63](https://github.com/MorevM/stylelint-config/issues/63)) ([a1af030](https://github.com/MorevM/stylelint-config/commit/a1af03040a5e19598ef5b4c74ddadc2a36001f40))
+* bump postcss from 8.4.14 to 8.4.16 ([#81](https://github.com/MorevM/stylelint-config/issues/81)) ([6ae961c](https://github.com/MorevM/stylelint-config/commit/6ae961c97e2cd27fc2cc33d6d5e23faf326620b5))
+* bump release-it from 15.1.0 to 15.1.1 ([#67](https://github.com/MorevM/stylelint-config/issues/67)) ([7871776](https://github.com/MorevM/stylelint-config/commit/787177652ef09b98b16553f80bb4b5f9a30640d5))
+* bump release-it from 15.1.1 to 15.1.2 ([#71](https://github.com/MorevM/stylelint-config/issues/71)) ([685d869](https://github.com/MorevM/stylelint-config/commit/685d869e7fecb5bdfdac94a537229d96ce8ebcfe))
+* bump release-it from 15.1.2 to 15.1.3 ([#73](https://github.com/MorevM/stylelint-config/issues/73)) ([03da2cb](https://github.com/MorevM/stylelint-config/commit/03da2cbcfbc3f0f0eb09895329c722cc3d6034fb))
+* bump release-it from 15.1.3 to 15.2.0 ([#77](https://github.com/MorevM/stylelint-config/issues/77)) ([4980159](https://github.com/MorevM/stylelint-config/commit/4980159b66f5950106a90ab28abf3fb9f5bf6067))
+* bump release-it from 15.2.0 to 15.3.0 ([#82](https://github.com/MorevM/stylelint-config/issues/82)) ([bf0b174](https://github.com/MorevM/stylelint-config/commit/bf0b174b5367e2d5e15987e3fcc8f1e7aa056513))
+* bump stylelint from 14.9.1 to 14.10.0 ([#80](https://github.com/MorevM/stylelint-config/issues/80)) ([3bd6295](https://github.com/MorevM/stylelint-config/commit/3bd62951fc233d0a61bfb478bbffc6220c068502))
+* bump stylelint-scss from 4.2.0 to 4.3.0 ([#69](https://github.com/MorevM/stylelint-config/issues/69)) ([6e65ac0](https://github.com/MorevM/stylelint-config/commit/6e65ac0e3b44ec4967d28e6b534e039948b2f71f))
+* bump stylelint-use-nesting from 3.0.0 to 4.0.0 ([#76](https://github.com/MorevM/stylelint-config/issues/76)) ([79d9291](https://github.com/MorevM/stylelint-config/commit/79d9291824906b1522a9420075cb9bc72e320bb8))
+* Set correct version of `stylelint` in `peerDependencies` ([0975b55](https://github.com/MorevM/stylelint-config/commit/0975b557a6ab46de0ba62c0616a67947a61721d4))
+
+
+### Bug fixes
+
+* Correct order of media queries ([a1b527f](https://github.com/MorevM/stylelint-config/commit/a1b527f075793beb33a81645a5cc2707c5fa3529))
+* Ignore `font-family` property for `value-keyword-case` ([c00dfca](https://github.com/MorevM/stylelint-config/commit/c00dfca5f2006ef11e2b24086cca1b3db58a6fae))
+
 ## [1.2.0](https://github.com/MorevM/stylelint-config/compare/v1.1.0...v1.2.0) (2022-06-23)
 
 
