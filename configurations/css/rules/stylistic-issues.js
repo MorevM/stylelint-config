@@ -5,6 +5,7 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/value-keyword-case/
 		'+value-keyword-case': ['lower', {
 			camelCaseSvgKeywords: true,
+			ignoreProperties: ['font-family'],
 		}],
 
 		// Specify lowercase or uppercase for function names (autofixable)
