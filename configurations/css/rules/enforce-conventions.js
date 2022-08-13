@@ -80,6 +80,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/import-notation
 		'+import-notation': 'string',
 
+		// Specify keyword or percentage notation for keyframe selectors (autofixable)
+		// https://stylelint.io/user-guide/rules/list/keyframe-selector-notation/
+		'+keyframe-selector-notation': 'percentage-unless-within-keyword-only-block',
+
 		// Specify a pattern for keyframe names
 		// https://stylelint.io/user-guide/rules/list/keyframes-name-pattern/
 		'keyframes-name-pattern': [KEBAB_CASE, {
