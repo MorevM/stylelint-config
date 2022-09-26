@@ -979,10 +979,10 @@
     conventional-changelog-conventionalcommits "^4.6.3"
     lodash.clonedeep "^4.5.0"
 
-"@morev/eslint-config@^17.3.0":
-  version "17.3.0"
-  resolved "https://registry.yarnpkg.com/@morev/eslint-config/-/eslint-config-17.3.0.tgz#42b10f2058758490ade27308312c88da86869b4e"
-  integrity sha512-5F87yzOmSva9f/PNpiXnXDiTicDK5ekvorzZUnNK8nVf57S5A6m/u/3OpQAKpRepto5wmofX7pzzqnKY+Cundw==
+"@morev/eslint-config@^17.3.1":
+  version "17.3.1"
+  resolved "https://registry.yarnpkg.com/@morev/eslint-config/-/eslint-config-17.3.1.tgz#4d2a971843588fb5f68a18c5e80d30090049ade5"
+  integrity sha512-OY5+pXG54oknoH8yrnfkfNaF/ZhietDnKqtJcLjglgg5QUMfRMiNBAd1ZxUAxaUW3m68luwR5Cq701a7yER4NQ==
   dependencies:
     "@babel/core" "^7.19.1"
     "@babel/eslint-parser" "^7.19.1"
