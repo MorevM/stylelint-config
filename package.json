@@ -71,10 +71,10 @@
 		"@morev/commitlint-config": "^0.1.1",
 		"@morev/eslint-config": "^17.4.0",
 		"@release-it/conventional-changelog": "^5.1.0",
-		"@types/jest": "^29.0.0",
+		"@types/jest": "^29.1.1",
 		"eslint": "^8.24.0",
 		"husky": "^8.0.1",
-		"jest": "^29.0.3",
+		"jest": "^29.1.2",
 		"lint-staged": "^13.0.3",
 		"release-it": "^15.4.2",
 		"stylelint": "^14.11.0"
