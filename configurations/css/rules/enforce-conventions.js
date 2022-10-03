@@ -42,10 +42,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/font-family-name-quotes/
 		'font-family-name-quotes': 'always-where-recommended',
 
-		// Require numeric or named (where possible) font-weight values.
+		// Require numeric or named (where possible) font-weight values (autofixable).
 		// Also, when named values are expected, require only valid names
 		// https://stylelint.io/user-guide/rules/list/font-weight-notation/
-		'font-weight-notation': ['numeric', {
+		'+font-weight-notation': ['numeric', {
 			ignore: ['relative'],
 		}],
 
