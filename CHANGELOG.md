@@ -1,5 +1,29 @@
 
 
+## [2.1.0](https://github.com/MorevM/stylelint-config/compare/v2.0.0...v2.1.0) (2022-10-03)
+
+
+### Features
+
+* Add autofix for `font-weight-notation` rule ([bbf83a8](https://github.com/MorevM/stylelint-config/commit/bbf83a89ecbeb7b03b9bdc1c4cc1f1550fb8b5ef))
+
+
+### Chores
+
+* bump @morev/eslint-config from 15.3.0 to 17.4.0 ([#107](https://github.com/MorevM/stylelint-config/issues/107)) ([e5a38ad](https://github.com/MorevM/stylelint-config/commit/e5a38ad13140176d4efa4f3e8886855a380a2add))
+* bump @release-it/conventional-changelog from 5.0.0 to 5.1.0 ([#86](https://github.com/MorevM/stylelint-config/issues/86)) ([b33685d](https://github.com/MorevM/stylelint-config/commit/b33685d465515bdc38362614fd721fa169e39487))
+* bump eslint from 8.21.0 to 8.24.0 ([#103](https://github.com/MorevM/stylelint-config/issues/103)) ([9e15a09](https://github.com/MorevM/stylelint-config/commit/9e15a09661c5c035e0d8d8d029252f85be5ed126))
+* bump jest and @types/jest ([#105](https://github.com/MorevM/stylelint-config/issues/105)) ([43f2816](https://github.com/MorevM/stylelint-config/commit/43f2816c4fc6c8805cee55d0926f478300957a29))
+* bump postcss from 8.4.16 to 8.4.17 ([#108](https://github.com/MorevM/stylelint-config/issues/108)) ([bce155c](https://github.com/MorevM/stylelint-config/commit/bce155cb2d2f485ce670dc1ab127ad2dfce7a182))
+* bump postcss-scss from 4.0.4 to 4.0.5 ([#98](https://github.com/MorevM/stylelint-config/issues/98)) ([3de727a](https://github.com/MorevM/stylelint-config/commit/3de727a50b98b9d295ed171344d303cb8bb0aae3))
+* bump release-it from 15.3.0 to 15.4.2 ([#100](https://github.com/MorevM/stylelint-config/issues/100)) ([85fcb38](https://github.com/MorevM/stylelint-config/commit/85fcb386ab2808f021eaf7566f20d9868cae6343))
+* bump stylelint from 14.10.0 to 14.13.0 ([6953ed8](https://github.com/MorevM/stylelint-config/commit/6953ed898106d9027c66f525615c001c786e14ad))
+
+
+### Refactoring
+
+* Relint files after ESlint config update ([4cdcb13](https://github.com/MorevM/stylelint-config/commit/4cdcb139f3eaef7edb382ef295f8e19e48a0ab4d))
+
 ## [2.0.0](https://github.com/MorevM/stylelint-config/compare/v1.2.0...v2.0.0) (2022-08-13)
 
 
