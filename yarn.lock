@@ -6723,10 +6723,10 @@ style-search@^0.1.0:
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
-stylelint-8-point-grid@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/stylelint-8-point-grid/-/stylelint-8-point-grid-2.1.0.tgz#1d9a09e1c773dbd7453532add4d22d2a5393f4e8"
-  integrity sha512-8P19ixdL3S4zw6w1vquDaETt9SvdYCw62HyWuA5SeMW90S5ws6jioCS3ZLp71ulSpvgg0k4Kgg7TP5V7opwadQ==
+stylelint-8-point-grid@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/stylelint-8-point-grid/-/stylelint-8-point-grid-2.2.0.tgz#fb3211f2bb395351346a27f16ab330c2061ae654"
+  integrity sha512-b1E2p+4zhSEg2zpfA3DbH+XyeijjaULc1SgggwNt3C2AhOT9KmEsw6wH0Jun85uz7aJEThKGSR5q25SaoDqvHg==
   dependencies:
     stylelint "^13.3.2"
 
