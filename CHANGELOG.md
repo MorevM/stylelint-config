@@ -1,5 +1,19 @@
 
 
+## [2.2.0](https://github.com/MorevM/stylelint-config/compare/v2.1.0...v2.2.0) (2022-12-10)
+
+
+### Features
+
+* Take account of new `media-feature-range-notation` rule ([8ba3e2d](https://github.com/MorevM/stylelint-config/commit/8ba3e2d4d39c9a159ec46705ab46ee1f077bef86))
+
+
+### Chores
+* bump stylelint from 14.13.0 to 14.16.0 ([457ded2](https://github.com/MorevM/stylelint-config/commit/457ded2cb3187c3aaa3f214708afefeb0ed6d3da))
+* bump stylelint-8-point-grid from 2.1.0 to 2.2.0 ([#110](https://github.com/MorevM/stylelint-config/issues/110)) ([7642b31](https://github.com/MorevM/stylelint-config/commit/7642b31b8733fa0a830cc0e9ea824481a9c54afa))
+* bump stylelint-declaration-block-no-ignored-properties ([#120](https://github.com/MorevM/stylelint-config/issues/120)) ([f31ad12](https://github.com/MorevM/stylelint-config/commit/f31ad12c23a163a3a3b6ce0255c9b62d120484df))
+* bump stylelint-high-performance-animation from 1.6.0 to 1.7.0 ([59d73e9](https://github.com/MorevM/stylelint-config/commit/59d73e916fda5fea1026ce4c44352eea4daab078))
+
 ## [2.1.0](https://github.com/MorevM/stylelint-config/compare/v2.0.0...v2.1.0) (2022-10-03)
 
 
