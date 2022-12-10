@@ -84,6 +84,11 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/keyframe-selector-notation/
 		'+keyframe-selector-notation': 'percentage-unless-within-keyword-only-block',
 
+		// Specify context or prefix notation for media feature ranges
+		// https://stylelint.io/user-guide/rules/media-feature-range-notation/
+		// TODO: [2024-05-11] Enable
+		'media-feature-range-notation': null,
+
 		// Specify a pattern for keyframe names
 		// https://stylelint.io/user-guide/rules/list/keyframes-name-pattern/
 		'keyframes-name-pattern': [KEBAB_CASE, {
