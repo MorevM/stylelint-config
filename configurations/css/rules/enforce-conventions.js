@@ -140,7 +140,7 @@ module.exports = {
 		// Disallow longhand properties that can be combined into one shorthand property
 		// https://stylelint.io/user-guide/rules/list/declaration-block-no-redundant-longhand-properties/
 		'declaration-block-no-redundant-longhand-properties': [true, {
-			ignoreShorthands: ['/grid/'], // Sometimes grids get hard to read
+			ignoreShorthands: ['/grid/', 'flex-flow'], // Sometimes grids get hard to read
 		}],
 
 		// Disallow `!important` within declarations
