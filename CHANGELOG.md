@@ -1,5 +1,18 @@
 
 
+### [2.2.1](https://github.com/MorevM/stylelint-config/compare/v2.2.0...v2.2.1) (2023-01-28)
+
+
+### Bug fixes
+
+* Allow to use `flex-wrap` and `flex-direction` separately ([a17aea0](https://github.com/MorevM/stylelint-config/commit/a17aea09ef9df569c764c0c99318b4697659679a))
+
+
+### Chores
+
+* Bump `stylelint-order` from 5.0.0 to 6.0.1 ([8936b71](https://github.com/MorevM/stylelint-config/commit/8936b7157425ae5b0414559a492f09c56d47989d))
+* Upgrade devDeps ([7b4600e](https://github.com/MorevM/stylelint-config/commit/7b4600e1d578213a88c4caff4c6073cfea30044f))
+
 ## [2.2.0](https://github.com/MorevM/stylelint-config/compare/v2.1.0...v2.2.0) (2022-12-10)
 
 
