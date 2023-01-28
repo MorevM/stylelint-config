@@ -107,7 +107,7 @@ module.exports = {
 
 		// Disallow usage of `@use` without a namespace
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-use-no-unnamespaced/README.md
-		// TODO: [2023-01-01] Blocked because of VSCode support https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss
+		// TODO: [2024-01-01] Blocked because of VSCode support https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss
 		'scss/at-use-no-unnamespaced': null,
 
 		// Require a newline after the colon in `$`-variable declarations (autofixable)
