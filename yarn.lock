@@ -6940,10 +6940,10 @@ stylelint-at-rule-no-children@^0.3.1:
   resolved "https://registry.yarnpkg.com/stylelint-at-rule-no-children/-/stylelint-at-rule-no-children-0.3.1.tgz#700152f9ddf4c544592e80ffdcb67ff342749e8d"
   integrity sha512-SNXI6r3XSQja4PqKunu1LNzfqTc/qaONnkOW4ey7ONYY3Z4HIgrBF1ctxCITth1az0fRdrUZNixT/NQIROTX1Q==
 
-stylelint-declaration-block-no-ignored-properties@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/stylelint-declaration-block-no-ignored-properties/-/stylelint-declaration-block-no-ignored-properties-2.6.0.tgz#237028415b5bd543341f7d3c57c5903259a9e09c"
-  integrity sha512-S9EC/tVJL19ppMRC4A4ecxtkENHZ7WNrEAukJVDtFt+iZgNP3SmokOLlYUhe6qZuB2XUvETqUx6r2p3Xfo7Rxw==
+stylelint-declaration-block-no-ignored-properties@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/stylelint-declaration-block-no-ignored-properties/-/stylelint-declaration-block-no-ignored-properties-2.7.0.tgz#78a4a03a5ec74a06b4abb226a31ff8fc57782a0e"
+  integrity sha512-44SpI9+9Oc1ICuwwRfwS/3npQ2jPobDSTnwWdNgZGryGqQCp17CgEIWjCv1BgUOSzND3RqywNCNLKvO1AOxbfg==
 
 stylelint-high-performance-animation@^1.7.0:
   version "1.7.0"
