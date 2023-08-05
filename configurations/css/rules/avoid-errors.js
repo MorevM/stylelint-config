@@ -74,6 +74,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/keyframe-declaration-no-important/
 		'keyframe-declaration-no-important': true,
 
+		// Disallow invalid media queries
+		// https://stylelint.io/user-guide/rules/media-query-no-invalid/
+		'media-query-no-invalid': true,
+
 		// Disallow invalid named grid areas
 		// https://stylelint.io/user-guide/rules/list/named-grid-areas-no-invalid/
 		'named-grid-areas-no-invalid': true,
