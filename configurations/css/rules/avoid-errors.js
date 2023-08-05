@@ -159,6 +159,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/no-unknown-animations/
 		'no-unknown-animations': true,
 
+		// Disallow unknown custom properties
+		// https://stylelint.io/user-guide/rules/no-unknown-custom-properties/
+		'no-unknown-custom-properties': null,
+
 		// Disallow unknown properties
 		// https://stylelint.io/user-guide/rules/list/property-no-unknown/
 		'property-no-unknown': [true, {
