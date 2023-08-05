@@ -141,6 +141,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/at-rule-no-unknown/
 		'at-rule-no-unknown': true,
 
+		// Disallow unknown values for properties within declarations
+		// https://stylelint.io/user-guide/rules/declaration-property-value-no-unknown/
+		'declaration-property-value-no-unknown': true,
+
 		// Disallow unknown functions
 		// https://stylelint.io/user-guide/rules/list/function-no-unknown
 		'function-no-unknown': true,
