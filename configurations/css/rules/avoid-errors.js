@@ -17,7 +17,10 @@ module.exports = {
 		// Disallow duplicate properties within declaration blocks (autofixable but might be confusing)
 		// https://stylelint.io/user-guide/rules/list/declaration-block-no-duplicate-properties/
 		'!declaration-block-no-duplicate-properties': [true, {
-			ignore: ['consecutive-duplicates-with-different-values'],
+			ignore: [
+				'consecutive-duplicates-with-different-values',
+				'consecutive-duplicates-with-different-syntaxes',
+			],
 		}],
 
 		// Disallow duplicate font family names (autofixable but might be confusing)
