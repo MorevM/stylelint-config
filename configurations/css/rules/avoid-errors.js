@@ -127,7 +127,9 @@ module.exports = {
 
 		// #region Unmatchable
 
-		// For next rules.
+		// Disallow unmatchable `An+B` selectors
+		// https://stylelint.io/user-guide/rules/selector-anb-no-unmatchable/
+		'selector-anb-no-unmatchable': true,
 
 		// #endregion
 
