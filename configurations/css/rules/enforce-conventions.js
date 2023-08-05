@@ -364,10 +364,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/keyframe-selector-notation/
 		'+keyframe-selector-notation': 'percentage-unless-within-keyword-only-block',
 
-		// Specify context or prefix notation for media feature ranges
+		// Specify context or prefix notation for media feature ranges (autofixable)
 		// https://stylelint.io/user-guide/rules/media-feature-range-notation/
 		// TODO: [2024-05-11] Enable
-		'media-feature-range-notation': null,
+		'+media-feature-range-notation': null,
 
 		// Specify simple or complex notation for `:not()` pseudo-classes (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-not-notation/
