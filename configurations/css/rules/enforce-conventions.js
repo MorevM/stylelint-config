@@ -113,6 +113,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/media-feature-name-no-vendor-prefix/
 		'+media-feature-name-no-vendor-prefix': true,
 
+		// Specify a list of allowed name and unit pairs within media features
+		// https://stylelint.io/user-guide/rules/media-feature-name-unit-allowed-list/
+		'media-feature-name-unit-allowed-list': null,
+
 		// Specify a list of allowed media feature name and value pairs
 		// https://stylelint.io/user-guide/rules/list/media-feature-name-value-allowed-list/
 		'media-feature-name-value-allowed-list': null,
