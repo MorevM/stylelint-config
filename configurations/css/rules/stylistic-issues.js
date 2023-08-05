@@ -1,61 +1,19 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 module.exports = {
 	rules: {
-		// Specify lowercase or uppercase for keywords values (autofixable)
-		// https://stylelint.io/user-guide/rules/list/value-keyword-case/
-		'+value-keyword-case': ['lower', {
-			camelCaseSvgKeywords: true,
-			ignoreProperties: ['font-family'],
-		}],
-
-		// Specify lowercase or uppercase for function names (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-name-case/
-		'+function-name-case': 'lower',
-
-		// Require or disallow an empty line before custom properties (autofixable)
-		// https://stylelint.io/user-guide/rules/list/custom-property-empty-line-before/
-		'+custom-property-empty-line-before': ['always', {
-			except: ['after-custom-property', 'first-nested'],
-			ignore: ['after-comment', 'inside-single-line-block'],
-		}],
-
-		// Specify lowercase or uppercase for type selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-type-case/
-		'+selector-type-case': 'lower',
-
-		// Require or disallow an empty line before rules (autofixable)
-		// https://stylelint.io/user-guide/rules/list/rule-empty-line-before/
-		'+rule-empty-line-before': ['always-multi-line', {
-			except: ['first-nested'],
-			ignore: ['after-comment'],
-		}],
-
-		// Require or disallow an empty line before at-rules (autofixable)
-		// https://stylelint.io/user-guide/rules/list/at-rule-empty-line-before/
-		'+at-rule-empty-line-before': ['always', {
-			except: ['blockless-after-same-name-blockless', 'first-nested'],
-			ignore: ['after-comment'],
-			ignoreAtRules: ['if', 'else', 'include'], // No effect for CSS, but good for extending with SCSS
-		}],
-
-		// Require or disallow an empty line before comments (autofixable)
-		// https://stylelint.io/user-guide/rules/list/comment-empty-line-before/
-		'+comment-empty-line-before': ['always', {
-			except: ['first-nested'],
-			ignore: ['stylelint-commands'],
-		}],
-
-		// Require or disallow whitespace on the inside of comment markers (autofixable)
-		// https://stylelint.io/user-guide/rules/list/comment-whitespace-inside/
-		'+comment-whitespace-inside': 'always',
+		// #region Color
 
 		// Specify lowercase or uppercase for hex colors (autofixable)
 		// https://stylelint.io/user-guide/rules/list/color-hex-case/
 		'+color-hex-case': 'lower',
 
+		// #endregion
+
+		// #region Function
+
 		// Require a newline or disallow whitespace after the commas of functions (autofixable)
 		// https://stylelint.io/user-guide/rules/list/function-comma-newline-after/
-		'function-comma-newline-after': 'always-multi-line',
+		'+function-comma-newline-after': 'always-multi-line',
 
 		// Require a newline or disallow whitespace before the commas of functions (autofixable)
 		// https://stylelint.io/user-guide/rules/list/function-comma-newline-before/
@@ -85,21 +43,37 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/function-whitespace-after/
 		'+function-whitespace-after': 'always',
 
+		// #endregion
+
+		// #region Number
+
 		// Require or disallow a leading zero for fractional numbers less than 1 (autofixable)
 		// https://stylelint.io/user-guide/rules/list/number-leading-zero/
 		'+number-leading-zero': 'never',
 
 		// Disallow trailing zeros in numbers (autofixable)
 		// https://stylelint.io/user-guide/rules/list/number-no-trailing-zeros/
-		'number-no-trailing-zeros': true,
+		'+number-no-trailing-zeros': true,
+
+		// #endregion
+
+		// #region String
 
 		// Specify single or double quotes around strings (autofixable)
 		// https://stylelint.io/user-guide/rules/list/string-quotes/
 		'+string-quotes': 'single',
 
+		// #endregion
+
+		// #region Unit
+
 		// Specify lowercase or uppercase for units (autofixable)
 		// https://stylelint.io/user-guide/rules/list/unit-case/
 		'+unit-case': 'lower',
+
+		// #endregion
+
+		// #region Value list
 
 		// Require a newline or disallow whitespace after the commas of value lists (autofixable)
 		// https://stylelint.io/user-guide/rules/list/value-list-comma-newline-after/
@@ -121,9 +95,17 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/value-list-max-empty-lines/
 		'+value-list-max-empty-lines': 0,
 
+		// #endregion
+
+		// #region Property
+
 		// Specify lowercase or uppercase for properties (autofixable)
 		// https://stylelint.io/user-guide/rules/list/property-case/
 		'+property-case': 'lower',
+
+		// #endregion
+
+		// #region Declaration
 
 		// Require a single space or disallow whitespace after the bang of declarations (autofixable)
 		// https://stylelint.io/user-guide/rules/list/declaration-bang-space-after/
@@ -145,9 +127,9 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/declaration-colon-space-before/
 		'+declaration-colon-space-before': 'never',
 
-		// Require or disallow an empty line before declarations (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-empty-line-before/
-		'+declaration-empty-line-before': null, // Conflicts with `scss/$dollar-variable`
+		// #endregion
+
+		// #region Declaration block
 
 		// Require a newline or disallow whitespace after the semicolons of declaration blocks (autofixable)
 		// https://stylelint.io/user-guide/rules/list/declaration-block-semicolon-newline-after/
@@ -168,6 +150,10 @@ module.exports = {
 		// Require or disallow a trailing semicolon within declaration blocks (autofixable)
 		// https://stylelint.io/user-guide/rules/list/declaration-block-trailing-semicolon/
 		'+declaration-block-trailing-semicolon': 'always',
+
+		// #endregion
+
+		// #region Block
 
 		// Require or disallow an empty line before the closing brace of blocks (autofixable)
 		// https://stylelint.io/user-guide/rules/list/block-closing-brace-empty-line-before/
@@ -206,6 +192,10 @@ module.exports = {
 		// Require a single space or disallow whitespace before the opening brace of blocks (autofixable)
 		// https://stylelint.io/user-guide/rules/list/block-opening-brace-space-before/
 		'+block-opening-brace-space-before': 'always',
+
+		// #endregion
+
+		// #region Selector
 
 		// Require a single space or disallow whitespace on the inside of the brackets within attribute selectors (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-attribute-brackets-space-inside/
@@ -247,6 +237,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/selector-pseudo-element-case/
 		'+selector-pseudo-element-case': 'lower',
 
+		// #endregion
+
+		// #region Selector list
+
 		// Require a newline or disallow whitespace after the commas of selector lists (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-list-comma-newline-after/
 		// Note: sometimes it's good to group similar selectors line by line
@@ -263,6 +257,10 @@ module.exports = {
 		// Require a single space or disallow whitespace before the commas of selector lists (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-list-comma-space-before/
 		'+selector-list-comma-space-before': 'never',
+
+		// #endregion
+
+		// #region Media feature
 
 		// Require a single space or disallow whitespace after the colon in media features (autofixable)
 		// https://stylelint.io/user-guide/rules/list/media-feature-colon-space-after/
@@ -288,6 +286,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/media-feature-range-operator-space-before/
 		'+media-feature-range-operator-space-before': 'always',
 
+		// #endregion
+
+		// #region Media query list
+
 		// Require a newline or disallow whitespace after the commas of media query lists (autofixable)
 		// https://stylelint.io/user-guide/rules/list/media-query-list-comma-newline-after/
 		'+media-query-list-comma-newline-after': 'always-multi-line',
@@ -303,6 +305,10 @@ module.exports = {
 		// Require a single space or disallow whitespace before the commas of media query lists (autofixable)
 		// https://stylelint.io/user-guide/rules/list/media-query-list-comma-space-before/
 		'+media-query-list-comma-space-before': 'never',
+
+		// #endregion
+
+		// #region At-rule
 
 		// Specify lowercase or uppercase for at-rules names (autofixable)
 		// https://stylelint.io/user-guide/rules/list/at-rule-name-case/
@@ -324,6 +330,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/at-rule-semicolon-space-before/
 		'at-rule-semicolon-space-before': 'never',
 
+		// #endregion
+
+		// #region General / Sheet
+
 		// Specify indentation (autofixable)
 		// https://stylelint.io/user-guide/rules/list/indentation/
 		'+indentation': 'tab',
@@ -340,20 +350,26 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/max-line-length/
 		'max-line-length': 120,
 
+		// Disallow empty first lines (autofixable)
+		// https://stylelint.io/user-guide/rules/list/no-empty-first-line/
+		'+no-empty-first-line': true,
+
 		// Disallow end-of-line whitespace (autofixable)
 		// https://stylelint.io/user-guide/rules/list/no-eol-whitespace/
 		'+no-eol-whitespace': true,
+
+		// Disallow extra semicolons (autofixable)
+		// https://stylelint.io/user-guide/rules/list/no-extra-semicolons/
+		'+no-extra-semicolons': true,
 
 		// Disallow missing end-of-source newlines (autofixable)
 		// https://stylelint.io/user-guide/rules/list/no-missing-end-of-source-newline/
 		'+no-missing-end-of-source-newline': true,
 
-		// Disallow empty first lines (autofixable)
-		// https://stylelint.io/user-guide/rules/list/no-empty-first-line/
-		'+no-empty-first-line': true,
+		// Require or disallow Unicode BOM
+		// https://stylelint.io/user-guide/rules/list/unicode-bom/
+		'unicode-bom': 'never',
 
-		// Disallow extra semicolons (autofixable)
-		// https://stylelint.io/user-guide/rules/list/no-extra-semicolons/
-		'+no-extra-semicolons': true,
+		// #endregion
 	},
 };
