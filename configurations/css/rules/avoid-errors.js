@@ -158,6 +158,10 @@ module.exports = {
 		// https://stylelint.io/user-guide/rules/list/media-feature-name-no-unknown/
 		'media-feature-name-no-unknown': true,
 
+		// Disallow unknown values for media features
+		// https://stylelint.io/user-guide/rules/media-feature-name-value-no-unknown/
+		'media-feature-name-value-no-unknown': true,
+
 		// Disallow unknown animations
 		// https://stylelint.io/user-guide/rules/list/no-unknown-animations/
 		'no-unknown-animations': true,
