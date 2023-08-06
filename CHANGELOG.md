@@ -1,5 +1,59 @@
 
 
+## [3.0.0](https://github.com/MorevM/stylelint-config/compare/v2.2.1...v3.0.0) (2023-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **css:** With new rule `media-feature-name-value-no-unknown` CSS preset becomes more strict.
+* **css:** With new rule `media-feature-name-value-no-unknown` CSS preset becomes more strict.
+* **css:** With new option `consecutive-duplicates-with-different-syntaxes` in `declaration-block-no-duplicate-properties` rule CSS preset becomes more strict.
+* **css:** With new rule `selector-anb-no-unmatchable` CSS preset becomes more strict.
+* **css:** With new rule `declaration-property-value-no-unknown` CSS preset becomes more strict.
+
+### Features
+
+* **css:** Add `declaration-property-value-no-unknown` rule ([9df3035](https://github.com/MorevM/stylelint-config/commit/9df30359bbde2bca7a16347359864e6a1dab6328))
+* **css:** Add `media-feature-name-value-no-unknown` rule ([0353e52](https://github.com/MorevM/stylelint-config/commit/0353e527191988e8aa46ef2382ff28b318e149ec))
+* **css:** Add `media-query-no-invalid` rule ([2859e66](https://github.com/MorevM/stylelint-config/commit/2859e66b324a02a927de366f6a0cc7285105588b))
+* **css:** Add `selector-anb-no-unmatchable` rule ([eff1b0a](https://github.com/MorevM/stylelint-config/commit/eff1b0aa7af1c0b718210ac753315a6809e4b744))
+* **css:** Add an extra option to `declaration-block-no-duplicate-properties` rule ([ff980bd](https://github.com/MorevM/stylelint-config/commit/ff980bd5222ff773024b134f65cc8eb59c9ed79a))
+* **css:** Take account of `media-feature-name-unit-allowed-list` rule ([e35117d](https://github.com/MorevM/stylelint-config/commit/e35117d62a4453e8add2f8f653738e90f486e390))
+* **css:** Take account of `no-unknown-custom-properties` rule ([1bfa0ea](https://github.com/MorevM/stylelint-config/commit/1bfa0ea4dab2617cf6c28e9844c8214f1a8ab67a))
+* **css:** Take account of `order/properties-alphabetical-order` rule ([8148dde](https://github.com/MorevM/stylelint-config/commit/8148ddecbfa8ba0237ba95f879a6323ac84e3bf0))
+* **css:** Take account of autofix for `media-feature-range-notation` rule ([11b0131](https://github.com/MorevM/stylelint-config/commit/11b0131dc9c518ca0c68981d34e192b4cde36bb1))
+
+
+### Refactoring
+
+* Reorganize `stylelint` rules to fit its docs ([e95fd36](https://github.com/MorevM/stylelint-config/commit/e95fd366c6d70b45ceb219e487547ee1d099f352))
+* Replace all standard stylistic rules with external package `stylelint-stylistic` ([6dc2681](https://github.com/MorevM/stylelint-config/commit/6dc2681db075bae0e8ad31e43ca08a197429dec6))
+
+
+### Tests
+
+* Add a simple test for unused/deprecated rules ([d594673](https://github.com/MorevM/stylelint-config/commit/d594673c5db3a9929a1300d249f2f750ad622d20))
+
+
+### Bug fixes
+
+* **scss:** Exclude new rules related only to CSS from SCSS config ([e262439](https://github.com/MorevM/stylelint-config/commit/e2624390ab38bc2389a9c6429941cb5956fde926))
+* **scss:** Nest declarations correctly using SASS (disallow CSS `[@nest](https://github.com/nest)`) ([4259d7d](https://github.com/MorevM/stylelint-config/commit/4259d7d2b91932f0d8e0f15d0664b6597a0887f4))
+
+
+### Chores
+
+* Add `test` task to the release config ([4fa4b1d](https://github.com/MorevM/stylelint-config/commit/4fa4b1d02cef20eae025bde92107747b85794fcf))
+* Bump `stylelint-scss` from 4.3.0 to 5.0.1 ([c40581b](https://github.com/MorevM/stylelint-config/commit/c40581b402dba35d892bc7054ac55d4b63683cc9))
+* Bump `stylelint-use-nesting` from 4.0.0 to 4.1.0 ([a8e46ce](https://github.com/MorevM/stylelint-config/commit/a8e46ce37e7f8f6c08727c4045b3cc83303ec977))
+* Bump `stylelint` from 14.16.1 to 15.10.2 ([d5c88e5](https://github.com/MorevM/stylelint-config/commit/d5c88e5b0cd844f15650e15a7e68d609dc594584))
+* Bump dependencies that don't require any actions ([5e5c5fd](https://github.com/MorevM/stylelint-config/commit/5e5c5fdb6b479a130b6204ca52c24dad651e6cb3))
+* Bump devDeps except `stylelint` itself ([4f334ac](https://github.com/MorevM/stylelint-config/commit/4f334ac6b07a71b78f3672b869c1e96463ec53d1))
+* bump eslint from 8.32.0 to 8.34.0 ([#158](https://github.com/MorevM/stylelint-config/issues/158)) ([e8e525c](https://github.com/MorevM/stylelint-config/commit/e8e525caea540a91b1dfe6cd8c03b8767b034828))
+ bump stylelint-order from 6.0.1 to 6.0.2 ([#159](https://github.com/MorevM/stylelint-config/issues/159)) ([fd8ce23](https://github.com/MorevM/stylelint-config/commit/fd8ce23eb1e02e8d99abe733ac01bb6d6dc74fe3))
+* Enforce VSCode settings by default ([a2d6bb5](https://github.com/MorevM/stylelint-config/commit/a2d6bb56b7f1dc5a34e930ec9538f2c7e8dcb73d))
+* Migrate from `.husky + lint-staged` to `lefthook` ([fd808bd](https://github.com/MorevM/stylelint-config/commit/fd808bd3594bc2ee8fcd85cc8d96dd9fe566281c))
+
 ### [2.2.1](https://github.com/MorevM/stylelint-config/compare/v2.2.0...v2.2.1) (2023-01-28)
 
 
