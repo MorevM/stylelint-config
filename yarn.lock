@@ -2582,6 +2582,14 @@ colord@^2.9.3:
   resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.3.tgz#4f8ce919de456f1d5c1c368c307fe20f3e59fb43"
   integrity sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==
 
+columnify@~1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/columnify/-/columnify-1.6.0.tgz#6989531713c9008bb29735e61e37acf5bd553cf3"
+  integrity sha512-lomjuFZKfM6MSAnV9aCZC9sc0qGbmZdfygNv+nCpqVkSKdCxCklLtd16O0EILGkImHw9ZpHkAnHaB+8Zxq5W6Q==
+  dependencies:
+    strip-ansi "^6.0.1"
+    wcwidth "^1.0.0"
+
 comment-parser@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/comment-parser/-/comment-parser-1.4.0.tgz#0f8c560f59698193854f12884c20c0e39a26d32c"
@@ -7732,6 +7740,15 @@ stylelint-declaration-block-no-ignored-properties@^2.7.0:
   resolved "https://registry.yarnpkg.com/stylelint-declaration-block-no-ignored-properties/-/stylelint-declaration-block-no-ignored-properties-2.7.0.tgz#78a4a03a5ec74a06b4abb226a31ff8fc57782a0e"
   integrity sha512-44SpI9+9Oc1ICuwwRfwS/3npQ2jPobDSTnwWdNgZGryGqQCp17CgEIWjCv1BgUOSzND3RqywNCNLKvO1AOxbfg==
 
+stylelint-find-new-rules@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/stylelint-find-new-rules/-/stylelint-find-new-rules-4.1.0.tgz#998b6eacd05ade6f78f70610396cbb34dd1d01b5"
+  integrity sha512-6rOX/PnHkHOS9bemn63s2NOPOXuGsq6fI/N8pmergZWC32cqDZkxqpmpeQjmo+OgZEMdM2Bf9YD6C0TS4NN0FA==
+  dependencies:
+    columnify "~1.6.0"
+    picocolors "^1.0.0"
+    yargs "~17.3.1"
+
 stylelint-high-performance-animation@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/stylelint-high-performance-animation/-/stylelint-high-performance-animation-1.8.0.tgz#f118fbc232206f1da6a471d62ac227939d43a479"
@@ -8426,7 +8443,7 @@ walker@^1.0.8:
   dependencies:
     makeerror "1.0.12"
 
-wcwidth@^1.0.1:
+wcwidth@^1.0.0, wcwidth@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/wcwidth/-/wcwidth-1.0.1.tgz#f0b0dcf915bc5ff1528afadb2c0e17b532da2fe8"
   integrity sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
@@ -8645,6 +8662,19 @@ yargs@^17.0.0, yargs@^17.3.1:
   version "17.5.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.5.1.tgz#e109900cab6fcb7fd44b1d8249166feb0b36e58e"
   integrity sha512-t6YAJcxDkNX7NFYiVtKvWUz8l+PaKTLiL63mJYWR2GnHq2gjEWISzsLp9wg3aY36dY1j+gfIEL3pIF+XlJJfbA==
+  dependencies:
+    cliui "^7.0.2"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.3"
+    y18n "^5.0.5"
+    yargs-parser "^21.0.0"
+
+yargs@~17.3.1:
+  version "17.3.1"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.3.1.tgz#da56b28f32e2fd45aefb402ed9c26f42be4c07b9"
+  integrity sha512-WUANQeVgjLbNsEmGk20f+nlHgOqzRFpiGWVaBrYGYIGANIIu3lWjoyi0fNlFmJkvfhCZ6BXINe7/W2O2bV4iaA==
   dependencies:
     cliui "^7.0.2"
     escalade "^3.1.1"
