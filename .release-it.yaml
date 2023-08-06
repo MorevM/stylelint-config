@@ -43,4 +43,4 @@ hooks:
     - yarn build
   after:init:
     - yarn lint
-    # - yarn test
+    - yarn test
