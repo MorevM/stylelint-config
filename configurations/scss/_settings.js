@@ -6,6 +6,10 @@ const parts = [
 
 const base = {
 	customSyntax: `require('postcss-scss')`,
+	rules: {
+		'declaration-property-value-no-unknown': null,
+		'media-query-no-invalid': null,
+	},
 };
 
 module.exports = { parts, base };
