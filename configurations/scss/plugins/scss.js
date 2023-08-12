@@ -207,6 +207,12 @@ module.exports = {
 		// Note: don't think it's a good idea
 		'scss/function-color-relative': null,
 
+		// Specify a list of disallowed functions. Should be used instead of Stylelint's `function-disallowed-list`.
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-disallowed-list/README.md
+		// Note: Should be configured individually per-project
+		'function-disallowed-list': null,
+		'scss/function-disallowed-list': null,
+
 		// Disallow unknown functions
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-no-unknown/README.md
 		// Note: setup to fit `more-sass` package
