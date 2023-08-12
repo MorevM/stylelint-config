@@ -1,5 +1,23 @@
 
 
+## [3.1.0](https://github.com/MorevM/stylelint-config/compare/v3.0.0...v3.1.0) (2023-08-12)
+
+
+### Features
+
+* **scss:** Take account of `scss/function-disallowed-list` rule ([2931b7c](https://github.com/MorevM/stylelint-config/commit/2931b7cb6d9311e258c93084a4d5a8d6f674d4d5))
+
+
+### Bug fixes
+
+* Mark `lefthook` as a devDep instead of direct ([76697b6](https://github.com/MorevM/stylelint-config/commit/76697b635e988d2fc2f931d327a5508e641a80c7))
+
+
+### Chores
+
+* Bump `stylelint-high-performance-animation` from 1.8.0 to 1.9.0 ([e89bffc](https://github.com/MorevM/stylelint-config/commit/e89bffcee2532a6aaed92e8cb22eccd5b8d51b5c))
+* Bump `stylelint-scss` from 5.0.1 to 5.1.0 ([09fdfdf](https://github.com/MorevM/stylelint-config/commit/09fdfdfa6521a225d424529feffbaa06c1c7e57d))
+
 ## [3.0.0](https://github.com/MorevM/stylelint-config/compare/v2.2.1...v3.0.0) (2023-08-06)
 
 
