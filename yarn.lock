@@ -7377,10 +7377,10 @@ stylelint-declaration-block-no-ignored-properties@^2.7.0:
   resolved "https://registry.yarnpkg.com/stylelint-declaration-block-no-ignored-properties/-/stylelint-declaration-block-no-ignored-properties-2.7.0.tgz#78a4a03a5ec74a06b4abb226a31ff8fc57782a0e"
   integrity sha512-44SpI9+9Oc1ICuwwRfwS/3npQ2jPobDSTnwWdNgZGryGqQCp17CgEIWjCv1BgUOSzND3RqywNCNLKvO1AOxbfg==
 
-stylelint-find-new-rules@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/stylelint-find-new-rules/-/stylelint-find-new-rules-4.1.1.tgz#95eed8648ea63628a33f35795eb771c4c80eb9de"
-  integrity sha512-dFVpUe3kopHQjt1zpWBh84sz382He1jTPU5Cg7a2HjQshAKlZcpGVK/N9rPbnXNGIFaW3rlVibgfdla/jVCllw==
+stylelint-find-new-rules@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/stylelint-find-new-rules/-/stylelint-find-new-rules-4.1.2.tgz#4e3e4e2d65d419eac333e7de3782600d35869f0d"
+  integrity sha512-ZNshgGgodwI5pI+SYVrPWGFcUYg3Q6PICTERKWe1VHTft01ijS9mQVL+tJnGRFSZhsdHETX8aAlzoCIUDgRarQ==
   dependencies:
     columnify "~1.6.0"
     picocolors "^1.0.0"
