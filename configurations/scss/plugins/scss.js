@@ -8,6 +8,10 @@ module.exports = {
 		// SASS imports may be everywhere
 		'no-invalid-position-at-import-rule': null,
 
+		// Disallow redundant `@at-root` rule.
+		// https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-root-no-redundant
+		'scss/at-root-no-redundant': true,
+
 		// This is a rule that checks for situations where users have:
 		// * Done a loop using map-keys
 		// * Grabbed the value for that key inside of the loop.
