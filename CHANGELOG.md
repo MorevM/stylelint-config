@@ -1,5 +1,19 @@
 
 
+## [4.0.0](https://github.com/MorevM/stylelint-config/compare/v3.1.0...v4.0.0) (2023-09-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **scss:** With new rules `scss/at-root-no-redundant`, `scss/at-use-no-redundant-alias`, `scss/function-calculation-no-interpolation`, `scss/property-no-unknown` SCSS preset becomes more strict.
+
+### Features
+
+* **scss:** Add `scss/at-root-no-redundant` rule ([136d513](https://github.com/MorevM/stylelint-config/commit/136d513fc836b0d5552403ce66e87940700c7f5b))
+* **scss:** Add `scss/at-use-no-redundant-alias` rule ([ad05c2a](https://github.com/MorevM/stylelint-config/commit/ad05c2ab3f592ceb6ab435c6f4312590227d883c))
+* **scss:** Add `scss/function-calculation-no-interpolation` rule ([ac962e4](https://github.com/MorevM/stylelint-config/commit/ac962e4e8d21d82115e0887326414210b61dc45f))
+* **scss:** Add `scss/property-no-unknown` rule ([abcef2a](https://github.com/MorevM/stylelint-config/commit/abcef2a656ac20f5b7a1ec43c4558b581bc921f9))
+
 ## [3.1.0](https://github.com/MorevM/stylelint-config/compare/v3.0.0...v3.1.0) (2023-08-12)
 
 
