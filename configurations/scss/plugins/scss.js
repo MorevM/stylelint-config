@@ -258,6 +258,11 @@ module.exports = {
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/partial-no-import/README.md
 		'scss/partial-no-import': null,
 
+		// Disallow unknown properties, including nested properties.
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/property-no-unknown/README.md
+		'property-no-unknown': null,
+		'scss/property-no-unknown': true,
+
 		// Require or disallow nesting of combinators in selectors
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/selector-nest-combinators/README.md
 		'scss/selector-nest-combinators': null,
