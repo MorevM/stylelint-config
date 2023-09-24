@@ -210,6 +210,10 @@ module.exports = {
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dimension-no-non-numeric-values/README.md
 		'scss/dimension-no-non-numeric-values': true,
 
+		// Disallow interpolation in calc(), clamp(), min(), and max() functions.
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-calculation-no-interpolation/README.md
+		'scss/function-calculation-no-interpolation': true,
+
 		// Encourage the use of the `scale-color`
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-color-relative/README.md
 		// Note: don't think it's a good idea
