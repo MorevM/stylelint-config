@@ -114,6 +114,10 @@ module.exports = {
 		// TODO: [2024-01-01] Blocked because of VSCode support https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss
 		'scss/at-use-no-unnamespaced': null,
 
+		// Disallow redundant namespace aliases (i.e. @use "foo" as foo)
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-use-no-redundant-alias/README.md
+		'scss/at-use-no-redundant-alias': true,
+
 		// Require a newline after the colon in `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-colon-newline-after/README.md
 		// Note: it depends
