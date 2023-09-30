@@ -54,7 +54,7 @@
 	},
 	"dependencies": {
 		"lodash.mergewith": "^4.6.2",
-		"postcss": "^8.4.30",
+		"postcss": "^8.4.31",
 		"postcss-scss": "^4.0.8",
 		"stylelint-8-point-grid": "^2.2.0",
 		"stylelint-at-rule-no-children": "^0.3.1",
