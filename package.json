@@ -65,7 +65,7 @@
 		"stylelint-scss": "^5.2.1",
 		"stylelint-selector-no-empty": "^1.0.9",
 		"stylelint-selector-tag-no-without-class": "^2.0.6",
-		"stylelint-stylistic": "^0.4.3",
+		"stylelint-stylistic": "^0.4.5",
 		"stylelint-use-nesting": "^4.1.0"
 	},
 	"devDependencies": {
