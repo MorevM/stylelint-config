@@ -70,7 +70,7 @@
 	},
 	"devDependencies": {
 		"@morev/commitlint-config": "^0.2.2",
-		"@morev/eslint-config": "^24.5.0",
+		"@morev/eslint-config": "^26.3.0",
 		"@release-it/conventional-changelog": "^7.0.2",
 		"@types/jest": "^29.5.11",
 		"eslint": "^8.56.0",
