@@ -445,7 +445,7 @@ module.exports = {
 		// Disallow longhand properties that can be combined into one shorthand property (autofixable)
 		// https://stylelint.io/user-guide/rules/list/declaration-block-no-redundant-longhand-properties/
 		'+declaration-block-no-redundant-longhand-properties': [true, {
-			ignoreShorthands: ['/grid/', 'flex-flow'], // Sometimes get hard to read
+			ignoreShorthands: ['/grid/', 'flex-flow', 'place-items'], // Sometimes get hard to read or recognize
 		}],
 
 		// Disallow redundant values in shorthand properties (autofixable)
