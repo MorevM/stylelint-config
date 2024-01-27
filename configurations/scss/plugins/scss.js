@@ -187,6 +187,11 @@ module.exports = {
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/double-slash-comment-whitespace-inside/README.md
 		'scss/double-slash-comment-whitespace-inside': 'always',
 
+		// Disallow nesting a single block if it could be merged with its parent block
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/block-no-redundant-nesting/README.md
+		// Note: Potentially may break the BEM block declaration with a single element / modifier
+		'scss/block-no-redundant-nesting': null,
+
 		// Disallow empty comments
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/comment-no-empty/README.md
 		'comment-no-empty': null,
