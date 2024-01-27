@@ -1,4 +1,4 @@
-import { WARN } from '../../../utils/constants.js';
+import { WARNING } from '../../../utils/constants.js';
 
 export default {
 	plugins: ['stylelint-high-performance-animation'],
@@ -6,7 +6,7 @@ export default {
 		'plugin/no-low-performance-animation-properties': [true, {
 			ignore: 'paint-properties',
 			ignoreProperties: ['text-shadow'],
-			severity: WARN,
+			severity: WARNING,
 		}],
 	},
 };

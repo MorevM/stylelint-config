@@ -1,13 +1,13 @@
 import { arrayUnique, createMergeObjects, isArray, mergeObjects, omit } from '@morev/utils';
-import { WARN } from './constants.js';
+import { WARNING } from './constants.js';
 
 const autofixableRulesToWarn = (rules, autofixableList) => Object.fromEntries(
 	Object.entries(rules)
 		.map(([rule, value]) => {
 			if (!autofixableList.includes(rule)) return [rule, value];
 			const newRuleValue = Array.isArray(value)
-				? [value[0], { ...value[1], severity: WARN }]
-				: [value, { severity: WARN }];
+				? [value[0], { ...value[1], severity: WARNING }]
+				: [value, { severity: WARNING }];
 			return [rule, newRuleValue];
 		}),
 );
