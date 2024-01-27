@@ -176,9 +176,7 @@ export default {
 
 		// Disallow unknown properties
 		// https://stylelint.io/user-guide/rules/list/property-no-unknown/
-		'property-no-unknown': [true, {
-			ignoreProperties: ['/^lost-/'], // PostCSS Lost Grid // @TODO: Is it time to remove?
-		}],
+		'property-no-unknown': true,
 
 		// Disallow unknown pseudo-class selectors
 		// https://stylelint.io/user-guide/rules/list/selector-pseudo-class-no-unknown/
