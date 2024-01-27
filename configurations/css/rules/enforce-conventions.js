@@ -364,6 +364,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/keyframe-selector-notation/
 		'+keyframe-selector-notation': 'percentage-unless-within-keyword-only-block',
 
+		// Specify number or percentage notation for lightness (autofixable)
+		// https://stylelint.io/user-guide/rules/list/keyframe-selector-notation/
+		'+lightness-notation': 'percentage',
+
 		// Specify context or prefix notation for media feature ranges (autofixable)
 		// https://stylelint.io/user-guide/rules/media-feature-range-notation/
 		// TODO: [2024-05-11] Enable
