@@ -305,5 +305,9 @@ export default {
 		// Disallows the use of global function names, as these global functions are now located inside built-in Sass modules
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/no-global-function-names/README.md
 		'scss/no-global-function-names': true,
+
+		// Disallow unused private members such as functions, mixins, variables or placeholder selectors
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/no-unused-private-members/README.md
+		'scss/no-unused-private-members': true,
 	},
 };
