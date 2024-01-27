@@ -50,7 +50,7 @@
 		"release": "release-it --disable-metrics"
 	},
 	"peerDependencies": {
-		"stylelint": "^14.11.0"
+		"stylelint": "^16.0.0"
 	},
 	"dependencies": {
 		"lodash.mergewith": "^4.6.2",
@@ -62,7 +62,7 @@
 		"stylelint-high-performance-animation": "^1.10.0",
 		"stylelint-no-nested-media": "^0.1.0",
 		"stylelint-order": "^6.0.4",
-		"stylelint-scss": "^5.2.1",
+		"stylelint-scss": "^6.1.0",
 		"stylelint-selector-no-empty": "^1.0.9",
 		"stylelint-selector-tag-no-without-class": "^2.0.6",
 		"stylelint-stylistic": "^0.4.3",
