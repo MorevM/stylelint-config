@@ -10,7 +10,7 @@ export default {
 
 		// Disallow redundant `@at-root` rule (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-root-no-redundant
-		'scss/at-root-no-redundant': true,
+		'+scss/at-root-no-redundant': true,
 
 		// This is a rule that checks for situations where users have:
 		// * Done a loop using map-keys
@@ -111,7 +111,7 @@ export default {
 
 		// Disallow redundant namespace aliases (i.e. @use "foo" as foo) (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-use-no-redundant-alias/README.md
-		'scss/at-use-no-redundant-alias': true,
+		'+scss/at-use-no-redundant-alias': true,
 
 		// Require a newline after the colon in `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-colon-newline-after/README.md
