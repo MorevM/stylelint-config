@@ -64,11 +64,6 @@ module.exports = {
 		// Note: It needed sometimes to catch exactly `null`
 		'scss/at-if-no-null': null,
 
-		// Disallow leading underscore in partial names in `@import`
-		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-import-no-partial-leading-underscore/README.md
-		// Note: Whats wrong with that?
-		'scss/at-import-no-partial-leading-underscore': null,
-
 		// Require or disallow extension in @import commands
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-import-partial-extension/README.md
 		'scss/at-import-partial-extension': 'never',
@@ -288,6 +283,11 @@ module.exports = {
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/selector-no-union-class-name/README.md
 		// Note: breaks BEM
 		'scss/selector-no-union-class-name': null,
+
+		// Disallow leading underscore in partial names in `@import`, `@use`, `@forward`, and `meta.load-css` `$url` parameter.
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/selector-no-union-class-name/README.md
+		// Note: nothing wrong with that
+		'scss/load-no-partial-leading-underscore': null,
 
 		// Disallow dollar variables within a stylesheet
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/no-dollar-variables/README.md
