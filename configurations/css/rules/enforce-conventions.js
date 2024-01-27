@@ -1,4 +1,4 @@
-import { KEBAB_CASE } from '../../../utils/constants.js';
+import { KEBAB_CASE, WARNING } from '../../../utils/constants.js';
 
 export default {
 	rules: {
@@ -97,7 +97,7 @@ export default {
 
 		// Disallow units for zero lengths (autofixable)
 		// https://stylelint.io/user-guide/rules/list/length-zero-no-unit/
-		'+length-zero-no-unit': true,
+		'+length-zero-no-unit': [true, { severity: WARNING }],
 
 		// Media feature
 

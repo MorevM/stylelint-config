@@ -1,3 +1,5 @@
+import { WARNING } from '../../../utils/constants.js';
+
 export default {
 	rules: {
 		// #region Descending
@@ -52,7 +54,7 @@ export default {
 
 		// Disallow empty comments
 		// https://stylelint.io/user-guide/rules/list/comment-no-empty/
-		'comment-no-empty': true,
+		'comment-no-empty': [true, { severity: WARNING }],
 
 		// Disallow empty sources
 		// https://stylelint.io/user-guide/rules/list/no-empty-source/
@@ -66,9 +68,9 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/color-no-invalid-hex/
 		'color-no-invalid-hex': true,
 
-		// Disallow an unspaced operator within calc functions
+		// Disallow an unspaced operator within calc functions (autofixable)
 		// https://stylelint.io/user-guide/rules/list/function-calc-no-unspaced-operator/
-		'function-calc-no-unspaced-operator': true,
+		'+function-calc-no-unspaced-operator': [true, { severity: WARNING }],
 
 		// Disallow `!important` within keyframe declarations
 		// https://stylelint.io/user-guide/rules/list/keyframe-declaration-no-important/
@@ -86,7 +88,7 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/no-invalid-double-slash-comments/
 		'no-invalid-double-slash-comments': true,
 
-		// Disallow invalid position @import rules within a stylesheet
+		// Disallow invalid position `@import` rules within a stylesheet
 		// https://stylelint.io/user-guide/rules/list/no-invalid-position-at-import-rule/
 		'no-invalid-position-at-import-rule': true,
 
