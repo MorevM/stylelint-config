@@ -1,4 +1,4 @@
-const { processExports } = require('../../utils/helpers.js');
-const { parts, base } = require('./_settings.js');
+import { processExports } from '../../utils/helpers.js';
+import { parts, base } from './_settings.js';
 
-module.exports = (mode) => processExports({ mode, parts, base });
+export default processExports({ parts, base });

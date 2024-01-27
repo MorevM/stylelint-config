@@ -1,15 +1,21 @@
-const parts = [
-	'./plugins/scss.js',
-	'./plugins/at-rule-no-children.js',
-	'./plugins/use-nesting.js',
-].map(part => require(part));
+import {
+	pluginAtRuleNoChildren,
+	pluginScss,
+	pluginUseNesting,
+} from './plugins/_index.js';
 
-const base = {
-	customSyntax: `require('postcss-scss')`,
+export const base = {
+	customSyntax: `import('postcss-scss')`,
 	rules: {
 		'declaration-property-value-no-unknown': null,
 		'media-query-no-invalid': null,
+		'no-descending-specificity': null,
+		'no-duplicate-selectors': null,
 	},
 };
 
-module.exports = { parts, base };
+export const parts = [
+	pluginAtRuleNoChildren,
+	pluginScss,
+	pluginUseNesting,
+];

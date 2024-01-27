@@ -168,4 +168,4 @@ properties.push([
 	'break-before', 'break-after', 'break-inside', 'widows', 'orphans',
 ]);
 
-module.exports = properties.flat();
+export default properties.flat();

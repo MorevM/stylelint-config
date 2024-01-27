@@ -1,8 +1,5 @@
-const _mergeWith = require('lodash.mergewith');
-const { WARN } = require('./constants.js');
-
-const mergeWithArrayComparer = (ov, sv) =>
-	(Array.isArray(ov) ? [...new Set([...sv || [], ...ov || []])] : undefined);
+import { arrayUnique, createMergeObjects, isArray, mergeObjects, omit } from '@morev/utils';
+import { WARN } from './constants.js';
 
 const autofixableRulesToWarn = (rules, autofixableList) => Object.fromEntries(
 	Object.entries(rules)
@@ -15,30 +12,24 @@ const autofixableRulesToWarn = (rules, autofixableList) => Object.fromEntries(
 		}),
 );
 
-const autofixableRulesToOff = (rules, autofixableList) => Object.fromEntries(
-	Object.entries(rules)
-		.map(([rule, value]) => [rule, autofixableList.includes(rule) ? null : value]),
-);
-
-const getProcessedRules = ({ mode, base, rules }) => {
-	if (mode === 'strict') return rules;
-
+const getProcessedRules = ({ base, rules }) => {
 	const autofixableRules = Object.entries(base.rules)
 		.filter(([key]) => key.startsWith('+'))
 		.map(([key]) => key.slice(1));
 
-	return mode === 'default'
-		? autofixableRulesToWarn(rules, autofixableRules)
-		: autofixableRulesToOff(rules, autofixableRules); // assume `quiet`
+	return autofixableRulesToWarn(rules, autofixableRules);
 };
 
-const processExports = ({ mode, base, parts }) => {
-	const mergedParts = _mergeWith(
-		{},
-		{ ...base },
-		...(parts || []),
-		mergeWithArrayComparer,
-	);
+export const mergeObjectsConsideringArrays = createMergeObjects((obj, key, value, stack) => {
+	if (isArray(obj[key]) && isArray(value)) {
+		obj[key] = arrayUnique([...obj[key], ...value]);
+		return true;
+	}
+	return false;
+});
+
+export const processExports = ({ base, parts }) => {
+	const mergedParts = mergeObjectsConsideringArrays({}, base, ...parts);
 
 	const rules = Object.fromEntries(
 		Object.entries(mergedParts.rules)
@@ -54,13 +45,7 @@ const processExports = ({ mode, base, parts }) => {
 			}, []),
 	);
 
-	const processedRules = getProcessedRules({ mode, base: mergedParts, rules });
+	const processedRules = getProcessedRules({ base: mergedParts, rules });
 
-	return _mergeWith(
-		{ ...mergedParts, rules: processedRules },
-		mergeWithArrayComparer,
-	);
+	return mergeObjects(omit(mergedParts, 'rules'), { rules: processedRules });
 };
-
-
-module.exports = { processExports, mergeWithArrayComparer };

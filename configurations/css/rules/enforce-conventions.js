@@ -1,6 +1,6 @@
-const { KEBAB_CASE } = require('../../../utils/constants.js');
+import { KEBAB_CASE } from '../../../utils/constants.js';
 
-module.exports = {
+export default {
 	rules: {
 		// #region Allowed, disallowed & required
 

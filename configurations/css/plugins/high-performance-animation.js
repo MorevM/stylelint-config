@@ -1,6 +1,6 @@
-const { WARN } = require('../../../utils/constants.js');
+import { WARN } from '../../../utils/constants.js';
 
-module.exports = {
+export default {
 	plugins: ['stylelint-high-performance-animation'],
 	rules: {
 		'plugin/no-low-performance-animation-properties': [true, {

@@ -1,8 +1,8 @@
-const propertiesOrder = require('../../../shared/properties-order.js');
-const rulesOrder = require('../../../shared/rules-order.js');
-const { WARN } = require('../../../utils/constants.js');
+import propertiesOrder from '../../../shared/properties-order.js';
+import rulesOrder from '../../../shared/rules-order.js';
+import { WARN } from '../../../utils/constants.js';
 
-module.exports = {
+export default {
 	plugins: ['stylelint-order'],
 	rules: {
 		'+order/properties-alphabetical-order': null,

@@ -1,14 +1,27 @@
-const parts = [
-	'./rules/avoid-errors.js',
-	'./rules/enforce-conventions.js',
+import {
+	stylelintAvoidErrors,
+	stylelintEnforceConventions,
+} from './rules/_index.js';
 
-	'./plugins/declaration-block-no-ignored-properties.js',
-	'./plugins/high-performance-animation.js',
-	'./plugins/no-nested-media.js',
-	'./plugins/order.js',
-	'./plugins/selector-no-empty.js',
-	'./plugins/selector-tag-no-without-class.js',
-	'./plugins/stylistic.js',
-].map(part => require(part));
+import {
+	pluginDeclarationBlockNoIgnoredProperties,
+	pluginHighPerformanceAnimation,
+	pluginNoNestedMedia,
+	pluginOrder,
+	pluginSelectorNoEmpty,
+	pluginSelectorTagNoWithoutClass,
+	pluginStylistic,
+} from './plugins/_index.js';
 
-module.exports = { parts };
+export const parts = [
+	stylelintAvoidErrors,
+	stylelintEnforceConventions,
+	//
+	pluginDeclarationBlockNoIgnoredProperties,
+	pluginHighPerformanceAnimation,
+	pluginNoNestedMedia,
+	pluginOrder,
+	pluginSelectorNoEmpty,
+	pluginSelectorTagNoWithoutClass,
+	pluginStylistic,
+];

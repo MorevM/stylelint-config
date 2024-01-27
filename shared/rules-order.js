@@ -30,6 +30,7 @@ rules.push([
 
 // Pseudo-elements except ::before and ::after like ::placeholder
 // Prefixed non-standard pseudo-elements like ::-ms-clear or :-webkit-autofill
+// TODO: &--placeholder-visible::placeholder after ::placeholder (cardplace)
 rules.push([
 	{ type: 'rule', selector: '^&::\w+' },
 	{ type: 'rule', selector: '^&[:]{1,2}-\w+' },
@@ -104,4 +105,4 @@ rules.push([
 	'rules',
 ]);
 
-module.exports = rules.flat();
+export default rules.flat();

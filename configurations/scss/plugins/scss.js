@@ -1,14 +1,14 @@
-const { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE } = require('../../../utils/constants.js');
+import { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE } from '../../../utils/constants.js';
 
-module.exports = {
+export default {
 	plugins: ['stylelint-scss'],
 	rules: {
-		// Works incorrect with SASS rgba()
-		'color-function-notation': null,
-		// SASS imports may be everywhere
-		'no-invalid-position-at-import-rule': null,
+		// // Works incorrect with SASS rgba()
+		// 'color-function-notation': null,
+		// // SASS imports may be everywhere
+		// 'no-invalid-position-at-import-rule': null,
 
-		// Disallow redundant `@at-root` rule.
+		// Disallow redundant `@at-root` rule (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-root-no-redundant
 		'scss/at-root-no-redundant': true,
 
@@ -99,7 +99,7 @@ module.exports = {
 
 		// Disallow unknown at-rules
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-rule-no-unknown/README.md
-		'at-rule-no-unknown': null,
+		// 'at-rule-no-unknown': null,
 		'scss/at-rule-no-unknown': [true, {
 			ignoreAtRules: ['lost', 'include'],
 		}],
@@ -109,7 +109,7 @@ module.exports = {
 		// TODO: [2025-01-01] Blocked because of VSCode support https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss
 		'scss/at-use-no-unnamespaced': null,
 
-		// Disallow redundant namespace aliases (i.e. @use "foo" as foo)
+		// Disallow redundant namespace aliases (i.e. @use "foo" as foo) (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-use-no-redundant-alias/README.md
 		'scss/at-use-no-redundant-alias': true,
 
@@ -133,7 +133,7 @@ module.exports = {
 
 		// Require an empty line or disallow empty lines after `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-empty-line-after/README.md
-		'declaration-empty-line-before': null, // Conflicting
+		// 'declaration-empty-line-before': null, // Conflicting
 		'+scss/dollar-variable-empty-line-after': ['always', {
 			except: ['last-nested', 'before-comment', 'before-dollar-variable'],
 			ignore: ['before-comment', 'inside-single-line-block'],
@@ -189,7 +189,7 @@ module.exports = {
 
 		// Disallow empty comments
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/comment-no-empty/README.md
-		'comment-no-empty': null,
+		// 'comment-no-empty': null,
 		'scss/comment-no-empty': true,
 
 		// Disallow `/*`-comments
@@ -222,13 +222,13 @@ module.exports = {
 		// Specify a list of disallowed functions. Should be used instead of Stylelint's `function-disallowed-list`.
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-disallowed-list/README.md
 		// Note: Should be configured individually per-project
-		'function-disallowed-list': null,
+		// 'function-disallowed-list': null,
 		'scss/function-disallowed-list': null,
 
 		// Disallow unknown functions
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-no-unknown/README.md
 		// Note: setup to fit `more-sass` package
-		'function-no-unknown': null,
+		// 'function-no-unknown': null,
 		'scss/function-no-unknown': [true, {
 			ignoreFunctions: ['shade', 'social-color', 'tint', 'column', 'offset', 'get-char'],
 		}],
@@ -268,7 +268,7 @@ module.exports = {
 
 		// Disallow unknown properties, including nested properties.
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/property-no-unknown/README.md
-		'property-no-unknown': null,
+		// 'property-no-unknown': null,
 		'scss/property-no-unknown': true,
 
 		// Require or disallow nesting of combinators in selectors
