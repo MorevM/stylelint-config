@@ -1,5 +1,44 @@
 
 
+## [5.0.0](https://github.com/MorevM/stylelint-config/compare/v4.0.0...v5.0.0) (2024-02-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **css:** Lost-related properties (https://lostgrid.org/) have been excluded from the whitelist of `property-no-unknown` since they are now useless with wide support for Flex and Grid.
+Legacy code that relies on it will now flag these properties.
+* **scss:** With new rule `scss/no-unused-private-members` SCSS preset becomes more strict
+* The package now is defined as ESM and uses Stylelint v16, so it requires Node 18.12.0 or greater.
+The options `quite`, `strict` are no longer available. Practice has shown that there are almost no use cases, so now there is only two exports: "/scss" (also considering a default export) and "/css" for CSS-only projects.
+
+### Features
+
+* **css:** Add `lightness-notation` rule ([5fe09f9](https://github.com/MorevM/stylelint-config/commit/5fe09f9ad49cf80a1e369c8bf9f940f30f51c4fd))
+* **scss:** Add `scss/no-unused-private-members` rule ([0cff220](https://github.com/MorevM/stylelint-config/commit/0cff2202080471d22a3c4289f009e0f0a8dd7975))
+* **scss:** Enable autofix for `scss/at-root-no-redundant` and `scss/at-use-no-redundant-alias` rules ([f798c48](https://github.com/MorevM/stylelint-config/commit/f798c48386327a497a9de4a6a855222f77c20d3f))
+* Take account of `scss/block-no-redundant-nesting` rule ([c30a1de](https://github.com/MorevM/stylelint-config/commit/c30a1dee376610345eb55a33d066bafe1e49ed30))
+
+
+### Bug fixes
+
+* **css:** Disable plugin `stylelint-selector-tag-no-without-class` due to Stylelint v16 incompatibility ([73eda2f](https://github.com/MorevM/stylelint-config/commit/73eda2fba86db59567205089020674590a190493))
+* **css:** Disable plugin `stylelint-use-nesting` due to Stylelint v16 incompatibility ([75c4252](https://github.com/MorevM/stylelint-config/commit/75c425259b544bd1e03baea81d8cdca1fd59539c))
+* **css:** Do not combine `justify-items` and `align-items` to `place-items` ([c60dcdd](https://github.com/MorevM/stylelint-config/commit/c60dcdd1728cabc743059b0394e81df9a0252a96))
+* **css:** Remove `lost-x` properties from whitelist of `property-no-unknown` ([e8ffb37](https://github.com/MorevM/stylelint-config/commit/e8ffb37940ed6218d36c470f27d54145aa665e1e))
+
+
+### Refactoring
+
+* **css:** Set explicit severity for some rules ([06c878c](https://github.com/MorevM/stylelint-config/commit/06c878c282876c1a866e4d26cbb59decd744f8ca))
+* Rewriting to ESM and other significant changes ([9405b58](https://github.com/MorevM/stylelint-config/commit/9405b5854bc1d0a0f83ce3670737543eafce4121))
+* Use `scss/load-no-partial-leading-underscore` instead of deprecated `at-import-no-partial-leading-underscore` ([f68fc1e](https://github.com/MorevM/stylelint-config/commit/f68fc1e400ae083e452ca098dc412fa04045dd9f))
+
+
+### Documentation
+
+* Add a `README.md` file ([4a2f34d](https://github.com/MorevM/stylelint-config/commit/4a2f34da211cdf12d0403b112b7af0f95079d1d1))
+
+
 ## [4.0.0](https://github.com/MorevM/stylelint-config/compare/v3.1.0...v4.0.0) (2023-09-24)
 
 
