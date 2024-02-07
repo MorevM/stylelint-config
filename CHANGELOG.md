@@ -1,5 +1,12 @@
 
 
+## [5.0.1](https://github.com/MorevM/stylelint-config/compare/v5.0.0...v5.0.1) (2024-02-07)
+
+
+### Bug fixes
+
+* Disable base `at-rule-no-unknown` using SCSS config ([c636501](https://github.com/MorevM/stylelint-config/commit/c636501f75f0646a13247e56c6a9e09a59244641))
+
 ## [5.0.0](https://github.com/MorevM/stylelint-config/compare/v4.0.0...v5.0.0) (2024-02-04)
 
 
