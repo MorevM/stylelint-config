@@ -99,7 +99,7 @@ export default {
 
 		// Disallow unknown at-rules
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-rule-no-unknown/README.md
-		// 'at-rule-no-unknown': null,
+		'at-rule-no-unknown': null,
 		'scss/at-rule-no-unknown': [true, {
 			ignoreAtRules: ['lost', 'include'],
 		}],
@@ -133,7 +133,7 @@ export default {
 
 		// Require an empty line or disallow empty lines after `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-empty-line-after/README.md
-		// 'declaration-empty-line-before': null, // Conflicting
+		'declaration-empty-line-before': null, // Conflicting
 		'+scss/dollar-variable-empty-line-after': ['always', {
 			except: ['last-nested', 'before-comment', 'before-dollar-variable'],
 			ignore: ['before-comment', 'inside-single-line-block'],
