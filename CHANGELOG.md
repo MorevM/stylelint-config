@@ -1,5 +1,17 @@
 
 
+## [5.1.0](https://github.com/MorevM/stylelint-config/compare/v5.0.1...v5.1.0) (2024-02-18)
+
+
+### Features
+
+* **css:** Enable `stylelint-selector-tag-no-without-class` plugin ([5d7c303](https://github.com/MorevM/stylelint-config/commit/5d7c3032ec7a1773ec55540c65ec800ce5d2459d))
+
+
+### Chores
+
+* Bump `stylelint-selector-tag-no-without-class` from 2.0.6 to 3.0.0 ([2f90a8b](https://github.com/MorevM/stylelint-config/commit/2f90a8bb486ff4f52a5e4b2b59c009b6ce0ce56d))
+
 ## [5.0.1](https://github.com/MorevM/stylelint-config/compare/v5.0.0...v5.0.1) (2024-02-07)
 
 
