@@ -335,6 +335,15 @@ export default {
 
 		// #endregion
 
+		// #region Named grid areas
+
+		// Require cell tokens (and optionally ending quotes) within grid-template-areas to be aligned (autofixable)
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/named-grid-areas-alignment/README.md
+		// Ma rule :)
+		'+@stylistic/named-grid-areas-alignment': [true, { gap: 2, alignQuotes: true }],
+
+		// #endregion
+
 		// #region General / Sheet
 
 		// Specify indentation (autofixable)
