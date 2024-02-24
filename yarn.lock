@@ -376,17 +376,17 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@csstools/css-parser-algorithms@^2.3.2", "@csstools/css-parser-algorithms@^2.5.0":
+"@csstools/css-parser-algorithms@^2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@csstools/css-parser-algorithms/-/css-parser-algorithms-2.5.0.tgz#0c03cd5418a9f404a05ff2ffcb1b69d04e8ec532"
   integrity sha512-abypo6m9re3clXA00eu5syw+oaPHbJTPapu9C4pzNsJ4hdZDzushT50Zhu+iIYXgEe1CxnRMn7ngsbV+MLrlpQ==
 
-"@csstools/css-tokenizer@^2.2.1", "@csstools/css-tokenizer@^2.2.3":
+"@csstools/css-tokenizer@^2.2.3":
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/@csstools/css-tokenizer/-/css-tokenizer-2.2.3.tgz#b099d543ea57b64f495915a095ead583866c50c6"
   integrity sha512-pp//EvZ9dUmGuGtG1p+n17gTHEOqu9jO+FiCUjNN3BDmyhdA2Jq9QsVeR7K8/2QCK17HSsioPlTW9ZkzoWb3Lg==
 
-"@csstools/media-query-list-parser@^2.1.5", "@csstools/media-query-list-parser@^2.1.7":
+"@csstools/media-query-list-parser@^2.1.7":
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/@csstools/media-query-list-parser/-/media-query-list-parser-2.1.7.tgz#a4836e3dbd693081a30b32ce9c2a781e1be16788"
   integrity sha512-lHPKJDkPUECsyAvD60joYfDmp8UERYxHGkFfyLJFTVK/ERJe0sVlIFLXU5XFxdjNDTerp5L4KeaKG+Z5S94qxQ==
@@ -1001,19 +1001,19 @@
     "@types/eslint" "^8.56.2"
     "@typescript-eslint/utils" "^6.21.0"
 
-"@stylistic/stylelint-plugin@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@stylistic/stylelint-plugin/-/stylelint-plugin-2.0.0.tgz#80240770d944e1627dc26eebf7590c9d10948fd5"
-  integrity sha512-dHKuT6PGd1WGZLOTuozAM7GdQzdmlmnFXYzvV1jYJXXpcCpV/OJ3+n8TXpMkoOeKHpJydY43EOoZTO1W/FOA4Q==
+"@stylistic/stylelint-plugin@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@stylistic/stylelint-plugin/-/stylelint-plugin-2.1.0.tgz#7800c71626d005ce090d71614f5421dbb7e6b3c6"
+  integrity sha512-mUZEW9uImHSbXeyzbFmHb8WPBv56UTaEnWL/3dGdAiJ54C+8GTfDwDVdI6gbqT9wV7zynkPu7tCXc5746H9mZQ==
   dependencies:
-    "@csstools/css-parser-algorithms" "^2.3.2"
-    "@csstools/css-tokenizer" "^2.2.1"
-    "@csstools/media-query-list-parser" "^2.1.5"
+    "@csstools/css-parser-algorithms" "^2.5.0"
+    "@csstools/css-tokenizer" "^2.2.3"
+    "@csstools/media-query-list-parser" "^2.1.7"
     is-plain-object "^5.0.0"
-    postcss-selector-parser "^6.0.13"
+    postcss-selector-parser "^6.0.15"
     postcss-value-parser "^4.2.0"
     style-search "^0.1.0"
-    stylelint "^16.0.2"
+    stylelint "^16.2.1"
 
 "@szmarczak/http-timer@^5.0.1":
   version "5.0.1"
@@ -6387,50 +6387,6 @@ stylelint@^13.3.2:
     table "^6.6.0"
     v8-compile-cache "^2.3.0"
     write-file-atomic "^3.0.3"
-
-stylelint@^16.0.2:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-16.2.0.tgz#60678f64d7660350fdd06415fd449f332b4fcbf6"
-  integrity sha512-gwqU5AkIb52wrAzzn+359S3NIJDMl02TXLUaV2tzA/L6jUdpTwNt+MCxHlc8+Hb2bUHlYVo92YeSIryF2gJthA==
-  dependencies:
-    "@csstools/css-parser-algorithms" "^2.5.0"
-    "@csstools/css-tokenizer" "^2.2.3"
-    "@csstools/media-query-list-parser" "^2.1.7"
-    "@csstools/selector-specificity" "^3.0.1"
-    balanced-match "^2.0.0"
-    colord "^2.9.3"
-    cosmiconfig "^9.0.0"
-    css-functions-list "^3.2.1"
-    css-tree "^2.3.1"
-    debug "^4.3.4"
-    fast-glob "^3.3.2"
-    fastest-levenshtein "^1.0.16"
-    file-entry-cache "^8.0.0"
-    global-modules "^2.0.0"
-    globby "^11.1.0"
-    globjoin "^0.1.4"
-    html-tags "^3.3.1"
-    ignore "^5.3.0"
-    imurmurhash "^0.1.4"
-    is-plain-object "^5.0.0"
-    known-css-properties "^0.29.0"
-    mathml-tag-names "^2.1.3"
-    meow "^13.1.0"
-    micromatch "^4.0.5"
-    normalize-path "^3.0.0"
-    picocolors "^1.0.0"
-    postcss "^8.4.33"
-    postcss-resolve-nested-selector "^0.1.1"
-    postcss-safe-parser "^7.0.0"
-    postcss-selector-parser "^6.0.15"
-    postcss-value-parser "^4.2.0"
-    resolve-from "^5.0.0"
-    string-width "^4.2.3"
-    strip-ansi "^7.1.0"
-    supports-hyperlinks "^3.0.0"
-    svg-tags "^1.0.0"
-    table "^6.8.1"
-    write-file-atomic "^5.0.1"
 
 stylelint@^16.2.1:
   version "16.2.1"
