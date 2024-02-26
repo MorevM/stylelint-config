@@ -1,5 +1,17 @@
 
 
+## [5.2.0](https://github.com/MorevM/stylelint-config/compare/v5.1.0...v5.2.0) (2024-02-26)
+
+
+### Features
+
+* **css:** Add `@stylistic/named-grid-areas-alignment` rule ([4bea590](https://github.com/MorevM/stylelint-config/commit/4bea5908126d7b47680e9ded2435760159893f46))
+
+
+### Chores
+
+* Bump `@stylistic/stylelint-plugin` from 2.0.0 to 2.1.0 ([5a17469](https://github.com/MorevM/stylelint-config/commit/5a174691aded7ea8a0dbcbcebc4be30f33405535))
+
 ## [5.1.0](https://github.com/MorevM/stylelint-config/compare/v5.0.1...v5.1.0) (2024-02-18)
 
 
