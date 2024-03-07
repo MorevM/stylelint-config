@@ -11,6 +11,7 @@ export const base = {
 		'media-query-no-invalid': null,
 		'no-descending-specificity': null,
 		'no-duplicate-selectors': null,
+		'no-invalid-position-at-import-rule': null,
 	},
 };
 
