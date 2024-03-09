@@ -68,6 +68,14 @@ export default {
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-import-partial-extension/README.md
 		'scss/at-import-partial-extension': 'never',
 
+		// Specify a list of allowed file extensions for partial names in `@import` commands.
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-import-partial-extension-allowed-list/README.md
+		'scss/at-import-partial-extension-allowed-list': null,
+
+		// Specify a list of disallowed file extensions for partial names in @import commands.
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-import-partial-extension-disallowed-list/README.md
+		'scss/at-import-partial-extension-disallowed-list': null,
+
 		// Require or disallow parentheses in argumentless `@mixin` calls (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-mixin-argumentless-call-parentheses/README.md
 		'+scss/at-mixin-argumentless-call-parentheses': 'never',
