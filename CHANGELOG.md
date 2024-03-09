@@ -1,5 +1,22 @@
 
 
+## [5.3.0](https://github.com/MorevM/stylelint-config/compare/v5.2.0...v5.3.0) (2024-03-09)
+
+
+### Features
+
+* **scss:** Take account of `scss/at-import-partial-extension-allowed-list` and `scss/at-import-partial-extension-disallowed-list` rules ([b40419b](https://github.com/MorevM/stylelint-config/commit/b40419bf1579add4f258e27028cd76f59b364e48))
+
+
+### Chores
+
+* bump stylelint-scss from 6.1.0 to 6.2.1 ([#279](https://github.com/MorevM/stylelint-config/issues/279)) ([952589f](https://github.com/MorevM/stylelint-config/commit/952589fdc3f33b35296278338bd21f2682e4483f))
+
+### Bug fixes
+
+* **scss:** Disable `no-invalid-position-at-import-rule` rule for SCSS config ([59e9de7](https://github.com/MorevM/stylelint-config/commit/59e9de78dd49f05bc928049cf7d4e0139640bfc0))
+* **scss:** Remove deprecated `at-import-partial-extension-whitelist` and `scss/at-import-partial-extension-whitelist` rules ([d5c0ee7](https://github.com/MorevM/stylelint-config/commit/d5c0ee788de90014586abc0bd61584792a60c133))
+
 ## [5.2.0](https://github.com/MorevM/stylelint-config/compare/v5.1.0...v5.2.0) (2024-02-26)
 
 
