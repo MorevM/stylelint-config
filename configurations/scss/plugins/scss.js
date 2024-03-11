@@ -228,7 +228,7 @@ export default {
 		// Disallow unknown functions
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-no-unknown/README.md
 		// Note: setup to fit `more-sass` package
-		// 'function-no-unknown': null,
+		'function-no-unknown': null,
 		'scss/function-no-unknown': [true, {
 			ignoreFunctions: ['shade', 'social-color', 'tint', 'column', 'offset', 'get-char'],
 		}],
