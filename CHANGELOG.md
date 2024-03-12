@@ -1,5 +1,12 @@
 
 
+## [5.3.1](https://github.com/MorevM/stylelint-config/compare/v5.3.0...v5.3.1) (2024-03-12)
+
+
+### Bug fixes
+
+* **scss:** Disable `function-no-unknown` for SCSS files ([f4e8418](https://github.com/MorevM/stylelint-config/commit/f4e8418d357d4b6eb1f7ac31e64eaadf36831e72))
+
 ## [5.3.0](https://github.com/MorevM/stylelint-config/compare/v5.2.0...v5.3.0) (2024-03-09)
 
 
