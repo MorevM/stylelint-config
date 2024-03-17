@@ -1,7 +1,7 @@
 import {
 	pluginAtRuleNoChildren,
 	pluginScss,
-	// pluginUseNesting, // No Stylelint v16 support
+	pluginUseNesting,
 } from './plugins/_index.js';
 
 export const base = {
@@ -18,5 +18,5 @@ export const base = {
 export const parts = [
 	pluginAtRuleNoChildren,
 	pluginScss,
-	// pluginUseNesting, // No Stylelint v16 support
+	pluginUseNesting,
 ];
