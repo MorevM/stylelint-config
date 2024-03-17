@@ -1,5 +1,17 @@
 
 
+## [5.4.0](https://github.com/MorevM/stylelint-config/compare/v5.3.1...v5.4.0) (2024-03-17)
+
+
+### Features
+
+* **scss:** Re-enable `stylelint-use-nesting` plugin ([7b1b1a6](https://github.com/MorevM/stylelint-config/commit/7b1b1a69c5a7351ec1a3850c83667de76344c8eb))
+
+
+### Chores
+
+* Bump stylelint-use-nesting from 4.1.0 to 5.1.1 ([a08eeab](https://github.com/MorevM/stylelint-config/commit/a08eeab1806e62ce2790c852e6b1efb546555290))
+
 ## [5.3.1](https://github.com/MorevM/stylelint-config/compare/v5.3.0...v5.3.1) (2024-03-12)
 
 
