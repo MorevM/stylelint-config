@@ -6352,10 +6352,10 @@ stylelint-selector-tag-no-without-class@^3.0.1:
     lodash "^4.17.5"
     postcss-selector-parser "^6.0.15"
 
-stylelint-use-nesting@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/stylelint-use-nesting/-/stylelint-use-nesting-4.1.0.tgz#77d36f05da74be68312af402f04ea13555783034"
-  integrity sha512-DDI+T/8kGIxdcfPClxp/oS2cFSWvd+hoV54clF7lnrlSvYHOQouaxgMOuPmkIQig0suss/PrAw5GwBYoSu8WoQ==
+stylelint-use-nesting@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/stylelint-use-nesting/-/stylelint-use-nesting-5.1.1.tgz#74f1d768a0f0fb7a180d0e55b1be5cd4e8ae9f1d"
+  integrity sha512-CMPN52zWGqogls7i6u0jCjOU7jb6/3r+1/VWkuSoA6KAATgHEvGe6xc9PcLMBKYLtTS1tblEyIUW8fiU36D5GQ==
 
 stylelint@^13.3.2:
   version "13.13.1"
