@@ -1,5 +1,9 @@
 
 
+## [5.4.1](https://github.com/MorevM/stylelint-config/compare/v5.4.0...v5.4.1) (2024-03-30)
+
+No notable changes here, just dependencies bump.
+
 ## [5.4.0](https://github.com/MorevM/stylelint-config/compare/v5.3.1...v5.4.0) (2024-03-17)
 
 
