@@ -1131,10 +1131,10 @@
     "@types/eslint" "^8.56.2"
     "@typescript-eslint/utils" "^6.21.0"
 
-"@stylistic/stylelint-plugin@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@stylistic/stylelint-plugin/-/stylelint-plugin-2.1.0.tgz#7800c71626d005ce090d71614f5421dbb7e6b3c6"
-  integrity sha512-mUZEW9uImHSbXeyzbFmHb8WPBv56UTaEnWL/3dGdAiJ54C+8GTfDwDVdI6gbqT9wV7zynkPu7tCXc5746H9mZQ==
+"@stylistic/stylelint-plugin@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@stylistic/stylelint-plugin/-/stylelint-plugin-2.1.1.tgz#87e3b97868257cd9e3a5294cb25b7eb1158f4041"
+  integrity sha512-xqHTmQZN7EbnFDW7jw0rAsdFNO4IRqvXhrh3qhUlIwF/x09Zm7kgs/ADktHxsTJYcw346PpGihsB0t4pZhpeHw==
   dependencies:
     "@csstools/css-parser-algorithms" "^2.5.0"
     "@csstools/css-tokenizer" "^2.2.3"
