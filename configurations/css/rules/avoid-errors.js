@@ -172,6 +172,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/no-unknown-animations/
 		'no-unknown-animations': true,
 
+		// Disallow unknown custom media queries.
+		// https://stylelint.io/user-guide/rules/no-unknown-custom-media
+		'no-unknown-custom-media': null,
+
 		// Disallow unknown custom properties
 		// https://stylelint.io/user-guide/rules/no-unknown-custom-properties/
 		'no-unknown-custom-properties': null,
