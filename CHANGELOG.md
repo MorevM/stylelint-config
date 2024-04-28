@@ -1,5 +1,23 @@
 
 
+## [5.5.0](https://github.com/MorevM/stylelint-config/compare/v5.4.1...v5.5.0) (2024-04-28)
+
+
+### Features
+
+* **css:** Take account of `no-unknown-custom-media` rule ([30746ec](https://github.com/MorevM/stylelint-config/commit/30746ecbcd28a39c00ea8c48406fa597a0064d06))
+
+
+### Chores
+
+* Bump @stylistic/stylelint-plugin from 2.1.0 to 2.1.1 ([#288](https://github.com/MorevM/stylelint-config/issues/288)) ([e49fe18](https://github.com/MorevM/stylelint-config/commit/e49fe18202b0da1a2550bfadfa5b718578a225e2))
+* Bump stylelint from 16.3.1 to 16.4.0 ([13d374e](https://github.com/MorevM/stylelint-config/commit/13d374e90076d2d2ce698d14d6d708d58f66388f))
+
+
+### Bug fixes
+
+* **css:** Disable `declaration-block-no-redundant-longhand-properties` for `transition` properties ([78d7ac7](https://github.com/MorevM/stylelint-config/commit/78d7ac702112e83b421f4e92ac0f2b655fe09173))
+
 ## [5.4.1](https://github.com/MorevM/stylelint-config/compare/v5.4.0...v5.4.1) (2024-03-30)
 
 No notable changes here, just dependencies bump.
