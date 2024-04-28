@@ -449,7 +449,10 @@ export default {
 		// Disallow longhand properties that can be combined into one shorthand property (autofixable)
 		// https://stylelint.io/user-guide/rules/list/declaration-block-no-redundant-longhand-properties/
 		'+declaration-block-no-redundant-longhand-properties': [true, {
-			ignoreShorthands: ['/grid/', 'flex-flow', 'place-items'], // Sometimes get hard to read or recognize
+			ignoreShorthands: [
+				'/grid/', 'flex-flow', 'place-items', // getting hard to read, the developer knows better
+				'/transition/', // gets very messy in the case of multiple properties
+			],
 		}],
 
 		// Disallow redundant values in shorthand properties (autofixable)
