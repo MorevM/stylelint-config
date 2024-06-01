@@ -7,7 +7,7 @@ export default {
 		// #region Color
 
 		// Specify lowercase or uppercase for hex colors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/color-hex-case/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/color-hex-case/README.md
 		'+@stylistic/color-hex-case': 'lower',
 
 		// #endregion
@@ -15,35 +15,35 @@ export default {
 		// #region Function
 
 		// Require a newline or disallow whitespace after the commas of functions (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-comma-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-newline-after/README.md
 		'+@stylistic/function-comma-newline-after': 'always-multi-line',
 
 		// Require a newline or disallow whitespace before the commas of functions (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-comma-newline-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-newline-before/README.md
 		'+@stylistic/function-comma-newline-before': null,
 
 		// Require a single space or disallow whitespace after the commas of functions (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-comma-space-after
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-after/README.md
 		'+@stylistic/function-comma-space-after': 'always-single-line',
 
 		// Require a single space or disallow whitespace before the commas of functions (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-comma-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-before/README.md
 		'+@stylistic/function-comma-space-before': 'never',
 
 		// Limit the number of adjacent empty lines within functions (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-max-empty-lines/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-max-empty-lines/README.md
 		'+@stylistic/function-max-empty-lines': 0,
 
 		// Require a newline or disallow whitespace on the inside of the parentheses of functions (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-parentheses-newline-inside/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-newline-inside/README.md
 		'+@stylistic/function-parentheses-newline-inside': 'always-multi-line',
 
 		// Require a single space or disallow whitespace on the inside of the parentheses of functions (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-parentheses-space-inside/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-space-inside/README.md
 		'+@stylistic/function-parentheses-space-inside': 'never-single-line',
 
 		// Require or disallow whitespace after functions (autofixable)
-		// https://stylelint.io/user-guide/rules/list/function-whitespace-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-whitespace-after/README.md
 		'+@stylistic/function-whitespace-after': 'always',
 
 		// #endregion
@@ -51,11 +51,11 @@ export default {
 		// #region Number
 
 		// Require or disallow a leading zero for fractional numbers less than 1 (autofixable)
-		// https://stylelint.io/user-guide/rules/list/number-leading-zero/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-leading-zero/README.md
 		'+@stylistic/number-leading-zero': 'never',
 
 		// Disallow trailing zeros in numbers (autofixable)
-		// https://stylelint.io/user-guide/rules/list/number-no-trailing-zeros/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-no-trailing-zeros/README.md
 		'+@stylistic/number-no-trailing-zeros': true,
 
 		// #endregion
@@ -63,7 +63,7 @@ export default {
 		// #region String
 
 		// Specify single or double quotes around strings (autofixable)
-		// https://stylelint.io/user-guide/rules/list/string-quotes/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md
 		'+@stylistic/string-quotes': 'single',
 
 		// #endregion
@@ -71,7 +71,7 @@ export default {
 		// #region Unit
 
 		// Specify lowercase or uppercase for units (autofixable)
-		// https://stylelint.io/user-guide/rules/list/unit-case/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/unit-case/README.md
 		'+@stylistic/unit-case': 'lower',
 
 		// #endregion
@@ -79,23 +79,23 @@ export default {
 		// #region Value list
 
 		// Require a newline or disallow whitespace after the commas of value lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/value-list-comma-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-newline-after/README.md
 		'+@stylistic/value-list-comma-newline-after': 'always-multi-line',
 
 		// Require a newline or disallow whitespace before the commas of value lists
-		// https://stylelint.io/user-guide/rules/list/value-list-comma-newline-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-newline-before/README.md
 		'@stylistic/value-list-comma-newline-before': 'never-multi-line',
 
 		// Require a single space or disallow whitespace after the commas of value lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/value-list-comma-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md
 		'+@stylistic/value-list-comma-space-after': 'always-single-line',
 
 		// Require a single space or disallow whitespace before the commas of value lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/value-list-comma-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-before/README.md
 		'+@stylistic/value-list-comma-space-before': 'never',
 
 		// Limit the number of adjacent empty lines within value lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/value-list-max-empty-lines/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-max-empty-lines/README.md
 		'+@stylistic/value-list-max-empty-lines': 0,
 
 		// #endregion
@@ -103,7 +103,7 @@ export default {
 		// #region Property
 
 		// Specify lowercase or uppercase for properties (autofixable)
-		// https://stylelint.io/user-guide/rules/list/property-case/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/property-case/README.md
 		'+@stylistic/property-case': 'lower',
 
 		// #endregion
@@ -111,23 +111,23 @@ export default {
 		// #region Declaration
 
 		// Require a single space or disallow whitespace after the bang of declarations (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-bang-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-after/README.md
 		'+@stylistic/declaration-bang-space-after': 'never',
 
 		// Require a single space or disallow whitespace before the bang of declarations (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-bang-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-before/README.md
 		'+@stylistic/declaration-bang-space-before': 'always',
 
 		// Require a newline or disallow whitespace after the colon of declarations (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-colon-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-newline-after/README.md
 		'+@stylistic/declaration-colon-newline-after': 'always-multi-line',
 
 		// Require a single space or disallow whitespace after the colon of declarations (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-colon-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-after/README.md
 		'+@stylistic/declaration-colon-space-after': 'always-single-line',
 
 		// Require a single space or disallow whitespace before the colon of declarations (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-colon-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-before/README.md
 		'+@stylistic/declaration-colon-space-before': 'never',
 
 		// #endregion
@@ -135,23 +135,23 @@ export default {
 		// #region Declaration block
 
 		// Require a newline or disallow whitespace after the semicolons of declaration blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-block-semicolon-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md
 		'+@stylistic/declaration-block-semicolon-newline-after': 'always-multi-line',
 
 		// Require a newline or disallow whitespace before the semicolons of declaration blocks
-		// https://stylelint.io/user-guide/rules/list/declaration-block-semicolon-newline-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-before/README.md
 		'@stylistic/declaration-block-semicolon-newline-before': 'never-multi-line',
 
 		// Require a single space or disallow whitespace after the semicolons of declaration blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-block-semicolon-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md
 		'+@stylistic/declaration-block-semicolon-space-after': 'always-single-line',
 
 		// Require a single space or disallow whitespace before the semicolons of declaration blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-block-semicolon-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-before/README.md
 		'+@stylistic/declaration-block-semicolon-space-before': 'never',
 
 		// Require or disallow a trailing semicolon within declaration blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/declaration-block-trailing-semicolon/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-trailing-semicolon/README.md
 		'+@stylistic/declaration-block-trailing-semicolon': 'always',
 
 		// #endregion
@@ -159,41 +159,41 @@ export default {
 		// #region Block
 
 		// Require or disallow an empty line before the closing brace of blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/block-closing-brace-empty-line-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-empty-line-before/README.md
 		'+@stylistic/block-closing-brace-empty-line-before': 'never',
 
 		// Require a newline or disallow whitespace after the closing brace of blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/block-closing-brace-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-after/README.md
 		'+@stylistic/block-closing-brace-newline-after': ['always', {
 			ignoreAtRules: ['if', 'else'], // No effect for CSS, but good for extending with SCSS
 		}],
 
 		//  Require a newline or disallow whitespace before the closing brace of blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/block-closing-brace-newline-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-before/README.md
 		'+@stylistic/block-closing-brace-newline-before': 'always-multi-line',
 
 		// Require a single space or disallow whitespace after the closing brace of blocks
-		// https://stylelint.io/user-guide/rules/list/block-closing-brace-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-space-after/README.md
 		'@stylistic/block-closing-brace-space-after': null,
 
 		// Require a single space or disallow whitespace before the closing brace of blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/block-closing-brace-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-space-before/README.md
 		'+@stylistic/block-closing-brace-space-before': 'always-single-line',
 
 		// Require a newline after the opening brace of blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/block-opening-brace-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-newline-after/README.md
 		'+@stylistic/block-opening-brace-newline-after': 'always-multi-line',
 
 		// Require a newline or disallow whitespace before the opening brace of blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/block-opening-brace-newline-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-newline-before/README.md
 		'+@stylistic/block-opening-brace-newline-before': null,
 
 		// Require a single space or disallow whitespace after the opening brace of blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/block-opening-brace-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-after/README.md
 		'+@stylistic/block-opening-brace-space-after': 'always-single-line',
 
 		// Require a single space or disallow whitespace before the opening brace of blocks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/block-opening-brace-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-before/README.md
 		'+@stylistic/block-opening-brace-space-before': 'always',
 
 		// #endregion
@@ -201,43 +201,43 @@ export default {
 		// #region Selector
 
 		// Require a single space or disallow whitespace on the inside of the brackets within attribute selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-attribute-brackets-space-inside/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-brackets-space-inside/README.md
 		'+@stylistic/selector-attribute-brackets-space-inside': 'never',
 
 		// Require a single space or disallow whitespace after operators within attribute selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-attribute-operator-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-after/README.md
 		'+@stylistic/selector-attribute-operator-space-after': 'never',
 
 		// Require a single space or disallow whitespace before operators within attribute selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-attribute-operator-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-before/README.md
 		'+@stylistic/selector-attribute-operator-space-before': 'never',
 
 		// Require a single space or disallow whitespace after the combinators of selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-combinator-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-after/README.md
 		'+@stylistic/selector-combinator-space-after': 'always',
 
 		// Require a single space or disallow whitespace before the combinators of selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-combinator-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-before/README.md
 		'+@stylistic/selector-combinator-space-before': 'always',
 
 		// Disallow non-space characters for descendant combinators of selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-descendant-combinator-no-non-space/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-descendant-combinator-no-non-space/README.md
 		'+@stylistic/selector-descendant-combinator-no-non-space': true,
 
 		//  Limit the number of adjacent empty lines within selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-max-empty-lines/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-max-empty-lines/README.md
 		'+@stylistic/selector-max-empty-lines': 0,
 
 		// Specify lowercase or uppercase for pseudo-class selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-pseudo-class-case/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-case/README.md
 		'+@stylistic/selector-pseudo-class-case': 'lower',
 
 		// Require a single space or disallow whitespace on the inside of the parentheses within pseudo-class selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-pseudo-class-parentheses-space-inside/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md
 		'+@stylistic/selector-pseudo-class-parentheses-space-inside': 'never',
 
 		// Specify lowercase or uppercase for pseudo-element selectors (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-pseudo-element-case/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-element-case/README.md
 		'+@stylistic/selector-pseudo-element-case': 'lower',
 
 		// #endregion
@@ -245,20 +245,20 @@ export default {
 		// #region Selector list
 
 		// Require a newline or disallow whitespace after the commas of selector lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-list-comma-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-after/README.md
 		// Note: sometimes it's good to group similar selectors line by line
 		'+@stylistic/selector-list-comma-newline-after': null,
 
 		// Require a newline or disallow whitespace before the commas of selector lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-list-comma-newline-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-before/README.md
 		'+@stylistic/selector-list-comma-newline-before': 'never-multi-line',
 
 		// Require a single space or disallow whitespace after the commas of selector lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-list-comma-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-space-after/README.md
 		'+@stylistic/selector-list-comma-space-after': 'always-single-line',
 
 		// Require a single space or disallow whitespace before the commas of selector lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/selector-list-comma-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-space-before/README.md
 		'+@stylistic/selector-list-comma-space-before': 'never',
 
 		// #endregion
@@ -266,27 +266,27 @@ export default {
 		// #region Media feature
 
 		// Require a single space or disallow whitespace after the colon in media features (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-feature-colon-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md
 		'+@stylistic/media-feature-colon-space-after': 'always',
 
 		// Require a single space or disallow whitespace before the colon in media features (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-feature-colon-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-before/README.md
 		'+@stylistic/media-feature-colon-space-before': 'never',
 
 		// Specify lowercase or uppercase for media feature names (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-feature-name-case/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-name-case/README.md
 		'+@stylistic/media-feature-name-case': 'lower',
 
 		// Require a single space or disallow whitespace on the inside of the parentheses within media features (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-feature-parentheses-space-inside/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-parentheses-space-inside/README.md
 		'+@stylistic/media-feature-parentheses-space-inside': 'never',
 
 		// Require a single space or disallow whitespace after the range operator in media features (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-feature-range-operator-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-after/README.md
 		'+@stylistic/media-feature-range-operator-space-after': 'always',
 
 		// Require a single space or disallow whitespace before the range operator in media features (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-feature-range-operator-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-before/README.md
 		'+@stylistic/media-feature-range-operator-space-before': 'always',
 
 		// #endregion
@@ -294,19 +294,19 @@ export default {
 		// #region Media query list
 
 		// Require a newline or disallow whitespace after the commas of media query lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-query-list-comma-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-newline-after/README.md
 		'+@stylistic/media-query-list-comma-newline-after': 'always-multi-line',
 
 		// Require a newline or disallow whitespace before the commas of media query lists
-		// https://stylelint.io/user-guide/rules/list/media-query-list-comma-newline-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-newline-before/README.md
 		'@stylistic/media-query-list-comma-newline-before': 'never-multi-line',
 
 		// Require a single space or disallow whitespace after the commas of media query lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-query-list-comma-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-after/README.md
 		'+@stylistic/media-query-list-comma-space-after': 'always-single-line',
 
 		// Require a single space or disallow whitespace before the commas of media query lists (autofixable)
-		// https://stylelint.io/user-guide/rules/list/media-query-list-comma-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-before/README.md
 		'+@stylistic/media-query-list-comma-space-before': 'never',
 
 		// #endregion
@@ -314,23 +314,23 @@ export default {
 		// #region At-rule
 
 		// Specify lowercase or uppercase for at-rules names (autofixable)
-		// https://stylelint.io/user-guide/rules/list/at-rule-name-case/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-case/README.md
 		'+@stylistic/at-rule-name-case': 'lower',
 
 		// Require a newline after at-rule names
-		// https://stylelint.io/user-guide/rules/list/at-rule-name-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-newline-after/README.md
 		'@stylistic/at-rule-name-newline-after': null,
 
 		// Require a single space after at-rule names (autofixable)
-		// https://stylelint.io/user-guide/rules/list/at-rule-name-space-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-space-after/README.md
 		'+@stylistic/at-rule-name-space-after': 'always-single-line',
 
 		// Require a newline after the semicolon of at-rules (autofixable)
-		// https://stylelint.io/user-guide/rules/list/at-rule-semicolon-newline-after/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-semicolon-newline-after/README.md
 		'+@stylistic/at-rule-semicolon-newline-after': 'always',
 
 		// Require a single space or disallow whitespace before the semicolons of at-rules
-		// https://stylelint.io/user-guide/rules/list/at-rule-semicolon-space-before/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-semicolon-space-before/README.md
 		'@stylistic/at-rule-semicolon-space-before': 'never',
 
 		// #endregion
@@ -347,39 +347,39 @@ export default {
 		// #region General / Sheet
 
 		// Specify indentation (autofixable)
-		// https://stylelint.io/user-guide/rules/list/indentation/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md
 		'+@stylistic/indentation': 'tab',
 
 		// Specify unix or windows linebreaks (autofixable)
-		// https://stylelint.io/user-guide/rules/list/linebreaks/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/linebreaks/README.md
 		'+@stylistic/linebreaks': 'unix',
 
 		// Limit the number of adjacent empty lines (autofixable)
-		// https://stylelint.io/user-guide/rules/list/max-empty-lines/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-empty-lines/README.md
 		'+@stylistic/max-empty-lines': 1,
 
 		// Limit the length of a line
-		// https://stylelint.io/user-guide/rules/list/max-line-length/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-line-length/README.md
 		'@stylistic/max-line-length': 120,
 
 		// Disallow empty first lines (autofixable)
-		// https://stylelint.io/user-guide/rules/list/no-empty-first-line/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-empty-first-line/README.md
 		'+@stylistic/no-empty-first-line': true,
 
 		// Disallow end-of-line whitespace (autofixable)
-		// https://stylelint.io/user-guide/rules/list/no-eol-whitespace/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-eol-whitespace/README.md
 		'+@stylistic/no-eol-whitespace': true,
 
 		// Disallow extra semicolons (autofixable)
-		// https://stylelint.io/user-guide/rules/list/no-extra-semicolons/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-extra-semicolons/README.md
 		'+@stylistic/no-extra-semicolons': true,
 
 		// Disallow missing end-of-source newlines (autofixable)
-		// https://stylelint.io/user-guide/rules/list/no-missing-end-of-source-newline/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-missing-end-of-source-newline/README.md
 		'+@stylistic/no-missing-end-of-source-newline': true,
 
 		// Require or disallow Unicode BOM
-		// https://stylelint.io/user-guide/rules/list/unicode-bom/
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/unicode-bom/README.md
 		'@stylistic/unicode-bom': 'never',
 
 		// #endregion
