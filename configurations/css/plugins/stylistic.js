@@ -224,7 +224,7 @@ export default {
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-descendant-combinator-no-non-space/README.md
 		'+@stylistic/selector-descendant-combinator-no-non-space': true,
 
-		//  Limit the number of adjacent empty lines within selectors (autofixable)
+		// Limit the number of adjacent empty lines within selectors (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-max-empty-lines/README.md
 		'+@stylistic/selector-max-empty-lines': 0,
 
