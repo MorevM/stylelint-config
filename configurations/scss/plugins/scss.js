@@ -85,6 +85,10 @@ export default {
 		// Note: It depends
 		'scss/at-mixin-named-arguments': null,
 
+		// Disallow risky nesting selectors within a mixin
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-mixin-no-risky-nesting-selector/README.md
+		'scss/at-mixin-no-risky-nesting-selector': true,
+
 		// Require or disallow a space before `@mixin` parentheses (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-mixin-parentheses-space-before/README.md
 		'+scss/at-mixin-parentheses-space-before': 'never',
