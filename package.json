@@ -49,7 +49,7 @@
 		"stylelint": "^16.0.0"
 	},
 	"dependencies": {
-		"@stylistic/stylelint-plugin": "^2.1.1",
+		"@stylistic/stylelint-plugin": "^2.1.2",
 		"postcss": "^8.4.38",
 		"postcss-scss": "^4.0.9",
 		"stylelint-8-point-grid": "^2.2.0",
@@ -65,14 +65,14 @@
 	},
 	"devDependencies": {
 		"@morev/commitlint-config": "^0.2.2",
-		"@morev/eslint-config": "^32.0.0",
-		"@morev/utils": "^3.9.0",
+		"@morev/eslint-config": "^33.0.0",
+		"@morev/utils": "^3.11.0",
 		"@release-it/conventional-changelog": "^8.0.1",
 		"eslint": "^8.57.0",
-		"lefthook": "^1.6.10",
-		"release-it": "^17.2.1",
-		"stylelint": "^16.4.0",
+		"lefthook": "^1.6.14",
+		"release-it": "^17.3.0",
+		"stylelint": "^16.6.1",
 		"stylelint-find-new-rules": "^5.0.0",
-		"vitest": "^1.5.2"
+		"vitest": "^1.6.0"
 	}
 }
