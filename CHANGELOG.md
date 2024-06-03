@@ -1,5 +1,32 @@
 
 
+## [6.0.0](https://github.com/MorevM/stylelint-config/compare/v5.5.0...v6.0.0) (2024-06-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **scss:** With new rule `scss/at-mixin-no-risky-nesting-selector` SCSS config becomes more strict.
+
+### Features
+
+* **scss:** Add `at-mixin-no-risky-nesting-selector` rule ([cb9ea60](https://github.com/MorevM/stylelint-config/commit/cb9ea601e0aaff7c8fb39509ca547afc3aad5497))
+
+
+### Documentation
+
+* **css:** Fix stylistic rules docs links ([0ec4c3f](https://github.com/MorevM/stylelint-config/commit/0ec4c3fa0beb4b817ee77731256bd853d74f58b9))
+
+
+### Chores
+* Bump @stylistic/stylelint-plugin from 2.1.1 to 2.1.2 ([#299](https://github.com/MorevM/stylelint-config/issues/299)) ([2ba0e81](https://github.com/MorevM/stylelint-config/commit/2ba0e811990a761c87c3feb5eb32ac2a46b919d2))
+* Bump `stylelint-scss` from 6.2.1 to 6.3.0 ([9b4b882](https://github.com/MorevM/stylelint-config/commit/9b4b882e5885952afaa44a4f13289d1013babda3))
+* Bump stylelint from 16.4.0 to 16.6.1 ([#308](https://github.com/MorevM/stylelint-config/issues/308)) ([c49d455](https://github.com/MorevM/stylelint-config/commit/c49d455c938154b8b7be07cbcad2aef18fd347df))
+
+
+### CI improvements
+
+* Extract latest changelog entry to GH release ([cfc3fb7](https://github.com/MorevM/stylelint-config/commit/cfc3fb7bc52a7c536eed58deb8b21edf53b2bdd2))
+
 ## [5.5.0](https://github.com/MorevM/stylelint-config/compare/v5.4.1...v5.5.0) (2024-04-28)
 
 
