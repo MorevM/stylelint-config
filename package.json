@@ -50,7 +50,7 @@
 	},
 	"dependencies": {
 		"@stylistic/stylelint-plugin": "^3.1.0",
-		"postcss": "^8.4.38",
+		"postcss": "^8.4.47",
 		"postcss-scss": "^4.0.9",
 		"stylelint-8-point-grid": "^2.2.0",
 		"stylelint-at-rule-no-children": "^0.3.1",
@@ -61,7 +61,7 @@
 		"stylelint-scss": "^6.7.0",
 		"stylelint-selector-no-empty": "^1.0.9",
 		"stylelint-selector-tag-no-without-class": "^3.0.1",
-		"stylelint-use-nesting": "^5.1.1"
+		"stylelint-use-nesting": "^6.0.0"
 	},
 	"devDependencies": {
 		"@morev/commitlint-config": "^0.2.2",
