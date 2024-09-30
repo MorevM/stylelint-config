@@ -1,4 +1,4 @@
-import { KEBAB_CASE, WARNING } from '../../../utils/constants.js';
+import { KEBAB_CASE, KEBAB_CASE_ALLOW_DOUBLE, WARNING } from '../../../utils/constants.js';
 
 export default {
 	rules: {
@@ -397,7 +397,7 @@ export default {
 
 		// Specify a pattern for custom properties
 		// https://stylelint.io/user-guide/rules/list/custom-property-pattern/
-		'custom-property-pattern': [KEBAB_CASE, {
+		'custom-property-pattern': [KEBAB_CASE_ALLOW_DOUBLE, {
 			message: 'Expected custom property name to be kebab-case',
 		}],
 
