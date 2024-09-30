@@ -64,10 +64,6 @@ export default {
 		// Note: It needed sometimes to catch exactly `null`
 		'scss/at-if-no-null': null,
 
-		// Require or disallow extension in @import commands
-		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-import-partial-extension/README.md
-		'scss/at-import-partial-extension': 'never',
-
 		// Specify a list of allowed file extensions for partial names in `@import` commands.
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-import-partial-extension-allowed-list/README.md
 		'scss/at-import-partial-extension-allowed-list': null,
@@ -292,6 +288,10 @@ export default {
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/selector-no-union-class-name/README.md
 		// Note: nothing wrong with that
 		'scss/load-no-partial-leading-underscore': null,
+
+		// Require or disallow extension in `@import`, `@use`, `@forward`, and `meta.load-css` commands (autofixable)
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/load-partial-extension/README.md
+		'+scss/load-partial-extension': 'never',
 
 		// Disallow dollar variables within a stylesheet
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/no-dollar-variables/README.md
