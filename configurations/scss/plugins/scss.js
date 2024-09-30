@@ -206,6 +206,10 @@ export default {
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/declaration-nested-properties-no-divided-groups/README.md
 		'scss/declaration-nested-properties-no-divided-groups': null,
 
+		// Disallow unknown values for properties within declarations
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/declaration-property-value-no-unknown/README.md
+		'scss/declaration-property-value-no-unknown': true,
+
 		// Interpolating a value with a unit (e.g. #{$value}px) results in a string value, not as numeric value
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dimension-no-non-numeric-values/README.md
 		'scss/dimension-no-non-numeric-values': true,
