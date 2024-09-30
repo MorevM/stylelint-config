@@ -65,14 +65,14 @@
 	},
 	"devDependencies": {
 		"@morev/commitlint-config": "^0.2.2",
-		"@morev/eslint-config": "^33.0.0",
-		"@morev/utils": "^3.11.0",
-		"@release-it/conventional-changelog": "^8.0.1",
+		"@morev/eslint-config": "^34.0.0",
+		"@morev/utils": "^3.11.1",
+		"@release-it/conventional-changelog": "^8.0.2",
 		"eslint": "^8.57.0",
-		"lefthook": "^1.6.15",
-		"release-it": "^17.3.0",
+		"lefthook": "^1.7.18",
+		"release-it": "^17.6.0",
 		"stylelint": "^16.6.1",
 		"stylelint-find-new-rules": "^5.0.0",
-		"vitest": "^1.6.0"
+		"vitest": "^2.1.1"
 	}
 }
