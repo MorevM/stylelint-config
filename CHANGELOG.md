@@ -1,5 +1,31 @@
 
 
+## [7.0.0](https://github.com/MorevM/stylelint-config/compare/v6.0.0...v7.0.0) (2024-09-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* The config now requires `stylelint` version 16.8.0 or higher.
+* **scss:** With new rule `declaration-property-value-no-unknown` some of incorrect declarations (if any) may produce new errors.
+
+### Features
+
+* **scss:** Add `declaration-property-value-no-unknown` rule ([7b67fae](https://github.com/MorevM/stylelint-config/commit/7b67faea56e7a09008e59718b21e9d8e3cf48053))
+* **scss:** Add `load-partial-extension` rule instead of deprecated `at-import-partial-extension` ([050ffe3](https://github.com/MorevM/stylelint-config/commit/050ffe38dcf6164099bf0ac9e087e193c4a1f999))
+
+
+### Bug fixes
+
+* **css:** Allow double dash in custom property names ([1fefc1b](https://github.com/MorevM/stylelint-config/commit/1fefc1bdf10bddae55aa8f3dd2e0c8f9627fe7b7))
+
+
+### Chores
+
+* Bump `@stylistic/stylelint-plugin` from 2.1.2 to 3.1.0 ([60d9056](https://github.com/MorevM/stylelint-config/commit/60d9056bc4c9597e60808281023347b9fc09ffd9))
+* Bump `stylelint-scss` from 6.3.0 to 6.7.0 ([88b4c95](https://github.com/MorevM/stylelint-config/commit/88b4c95477e0dfc899db545966b1475e3c2956e7))
+* Bump `stylelint-use-nesting` from 5.1.1 to 6.0.0 ([e901e0e](https://github.com/MorevM/stylelint-config/commit/e901e0e5922dd77bec6d733effeaa70a655c4ad1))
+* Bump `stylelint` from 16.6.1 to 16.9.0 ([dac53ce](https://github.com/MorevM/stylelint-config/commit/dac53ce294d4f71a5c785c60b9500d3f5141e010))
+
 ## [6.0.0](https://github.com/MorevM/stylelint-config/compare/v5.5.0...v6.0.0) (2024-06-03)
 
 
