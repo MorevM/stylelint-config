@@ -1,5 +1,13 @@
 
 
+## [7.0.1](https://github.com/MorevM/stylelint-config/compare/v7.0.0...v7.0.1) (2024-10-09)
+
+
+### Bug fixes
+
+* **css:** Place `aspect-ratio` property below width and height when sorting properties ([e122ce0](https://github.com/MorevM/stylelint-config/commit/e122ce0823b12143243f9d65f9b21935fa67531a))
+
+
 ## [7.0.0](https://github.com/MorevM/stylelint-config/compare/v6.0.0...v7.0.0) (2024-09-30)
 
 
