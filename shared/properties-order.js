@@ -67,6 +67,7 @@ properties.push([
 	'block-size', 'min-block-size', 'max-block-size',
 	'width', 'min-width', 'max-width',
 	'height', 'min-height', 'max-height',
+	'aspect-ratio',
 	'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
 	'margin-block-start', 'margin-block-end', 'margin-inline-start', 'margin-inline-end',
 	'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
