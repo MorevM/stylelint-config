@@ -41,8 +41,8 @@
 		"vscode-settings": "cp .vscode/settings.template.json .vscode/settings.json",
 		"build": "node utils/build.js",
 		"test": "vitest",
-		"lint": "eslint \"**/*.{js,json,json5,jsonc,yml,yaml}\"",
-		"lint:fix": "eslint \"**/*.{js,json,json5,jsonc,yml,yaml}\" --fix",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"release": "release-it --disable-metrics"
 	},
 	"peerDependencies": {
@@ -65,10 +65,10 @@
 	},
 	"devDependencies": {
 		"@morev/commitlint-config": "^0.2.2",
-		"@morev/eslint-config": "^35.0.2",
+		"@morev/eslint-config": "^35.1.0",
 		"@morev/utils": "^3.11.1",
 		"@release-it/conventional-changelog": "^8.0.2",
-		"eslint": "^9.15.0",
+		"eslint": "9.14.0",
 		"lefthook": "^1.8.2",
 		"release-it": "^17.10.0",
 		"stylelint": "^16.10.0",
