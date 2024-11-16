@@ -1,5 +1,18 @@
 
 
+## [7.1.0](https://github.com/MorevM/stylelint-config/compare/v7.0.1...v7.1.0) (2024-11-16)
+
+
+### Features
+
+* **scss:** Add `scss/function-color-channel` rule ([6746e07](https://github.com/MorevM/stylelint-config/commit/6746e076491c5edb2c47f675daed8f42b6d0bf2f))
+
+
+### Bug fixes
+
+* **scss:** Disable `aditayvm/at-rule-no-children` due to wrong implementation ([7095f27](https://github.com/MorevM/stylelint-config/commit/7095f273a26fd389fcb6bdc787a817b5f56969f4))
+
+
 ## [7.0.1](https://github.com/MorevM/stylelint-config/compare/v7.0.0...v7.0.1) (2024-10-09)
 
 
