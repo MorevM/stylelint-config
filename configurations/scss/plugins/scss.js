@@ -1,4 +1,4 @@
-import { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE } from '../../../utils/constants.js';
+import { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE, WARNING } from '../../../utils/constants.js';
 
 export default {
 	plugins: ['stylelint-scss'],
@@ -217,6 +217,12 @@ export default {
 		// Disallow interpolation in calc(), clamp(), min(), and max() functions.
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-calculation-no-interpolation/README.md
 		'scss/function-calculation-no-interpolation': true,
+
+		// Encourage the use of the `color.channel` function over related deprecated color functions
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-color-channel/README.md
+		'scss/function-color-channel': [true, {
+			severity: WARNING,
+		}],
 
 		// Encourage the use of the `scale-color`
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-color-relative/README.md
