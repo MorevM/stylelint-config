@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-unsafe-regex */
 export const WARNING = 'warning';
 export const ERROR = 'error';
 export const KEBAB_CASE =  /^([a-z][\da-z]*)(-[\da-z]+)*$/;

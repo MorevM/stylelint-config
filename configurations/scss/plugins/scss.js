@@ -162,7 +162,7 @@ export default {
 
 		// Specify a pattern for Sass-like variables
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-pattern/README.md
-		'scss/dollar-variable-pattern': /^(?:-{1,2}|_)?([a-z][\da-z]*)(-{1,2}[\da-z]+)*$/, // eslint-disable-line unicorn/no-unsafe-regex
+		'scss/dollar-variable-pattern': /^(?:-{1,2}|_)?([a-z][\da-z]*)(-{1,2}[\da-z]+)*$/,
 
 		// Specify a pattern for `%`-placeholders
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/percent-placeholder-pattern/README.md
