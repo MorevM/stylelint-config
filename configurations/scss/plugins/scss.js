@@ -106,7 +106,7 @@ export default {
 
 		// Disallow usage of `@use` without a namespace
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-use-no-unnamespaced/README.md
-		// TODO: [2025-01-01] Blocked because of VSCode support https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss
+		// TODO: [2026-01-01] Blocked because of VSCode support https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss
 		'scss/at-use-no-unnamespaced': null,
 
 		// Disallow redundant namespace aliases (i.e. @use "foo" as foo) (autofixable)
