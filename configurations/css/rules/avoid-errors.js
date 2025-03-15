@@ -152,6 +152,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/at-rule-descriptor-no-unknown/
 		'at-rule-descriptor-no-unknown': true,
 
+		// Disallow unknown values for descriptors within at-rules
+		// https://stylelint.io/user-guide/rules/at-rule-descriptor-value-no-unknown/
+		'at-rule-descriptor-value-no-unknown': true,
+
 		// Disallow unknown at-rules
 		// https://stylelint.io/user-guide/rules/list/at-rule-no-unknown/
 		'at-rule-no-unknown': true,
