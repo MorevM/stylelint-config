@@ -97,7 +97,10 @@ export default {
 
 		// Disallow units for zero lengths (autofixable)
 		// https://stylelint.io/user-guide/rules/list/length-zero-no-unit/
-		'+length-zero-no-unit': [true, { severity: WARNING }],
+		'+length-zero-no-unit': [true, {
+			severity: WARNING,
+			ignore: ['custom-properties'],
+		}],
 
 		// Media feature
 
