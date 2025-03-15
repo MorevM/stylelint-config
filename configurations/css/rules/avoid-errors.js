@@ -8,6 +8,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/at-rule-no-deprecated/
 		'+at-rule-no-deprecated': true,
 
+		// Disallow deprecated keywords for properties within declarations
+		// https://stylelint.io/user-guide/rules/declaration-property-value-keyword-no-deprecated/
+		'+declaration-property-value-keyword-no-deprecated': true,
+
 		// #endregion
 
 		// #region Descending
