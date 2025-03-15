@@ -2,6 +2,14 @@ import { WARNING } from '../../../utils/constants.js';
 
 export default {
 	rules: {
+		// #region Deprecated
+
+		// Disallow deprecated at-rules
+		// https://stylelint.io/user-guide/rules/at-rule-no-deprecated/
+		'+at-rule-no-deprecated': true,
+
+		// #endregion
+
 		// #region Descending
 
 		// Disallow selectors of lower specificity from coming after overriding selectors of higher specificity
