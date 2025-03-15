@@ -112,6 +112,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/string-no-newline/
 		'string-no-newline': true,
 
+		// Disallow invalid syntax strings
+		// https://stylelint.io/user-guide/rules/syntax-string-no-invalid/
+		'syntax-string-no-invalid': true,
+
 		// #endregion
 
 		// #region Irregular
