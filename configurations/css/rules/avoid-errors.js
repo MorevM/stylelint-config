@@ -76,6 +76,10 @@ export default {
 
 		// #region Invalid
 
+		// Disallow invalid preludes for at-rules
+		// https://stylelint.io/user-guide/rules/at-rule-prelude-no-invalid/
+		'at-rule-prelude-no-invalid': true,
+
 		// Disallow invalid hex colors
 		// https://stylelint.io/user-guide/rules/list/color-no-invalid-hex/
 		'color-no-invalid-hex': true,
