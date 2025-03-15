@@ -1,7 +1,7 @@
+import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
-import util from 'node:util';
 import { fileURLToPath } from 'node:url';
-import { rmSync, mkdirSync, writeFileSync } from 'node:fs';
+import util from 'node:util';
 import { css, scss } from '../configurations/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

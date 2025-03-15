@@ -1,9 +1,4 @@
 import {
-	stylelintAvoidErrors,
-	stylelintEnforceConventions,
-} from './rules/_index.js';
-
-import {
 	pluginDeclarationBlockNoIgnoredProperties,
 	pluginHighPerformanceAnimation,
 	pluginNoNestedMedia,
@@ -12,6 +7,11 @@ import {
 	pluginSelectorTagNoWithoutClass,
 	pluginStylistic,
 } from './plugins/_index.js';
+
+import {
+	stylelintAvoidErrors,
+	stylelintEnforceConventions,
+} from './rules/_index.js';
 
 export const parts = [
 	stylelintAvoidErrors,

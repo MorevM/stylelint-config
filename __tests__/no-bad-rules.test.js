@@ -1,5 +1,5 @@
+import { beforeAll, describe, expect, it } from 'vitest';
 import cp from 'node:child_process';
-import { describe, it, expect, beforeAll } from 'vitest';
 import stylelintRules from 'stylelint-find-new-rules';
 
 const toHumanReadable = (declarations) => declarations.map((declaration) =>
