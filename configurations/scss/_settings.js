@@ -1,5 +1,5 @@
 import {
-	// pluginAtRuleNoChildren,
+	pluginAtRuleNoChildren,
 	pluginScss,
 	pluginUseNesting,
 } from './plugins/_index.js';
@@ -16,7 +16,7 @@ export const base = {
 };
 
 export const parts = [
-	// pluginAtRuleNoChildren,
+	pluginAtRuleNoChildren,
 	pluginScss,
 	pluginUseNesting,
 ];
