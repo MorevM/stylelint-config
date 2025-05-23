@@ -7183,10 +7183,10 @@ stylelint-8-point-grid@^2.2.0:
   dependencies:
     stylelint "^13.3.2"
 
-stylelint-at-rule-no-children@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/stylelint-at-rule-no-children/-/stylelint-at-rule-no-children-0.3.1.tgz#700152f9ddf4c544592e80ffdcb67ff342749e8d"
-  integrity sha512-SNXI6r3XSQja4PqKunu1LNzfqTc/qaONnkOW4ey7ONYY3Z4HIgrBF1ctxCITth1az0fRdrUZNixT/NQIROTX1Q==
+stylelint-at-rule-no-children@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/stylelint-at-rule-no-children/-/stylelint-at-rule-no-children-0.4.1.tgz#543d177e5f277854b2c29864b70e83ec049dc4eb"
+  integrity sha512-1c825L4OnrSSEa7jUSC3FGxOJ5praUHMe10yayT2Be5X6ysRScPUB2VrSeQDpYyb0GOeqp6YuC7M/KRAkPVzGg==
 
 stylelint-declaration-block-no-ignored-properties@^2.8.0:
   version "2.8.0"
