@@ -1381,10 +1381,10 @@
     estraverse "^5.3.0"
     picomatch "^4.0.2"
 
-"@stylistic/stylelint-plugin@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@stylistic/stylelint-plugin/-/stylelint-plugin-3.1.1.tgz#2503ef353d50bbdf495db4bb1b87ca7f639f16d6"
-  integrity sha512-XagAHHIa528EvyGybv8EEYGK5zrVW74cHpsjhtovVATbhDRuJYfE+X4HCaAieW9lCkwbX6L+X0I4CiUG3w/hFw==
+"@stylistic/stylelint-plugin@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@stylistic/stylelint-plugin/-/stylelint-plugin-3.1.2.tgz#15c28db7bb3eb2db187f40acccb1ff667a887ec2"
+  integrity sha512-tylFJGMQo62alGazK74MNxFjMagYOHmBZiePZFOJK2n13JZta0uVkB3Bh5qodUmOLtRH+uxH297EibK14UKm8g==
   dependencies:
     "@csstools/css-parser-algorithms" "^3.0.1"
     "@csstools/css-tokenizer" "^3.0.1"
