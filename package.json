@@ -5,7 +5,7 @@
 	"private": false,
 	"version": "7.1.0",
 	"engines": {
-		"node": ">=18.12.0"
+		"node": ">=20"
 	},
 	"license": "MIT",
 	"publishConfig": {
@@ -46,7 +46,7 @@
 		"release": "release-it --disable-metrics"
 	},
 	"peerDependencies": {
-		"stylelint": "^16.16.0"
+		"stylelint": "^16.18.0"
 	},
 	"dependencies": {
 		"@stylistic/stylelint-plugin": "^3.1.2",
@@ -57,7 +57,7 @@
 		"stylelint-declaration-block-no-ignored-properties": "^2.8.0",
 		"stylelint-high-performance-animation": "^1.11.0",
 		"stylelint-no-nested-media": "^0.1.0",
-		"stylelint-order": "^6.0.4",
+		"stylelint-order": "^7.0.0",
 		"stylelint-scss": "^6.9.0",
 		"stylelint-selector-no-empty": "^1.0.9",
 		"stylelint-selector-tag-no-without-class": "^3.0.1",
