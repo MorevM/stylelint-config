@@ -1,4 +1,4 @@
-/* eslint-disable no-autofix/unicorn/no-array-push-push -- Needed for readability */
+/* eslint-disable unicorn/prefer-single-call -- Needed for readability */
 const rules = [];
 
 // Functions related to block (e.g. some helper functions) should be on top

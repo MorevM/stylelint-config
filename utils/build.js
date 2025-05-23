@@ -1,10 +1,7 @@
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 import util from 'node:util';
 import { css, scss } from '../configurations/index.js';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const CONFIGURATIONS = [
 	{ name: 'css', configuration: css },
@@ -12,7 +9,7 @@ const CONFIGURATIONS = [
 ];
 
 const BUILD_DIRECTORY_RELATIVE = './build/configurations/';
-const BUILD_DIRECTORY = resolve(__dirname, '..', BUILD_DIRECTORY_RELATIVE);
+const BUILD_DIRECTORY = resolve(import.meta.dirname, '..', BUILD_DIRECTORY_RELATIVE);
 
 rmSync(BUILD_DIRECTORY, { recursive: true, force: true });
 mkdirSync(BUILD_DIRECTORY, { recursive: true });

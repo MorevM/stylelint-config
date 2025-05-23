@@ -1,4 +1,4 @@
-/* eslint-disable no-autofix/unicorn/no-array-push-push -- Needed for readability */
+/* eslint-disable unicorn/prefer-single-call -- Needed for readability */
 const properties = [];
 
 // Should be first
