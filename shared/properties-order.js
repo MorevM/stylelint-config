@@ -24,9 +24,9 @@ properties.push([
 // Positioning
 properties.push([
 	'position', 'inset',
+	'top', 'right', 'bottom', 'left',
 	'inset-block', 'inset-block-start', 'inset-block-end',
 	'inset-inline', 'inset-inline-start', 'inset-inline-end',
-	'top', 'right', 'bottom', 'left',
 	'z-index',
 ]);
 
@@ -68,9 +68,12 @@ properties.push([
 	'width', 'min-width', 'max-width',
 	'height', 'min-height', 'max-height',
 	'aspect-ratio',
-	'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+	'margin',
+	'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+	'margin-block', 'margin-inline',
 	'margin-block-start', 'margin-block-end', 'margin-inline-start', 'margin-inline-end',
-	'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+	'padding',
+	'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
 	'padding-block-start', 'padding-block-end', 'padding-inline-start', 'padding-inline-end',
 ]);
 
@@ -130,7 +133,15 @@ properties.push([
 	'border-right', 'border-right-width', 'border-right-style', 'border-right-color',
 	'border-bottom', 'border-bottom-width', 'border-bottom-style', 'border-bottom-color',
 	'border-left', 'border-left-width', 'border-left-style', 'border-left-color',
-	'border-radius', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-right-radius', 'border-bottom-left-radius',
+	'border-block', 'border-block-width', 'border-block-style', 'border-block-color',
+	'border-inline', 'border-inline-width', 'border-inline-style', 'border-inline-color',
+	'border-block-start', 'border-block-start-width', 'border-block-start-style', 'border-block-start-color',
+	'border-inline-end', 'border-inline-end-width', 'border-inline-end-style', 'border-inline-end-color',
+	'border-block-end', 'border-block-end-width', 'border-block-end-style', 'border-block-end-color',
+	'border-inline-start', 'border-inline-start-width', 'border-inline-start-style', 'border-inline-start-color',
+	'border-radius',
+	'border-top-left-radius', 'border-top-right-radius', 'border-bottom-right-radius', 'border-bottom-left-radius',
+	'border-start-start-radius', 'border-start-end-radius', 'border-end-end-radius', 'border-end-start-radius',
 	'border-image', 'border-image-source', 'border-image-slice', 'border-image-width', 'border-image-outset', 'border-image-repeat',
 	'overflow', 'overflow-inline', 'overflow-block', 'overflow-x', 'overflow-y',
 	'clip', 'clip-path',
