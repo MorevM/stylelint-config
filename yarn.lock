@@ -7204,10 +7204,10 @@ stylelint-find-new-rules@^5.0.0:
     read-pkg "^9.0.1"
     yargs "~17.7.2"
 
-stylelint-high-performance-animation@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/stylelint-high-performance-animation/-/stylelint-high-performance-animation-1.10.0.tgz#2c0b67320fc6d978ee9b532d6feffc708e86979d"
-  integrity sha512-YzNI+E6taN8pwgaM0INazRg4tw23VA17KNMKUVdOeohpnpSyJLBnLVT9NkRcaCFLodK/67smS5VZK+Qe4Ohrvw==
+stylelint-high-performance-animation@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/stylelint-high-performance-animation/-/stylelint-high-performance-animation-1.11.0.tgz#8b9fbf2b3d79ff40052454054850d63d50fc36ef"
+  integrity sha512-bo+VfSH5RmjVmu61BZeN4cBK+PGHpG5jfvaUsw0db+1sAqKuEGjzmxEbf271/Jq3HJHj8wyi/rCg1IcxxnIiiQ==
   dependencies:
     postcss-value-parser "^4.2.0"
 
