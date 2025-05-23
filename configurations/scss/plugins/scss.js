@@ -312,6 +312,10 @@ export default {
 		// Note: well, usually it's intended
 		'scss/no-duplicate-dollar-variables': null,
 
+		//  Disallow duplicate `@import`, `@use` and `@forward` rules
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/no-duplicate-load-rules/README.md
+		'scss/no-duplicate-load-rules': true,
+
 		// Disallow duplicate mixins within a stylesheet
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/no-duplicate-mixins/README.md
 		'scss/no-duplicate-mixins': true,
