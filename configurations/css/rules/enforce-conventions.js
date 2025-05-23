@@ -100,6 +100,7 @@ export default {
 		'+length-zero-no-unit': [true, {
 			severity: WARNING,
 			ignore: ['custom-properties'],
+			ignorePreludeOfAtRules: ['function', 'mixin'],
 		}],
 
 		// Media feature
