@@ -71,7 +71,7 @@
 		"eslint": "9.27.0",
 		"lefthook": "^1.11.13",
 		"release-it": "^19.0.2",
-		"stylelint": "^16.16.0",
+		"stylelint": "^16.19.1",
 		"stylelint-find-new-rules": "^5.0.0",
 		"vitest": "^3.1.4"
 	}
