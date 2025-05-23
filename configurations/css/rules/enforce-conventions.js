@@ -393,6 +393,12 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/comment-pattern/
 		'comment-pattern': null,
 
+		// Specify a pattern for container names
+		// https://stylelint.io/user-guide/rules/container-name-pattern/
+		'container-name-pattern': [KEBAB_CASE, {
+			message: 'Expected container name to be kebab-case',
+		}],
+
 		// Specify a pattern for custom media query names
 		// https://stylelint.io/user-guide/rules/list/custom-media-pattern/
 		'custom-media-pattern': [KEBAB_CASE, {
