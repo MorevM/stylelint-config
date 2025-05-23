@@ -1,4 +1,4 @@
-import { KEBAB_CASE, KEBAB_CASE_ALLOW_DOUBLE, WARNING } from '../../../utils/constants.js';
+import { KEBAB_CASE, KEBAB_CASE_ALLOW_DOT, KEBAB_CASE_ALLOW_DOUBLE, WARNING } from '../../../utils/constants.js';
 
 export default {
 	rules: {
@@ -408,6 +408,12 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/keyframes-name-pattern/
 		'keyframes-name-pattern': [KEBAB_CASE, {
 			message: 'Expected keyframe name to be kebab-case',
+		}],
+
+		// Specify a pattern for layer names
+		// https://stylelint.io/user-guide/rules/layer-name-pattern/
+		'layer-name-pattern': [KEBAB_CASE_ALLOW_DOT, {
+			message: 'Expected layer name to be kebab-case',
 		}],
 
 		// Specify a pattern for class selectors
