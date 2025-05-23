@@ -373,7 +373,7 @@ export default {
 
 		// Specify context or prefix notation for media feature ranges (autofixable)
 		// https://stylelint.io/user-guide/rules/media-feature-range-notation/
-		// TODO: [2025-05-11] Enable
+		// TODO: [2026-05-11] Enable
 		'+media-feature-range-notation': null,
 
 		// Specify simple or complex notation for `:not()` pseudo-classes (autofixable)
