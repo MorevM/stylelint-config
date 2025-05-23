@@ -98,6 +98,7 @@ properties.push([
 
 // Text
 properties.push([
+	'alignment-baseline',
 	'color',
 	'font', 'font-display',
 	'font-family', 'font-size', 'line-height', 'font-size-adjust',
@@ -123,6 +124,7 @@ properties.push([
 
 // Appearance
 properties.push([
+	'accent-color',
 	'object-fit', 'object-position',
 	'background', 'background-color', 'background-image', 'background-repeat',
 	'background-position', 'background-position-x', 'background-position-y',
@@ -152,16 +154,37 @@ properties.push([
 	'appearance',
 ]);
 
+// Scroll
+properties.push([
+	'scroll-behavior',
+	'scroll-padding',
+	'scroll-padding-top', 'scroll-padding-right', 'scroll-padding-bottom', 'scroll-padding-left',
+	'scroll-margin',
+	'scroll-margin-top', 'scroll-margin-right', 'scroll-margin-bottom', 'scroll-margin-left',
+	'scroll-margin-block', 'scroll-margin-block-start', 'scroll-margin-block-end',
+	'scroll-margin-inline', 'scroll-margin-inline-start', 'scroll-margin-inline-end',
+	'scroll-snap-align', 'scroll-snap-stop', 'scroll-snap-type',
+]);
+
+// Scrollbar
+properties.push([
+	'scrollbar-color',
+	'scrollbar-gutter',
+	'scrollbar-width',
+]);
+
 // Transform
 properties.push([
 	'transform', 'transform-origin', 'transform-box', 'transform-style', 'transform-function',
-	'rotate', 'scale',
+	'translate', 'rotate', 'scale',
 	'backface-visibility', 'perspective', 'perspective-origin',
 ]);
 
 // Transition
 properties.push([
-	'transition', 'transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay',
+	'transition',
+	'transition-behavior',
+	'transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay',
 ]);
 
 // Animation
