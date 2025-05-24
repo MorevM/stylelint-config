@@ -340,6 +340,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/alpha-value-notation/
 		'+alpha-value-notation': 'number',
 
+		// Specify alias notation for color-functions (autofixable)
+		// https://stylelint.io/user-guide/rules/color-function-alias-notation/
+		'+color-function-alias-notation': 'without-alpha',
+
 		// Specify modern or legacy notation for applicable color-functions (autofixable)
 		// https://stylelint.io/user-guide/rules/list/color-function-notation/
 		'+color-function-notation': 'modern',
