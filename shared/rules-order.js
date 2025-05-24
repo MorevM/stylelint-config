@@ -42,21 +42,25 @@ rules.push([
 	{ type: 'rule', selector: '^&[:]{1,2}before,\s*&[:]{1,2}after,?' },
 
 	{ type: 'rule', selector: '^&:hover[:]{1,2}before,?' },
-	{ type: 'rule', selector: '^&:active[:]{1,2}before,?' },
 	{ type: 'rule', selector: '^&:focus[:]{1,2}before,?' },
+	{ type: 'rule', selector: '^&:active[:]{1,2}before,?' },
 	{ type: 'rule', selector: '^&:\\w+[:]{1,2}before,?' },
 
 	{ type: 'rule', selector: '^&:hover[:]{1,2}after,?' },
-	{ type: 'rule', selector: '^&:active[:]{1,2}after,?' },
 	{ type: 'rule', selector: '^&:focus[:]{1,2}after,?' },
+	{ type: 'rule', selector: '^&:active[:]{1,2}after,?' },
 	{ type: 'rule', selector: '^&:\\w+[:]{1,2}after,?' },
 ]);
 
 // Pseudo-classes
 rules.push([
+	{ type: 'rule', selector: '&:link,?' },
+	{ type: 'rule', selector: '&:visited,?' },
 	{ type: 'rule', selector: '&:hover,?' },
-	{ type: 'rule', selector: '&:active,?' },
+	{ type: 'rule', selector: '&:focus-within,?' },
 	{ type: 'rule', selector: '&:focus,?' },
+	{ type: 'rule', selector: '&:focus-visible,?' },
+	{ type: 'rule', selector: '&:active,?' },
 	{ type: 'rule', selector: '^&:\\w,?' },
 ]);
 
