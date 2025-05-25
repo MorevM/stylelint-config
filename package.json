@@ -52,7 +52,6 @@
 		"@stylistic/stylelint-plugin": "^3.1.2",
 		"postcss": "^8.5.3",
 		"postcss-scss": "^4.0.9",
-		"stylelint-8-point-grid": "^2.2.0",
 		"stylelint-at-rule-no-children": "^0.4.1",
 		"stylelint-declaration-block-no-ignored-properties": "^2.8.0",
 		"stylelint-high-performance-animation": "^1.11.0",
