@@ -77,21 +77,35 @@ rules.push([
 	{ type: 'at-rule', name: 'include', hasBlock: true },
 ]);
 
-// Media queries in right order
+// Media queries in the right order
 rules.push([
-	{ type: 'at-rule', name: 'media', parameter: '\(--phone-small\)' }, // >= 320
-	{ type: 'at-rule', name: 'media', parameter: '\(--phone-standard\)' }, // same as above, legacy option
-	{ type: 'at-rule', name: 'media', parameter: '\(--phone-portrait\)' }, // >= 360
-	{ type: 'at-rule', name: 'media', parameter: '\(--phone-landscape\)' }, // >= 480
-	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-portrait\)' }, // >= 768
-	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-standard\)' }, // same as above, legacy option
-	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-landscape\)' }, // >= 1024
-	{ type: 'at-rule', name: 'media', parameter: '\(--laptop\)' }, // >= 1280
-	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-middle\)' }, // > >= 1440, legacy option
-	{ type: 'at-rule', name: 'media', parameter: '\(--desktop\)' }, // > >= 1660px
-	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-wide\)' }, // same as above, legacy option
-	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-2k\)' }, // > 1921
-	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-4k\)' }, // > 2561
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-phone-small\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--phone-small\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-phone-medium\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--phone-medium\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-phone-large\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--phone-large\)' },
+	//
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-tablet-small\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-small\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-tablet-medium\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-medium\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-tablet-large\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--tablet-large\)' },
+	//
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-laptop-small\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--laptop-small\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-laptop-medium\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--laptop-medium\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-laptop-large\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--laptop-large\)' },
+	//
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-desktop\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--desktop\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-desktop-2k\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-2k\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--less-desktop-4k\)' },
+	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-4k\)' },
 	{ type: 'at-rule', name: 'media' }, // rest
 ]);
 
