@@ -27,6 +27,18 @@ rules.push([
 	'declarations',
 ]);
 
+// Pseudo-classes
+rules.push([
+	{ type: 'rule', selector: '&:link,?' },
+	{ type: 'rule', selector: '&:visited,?' },
+	{ type: 'rule', selector: '&:hover,?' },
+	{ type: 'rule', selector: '&:focus-within,?' },
+	{ type: 'rule', selector: '&:focus,?' },
+	{ type: 'rule', selector: '&:focus-visible,?' },
+	{ type: 'rule', selector: '&:active,?' },
+	{ type: 'rule', selector: '^&:\\w,?' },
+]);
+
 // Pseudo-elements except ::before and ::after like ::placeholder
 // Prefixed non-standard pseudo-elements like ::-ms-clear or :-webkit-autofill
 rules.push([
@@ -49,18 +61,6 @@ rules.push([
 	{ type: 'rule', selector: '^&:focus[:]{1,2}after,?' },
 	{ type: 'rule', selector: '^&:active[:]{1,2}after,?' },
 	{ type: 'rule', selector: '^&:\\w+[:]{1,2}after,?' },
-]);
-
-// Pseudo-classes
-rules.push([
-	{ type: 'rule', selector: '&:link,?' },
-	{ type: 'rule', selector: '&:visited,?' },
-	{ type: 'rule', selector: '&:hover,?' },
-	{ type: 'rule', selector: '&:focus-within,?' },
-	{ type: 'rule', selector: '&:focus,?' },
-	{ type: 'rule', selector: '&:focus-visible,?' },
-	{ type: 'rule', selector: '&:active,?' },
-	{ type: 'rule', selector: '^&:\\w,?' },
 ]);
 
 // Selectors which increases specificity
