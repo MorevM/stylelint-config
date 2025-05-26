@@ -3,7 +3,7 @@
 	"description": "Strict shareable Stylelint configuration",
 	"type": "module",
 	"private": false,
-	"version": "8.0.0",
+	"version": "8.0.1",
 	"engines": {
 		"node": ">=22"
 	},

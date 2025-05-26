@@ -1,5 +1,12 @@
 
 
+## [8.0.1](https://github.com/MorevM/stylelint-config/compare/v8.0.0...v8.0.1) (2025-05-26)
+
+
+### Chores
+
+* Minimal Node version is 22 ([2b16e44](https://github.com/MorevM/stylelint-config/commit/2b16e4466632ea60d69b5b3ef6fcc7fd5131fe5d))
+
 ## [8.0.0](https://github.com/MorevM/stylelint-config/compare/v7.1.0...v8.0.0) (2025-05-26)
 
 
@@ -8,7 +15,7 @@
 * **shared:** Legacy media query names removed, added names from the latest revision <https://www.youtube.com/watch?v=91houg6eszI>
 * **shared:** The order of pseudo-classes and pseudo-elements has been changed: now pseudo-classes come before pseudo-elements
 * **shared:** Listed more pseudo classes, also changed their order - `:active` now takes precedence over `:focus`
-* Minimal required Node version is 20, and Stylelint version is 16.18.0 (referring to the direct dependency list)
+* Minimal required Node version is 22, and Stylelint version is 16.18.0 (referring to the direct dependency list)
 
 ### Features
 
