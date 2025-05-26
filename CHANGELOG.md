@@ -1,5 +1,43 @@
 
 
+## [8.0.0](https://github.com/MorevM/stylelint-config/compare/v7.1.0...v8.0.0) (2025-05-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **shared:** Legacy media query names removed, added names from the latest revision <https://www.youtube.com/watch?v=91houg6eszI>
+* **shared:** The order of pseudo-classes and pseudo-elements has been changed: now pseudo-classes come before pseudo-elements
+* **shared:** Listed more pseudo classes, also changed their order - `:active` now takes precedence over `:focus`
+* Minimal required Node version is 20, and Stylelint version is 16.18.0 (referring to the direct dependency list)
+
+### Features
+
+* **css:** Add `at-rule-descriptor-no-unknown` rule ([c747bab](https://github.com/MorevM/stylelint-config/commit/c747bab3a47025c139d926707db14456442832c5))
+* **css:** Add `at-rule-descriptor-value-no-unknown` rule ([bad061f](https://github.com/MorevM/stylelint-config/commit/bad061f912626973e3fbc5c47e04d4e349a99baf))
+* **css:** Add `at-rule-no-deprecated` rule ([4eb1b29](https://github.com/MorevM/stylelint-config/commit/4eb1b29900f6331e3ecbf970fd9a8dda933fc188))
+* **css:** Add `at-rule-prelude-no-invalid` rule ([5c47f3a](https://github.com/MorevM/stylelint-config/commit/5c47f3aba5063700d1388f2d31ef70b7cc7071c6))
+* **css:** Add `color-function-alias-notation` rule ([a47de56](https://github.com/MorevM/stylelint-config/commit/a47de56bdf7ff7da11480fef58aa65f5c08f7522))
+* **css:** Add `container-name-pattern` rule ([6aa1501](https://github.com/MorevM/stylelint-config/commit/6aa1501f9b0b596132043ccc8d8c9dcfea2bb842))
+* **css:** Add `declaration-property-value-keyword-no-deprecated` rule ([51019d5](https://github.com/MorevM/stylelint-config/commit/51019d5232c8598c771f4782b6117a31e41d87d5))
+* **css:** Add `layer-name-pattern` rule ([78f3987](https://github.com/MorevM/stylelint-config/commit/78f3987b1b64e7c76a4359423ecef2498b210b13))
+* **css:** Add `syntax-string-no-invalid` rule ([5a108ad](https://github.com/MorevM/stylelint-config/commit/5a108ad6096353caf6b3541d7b1d256456e6bf43))
+* **css:** Add an exception for `length-zero-no-unit` within SASS mixin and function arguments ([c975d9b](https://github.com/MorevM/stylelint-config/commit/c975d9b361c8b5c0554181ede70d63ee5aa83f85))
+* **css:** Change and extend order of pseudo-classes ([e687b41](https://github.com/MorevM/stylelint-config/commit/e687b41adcd7a618293902d28f084e1cdf61fe6e))
+* **scss:** Add `scss/no-duplicate-load-rules` rule ([ce33335](https://github.com/MorevM/stylelint-config/commit/ce33335d39d8e68510d7b988b49f62441a53925d))
+* **scss:** Enable `aditayvm/at-rule-no-children` as the implementation if fixed ([986a27b](https://github.com/MorevM/stylelint-config/commit/986a27b2836d29954b4eb5f8ae10c39ff4c2ce73))
+* **scss:** Enable autofix for `scss/double-slash-comment-whitespace-inside` ([7073a1d](https://github.com/MorevM/stylelint-config/commit/7073a1d459409986a3fbb40516bef398dee862d0))
+* **shared:** Add few more properties to `order` ([ca7454a](https://github.com/MorevM/stylelint-config/commit/ca7454a10ffb669390e394f2ccedec51f120030c))
+* **shared:** Respect logical properties in `order` plugin ([bbabd30](https://github.com/MorevM/stylelint-config/commit/bbabd305d01d4d98ce6c4bb63a1913eaf702cd2d))
+
+
+### Bug fixes
+
+* **css:** Do not force zero without unit for custom properties ([2905a5e](https://github.com/MorevM/stylelint-config/commit/2905a5ea37e66b588f935f9f689192f2ba1c7554))
+* **shared:** Change order of pseudo-selectors and pseudo-classes ([371e214](https://github.com/MorevM/stylelint-config/commit/371e21410aa805b139b2dda4287a691989e53fb4))
+* **shared:** Change the media breakpoints ([25ee31c](https://github.com/MorevM/stylelint-config/commit/25ee31c6d07ffa98488fe43904fdae586718193e))
+* **shared:** Proper RegExp for pseudo-selectors ([893e66b](https://github.com/MorevM/stylelint-config/commit/893e66b364ee420266b5de3f6ebde42ad932e190))
+
+
 ## [7.1.0](https://github.com/MorevM/stylelint-config/compare/v7.0.1...v7.1.0) (2024-11-16)
 
 
