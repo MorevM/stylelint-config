@@ -42,39 +42,8 @@ rules.push([
 // Pseudo-elements except ::before and ::after like ::placeholder
 // Prefixed non-standard pseudo-elements like ::-ms-clear or :-webkit-autofill
 rules.push([
-	{ type: 'rule', selector: '^&::\\w+' },
+	{ type: 'rule', selector: '^&::(?!before\\b|after\\b)\\w+' },
 	{ type: 'rule', selector: '^&[:]{1,2}-\\w+' },
-]);
-
-// ::before & ::after
-rules.push([
-	{ type: 'rule', selector: '^&[:]{1,2}before,?' },
-	{ type: 'rule', selector: '^&[:]{1,2}after,?' },
-	{ type: 'rule', selector: '^&[:]{1,2}before,\s*&[:]{1,2}after,?' },
-
-	{ type: 'rule', selector: '^&:hover[:]{1,2}before,?' },
-	{ type: 'rule', selector: '^&:focus[:]{1,2}before,?' },
-	{ type: 'rule', selector: '^&:active[:]{1,2}before,?' },
-	{ type: 'rule', selector: '^&:\\w+[:]{1,2}before,?' },
-
-	{ type: 'rule', selector: '^&:hover[:]{1,2}after,?' },
-	{ type: 'rule', selector: '^&:focus[:]{1,2}after,?' },
-	{ type: 'rule', selector: '^&:active[:]{1,2}after,?' },
-	{ type: 'rule', selector: '^&:\\w+[:]{1,2}after,?' },
-]);
-
-// Selectors which increases specificity
-rules.push([
-	{ type: 'rule', selector: '^&\\[' },
-	{ type: 'at-rule', selector: 'at-root' },
-	{ type: 'rule', selector: '#{' },
-	{ type: 'rule', selector: '^& \\+ &' },
-	{ type: 'rule', selector: '^& \\>' },
-	{ type: 'rule', selector: '^&\\.' },
-]);
-
-rules.push([
-	{ type: 'at-rule', name: 'include', hasBlock: true },
 ]);
 
 // Media queries in the right order
@@ -107,6 +76,37 @@ rules.push([
 	{ type: 'at-rule', name: 'media', parameter: '\(--less-desktop-4k\)' },
 	{ type: 'at-rule', name: 'media', parameter: '\(--desktop-4k\)' },
 	{ type: 'at-rule', name: 'media' }, // rest
+]);
+
+// ::before & ::after
+rules.push([
+	{ type: 'rule', selector: '^&[:]{1,2}before,?' },
+	{ type: 'rule', selector: '^&[:]{1,2}after,?' },
+	{ type: 'rule', selector: '^&[:]{1,2}before,\s*&[:]{1,2}after,?' },
+
+	{ type: 'rule', selector: '^&:hover[:]{1,2}before,?' },
+	{ type: 'rule', selector: '^&:focus[:]{1,2}before,?' },
+	{ type: 'rule', selector: '^&:active[:]{1,2}before,?' },
+	{ type: 'rule', selector: '^&:\\w+[:]{1,2}before,?' },
+
+	{ type: 'rule', selector: '^&:hover[:]{1,2}after,?' },
+	{ type: 'rule', selector: '^&:focus[:]{1,2}after,?' },
+	{ type: 'rule', selector: '^&:active[:]{1,2}after,?' },
+	{ type: 'rule', selector: '^&:\\w+[:]{1,2}after,?' },
+]);
+
+// Selectors which increases specificity
+rules.push([
+	{ type: 'rule', selector: '^&\\[' },
+	{ type: 'at-rule', selector: 'at-root' },
+	{ type: 'rule', selector: '#{' },
+	{ type: 'rule', selector: '^& \\+ &' },
+	{ type: 'rule', selector: '^& \\>' },
+	{ type: 'rule', selector: '^&\\.' },
+]);
+
+rules.push([
+	{ type: 'at-rule', name: 'include', hasBlock: true },
 ]);
 
 // BEM
