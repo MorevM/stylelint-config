@@ -1,5 +1,13 @@
 
 
+## [8.0.2](https://github.com/MorevM/stylelint-config/compare/v8.0.1...v8.0.2) (2025-06-07)
+
+
+### Bug fixes
+
+* **css:** Put media queries before `::before/::after` pseudoelements ([a16b77f](https://github.com/MorevM/stylelint-config/commit/a16b77fcca42b4c10053dd7b8bbda23334fd58fe))
+
+
 ## [8.0.1](https://github.com/MorevM/stylelint-config/compare/v8.0.0...v8.0.1) (2025-05-26)
 
 
