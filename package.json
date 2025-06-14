@@ -65,7 +65,7 @@
 	"devDependencies": {
 		"@morev/commitlint-config": "^0.2.2",
 		"@morev/eslint-config": "^38.1.1",
-		"@morev/utils": "^3.12.2",
+		"@morev/utils": "^3.13.1",
 		"@release-it/conventional-changelog": "^8.0.2",
 		"eslint": "9.27.0",
 		"lefthook": "^1.11.13",
