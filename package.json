@@ -67,7 +67,7 @@
 		"@morev/eslint-config": "^38.1.1",
 		"@morev/utils": "^3.12.2",
 		"@release-it/conventional-changelog": "^8.0.2",
-		"eslint": "9.27.0",
+		"eslint": "9.29.0",
 		"lefthook": "^1.11.13",
 		"release-it": "^19.0.2",
 		"stylelint": "^16.19.1",
