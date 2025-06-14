@@ -72,6 +72,6 @@
 		"release-it": "^19.0.2",
 		"stylelint": "^16.19.1",
 		"stylelint-find-new-rules": "^5.0.0",
-		"vitest": "^3.1.4"
+		"vitest": "^3.2.3"
 	}
 }
