@@ -52,7 +52,7 @@
 		"@stylistic/stylelint-plugin": "^3.1.2",
 		"postcss": "^8.5.4",
 		"postcss-scss": "^4.0.9",
-		"stylelint-at-rule-no-children": "^0.4.1",
+		"stylelint-at-rule-no-children": "^0.5.0",
 		"stylelint-declaration-block-no-ignored-properties": "^2.8.0",
 		"stylelint-high-performance-animation": "^1.11.0",
 		"stylelint-no-nested-media": "^0.1.0",
