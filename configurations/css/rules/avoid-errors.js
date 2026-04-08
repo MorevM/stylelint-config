@@ -16,6 +16,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/media-type-no-deprecated/
 		'media-type-no-deprecated': true,
 
+		// Disallow deprecated properties (partially autofixable)
+		// https://stylelint.io/user-guide/rules/property-no-deprecated/
+		'+property-no-deprecated': true,
+
 		// #endregion
 
 		// #region Descending
