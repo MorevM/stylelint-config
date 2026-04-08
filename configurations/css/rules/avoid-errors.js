@@ -140,6 +140,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/font-family-no-missing-generic-family-keyword/
 		'font-family-no-missing-generic-family-keyword': true,
 
+		// Disallow missing scoping root for nesting selectors
+		// https://stylelint.io/user-guide/rules/nesting-selector-no-missing-scoping-root/
+		'nesting-selector-no-missing-scoping-root': true,
+
 		// #endregion
 
 		// #region Non-standard
