@@ -12,6 +12,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/declaration-property-value-keyword-no-deprecated/
 		'+declaration-property-value-keyword-no-deprecated': true,
 
+		// Disallow deprecated media types
+		// https://stylelint.io/user-guide/rules/media-type-no-deprecated/
+		'media-type-no-deprecated': true,
+
 		// #endregion
 
 		// #region Descending
