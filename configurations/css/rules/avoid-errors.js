@@ -112,6 +112,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/no-invalid-position-at-import-rule/
 		'no-invalid-position-at-import-rule': true,
 
+		// Disallow invalid position declarations
+		// https://stylelint.io/user-guide/rules/no-invalid-position-declaration/
+		'no-invalid-position-declaration': true,
+
 		// Disallow (unescaped) newlines in strings
 		// https://stylelint.io/user-guide/rules/list/string-no-newline/
 		'string-no-newline': true,
