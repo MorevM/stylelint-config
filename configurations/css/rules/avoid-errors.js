@@ -150,7 +150,9 @@ export default {
 
 		// Disallow missing scoping root for nesting selectors
 		// https://stylelint.io/user-guide/rules/nesting-selector-no-missing-scoping-root/
-		'nesting-selector-no-missing-scoping-root': true,
+		'nesting-selector-no-missing-scoping-root': [true, {
+			ignoreAtRules: ['if', 'else', 'else if', 'for', 'while', 'mixin', 'function', 'utility'],
+		}],
 
 		// #endregion
 
