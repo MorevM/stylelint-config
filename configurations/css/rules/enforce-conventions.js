@@ -141,6 +141,10 @@ export default {
 
 		// Rule
 
+		// Require rules to be nested in specific at-rules
+		// https://stylelint.io/user-guide/rules/rule-nesting-at-rule-required-list/
+		'rule-nesting-at-rule-required-list': null,
+
 		// Specify a list of disallowed properties for selectors within rules
 		// https://stylelint.io/user-guide/rules/list/rule-selector-property-disallowed-list/
 		'rule-selector-property-disallowed-list': null,
