@@ -466,6 +466,10 @@ export default {
 
 		// #region Redundant
 
+		// Disallow redundant nested style rules within blocks
+		// https://stylelint.io/user-guide/rules/block-no-redundant-nested-style-rules/
+		'block-no-redundant-nested-style-rules': true,
+
 		// Disallow longhand properties that can be combined into one shorthand property (autofixable)
 		// https://stylelint.io/user-guide/rules/list/declaration-block-no-redundant-longhand-properties/
 		'+declaration-block-no-redundant-longhand-properties': [true, {
