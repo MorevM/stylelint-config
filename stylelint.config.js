@@ -4,4 +4,5 @@ export default {
 		{ files: '*.css', extends: ['./build/configurations/css.js'] },
 		{ files: '*.scss', extends: ['./build/configurations/scss.js'] },
 	],
+	rules: {},
 };
