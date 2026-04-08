@@ -10,7 +10,6 @@ export const base = {
 		'declaration-property-value-no-unknown': null,
 		'media-query-no-invalid': null,
 		'no-descending-specificity': null,
-		'no-duplicate-selectors': null,
 		'no-invalid-position-at-import-rule': null,
 	},
 };
