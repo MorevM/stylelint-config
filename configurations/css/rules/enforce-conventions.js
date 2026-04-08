@@ -255,7 +255,7 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/custom-property-empty-line-before/
 		'+custom-property-empty-line-before': ['always', {
 			except: ['after-custom-property', 'first-nested'],
-			ignore: ['after-comment', 'inside-single-line-block'],
+			ignore: ['after-comment', 'inside-single-line-block', 'after-custom-property'],
 		}],
 
 		// Require or disallow an empty line before declarations (autofixable)
