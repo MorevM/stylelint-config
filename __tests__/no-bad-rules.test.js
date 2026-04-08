@@ -9,7 +9,7 @@ describe('Check unused and deprecated props', () => {
 	let stylelintResult = null;
 
 	beforeAll(async () => {
-		cp.execSync('yarn build'); // Actual, newest stylelint config of this repo extends bundled version
+		cp.execSync('pnpm build'); // Actual stylelint config of this repo extends bundled version
 		stylelintResult = await stylelintRules('./build/configurations/scss.js');
 	});
 
