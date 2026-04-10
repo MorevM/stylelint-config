@@ -281,6 +281,10 @@ export default {
 		// 'property-no-unknown': null,
 		'scss/property-no-unknown': true,
 
+		// Specify a pattern for class selectors
+		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/selector-nest-combinators/README.md
+		'scss/selector-class-pattern': null,
+
 		// Require or disallow nesting of combinators in selectors
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/selector-nest-combinators/README.md
 		'scss/selector-nest-combinators': null,
