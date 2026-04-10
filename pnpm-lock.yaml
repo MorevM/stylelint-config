@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(stylelint@17.6.0(typescript@6.0.2))
       stylelint-high-performance-animation:
-        specifier: ^1.11.0
-        version: 1.11.0(stylelint@17.6.0(typescript@6.0.2))
+        specifier: ^2.0.0
+        version: 2.0.0(stylelint@17.6.0(typescript@6.0.2))
       stylelint-no-nested-media:
         specifier: ^0.1.0
         version: 0.1.0
@@ -4041,10 +4041,10 @@ packages:
     peerDependencies:
       stylelint: ^17
 
-  stylelint-high-performance-animation@1.11.0:
-    resolution: {integrity: sha512-bo+VfSH5RmjVmu61BZeN4cBK+PGHpG5jfvaUsw0db+1sAqKuEGjzmxEbf271/Jq3HJHj8wyi/rCg1IcxxnIiiQ==}
+  stylelint-high-performance-animation@2.0.0:
+    resolution: {integrity: sha512-wzxxfxJFyL7UKc91427EHmi6gNRXB0cBdsyCfIuXZFRb6Xv1qw8elNbF61e/tJRoRcavAGsZICivVsHCD3Mhug==}
     peerDependencies:
-      stylelint: ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+      stylelint: ^17.0.0
 
   stylelint-no-nested-media@0.1.0:
     resolution: {integrity: sha512-KXOmKOlVo5oHqoquJQqXJJui0Ky8lM775SohISaPAMKXcX+2LqxpIKDuQ+Zb/hBWA5PZWe9g8tdxo85rqoOfzA==}
@@ -8880,7 +8880,7 @@ snapshots:
       stylelint: 17.6.0(typescript@6.0.2)
       yargs: 18.0.0
 
-  stylelint-high-performance-animation@1.11.0(stylelint@17.6.0(typescript@6.0.2)):
+  stylelint-high-performance-animation@2.0.0(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
       postcss-value-parser: 4.2.0
       stylelint: 17.6.0(typescript@6.0.2)
