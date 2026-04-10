@@ -33,8 +33,8 @@ importers:
         specifier: ^8.1.1
         version: 8.1.1(stylelint@17.6.0(typescript@6.0.2))
       stylelint-scss:
-        specifier: ^6.12.0
-        version: 6.12.0(stylelint@17.6.0(typescript@6.0.2))
+        specifier: ^7.0.0
+        version: 7.0.0(stylelint@17.6.0(typescript@6.0.2))
       stylelint-selector-no-empty:
         specifier: ^1.0.9
         version: 1.0.9(stylelint@17.6.0(typescript@6.0.2))
@@ -2955,8 +2955,8 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
-  known-css-properties@0.36.0:
-    resolution: {integrity: sha512-A+9jP+IUmuQsNdsLdcg6Yt7voiMF/D4K83ew0OpJtpu+l34ef7LaohWV0Rc6KNvzw6ZDizkqfyB5JznZnzuKQA==}
+  known-css-properties@0.37.0:
+    resolution: {integrity: sha512-JCDrsP4Z1Sb9JwG0aJ8Eo2r7k4Ou5MwmThS/6lcIe1ICyb7UBJKGRIUUdqc2ASdE/42lgz6zFUnzAIhtXnBVrQ==}
 
   language-subtag-registry@0.3.22:
     resolution: {integrity: sha512-tN0MCzyWnoz/4nHS6uxdlFWoUZT7ABptwKPQ52Ea7URk6vll88bWBVhodtnlfEuCcKWNGoc+uGbw1cwa9IKh/w==}
@@ -3181,9 +3181,6 @@ packages:
 
   mdn-data@2.12.2:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
-
-  mdn-data@2.21.0:
-    resolution: {integrity: sha512-+ZKPQezM5vYJIkCxaC+4DTnRrVZR1CgsKLu5zsQERQx6Tea8Y+wMx5A24rq8A8NepCeatIQufVAekKNgiBMsGQ==}
 
   mdn-data@2.23.0:
     resolution: {integrity: sha512-786vq1+4079JSeu2XdcDjrhi/Ry7BWtjDl9WtGPWLiIHb2T66GvIVflZTBoSNZ5JqTtJGYEVMuFA/lbQlMOyDQ==}
@@ -4055,11 +4052,11 @@ packages:
     peerDependencies:
       stylelint: ^16.18.0 || ^17.0.0
 
-  stylelint-scss@6.12.0:
-    resolution: {integrity: sha512-U7CKhi1YNkM1pXUXl/GMUXi8xKdhl4Ayxdyceie1nZ1XNIdaUgMV6OArpooWcDzEggwgYD0HP/xIgVJo9a655w==}
-    engines: {node: '>=18.12.0'}
+  stylelint-scss@7.0.0:
+    resolution: {integrity: sha512-H88kCC+6Vtzj76NsC8rv6x/LW8slBzIbyeSjsKVlS+4qaEJoDrcJR4L+8JdrR2ORdTscrBzYWiiT2jq6leYR1Q==}
+    engines: {node: '>=20.19.0'}
     peerDependencies:
-      stylelint: ^16.0.2
+      stylelint: ^16.8.2 || ^17.0.0
 
   stylelint-selector-no-empty@1.0.9:
     resolution: {integrity: sha512-MmtOZNOj0dr/PFBxiSBZHtKq+rCTtdkU54E+AkzfHH0wegKKSihMax89PymBXGFboREHu8WaJL9xhh2ttPgkEQ==}
@@ -7580,7 +7577,7 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  known-css-properties@0.36.0: {}
+  known-css-properties@0.37.0: {}
 
   language-subtag-registry@0.3.22: {}
 
@@ -7845,8 +7842,6 @@ snapshots:
       '@types/mdast': 4.0.4
 
   mdn-data@2.12.2: {}
-
-  mdn-data@2.21.0: {}
 
   mdn-data@2.23.0: {}
 
@@ -8893,15 +8888,15 @@ snapshots:
       postcss-sorting: 10.0.0(postcss@8.5.9)
       stylelint: 17.6.0(typescript@6.0.2)
 
-  stylelint-scss@6.12.0(stylelint@17.6.0(typescript@6.0.2)):
+  stylelint-scss@7.0.0(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
-      css-tree: 3.1.0
+      css-tree: 3.2.1
       is-plain-object: 5.0.0
-      known-css-properties: 0.36.0
-      mdn-data: 2.21.0
+      known-css-properties: 0.37.0
+      mdn-data: 2.27.1
       postcss-media-query-parser: 0.2.3
       postcss-resolve-nested-selector: 0.1.6
-      postcss-selector-parser: 7.1.0
+      postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
       stylelint: 17.6.0(typescript@6.0.2)
 
