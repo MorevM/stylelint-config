@@ -46,10 +46,10 @@
 		"release": "release-it --disable-metrics"
 	},
 	"peerDependencies": {
-		"stylelint": "^16.18.0"
+		"stylelint": "^17.0.0"
 	},
 	"dependencies": {
-		"@stylistic/stylelint-plugin": "^3.1.2",
+		"@stylistic/stylelint-plugin": "^5.1.0",
 		"postcss": "^8.5.9",
 		"postcss-scss": "^4.0.9",
 		"stylelint-at-rule-no-children": "^0.4.1",
