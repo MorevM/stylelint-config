@@ -370,6 +370,10 @@ export default {
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-eol-whitespace/README.md
 		'+@stylistic/no-eol-whitespace': true,
 
+		// Disallow multiple whitespaces between property values and function arguments (autofixable)
+		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-multiple-whitespaces/README.md
+		'+@stylistic/no-multiple-whitespaces': true,
+
 		// Disallow extra semicolons (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-extra-semicolons/README.md
 		'+@stylistic/no-extra-semicolons': true,
