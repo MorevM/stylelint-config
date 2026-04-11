@@ -1,7 +1,7 @@
-/* eslint-disable unicorn/prefer-single-call -- Needed for readability */
+/* eslint-disable unicorn/prefer-single-call, unicorn/no-immediate-mutation -- Needed for readability */
 const rules = [];
 
-// Functions related to block (e.g. some helper functions) should be on top
+// Functions related to block (e.g. some utility functions) should be on top
 rules.push([
 	{ type: 'at-rule', name: 'function' },
 ]);
@@ -27,23 +27,33 @@ rules.push([
 	'declarations',
 ]);
 
-// Pseudo-classes
+// Contextual states
 rules.push([
-	{ type: 'rule', selector: '&:link,?' },
-	{ type: 'rule', selector: '&:visited,?' },
-	{ type: 'rule', selector: '&:hover,?' },
-	{ type: 'rule', selector: '&:focus-within,?' },
-	{ type: 'rule', selector: '&:focus,?' },
-	{ type: 'rule', selector: '&:focus-visible,?' },
-	{ type: 'rule', selector: '&:active,?' },
-	{ type: 'rule', selector: '^&:\\w,?' },
+	{ type: 'rule', selector: '&:empty,?' },
+
+	{ type: 'rule', selector: '&:only-child,?' },
+	{ type: 'rule', selector: '&:only-of-type,?' },
+
+	{ type: 'rule', selector: '&:first-child,?' },
+	{ type: 'rule', selector: '&:last-child,?' },
+
+	{ type: 'rule', selector: '&:first-of-type,?' },
+	{ type: 'rule', selector: '&:last-of-type,?' },
+
+	{ type: 'rule', selector: '&:nth-child,?' },
+	{ type: 'rule', selector: '&:nth-last-child,?' },
+
+	{ type: 'rule', selector: '&:nth-of-type,?' },
+	{ type: 'rule', selector: '&:nth-last-of-type,?' },
 ]);
 
-// Pseudo-elements except ::before and ::after like ::placeholder
-// Prefixed non-standard pseudo-elements like ::-ms-clear or :-webkit-autofill
 rules.push([
-	{ type: 'rule', selector: '^&::(?!before\\b|after\\b)\\w+' },
-	{ type: 'rule', selector: '^&[:]{1,2}-\\w+' },
+	{ type: 'at-rule', name: 'include', hasBlock: true },
+]);
+
+// Container queries
+rules.push([
+	{ type: 'at-rule', name: 'starting-style' },
 ]);
 
 // Media queries in the right order
@@ -78,8 +88,40 @@ rules.push([
 	{ type: 'at-rule', name: 'media' }, // rest
 ]);
 
-// ::before & ::after
+// Container queries
 rules.push([
+	{ type: 'at-rule', name: 'container' },
+]);
+
+// Pseudo-classes
+rules.push([
+	{ type: 'rule', selector: '&:link,?' },
+	{ type: 'rule', selector: '&:visited,?' },
+	{ type: 'rule', selector: '&:hover,?' },
+	{ type: 'rule', selector: '&:focus-within,?' },
+	{ type: 'rule', selector: '&:focus,?' },
+	{ type: 'rule', selector: '&:focus-visible,?' },
+	{ type: 'rule', selector: '&:active,?' },
+	{ type: 'rule', selector: '^&:\\w,?' },
+]);
+
+rules.push(
+	{ type: 'rule', selector: '^&\\.' },
+	{ type: 'rule', selector: '^&\\[' },
+	{ type: 'rule', selector: '&:(?:is|has|not)' },
+	{ type: 'rule', selector: '^&--' },
+);
+
+// Pseudo-elements except ::marker, ::before and ::after like ::placeholder
+// Prefixed non-standard pseudo-elements like ::-ms-clear or :-webkit-autofill
+rules.push([
+	{ type: 'rule', selector: '^&::(?!marker\\b|before\\b|after\\b)\\w+' },
+	{ type: 'rule', selector: '^&[:]{1,2}-\\w+' },
+]);
+
+// ::marker, ::before, ::after
+rules.push([
+	{ type: 'rule', selector: '^&[:]{1,2}marker,?' },
 	{ type: 'rule', selector: '^&[:]{1,2}before,?' },
 	{ type: 'rule', selector: '^&[:]{1,2}after,?' },
 	{ type: 'rule', selector: '^&[:]{1,2}before,\s*&[:]{1,2}after,?' },
@@ -95,30 +137,24 @@ rules.push([
 	{ type: 'rule', selector: '^&:\\w+[:]{1,2}after,?' },
 ]);
 
-// Selectors which increases specificity
+// BEM Elements
 rules.push([
-	{ type: 'rule', selector: '^&\\[' },
-	{ type: 'at-rule', selector: 'at-root' },
-	{ type: 'rule', selector: '#{' },
-	{ type: 'rule', selector: '^& \\+ &' },
-	{ type: 'rule', selector: '^& \\>' },
-	{ type: 'rule', selector: '^&\\.' },
-]);
-
-rules.push([
-	{ type: 'at-rule', name: 'include', hasBlock: true },
-]);
-
-// BEM
-rules.push([
-	{ type: 'rule', selector: '^&--' },
 	{ type: 'rule', selector: '^& &__\\w+' },
 	{ type: 'rule', selector: '^&__\\w+' },
 ]);
 
-// Nesting
+// Nesting & side-effects
 rules.push([
+	{ type: 'rule', selector: '#{' },
 	'rules',
+	{ type: 'at-rule', selector: 'at-root' },
+]);
+
+// Selectors which (potentially) increases specificity
+rules.push([
+	{ type: 'rule', selector: '^& \\+ &' },
+	{ type: 'rule', selector: '^& >' },
+	{ type: 'rule', selector: '^& ~' },
 ]);
 
 export default rules.flat();
