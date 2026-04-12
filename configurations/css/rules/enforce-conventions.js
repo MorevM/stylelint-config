@@ -357,6 +357,10 @@ export default {
 		// Note: more consistent view using repeating colors
 		'+color-hex-length': 'long',
 
+		// Specify short or full notation for the display property (autofixable)
+		// https://stylelint.io/user-guide/rules/display-notation/
+		'+display-notation': 'full',
+
 		// Require numeric or named (where possible) font-weight values (autofixable).
 		// Also, when named values are expected, require only valid names
 		// https://stylelint.io/user-guide/rules/list/font-weight-notation/
