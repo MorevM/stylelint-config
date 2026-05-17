@@ -412,6 +412,10 @@ export default {
 			except: [],
 		}],
 
+		// Specify explicit or implicit nesting notation for relative selectors (autofixable)
+		// https://stylelint.io/user-guide/rules/relative-selector-nesting-notation/
+		'+relative-selector-nesting-notation': 'implicit',
+
 		// Specify simple or complex notation for `:not()` pseudo-classes (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-not-notation/
 		'+selector-not-notation': 'complex',
