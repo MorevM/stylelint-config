@@ -35,9 +35,6 @@ importers:
       stylelint-scss:
         specifier: ^7.1.1
         version: 7.1.1(stylelint@17.11.1(typescript@6.0.3))
-      stylelint-selector-no-empty:
-        specifier: ^1.0.9
-        version: 1.0.9(stylelint@17.11.1(typescript@6.0.3))
       stylelint-selector-tag-no-without-class:
         specifier: ^4.1.0
         version: 4.1.0(stylelint@17.11.1(typescript@6.0.3))
@@ -4045,11 +4042,6 @@ packages:
     engines: {node: '>=20.19.0'}
     peerDependencies:
       stylelint: ^16.8.2 || ^17.0.0
-
-  stylelint-selector-no-empty@1.0.9:
-    resolution: {integrity: sha512-MmtOZNOj0dr/PFBxiSBZHtKq+rCTtdkU54E+AkzfHH0wegKKSihMax89PymBXGFboREHu8WaJL9xhh2ttPgkEQ==}
-    peerDependencies:
-      stylelint: ^14.9.1
 
   stylelint-selector-tag-no-without-class@4.1.0:
     resolution: {integrity: sha512-RtIcsU+gags/8JqFkNKbYWB0f/xhUKmXhakkFPuGjHDB1SDACa9v4YoU90SiVIhH6vK37W38mYZwA8RM2EtiTw==}
@@ -8860,10 +8852,6 @@ snapshots:
       postcss-resolve-nested-selector: 0.1.6
       postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
-      stylelint: 17.11.1(typescript@6.0.3)
-
-  stylelint-selector-no-empty@1.0.9(stylelint@17.11.1(typescript@6.0.3)):
-    dependencies:
       stylelint: 17.11.1(typescript@6.0.3)
 
   stylelint-selector-tag-no-without-class@4.1.0(stylelint@17.11.1(typescript@6.0.3)):
