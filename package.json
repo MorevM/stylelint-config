@@ -70,7 +70,7 @@
 		"eslint": "9.39.4",
 		"lefthook": "^2.1.6",
 		"release-it": "^20.0.1",
-		"stylelint": "^17.6.0",
+		"stylelint": "^17.11.1",
 		"stylelint-find-new-rules": "^6.0.0",
 		"typescript": "^6.0.3",
 		"vitest": "^4.1.6"
