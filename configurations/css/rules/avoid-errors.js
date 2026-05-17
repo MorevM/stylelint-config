@@ -20,6 +20,12 @@ export default {
 		// https://stylelint.io/user-guide/rules/property-no-deprecated/
 		'+property-no-deprecated': true,
 
+		// Disallow deprecated selectors (partially autofixable)
+		// https://stylelint.io/user-guide/rules/selector-no-deprecated/
+		'+selector-no-deprecated': [true, {
+			ignoreSelectors: [],
+		}],
+
 		// #endregion
 
 		// #region Descending
