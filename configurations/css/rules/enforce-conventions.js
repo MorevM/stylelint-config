@@ -275,6 +275,28 @@ export default {
 
 		// #endregion
 
+		// #region Layout mappings
+
+		// Specify flow-relative or physical layout mappings for properties (autofixable)
+		// https://stylelint.io/user-guide/rules/property-layout-mappings/
+		'+property-layout-mappings': ['flow-relative', {
+			ignoreProperties: [],
+		}],
+
+		// Specify flow-relative or physical layout mappings for units (autofixable)
+		// https://stylelint.io/user-guide/rules/unit-layout-mappings/
+		'+unit-layout-mappings': ['flow-relative', {
+			ignoreUnits: [],
+		}],
+
+		// Specify flow-relative or physical layout mappings for value keywords (autofixable)
+		// https://stylelint.io/user-guide/rules/value-keyword-layout-mappings/
+		'+value-keyword-layout-mappings': ['flow-relative', {
+			ignoreProperties: [],
+		}],
+
+		// #endregion
+
 		// #region Max & min
 
 		// Limit the number of declarations within a single-line declaration block
@@ -419,6 +441,7 @@ export default {
 
 		// Specify a pattern for custom properties
 		// https://stylelint.io/user-guide/rules/list/custom-property-pattern/
+		// TODO: BEM '--layout__gutter'
 		'custom-property-pattern': [KEBAB_CASE_ALLOW_DOUBLE, {
 			message: 'Expected custom property name to be kebab-case',
 		}],
