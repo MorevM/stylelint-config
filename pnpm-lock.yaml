@@ -39,8 +39,8 @@ importers:
         specifier: ^1.0.9
         version: 1.0.9(stylelint@17.11.1(typescript@6.0.3))
       stylelint-selector-tag-no-without-class:
-        specifier: ^3.0.1
-        version: 3.0.1(stylelint@17.11.1(typescript@6.0.3))
+        specifier: ^4.1.0
+        version: 4.1.0(stylelint@17.11.1(typescript@6.0.3))
       stylelint-use-nesting:
         specifier: ^6.0.2
         version: 6.0.2(stylelint@17.11.1(typescript@6.0.3))
@@ -3092,6 +3092,9 @@ packages:
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
+  lodash@4.18.1:
+    resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
+
   log-symbols@7.0.1:
     resolution: {integrity: sha512-ja1E3yCr9i/0hmBVaM0bfwDjnGy8I/s6PP4DFp+yP+a+mrHO4Rm7DtmnqROTUkHIkqffC84YY7AeqX6oFk0WFg==}
     engines: {node: '>=18'}
@@ -3612,10 +3615,6 @@ packages:
     peerDependencies:
       postcss: ^8.4.29
 
-  postcss-selector-parser@6.1.2:
-    resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
-    engines: {node: '>=4'}
-
   postcss-selector-parser@7.1.0:
     resolution: {integrity: sha512-8sLjZwK0R+JlxlYcTuVnyT2v+htpdrjDOKuMcOVdYjt52Lh8hWRYpxBPoKx/Zg+bcjc3wx6fmQevMmUztS/ccA==}
     engines: {node: '>=4'}
@@ -4052,11 +4051,11 @@ packages:
     peerDependencies:
       stylelint: ^14.9.1
 
-  stylelint-selector-tag-no-without-class@3.0.1:
-    resolution: {integrity: sha512-xukZ8Wb9PeZ+r/2cxLveKJuDRIWsRVOlLDnAeK3rGaC3N+BSUafDwXZiUtCtc3BxT2K2YmYSQOZc6ZQ621IdaA==}
-    engines: {node: '>=18.12.0'}
+  stylelint-selector-tag-no-without-class@4.1.0:
+    resolution: {integrity: sha512-RtIcsU+gags/8JqFkNKbYWB0f/xhUKmXhakkFPuGjHDB1SDACa9v4YoU90SiVIhH6vK37W38mYZwA8RM2EtiTw==}
+    engines: {node: '>=22'}
     peerDependencies:
-      stylelint: '>= 9.x < 17'
+      stylelint: '>=17'
 
   stylelint-use-nesting@6.0.2:
     resolution: {integrity: sha512-1YeOfI7pMucTO0GKAiBOz12EaNN5qzbbboAli/jDC47nTfNsOVd9c4WmTshQnnaMDRF8ZZ0ovGzBjw0WUE4tvg==}
@@ -4636,7 +4635,7 @@ snapshots:
       '@types/node': 20.5.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@6.0.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@6.0.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@6.0.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -6203,7 +6202,7 @@ snapshots:
     dependencies:
       browserslist: 4.28.2
 
-  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@6.0.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@6.0.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@6.0.3))(typescript@5.9.3):
     dependencies:
       '@types/node': 20.5.1
       cosmiconfig: 8.3.6(typescript@5.9.3)
@@ -7126,7 +7125,7 @@ snapshots:
   git-raw-commits@2.0.11:
     dependencies:
       dargs: 7.0.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       meow: 8.1.2
       split2: 3.2.2
       through2: 4.0.2
@@ -7651,6 +7650,8 @@ snapshots:
   lodash.upperfirst@4.3.1: {}
 
   lodash@4.17.21: {}
+
+  lodash@4.18.1: {}
 
   log-symbols@7.0.1:
     dependencies:
@@ -8366,11 +8367,6 @@ snapshots:
     dependencies:
       postcss: 8.5.14
 
-  postcss-selector-parser@6.1.2:
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-
   postcss-selector-parser@7.1.0:
     dependencies:
       cssesc: 3.0.0
@@ -8870,10 +8866,10 @@ snapshots:
     dependencies:
       stylelint: 17.11.1(typescript@6.0.3)
 
-  stylelint-selector-tag-no-without-class@3.0.1(stylelint@17.11.1(typescript@6.0.3)):
+  stylelint-selector-tag-no-without-class@4.1.0(stylelint@17.11.1(typescript@6.0.3)):
     dependencies:
-      lodash: 4.17.21
-      postcss-selector-parser: 6.1.2
+      lodash: 4.18.1
+      postcss-selector-parser: 7.1.1
       stylelint: 17.11.1(typescript@6.0.3)
 
   stylelint-use-nesting@6.0.2(stylelint@17.11.1(typescript@6.0.3)):
