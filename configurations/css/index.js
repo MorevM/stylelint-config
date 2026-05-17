@@ -1,4 +1,4 @@
 import { processExports } from '../../utils/helpers.js';
-import { parts } from './_settings.js';
+import { base, parts } from './_settings.js';
 
-export default processExports({ parts });
+export default processExports({ base,	parts });
