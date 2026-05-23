@@ -49,8 +49,8 @@
 		"stylelint": "^17.0.0"
 	},
 	"dependencies": {
-		"@stylistic/stylelint-plugin": "^5.1.0",
-		"postcss": "^8.5.14",
+		"@stylistic/stylelint-plugin": "^5.2.0",
+		"postcss": "^8.5.15",
 		"postcss-scss": "^4.0.9",
 		"stylelint-at-rule-no-children": "^0.4.1",
 		"stylelint-declaration-block-no-ignored-properties": "^3.0.0",
@@ -67,11 +67,11 @@
 		"@morev/utils": "^3.15.0",
 		"@release-it/conventional-changelog": "^8.0.2",
 		"eslint": "9.39.4",
-		"lefthook": "^2.1.6",
+		"lefthook": "^2.1.8",
 		"release-it": "^20.0.1",
-		"stylelint": "^17.11.1",
+		"stylelint": "^17.12.0",
 		"stylelint-find-new-rules": "^6.0.0",
 		"typescript": "^6.0.3",
-		"vitest": "^4.1.6"
+		"vitest": "^4.1.7"
 	}
 }
