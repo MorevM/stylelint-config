@@ -10,7 +10,7 @@ export default {
 
 		// Disallow redundant `@at-root` rule (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-root-no-redundant
-		'+scss/at-root-no-redundant': true,
+		'scss/at-root-no-redundant': [true, { severity: WARNING }],
 
 		// This is a rule that checks for situations where users have:
 		// * Done a loop using map-keys
@@ -20,19 +20,19 @@ export default {
 
 		// Require or disallow a newline after the closing brace of `@else` statements (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-else-closing-brace-newline-after/README.md
-		'+scss/at-else-closing-brace-newline-after': 'always-last-in-chain',
+		'scss/at-else-closing-brace-newline-after': ['always-last-in-chain', { severity: WARNING }],
 
 		// Require a single space or disallow whitespace after the closing brace of `@else` statements (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-else-closing-brace-space-after/README.md
-		'+scss/at-else-closing-brace-space-after': 'always-intermediate',
+		'scss/at-else-closing-brace-space-after': ['always-intermediate', { severity: WARNING }],
 
 		// Require an empty line or disallow empty lines before `@`-else (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-else-empty-line-before/README.md
-		'+scss/at-else-empty-line-before': 'never',
+		'scss/at-else-empty-line-before': ['never', { severity: WARNING }],
 
 		// Require or disallow a space before `@else if` parentheses (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-else-if-parentheses-space-before/README.md
-		'+scss/at-else-if-parentheses-space-before': 'always',
+		'scss/at-else-if-parentheses-space-before': ['always', { severity: WARNING }],
 
 		// Disallow at-extends (`@extend`) with missing placeholders
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-extend-no-missing-placeholder/README.md
@@ -45,7 +45,7 @@ export default {
 
 		// Require or disallow a space before `@function` parentheses (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-function-parentheses-space-before/README.md
-		'+scss/at-function-parentheses-space-before': 'never',
+		'scss/at-function-parentheses-space-before': ['never', { severity: WARNING }],
 
 		// Specify a pattern for Sass/SCSS-like function names
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-function-pattern/README.md
@@ -53,11 +53,11 @@ export default {
 
 		// Require or disallow a newline after the closing brace of `@if` statements (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-if-closing-brace-newline-after/README.md
-		'+scss/at-if-closing-brace-newline-after': 'always-last-in-chain',
+		'scss/at-if-closing-brace-newline-after': ['always-last-in-chain', { severity: WARNING }],
 
 		// Require a single space or disallow whitespace after the closing brace of `@if` statements (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-if-closing-brace-space-after/README.md
-		'+scss/at-if-closing-brace-space-after': 'always-intermediate',
+		'scss/at-if-closing-brace-space-after': ['always-intermediate', { severity: WARNING }],
 
 		// Check for equality to null is unnecessarily explicit since null is `falsy` in Sass
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-if-no-null/README.md
@@ -74,7 +74,7 @@ export default {
 
 		// Require or disallow parentheses in argumentless `@mixin` calls (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-mixin-argumentless-call-parentheses/README.md
-		'+scss/at-mixin-argumentless-call-parentheses': 'never',
+		'scss/at-mixin-argumentless-call-parentheses': ['never', { severity: WARNING }],
 
 		// Require named parameters in at-mixin call rule
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-mixin-named-arguments/README.md
@@ -87,7 +87,7 @@ export default {
 
 		// Require or disallow a space before `@mixin` parentheses (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-mixin-parentheses-space-before/README.md
-		'+scss/at-mixin-parentheses-space-before': 'never',
+		'scss/at-mixin-parentheses-space-before': ['never', { severity: WARNING }],
 
 		// Specify a pattern for Sass/SCSS-like mixin names
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-mixin-pattern/README.md
@@ -95,7 +95,7 @@ export default {
 
 		// Disallow parentheses in conditional `@` rules (`if`, `elsif`, `while`) (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-rule-conditional-no-parentheses/README.md
-		'+scss/at-rule-conditional-no-parentheses': null, // Even want to reverse it such `false` :)
+		'scss/at-rule-conditional-no-parentheses': [null, { severity: WARNING }], // Even want to reverse it such `false` :)
 
 		// Disallow unknown at-rules
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-rule-no-unknown/README.md
@@ -110,20 +110,20 @@ export default {
 
 		// Disallow redundant namespace aliases (i.e. @use "foo" as foo) (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-use-no-redundant-alias/README.md
-		'+scss/at-use-no-redundant-alias': true,
+		'scss/at-use-no-redundant-alias': [true, { severity: WARNING }],
 
 		// Require a newline after the colon in `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-colon-newline-after/README.md
 		// Note: it depends
-		'+scss/dollar-variable-colon-newline-after': null,
+		'scss/dollar-variable-colon-newline-after': [null, { severity: WARNING }],
 
 		// Require or disallow whitespace after the colon in `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-colon-space-after/README.md
-		'+scss/dollar-variable-colon-space-after': 'at-least-one-space',
+		'scss/dollar-variable-colon-space-after': ['at-least-one-space', { severity: WARNING }],
 
 		// Require a single space or disallow whitespace before the colon in `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-colon-space-before/README.md
-		'+scss/dollar-variable-colon-space-before': 'never',
+		'scss/dollar-variable-colon-space-before': ['never', { severity: WARNING }],
 
 		// Require `!default` flag for `$`-variable declarations
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-default/README.md
@@ -133,16 +133,18 @@ export default {
 		// Require an empty line or disallow empty lines after `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-empty-line-after/README.md
 		'declaration-empty-line-before': null, // Conflicting
-		'+scss/dollar-variable-empty-line-after': ['always', {
+		'scss/dollar-variable-empty-line-after': ['always', {
 			except: ['last-nested', 'before-comment', 'before-dollar-variable'],
 			ignore: ['before-comment', 'inside-single-line-block'],
+			severity: WARNING,
 		}],
 
 		// Require an empty line or disallow empty lines before `$`-variable declarations (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/dollar-variable-empty-line-before/README.md
-		'+scss/dollar-variable-empty-line-before': ['always', {
+		'scss/dollar-variable-empty-line-before': ['always', {
 			except: ['first-nested', 'after-comment', 'after-dollar-variable'],
 			ignore: ['after-comment', 'inside-single-line-block'],
+			severity: WARNING,
 		}],
 
 		// Require `$`-variable declarations to be placed first in a block (root or a rule
@@ -179,7 +181,7 @@ export default {
 
 		// Require or disallow whitespace after the `//` in `//`-comments (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/double-slash-comment-whitespace-inside/README.md
-		'+scss/double-slash-comment-whitespace-inside': 'always',
+		'scss/double-slash-comment-whitespace-inside': ['always', { severity: WARNING }],
 
 		// Disallow nesting a single block if it could be merged with its parent block
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/block-no-redundant-nesting/README.md
@@ -244,11 +246,11 @@ export default {
 
 		// Disallow quoted strings inside the quote function (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-quote-no-quoted-strings-inside/README.md
-		'+scss/function-quote-no-quoted-strings-inside': true,
+		'scss/function-quote-no-quoted-strings-inside': [true, { severity: WARNING }],
 
 		// Disallow unquoted strings inside the unquote function (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-unquote-no-unquoted-strings-inside/README.md
-		'+scss/function-unquote-no-unquoted-strings-inside': true,
+		'scss/function-unquote-no-unquoted-strings-inside': [true, { severity: WARNING }],
 
 		// Require quoted keys in Sass maps
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/map-keys-quotes/README.md
@@ -304,7 +306,7 @@ export default {
 
 		// Require or disallow extension in `@import`, `@use`, `@forward`, and `meta.load-css` commands (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/load-partial-extension/README.md
-		'+scss/load-partial-extension': 'never',
+		'scss/load-partial-extension': ['never', { severity: WARNING }],
 
 		// Disallow dollar variables within a stylesheet
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/no-dollar-variables/README.md

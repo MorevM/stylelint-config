@@ -1,5 +1,3 @@
-import { WARNING } from './constants.js';
-
 type PlainObject = Record<string, unknown>;
 type RuleValue = unknown;
 
@@ -48,22 +46,6 @@ const addRuleOption = (value: RuleValue, option: PlainObject) => {
 	return [primaryValue, { ...secondaryOptions, ...option }];
 };
 
-const autofixableRulesToWarn = (rules: Record<string, RuleValue>, autofixableList: string[]) => Object.fromEntries(
-	Object.entries(rules)
-		.map(([rule, value]) => {
-			if (!autofixableList.includes(rule)) return [rule, value];
-			return [rule, addRuleOption(value, { severity: WARNING })];
-		}),
-);
-
-const getProcessedRules = ({ base, rules }: { base: ConfigPart; rules: Record<string, RuleValue> }) => {
-	const autofixableRules = Object.entries(base.rules ?? {})
-		.filter(([key]) => key.startsWith('+'))
-		.map(([key]) => key.slice(1));
-
-	return autofixableRulesToWarn(rules, autofixableRules);
-};
-
 export const mergeObjectsConsideringArrays = mergeObjects;
 
 export const processExports = ({ base, parts }: { base: ConfigPart; parts: ConfigPart[] }) => {
@@ -78,11 +60,9 @@ export const processExports = ({ base, parts }: { base: ConfigPart; parts: Confi
 					ruleValue = addRuleOption(ruleValue, { disableFix: true });
 				}
 
-				return [...acc, [rule.replace(/^[!+]/, ''), ruleValue]];
+				return [...acc, [rule.replace(/^!/, ''), ruleValue]];
 			}, []),
 	);
 
-	const processedRules = getProcessedRules({ base: mergedParts, rules });
-
-	return mergeObjects(omit(mergedParts, 'rules'), { rules: processedRules });
+	return mergeObjects(omit(mergedParts, 'rules'), { rules });
 };

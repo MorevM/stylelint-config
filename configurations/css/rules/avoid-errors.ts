@@ -6,11 +6,11 @@ export default {
 
 		// Disallow deprecated at-rules
 		// https://stylelint.io/user-guide/rules/at-rule-no-deprecated/
-		'+at-rule-no-deprecated': true,
+		'at-rule-no-deprecated': [true, { severity: WARNING }],
 
 		// Disallow deprecated keywords for properties within declarations
 		// https://stylelint.io/user-guide/rules/declaration-property-value-keyword-no-deprecated/
-		'+declaration-property-value-keyword-no-deprecated': true,
+		'declaration-property-value-keyword-no-deprecated': [true, { severity: WARNING }],
 
 		// Disallow deprecated media types
 		// https://stylelint.io/user-guide/rules/media-type-no-deprecated/
@@ -18,12 +18,13 @@ export default {
 
 		// Disallow deprecated properties (partially autofixable)
 		// https://stylelint.io/user-guide/rules/property-no-deprecated/
-		'+property-no-deprecated': true,
+		'property-no-deprecated': [true, { severity: WARNING }],
 
 		// Disallow deprecated selectors (partially autofixable)
 		// https://stylelint.io/user-guide/rules/selector-no-deprecated/
-		'+selector-no-deprecated': [true, {
+		'selector-no-deprecated': [true, {
 			ignoreSelectors: [],
+			severity: WARNING,
 		}],
 
 		// #endregion
@@ -100,7 +101,7 @@ export default {
 
 		// Disallow an unspaced operator within calc functions (autofixable)
 		// https://stylelint.io/user-guide/rules/list/function-calc-no-unspaced-operator/
-		'+function-calc-no-unspaced-operator': [true, { severity: WARNING }],
+		'function-calc-no-unspaced-operator': [true, { severity: WARNING }],
 
 		// Disallow `!important` within keyframe declarations
 		// https://stylelint.io/user-guide/rules/list/keyframe-declaration-no-important/

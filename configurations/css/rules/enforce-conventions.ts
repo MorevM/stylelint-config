@@ -16,7 +16,7 @@ export default {
 
 		// Disallow vendor prefixes for at-rules (autofixable)
 		// https://stylelint.io/user-guide/rules/list/at-rule-no-vendor-prefix/
-		'+at-rule-no-vendor-prefix': true,
+		'at-rule-no-vendor-prefix': [true, { severity: WARNING }],
 
 		// Specify a list of required properties for an at-rule
 		// https://stylelint.io/user-guide/rules/list/at-rule-property-required-list/
@@ -97,7 +97,7 @@ export default {
 
 		// Disallow units for zero lengths (autofixable)
 		// https://stylelint.io/user-guide/rules/list/length-zero-no-unit/
-		'+length-zero-no-unit': [true, {
+		'length-zero-no-unit': [true, {
 			severity: WARNING,
 			ignore: ['custom-properties'],
 			ignorePreludeOfAtRules: ['function', 'mixin'],
@@ -115,7 +115,7 @@ export default {
 
 		// Disallow vendor prefixes for media feature names (autofixable)
 		// https://stylelint.io/user-guide/rules/list/media-feature-name-no-vendor-prefix/
-		'+media-feature-name-no-vendor-prefix': true,
+		'media-feature-name-no-vendor-prefix': [true, { severity: WARNING }],
 
 		// Specify a list of allowed name and unit pairs within media features
 		// https://stylelint.io/user-guide/rules/media-feature-name-unit-allowed-list/
@@ -181,8 +181,9 @@ export default {
 
 		// Disallow vendor prefixes for selectors (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-no-vendor-prefix/
-		'+selector-no-vendor-prefix': [true, {
+		'selector-no-vendor-prefix': [true, {
 			ignoreSelectors: ['::-ms-input-placeholder'],
+			severity: WARNING,
 		}],
 
 		// Specify a list of allowed pseudo-class selectors
@@ -215,7 +216,7 @@ export default {
 
 		// Disallow vendor prefixes for values (autofixable)
 		// https://stylelint.io/user-guide/rules/list/value-no-vendor-prefix/
-		'+value-no-vendor-prefix': true,
+		'value-no-vendor-prefix': [true, { severity: WARNING }],
 
 		// #endregion
 
@@ -223,17 +224,18 @@ export default {
 
 		// Specify lowercase or uppercase for function names (autofixable)
 		// https://stylelint.io/user-guide/rules/list/function-name-case/
-		'+function-name-case': 'lower',
+		'function-name-case': ['lower', { severity: WARNING }],
 
 		// Specify lowercase or uppercase for type selectors (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-type-case/
-		'+selector-type-case': 'lower',
+		'selector-type-case': ['lower', { severity: WARNING }],
 
 		// Specify lowercase or uppercase for keywords values (autofixable)
 		// https://stylelint.io/user-guide/rules/list/value-keyword-case/
-		'+value-keyword-case': ['lower', {
+		'value-keyword-case': ['lower', {
 			camelCaseSvgKeywords: true,
 			ignoreProperties: ['font-family'],
+			severity: WARNING,
 		}],
 
 		// #endregion
@@ -242,35 +244,39 @@ export default {
 
 		// Require or disallow an empty line before at-rules (autofixable)
 		// https://stylelint.io/user-guide/rules/list/at-rule-empty-line-before/
-		'+at-rule-empty-line-before': ['always', {
+		'at-rule-empty-line-before': ['always', {
 			except: ['blockless-after-same-name-blockless', 'first-nested'],
 			ignore: ['after-comment'],
 			ignoreAtRules: ['if', 'else', 'include'], // No effect for CSS, but good for extending with SCSS
+			severity: WARNING,
 		}],
 
 		// Require or disallow an empty line before comments (autofixable)
 		// https://stylelint.io/user-guide/rules/list/comment-empty-line-before/
-		'+comment-empty-line-before': ['always', {
+		'comment-empty-line-before': ['always', {
 			except: ['first-nested'],
 			ignore: ['stylelint-commands'],
+			severity: WARNING,
 		}],
 
 		// Require or disallow an empty line before custom properties (autofixable)
 		// https://stylelint.io/user-guide/rules/list/custom-property-empty-line-before/
-		'+custom-property-empty-line-before': ['always', {
+		'custom-property-empty-line-before': ['always', {
 			except: ['after-custom-property', 'first-nested'],
 			ignore: ['after-comment', 'inside-single-line-block', 'after-custom-property'],
+			severity: WARNING,
 		}],
 
 		// Require or disallow an empty line before declarations (autofixable)
 		// https://stylelint.io/user-guide/rules/list/declaration-empty-line-before/
-		'+declaration-empty-line-before': null, // @TODO: Investigate: Conflicts with `scss/$dollar-variable`
+		'declaration-empty-line-before': [null, { severity: WARNING }], // @TODO: Investigate: Conflicts with `scss/$dollar-variable`
 
 		// Require or disallow an empty line before rules (autofixable)
 		// https://stylelint.io/user-guide/rules/list/rule-empty-line-before/
-		'+rule-empty-line-before': ['always-multi-line', {
+		'rule-empty-line-before': ['always-multi-line', {
 			except: ['first-nested'],
 			ignore: ['after-comment'],
+			severity: WARNING,
 		}],
 
 		// #endregion
@@ -279,20 +285,23 @@ export default {
 
 		// Specify flow-relative or physical layout mappings for properties (autofixable)
 		// https://stylelint.io/user-guide/rules/property-layout-mappings/
-		'+property-layout-mappings': ['flow-relative', {
+		'property-layout-mappings': ['flow-relative', {
 			ignoreProperties: [],
+			severity: WARNING,
 		}],
 
 		// Specify flow-relative or physical layout mappings for units (autofixable)
 		// https://stylelint.io/user-guide/rules/unit-layout-mappings/
-		'+unit-layout-mappings': ['flow-relative', {
+		'unit-layout-mappings': ['flow-relative', {
 			ignoreUnits: [],
+			severity: WARNING,
 		}],
 
 		// Specify flow-relative or physical layout mappings for value keywords (autofixable)
 		// https://stylelint.io/user-guide/rules/value-keyword-layout-mappings/
-		'+value-keyword-layout-mappings': ['flow-relative', {
+		'value-keyword-layout-mappings': ['flow-relative', {
 			ignoreProperties: [],
+			severity: WARNING,
 		}],
 
 		// #endregion
@@ -364,65 +373,67 @@ export default {
 
 		// Specify percentage or number notation for alpha-values (autofixable)
 		// https://stylelint.io/user-guide/rules/list/alpha-value-notation/
-		'+alpha-value-notation': 'number',
+		'alpha-value-notation': ['number', { severity: WARNING }],
 
 		// Specify alias notation for color-functions (autofixable)
 		// https://stylelint.io/user-guide/rules/color-function-alias-notation/
-		'+color-function-alias-notation': 'without-alpha',
+		'color-function-alias-notation': ['without-alpha', { severity: WARNING }],
 
 		// Specify modern or legacy notation for applicable color-functions (autofixable)
 		// https://stylelint.io/user-guide/rules/list/color-function-notation/
-		'+color-function-notation': 'modern',
+		'color-function-notation': ['modern', { severity: WARNING }],
 
 		// Specify short or long notation for hex colors (autofixable)
 		// https://stylelint.io/user-guide/rules/list/color-hex-length/
 		// Note: more consistent view using repeating colors
-		'+color-hex-length': 'long',
+		'color-hex-length': ['long', { severity: WARNING }],
 
 		// Specify short or full notation for the display property (autofixable)
 		// https://stylelint.io/user-guide/rules/display-notation/
-		'+display-notation': 'full',
+		'display-notation': ['full', { severity: WARNING }],
 
 		// Require numeric or named (where possible) font-weight values (autofixable).
 		// Also, when named values are expected, require only valid names
 		// https://stylelint.io/user-guide/rules/list/font-weight-notation/
-		'+font-weight-notation': ['numeric', {
+		'font-weight-notation': ['numeric', {
 			ignore: ['relative'],
+			severity: WARNING,
 		}],
 
 		// Specify number or angle notation for degree hues (autofixable)
 		// https://stylelint.io/user-guide/rules/list/hue-degree-notation/
-		'+hue-degree-notation': 'angle',
+		'hue-degree-notation': ['angle', { severity: WARNING }],
 
 		// Specify string or URL notation for `@import` rules (autofixable)
 		// https://stylelint.io/user-guide/rules/list/import-notation
-		'+import-notation': 'string',
+		'import-notation': ['string', { severity: WARNING }],
 
 		// Specify keyword or percentage notation for keyframe selectors (autofixable)
 		// https://stylelint.io/user-guide/rules/list/keyframe-selector-notation/
-		'+keyframe-selector-notation': 'percentage-unless-within-keyword-only-block',
+		'keyframe-selector-notation': ['percentage-unless-within-keyword-only-block', { severity: WARNING }],
 
 		// Specify number or percentage notation for lightness (autofixable)
 		// https://stylelint.io/user-guide/rules/list/keyframe-selector-notation/
-		'+lightness-notation': 'percentage',
+		'lightness-notation': ['percentage', { severity: WARNING }],
 
 		// Specify context or prefix notation for media feature ranges (autofixable)
 		// https://stylelint.io/user-guide/rules/media-feature-range-notation/
-		'+media-feature-range-notation': ['context', {
+		'media-feature-range-notation': ['context', {
 			except: [],
+			severity: WARNING,
 		}],
 
 		// Specify explicit or implicit nesting notation for relative selectors (autofixable)
 		// https://stylelint.io/user-guide/rules/relative-selector-nesting-notation/
-		'+relative-selector-nesting-notation': 'implicit',
+		'relative-selector-nesting-notation': ['implicit', { severity: WARNING }],
 
 		// Specify simple or complex notation for `:not()` pseudo-classes (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-not-notation/
-		'+selector-not-notation': 'complex',
+		'selector-not-notation': ['complex', { severity: WARNING }],
 
 		// Specify single or double colon notation for applicable pseudo-elements (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-pseudo-element-colon-notation/
-		'+selector-pseudo-element-colon-notation': 'double',
+		'selector-pseudo-element-colon-notation': ['double', { severity: WARNING }],
 
 		// #endregion
 
@@ -486,17 +497,18 @@ export default {
 
 		// Specify whether or not quotation marks should be used around font family names (autofixable)
 		// https://stylelint.io/user-guide/rules/list/font-family-name-quotes/
-		'+font-family-name-quotes': 'always-where-recommended',
+		'font-family-name-quotes': ['always-where-recommended', { severity: WARNING }],
 
 		// Require or disallow quotes for urls (autofixable)
 		// https://stylelint.io/user-guide/rules/list/function-url-quotes/
-		'+function-url-quotes': ['always', {
+		'function-url-quotes': ['always', {
 			except: ['empty'],
+			severity: WARNING,
 		}],
 
 		// Require or disallow quotes for attribute value (autofixable)
 		// https://stylelint.io/user-guide/rules/list/selector-attribute-quotes/
-		'+selector-attribute-quotes': 'always',
+		'selector-attribute-quotes': ['always', { severity: WARNING }],
 
 		// #endregion
 
@@ -508,16 +520,17 @@ export default {
 
 		// Disallow longhand properties that can be combined into one shorthand property (autofixable)
 		// https://stylelint.io/user-guide/rules/list/declaration-block-no-redundant-longhand-properties/
-		'+declaration-block-no-redundant-longhand-properties': [true, {
+		'declaration-block-no-redundant-longhand-properties': [true, {
 			ignoreShorthands: [
 				'/grid/', 'flex-flow', 'place-items', // getting hard to read, the developer knows better
 				'/transition/', // gets very messy in the case of multiple properties
 			],
+			severity: WARNING,
 		}],
 
 		// Disallow redundant values in shorthand properties (autofixable)
 		// https://stylelint.io/user-guide/rules/list/shorthand-property-no-redundant-values/
-		'+shorthand-property-no-redundant-values': true,
+		'shorthand-property-no-redundant-values': [true, { severity: WARNING }],
 
 		// #endregion
 
@@ -525,7 +538,7 @@ export default {
 
 		// Require or disallow whitespace on the inside of comment markers (autofixable)
 		// https://stylelint.io/user-guide/rules/list/comment-whitespace-inside/
-		'+comment-whitespace-inside': 'always',
+		'comment-whitespace-inside': ['always', { severity: WARNING }],
 
 		// #endregion
 	},
