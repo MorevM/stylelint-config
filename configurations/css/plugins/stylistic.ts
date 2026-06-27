@@ -1,5 +1,5 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { WARNING } from '../../../utils/constants.js';
+import { WARNING } from '~utils/constants';
 
 export default {
 	plugins: [

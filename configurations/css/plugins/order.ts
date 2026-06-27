@@ -1,6 +1,6 @@
-import propertiesOrder from '../../../shared/properties-order.js';
-import rulesOrder from '../../../shared/rules-order.js';
-import { WARNING } from '../../../utils/constants.js';
+import propertiesOrder from '~shared/properties-order';
+import rulesOrder from '~shared/rules-order';
+import { WARNING } from '~utils/constants';
 
 export default {
 	plugins: ['stylelint-order'],

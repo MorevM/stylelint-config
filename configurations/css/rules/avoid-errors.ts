@@ -1,4 +1,4 @@
-import { WARNING } from '../../../utils/constants.js';
+import { WARNING } from '~utils/constants';
 
 export default {
 	rules: {

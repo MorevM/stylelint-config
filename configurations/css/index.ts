@@ -1,4 +1,4 @@
-import { processExports } from '../../utils/helpers.js';
+import { processExports } from '~utils/helpers';
 import {
 	pluginDeclarationBlockNoIgnoredProperties,
 	pluginHighPerformanceAnimation,
@@ -7,11 +7,11 @@ import {
 	pluginSelectorNoEmpty,
 	pluginSelectorTagNoWithoutClass,
 	pluginStylistic,
-} from './plugins/_index.js';
+} from './plugins/_index';
 import {
 	stylelintAvoidErrors,
 	stylelintEnforceConventions,
-} from './rules/_index.js';
+} from './rules/_index';
 
 const base = {
 	languageOptions: {

@@ -1,3 +1,3 @@
-export { default as pluginAtRuleNoChildren } from './at-rule-no-children.js';
-export { default as pluginScss } from './scss.js';
-export { default as pluginUseNesting } from './use-nesting.js';
+export { default as pluginAtRuleNoChildren } from './at-rule-no-children';
+export { default as pluginScss } from './scss';
+export { default as pluginUseNesting } from './use-nesting';

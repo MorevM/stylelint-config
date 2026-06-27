@@ -1,4 +1,4 @@
-import { KEBAB_CASE, KEBAB_CASE_ALLOW_DOT, KEBAB_CASE_ALLOW_DOUBLE, WARNING } from '../../../utils/constants.js';
+import { KEBAB_CASE, KEBAB_CASE_ALLOW_DOT, KEBAB_CASE_ALLOW_DOUBLE, WARNING } from '~utils/constants';
 
 export default {
 	rules: {

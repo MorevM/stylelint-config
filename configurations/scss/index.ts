@@ -1,11 +1,10 @@
 import postcssScss from 'postcss-scss';
-
-import { processExports } from '../../utils/helpers.js';
+import { processExports } from '~utils/helpers';
 import {
 	pluginAtRuleNoChildren,
 	pluginScss,
 	pluginUseNesting,
-} from './plugins/_index.js';
+} from './plugins/_index';
 
 const base = {
 	customSyntax: postcssScss,
