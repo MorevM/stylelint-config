@@ -101,7 +101,7 @@ export default {
 
 		// Disallow an unspaced operator within calc functions (autofixable)
 		// https://stylelint.io/user-guide/rules/list/function-calc-no-unspaced-operator/
-		'function-calc-no-unspaced-operator': [true, { severity: WARNING }],
+		'function-calc-no-unspaced-operator': true,
 
 		// Disallow `!important` within keyframe declarations
 		// https://stylelint.io/user-guide/rules/list/keyframe-declaration-no-important/
