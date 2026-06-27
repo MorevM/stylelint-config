@@ -1,4 +1,6 @@
 /* eslint-disable unicorn/prefer-single-call -- Needed for readability */
+/* eslint-disable unicorn/no-immediate-mutation -- Keep the long ordered property groups readable as incremental pushes. */
+
 const properties = [];
 
 // Should be first

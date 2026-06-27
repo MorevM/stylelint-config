@@ -48,9 +48,6 @@ importers:
       '@morev/eslint-config':
         specifier: ^41.0.0
         version: 41.0.0(@types/estree@1.0.9)(@typescript-eslint/eslint-plugin@8.58.1(@typescript-eslint/parser@8.58.1(eslint@9.39.4(jiti@2.7.0))(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/parser@8.58.1(eslint@9.39.4(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/rule-tester@8.58.1(eslint@9.39.4(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/typescript-estree@8.58.1(typescript@6.0.3))(@typescript-eslint/utils@8.58.1(eslint@9.39.4(jiti@2.7.0))(typescript@6.0.3))(eslint@9.39.4(jiti@2.7.0))(jiti@2.7.0)(typescript@6.0.3)(vitest@4.1.9(@types/node@20.5.1)(vite@6.2.2(@types/node@20.5.1)(jiti@2.7.0)))
-      '@morev/utils':
-        specifier: ^3.15.0
-        version: 3.15.0
       '@release-it/conventional-changelog':
         specifier: ^8.0.2
         version: 8.0.2(release-it@20.2.1(@types/node@20.5.1))

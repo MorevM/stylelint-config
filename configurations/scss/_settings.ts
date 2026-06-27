@@ -1,3 +1,5 @@
+import postcssScss from 'postcss-scss';
+
 import {
 	pluginAtRuleNoChildren,
 	pluginScss,
@@ -5,7 +7,7 @@ import {
 } from './plugins/_index.js';
 
 export const base = {
-	customSyntax: `import('postcss-scss')`,
+	customSyntax: postcssScss,
 	rules: {
 		'declaration-property-value-no-unknown': null,
 		'media-query-no-invalid': null,

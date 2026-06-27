@@ -1,18 +1,37 @@
 // Original package: https://www.npmjs.com/package/stylelint-selector-no-empty
 // This is a rewritten version because the original package is no longer maintained.
-// TODO: When migrating to TS, replace inspectSelectorNoEmptyPlugin with a cleaner build-time inline code strategy.
 
-import { inspect } from 'node:util';
 import stylelint from 'stylelint';
+import type { Root, Rule } from 'postcss';
 
-const getSplittedSelectors = (splittedSelectors, splitBy) => {
+type ReportErrorOptions = {
+	nearestSelector: string;
+	result: stylelint.PostcssResult;
+	rule: Rule;
+};
+
+type ReportError = (options: ReportErrorOptions) => void;
+
+const getSplittedSelectors = (splittedSelectors: string[], splitBy: string) => {
 	return splittedSelectors.flatMap((selector) =>
 		selector
 			.split(splitBy)
 			.filter((part) => part.trim().length > 0));
 };
 
-const checkEmptySelector = ({ splittedSelectors, result, rule, nearestSelector, reportError }) => {
+const checkEmptySelector = ({
+	splittedSelectors,
+	result,
+	rule,
+	nearestSelector,
+	reportError,
+}: {
+	nearestSelector: string;
+	reportError: ReportError;
+	result: stylelint.PostcssResult;
+	rule: Rule;
+	splittedSelectors: string[];
+}) => {
 	for (const splittedSelector of splittedSelectors) {
 		let selectorPart = splittedSelector;
 
@@ -35,7 +54,15 @@ const checkEmptySelector = ({ splittedSelectors, result, rule, nearestSelector, 
 	}
 };
 
-const checkRule = ({ rule, result, reportError }) => {
+const checkRule = ({
+	rule,
+	result,
+	reportError,
+}: {
+	reportError: ReportError;
+	result: stylelint.PostcssResult;
+	rule: Rule;
+}) => {
 	let nearestSelector = '';
 
 	rule.selector.split(',').forEach((selector) => {
@@ -61,7 +88,7 @@ const checkRule = ({ rule, result, reportError }) => {
 	});
 };
 
-const checkRoot = (reportError, root, result) => {
+const checkRoot = (reportError: ReportError, root: Root, result: stylelint.PostcssResult) => {
 	root.walkRules((rule) => {
 		try {
 			checkRule({ rule, result, reportError });
@@ -71,10 +98,10 @@ const checkRoot = (reportError, root, result) => {
 	});
 };
 
-const createSelectorNoEmptyPlugin = (stylelintApi) => {
+const createSelectorNoEmptyPlugin = (stylelintApi: typeof stylelint) => {
 	const ruleName = 'plugin/stylelint-selector-no-empty';
 	const messages = stylelintApi.utils.ruleMessages(ruleName, {
-		expected: (selector) => {
+		expected: (selector: string) => {
 			if (selector.length > 0) {
 				return `Unexpected empty selector near '${selector}'`;
 			}
@@ -83,7 +110,7 @@ const createSelectorNoEmptyPlugin = (stylelintApi) => {
 		},
 	});
 
-	const reportError = ({ rule, result, nearestSelector }) => {
+	const reportError: ReportError = ({ rule, result, nearestSelector }) => {
 		stylelintApi.utils.report({
 			result,
 			ruleName,
@@ -92,27 +119,19 @@ const createSelectorNoEmptyPlugin = (stylelintApi) => {
 		});
 	};
 
-	return stylelintApi.createPlugin(ruleName, (enabled) => {
-		if (!enabled) return;
+	const rule = Object.assign((enabled: boolean) => {
+		if (!enabled) return () => {};
 
 		return checkRoot.bind(null, reportError);
+	}, {
+		messages,
+		ruleName,
 	});
+
+	return stylelintApi.createPlugin(ruleName, rule);
 };
 
 const selectorNoEmpty = createSelectorNoEmptyPlugin(stylelint);
-
-const inspectSelectorNoEmptyPlugin = () => [
-	'((stylelintApi) => {',
-	`const getSplittedSelectors = ${getSplittedSelectors.toString()};`,
-	`const checkEmptySelector = ${checkEmptySelector.toString()};`,
-	`const checkRule = ${checkRule.toString()};`,
-	`const checkRoot = ${checkRoot.toString()};`,
-	`const createSelectorNoEmptyPlugin = ${createSelectorNoEmptyPlugin.toString()};`,
-	'return createSelectorNoEmptyPlugin(stylelintApi);',
-	"})((await import('stylelint')).default)",
-].join('\n');
-
-selectorNoEmpty[inspect.custom] = inspectSelectorNoEmptyPlugin;
 
 const pluginSelectorNoEmpty = {
 	plugins: [

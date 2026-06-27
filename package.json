@@ -31,15 +31,26 @@
 		"build"
 	],
 	"exports": {
-		".": "./build/configurations/scss.js",
-		"./css": "./build/configurations/css.js",
-		"./scss": "./build/configurations/scss.js"
+		".": {
+			"types": "./build/configurations/scss.d.ts",
+			"import": "./build/configurations/scss.js"
+		},
+		"./css": {
+			"types": "./build/configurations/css.d.ts",
+			"import": "./build/configurations/css.js"
+		},
+		"./scss": {
+			"types": "./build/configurations/scss.d.ts",
+			"import": "./build/configurations/scss.js"
+		}
 	},
 	"main": "./build/configurations/scss.js",
+	"types": "./build/configurations/scss.d.ts",
 	"scripts": {
 		"prepare": "lefthook install",
 		"vscode-settings": "cp .vscode/settings.template.json .vscode/settings.json",
-		"build": "node utils/build.js",
+		"build": "tsdown",
+		"typecheck": "tsc --noEmit",
 		"test": "vitest",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
@@ -64,7 +75,6 @@
 	"devDependencies": {
 		"@morev/commitlint-config": "^0.2.2",
 		"@morev/eslint-config": "^41.0.0",
-		"@morev/utils": "^3.15.0",
 		"@release-it/conventional-changelog": "^8.0.2",
 		"eslint": "9.39.4",
 		"lefthook": "^2.1.9",
