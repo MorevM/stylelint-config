@@ -45,7 +45,8 @@ export default {
 
 		// Disallow duplicate properties within declaration blocks (autofixable but might be confusing)
 		// https://stylelint.io/user-guide/rules/list/declaration-block-no-duplicate-properties/
-		'!declaration-block-no-duplicate-properties': [true, {
+		'declaration-block-no-duplicate-properties': [true, {
+			disableFix: true,
 			ignore: [
 				'consecutive-duplicates-with-different-values',
 				'consecutive-duplicates-with-different-syntaxes',
@@ -54,7 +55,8 @@ export default {
 
 		// Disallow duplicate font family names (autofixable but might be confusing)
 		// https://stylelint.io/user-guide/rules/list/font-family-no-duplicate-names/
-		'!font-family-no-duplicate-names': [true, {
+		'font-family-no-duplicate-names': [true, {
+			disableFix: true,
 			ignoreFontFamilyNames: ['monospace'],
 		}],
 

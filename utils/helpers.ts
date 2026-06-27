@@ -36,32 +36,13 @@ const mergeObjects = (target: PlainObject, ...sources: PlainObject[]) => {
 	return target;
 };
 
-const addRuleOption = (value: RuleValue, option: PlainObject) => {
-	if (!Array.isArray(value)) {
-		return [value, option];
-	}
-
-	const [primaryValue, secondaryOptions = {}] = value as [unknown, PlainObject?];
-
-	return [primaryValue, { ...secondaryOptions, ...option }];
-};
-
 export const mergeObjectsConsideringArrays = mergeObjects;
 
 export const processExports = ({ base, parts }: { base: ConfigPart; parts: ConfigPart[] }) => {
 	const mergedParts = mergeObjectsConsideringArrays({}, base, ...parts) as ConfigPart;
 
 	const rules = Object.fromEntries(
-		Object.entries(mergedParts.rules ?? {})
-			.reduce<Array<[string, RuleValue]>>((acc, [rule, value]) => {
-				let ruleValue = value;
-
-				if (rule.startsWith('!')) {
-					ruleValue = addRuleOption(ruleValue, { disableFix: true });
-				}
-
-				return [...acc, [rule.replace(/^!/, ''), ruleValue]];
-			}, []),
+		Object.entries(mergedParts.rules ?? {}),
 	);
 
 	return mergeObjects(omit(mergedParts, 'rules'), { rules });
