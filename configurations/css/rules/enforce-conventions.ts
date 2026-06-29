@@ -234,7 +234,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/list/value-keyword-case/
 		'value-keyword-case': ['lower', {
 			camelCaseSvgKeywords: true,
-			ignoreProperties: ['font-family'],
+			ignoreProperties: [
+				'font-family',
+				'/^--/',
+			],
 			severity: WARNING,
 		}],
 
