@@ -137,7 +137,9 @@ export default {
 
 		// Disallow vendor prefixes for properties (autofixable)
 		// https://stylelint.io/user-guide/rules/list/property-no-vendor-prefix/
-		'property-no-vendor-prefix': true,
+		'property-no-vendor-prefix': [true, {
+			ignoreProperties: ['-webkit-text-size-adjust'],
+		}],
 
 		// Rule
 
