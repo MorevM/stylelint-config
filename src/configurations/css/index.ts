@@ -1,5 +1,6 @@
 import { processExports } from '#utils';
 import {
+	morevStylelintPlugin,
 	pluginDeclarationBlockNoIgnoredProperties,
 	pluginHighPerformanceAnimation,
 	pluginNoNestedMedia,
@@ -28,4 +29,5 @@ export default processExports(
 	pluginSelectorNoEmpty,
 	pluginSelectorTagNoWithoutClass,
 	pluginStylistic,
+	morevStylelintPlugin,
 );

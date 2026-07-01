@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@morev/stylelint-plugin':
+        specifier: ^0.5.0
+        version: 0.5.0(stylelint@17.12.0(typescript@6.0.3))(typescript@6.0.3)
       '@morev/utils':
         specifier: ^3.15.0
         version: 3.15.0
@@ -20,9 +23,6 @@ importers:
       postcss-scss:
         specifier: ^4.0.9
         version: 4.0.9(postcss@8.5.15)
-      stylelint-at-rule-no-children:
-        specifier: ^0.4.1
-        version: 0.4.1
       stylelint-declaration-block-no-ignored-properties:
         specifier: ^3.0.0
         version: 3.0.0(stylelint@17.12.0(typescript@6.0.3))
@@ -741,6 +741,12 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       eslint: ^9.0.0
+
+  '@morev/stylelint-plugin@0.5.0':
+    resolution: {integrity: sha512-j+J9yxbUDLggYqGAjUwjwoPgtLnbfLsMWOjSEsz5XQoDPdmo8VUR6KFMUWcwGU2tfaIb69uwHvXv/ALxw/MQJQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      stylelint: '>=16'
 
   '@morev/utils@2.8.1':
     resolution: {integrity: sha512-q++LKjbWTUt8cZIvnDLUnt+6LXsgiUmfW5S3kaPST4bR/FXhoU87hwua9DfgqW6ht11CwgOyGeQ14ktV51somw==}
@@ -4214,9 +4220,6 @@ packages:
   style-search@0.1.0:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
 
-  stylelint-at-rule-no-children@0.4.1:
-    resolution: {integrity: sha512-1c825L4OnrSSEa7jUSC3FGxOJ5praUHMe10yayT2Be5X6ysRScPUB2VrSeQDpYyb0GOeqp6YuC7M/KRAkPVzGg==}
-
   stylelint-declaration-block-no-ignored-properties@3.0.0:
     resolution: {integrity: sha512-3ml4NgSW6nkHQrk+/ounU7Qljfb7e7FayHzU7Mry6rF9X28RXyPLD2bNn4QVOO7t98d5EGCCVkNbHCZSx+bNUQ==}
     engines: {node: '>=20.19.0'}
@@ -4568,6 +4571,14 @@ packages:
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
 
+  valibot@1.4.2:
+    resolution: {integrity: sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
@@ -4901,7 +4912,7 @@ snapshots:
       '@types/node': 20.5.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@6.0.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@6.0.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.9.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -5480,6 +5491,16 @@ snapshots:
       eslint: 9.39.4(jiti@2.7.0)
       eslint-rule-composer: 0.3.0
 
+  '@morev/stylelint-plugin@0.5.0(stylelint@17.12.0(typescript@6.0.3))(typescript@6.0.3)':
+    dependencies:
+      '@morev/utils': 3.15.0
+      postcss: 8.5.15
+      postcss-selector-parser: 7.1.1
+      stylelint: 17.12.0(typescript@6.0.3)
+      valibot: 1.4.2(typescript@6.0.3)
+    transitivePeerDependencies:
+      - typescript
+
   '@morev/utils@2.8.1':
     dependencies:
       fast-copy: 3.0.2
@@ -5872,7 +5893,7 @@ snapshots:
       eslint: 9.39.4(jiti@2.7.0)
       json-stable-stringify-without-jsonify: 1.0.1
       lodash.merge: 4.6.2
-      semver: 7.7.4
+      semver: 7.8.5
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6553,7 +6574,7 @@ snapshots:
     dependencies:
       browserslist: 4.28.2
 
-  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@6.0.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@6.0.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.9.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
       '@types/node': 20.5.1
       cosmiconfig: 8.3.6(typescript@5.9.3)
@@ -8646,7 +8667,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.29.0
       index-to-position: 1.2.0
-      type-fest: 4.37.0
+      type-fest: 4.41.0
 
   parse-path@7.1.0:
     dependencies:
@@ -9185,8 +9206,6 @@ snapshots:
 
   style-search@0.1.0: {}
 
-  stylelint-at-rule-no-children@0.4.1: {}
-
   stylelint-declaration-block-no-ignored-properties@3.0.0(stylelint@17.12.0(typescript@6.0.3)):
     dependencies:
       stylelint: 17.12.0(typescript@6.0.3)
@@ -9578,6 +9597,10 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   v8-compile-cache-lib@3.0.1: {}
+
+  valibot@1.4.2(typescript@6.0.3):
+    optionalDependencies:
+      typescript: 6.0.3
 
   validate-npm-package-license@3.0.4:
     dependencies:

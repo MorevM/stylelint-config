@@ -60,11 +60,11 @@
 		"stylelint": "^17.0.0"
 	},
 	"dependencies": {
+		"@morev/stylelint-plugin": "^0.5.0",
 		"@morev/utils": "^3.15.0",
 		"@stylistic/stylelint-plugin": "^5.2.0",
 		"postcss": "^8.5.15",
 		"postcss-scss": "^4.0.9",
-		"stylelint-at-rule-no-children": "^0.4.1",
 		"stylelint-declaration-block-no-ignored-properties": "^3.0.0",
 		"stylelint-high-performance-animation": "^2.0.0",
 		"stylelint-no-nested-media": "^0.1.0",
