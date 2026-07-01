@@ -28,7 +28,7 @@
 		"codestyle"
 	],
 	"files": [
-		"build"
+		"dist"
 	],
 	"exports": {
 		".": {
