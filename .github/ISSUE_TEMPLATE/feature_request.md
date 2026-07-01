@@ -1,21 +1,27 @@
 ---
-name: Feature request
-about: Suggest an idea for this project.
+name: Config change
+about: Request a rule, preset, helper, or documentation change.
 
 ---
 
-## Purpose
+## What should change?
 
-Describe what tasks new feature should resolve.
+Name the rule, preset, helper, or documentation area if you know it.
 
-## Solution
+## Why?
 
-A clear and concise description of what you want to happen.
+Describe the project pattern or Stylelint behavior this config should handle better.
 
-## Alternatives
+## Example
 
-A clear and concise description of any alternative solutions or features you've considered (optional).
+```scss
+/* Current behavior */
+```
 
-## Additional context
+```scss
+/* Expected behavior */
+```
 
-Add any other context or screenshots about the feature request here (optional).
+## Scope
+
+Should this affect CSS, SCSS, BEM rules, `defineConfig`, package exports, or docs only?
