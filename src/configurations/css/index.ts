@@ -1,4 +1,4 @@
-import { processExports } from '~utils/helpers';
+import { processExports } from '#utils';
 import {
 	pluginDeclarationBlockNoIgnoredProperties,
 	pluginHighPerformanceAnimation,
@@ -7,22 +7,18 @@ import {
 	pluginSelectorNoEmpty,
 	pluginSelectorTagNoWithoutClass,
 	pluginStylistic,
-} from './plugins/_index';
-import {
-	stylelintAvoidErrors,
-	stylelintEnforceConventions,
-} from './rules/_index';
+} from './plugins';
+import { stylelintAvoidErrors, stylelintEnforceConventions } from './rules';
 
-const base = {
-	languageOptions: {
-		directionality: {
-			block: 'top-to-bottom',
-			inline: 'left-to-right',
+export default processExports(
+	{
+		languageOptions: {
+			directionality: {
+				block: 'top-to-bottom',
+				inline: 'left-to-right',
+			},
 		},
 	},
-};
-
-const parts = [
 	stylelintAvoidErrors,
 	stylelintEnforceConventions,
 	pluginDeclarationBlockNoIgnoredProperties,
@@ -32,6 +28,4 @@ const parts = [
 	pluginSelectorNoEmpty,
 	pluginSelectorTagNoWithoutClass,
 	pluginStylistic,
-];
-
-export default processExports({ base, parts });
+);

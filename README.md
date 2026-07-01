@@ -21,66 +21,113 @@ Strict shareable Stylelint configuration with reasonable defaults.
 
 ### Using `yarn`
 
-```bash
+```sh
 yarn add stylelint @morev/stylelint-config --dev
 ```
 
 ### Using `npm`
 
-```bash
+```sh
 npm install -D stylelint @morev/stylelint-config
 ```
 
 ### Using `pnpm`
 
-```bash
+```sh
 pnpm add -d stylelint @morev/stylelint-config
 ```
 
 ## Usage
 
 Create a [Stylelint configuration file](https://stylelint.io/user-guide/configure/)
-(`.stylelintrc.js` for the following instruction) in the package root with the following content:
-
-> Note: the following instruction assumes that the package is written in ESM.
->
-> For projects written in CommonJS (that doesn't have `"type": "module"` within its `package.json`)
-> you need to specify `.cjs` extension for configuration file and use `module.exports` instead of `export default`.
->
-> Alternatively you can use a configuration file defined in YAML or JSON format, but it's less extensible.
+(`stylelint.config.ts` for the following instruction) in the package root with the following content:
 
 ### SCSS repository (default)
 
 ```js
-/** @type {import('stylelint').Config} */
-export default {
-  extends: [
-    '@morev/stylelint-config',
-  ],
-  rules: {},
-}
+import { defineConfig } from '@morev/stylelint-config';
+
+export default defineConfig();
+```
+
+SCSS preset is used by default. You can also choose it explicitly:
+
+```js
+import { defineConfig } from '@morev/stylelint-config';
+
+export default defineConfig({ preset: 'scss' });
 ```
 
 ### CSS repository
 
 ```js
-/** @type {import('stylelint').Config} */
-export default {
-  extends: [
-    '@morev/stylelint-config/css',
-  ],
-  rules: {},
-}
+import { defineConfig } from '@morev/stylelint-config';
+
+export default defineConfig({ preset: 'css' });
 ```
 
-### Mixed (for some reason O_o) repository
+### Mixed repository
 
 ```js
-/** @type {import('stylelint').Config} */
+import { defineConfig } from '@morev/stylelint-config';
+
 export default {
   overrides: [
-    { files: ['*.css'], extends: ['@morev/stylelint-config/css'] }
-    { files: ['*.scss'], extends: ['@morev/stylelint-config/scss'] }
-  ]
-}
+    { files: ['*.css'], ...defineConfig({ preset: 'css' }) },
+    { files: ['*.scss'], ...defineConfig({ preset: 'scss' }) },
+  ],
+};
+```
+
+### Custom order
+
+`defineConfig` accepts project-specific order overrides without redefining the whole
+`order/order` value. The `order` option intentionally supports only configurable project
+groups: `mixins`, `blockMixins`, `mediaQueries`, and `containerQueries`. Arrays replace
+the default group, and callbacks receive a cloned typed copy of the default group values.
+If the resulting custom group omits its broad matcher, `defineConfig` appends it so
+unmatched at-rules still keep their position.
+
+```js
+import { defineConfig } from '@morev/stylelint-config';
+
+export default defineConfig({
+  preset: 'scss',
+  order: {
+    // Arrays replace the default values for the group.
+    mixins: ['theme-dark'],
+    blockMixins: ['responsive'],
+    // The callback return value also replaces defaults; spread them to extend instead.
+    mediaQueries: (mediaQueries) => [
+      '--watch',
+      ...mediaQueries,
+      '--ultra-wide',
+    ],
+    containerQueries: [],
+  },
+}, {
+  // Rest elements can extend the config in Stylelint format.
+  rules: {
+    'selector-max-id': null,
+  },
+});
+```
+
+### Exported order values
+
+The raw default order values are also exported for advanced Stylelint configuration:
+
+```js
+import {
+  PROPERTIES_ORDER,
+  RULES_ORDER,
+  defineConfig,
+} from '@morev/stylelint-config';
+
+export default defineConfig({}, {
+  rules: {
+    'order/order': [RULES_ORDER, { severity: 'warning' }],
+    'order/properties-order': [PROPERTIES_ORDER, { severity: 'warning' }],
+  },
+});
 ```

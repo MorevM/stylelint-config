@@ -1,4 +1,4 @@
-import { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE, WARNING } from '~utils/constants';
+import { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE, WARNING } from '#constants';
 
 export default {
 	plugins: ['stylelint-scss'],

@@ -32,20 +32,20 @@
 	],
 	"exports": {
 		".": {
-			"types": "./build/configurations/scss.d.ts",
-			"import": "./build/configurations/scss.js"
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
 		},
 		"./css": {
-			"types": "./build/configurations/css.d.ts",
-			"import": "./build/configurations/css.js"
+			"types": "./dist/configurations/css.d.ts",
+			"import": "./dist/configurations/css.js"
 		},
 		"./scss": {
-			"types": "./build/configurations/scss.d.ts",
-			"import": "./build/configurations/scss.js"
+			"types": "./dist/configurations/scss.d.ts",
+			"import": "./dist/configurations/scss.js"
 		}
 	},
-	"main": "./build/configurations/scss.js",
-	"types": "./build/configurations/scss.d.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"prepare": "lefthook install",
 		"vscode-settings": "cp .vscode/settings.template.json .vscode/settings.json",
@@ -60,6 +60,7 @@
 		"stylelint": "^17.0.0"
 	},
 	"dependencies": {
+		"@morev/utils": "^3.15.0",
 		"@stylistic/stylelint-plugin": "^5.2.0",
 		"postcss": "^8.5.15",
 		"postcss-scss": "^4.0.9",

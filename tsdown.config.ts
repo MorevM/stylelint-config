@@ -1,7 +1,6 @@
 import { defineConfig } from 'tsdown/config';
-import type { UserConfig } from 'tsdown/config';
 
-const config: UserConfig = {
+export default defineConfig({
 	clean: true,
 	deps: {
 		neverBundle: [
@@ -11,15 +10,13 @@ const config: UserConfig = {
 	},
 	dts: true,
 	entry: {
-		'configurations/css': './configurations/css/index.ts',
-		'configurations/scss': './configurations/scss/index.ts',
+		'index': './src/index.ts',
+		'configurations/css': './src/configurations/css/index.ts',
+		'configurations/scss': './src/configurations/scss/index.ts',
 	},
 	fixedExtension: false,
 	format: 'esm',
 	hash: false,
-	outDir: 'build',
 	platform: 'node',
 	target: 'node22',
-};
-
-export default defineConfig(config);
+});

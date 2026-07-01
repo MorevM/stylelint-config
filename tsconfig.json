@@ -10,8 +10,9 @@
 		"noEmit": true,
 		"noUncheckedIndexedAccess": false,
 		"paths": {
-			"~shared/*": ["./shared/*"],
-			"~utils/*": ["./utils/*"],
+			"#constants": ["./src/constants.ts"],
+			"#shared": ["./src/shared/index.ts"],
+			"#utils": ["./src/utils.ts"],
 		},
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
@@ -20,11 +21,10 @@
 	},
 	"include": [
 		"__tests__/**/*.ts",
-		"configurations/**/*.ts",
-		"shared/**/*.ts",
+		"src/**/*.ts",
+		"stylelint.config.ts",
 		"tsdown.config.ts",
 		"types/**/*.d.ts",
-		"utils/**/*.ts",
 		"vitest.config.ts",
 	],
 }

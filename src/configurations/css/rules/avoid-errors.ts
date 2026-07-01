@@ -1,4 +1,4 @@
-import { WARNING } from '~utils/constants';
+import { WARNING } from '#constants';
 
 export default {
 	rules: {
