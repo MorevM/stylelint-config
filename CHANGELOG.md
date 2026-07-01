@@ -545,7 +545,7 @@ The options `quite`, `strict` are no longer available. Practice has shown that t
 * bump postcss from 8.4.8 to 8.4.12 ([#10](https://github.com/MorevM/stylelint-config/issues/10)) ([f04cc2a](https://github.com/MorevM/stylelint-config/commit/f04cc2ad29752afb11fdef1722129dd9bfb86374))
 * bump stylelint from 14.5.3 to 14.6.0 ([#13](https://github.com/MorevM/stylelint-config/issues/13)) ([9158f4c](https://github.com/MorevM/stylelint-config/commit/9158f4c1eb6d26fd64fbb2366ed95f6a4ae6744c))
 * bump stylelint-scss from 4.1.0 to 4.2.0 ([#11](https://github.com/MorevM/stylelint-config/issues/11)) ([7c47b80](https://github.com/MorevM/stylelint-config/commit/7c47b80da7001e576f28a5f87b65bb8cdc86c27c))
-* Set correct perrDependency stylelint version ([5de96ed](https://github.com/MorevM/stylelint-config/commit/5de96ed3241a0ddf20aa9a04e18070976749cf83))
+* Set correct peerDependency stylelint version ([5de96ed](https://github.com/MorevM/stylelint-config/commit/5de96ed3241a0ddf20aa9a04e18070976749cf83))
 * Upgrade `release-it` ([3a48b03](https://github.com/MorevM/stylelint-config/commit/3a48b033bc572d34bf01ec5fdf62c0d71806d85a))### [0.1.3](https://github.com/MorevM/stylelint-config/compare/v0.1.2...v0.1.3) (2022-03-12)
 
 

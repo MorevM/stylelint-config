@@ -48,6 +48,7 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"prepare": "lefthook install",
+		"spellcheck": "cspell --no-progress --show-suggestions --unique",
 		"vscode-settings": "cp .vscode/settings.template.json .vscode/settings.json",
 		"build": "tsdown",
 		"typecheck": "tsc --noEmit",
@@ -74,9 +75,11 @@
 		"stylelint-use-nesting": "^6.0.2"
 	},
 	"devDependencies": {
+		"@cspell/dict-ru_ru": "^2.3.2",
 		"@morev/commitlint-config": "^0.2.2",
 		"@morev/eslint-config": "^41.0.0",
 		"@release-it/conventional-changelog": "^8.0.2",
+		"cspell": "^10.0.1",
 		"eslint": "9.39.4",
 		"lefthook": "^2.1.9",
 		"release-it": "^20.2.1",
