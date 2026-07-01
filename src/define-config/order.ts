@@ -8,7 +8,7 @@ import type {
 } from '#shared';
 import type {
 	ConfigurableOrderGroupName,
-	DefineConfigOptions,
+	DefineConfigOrderFactoryOptions,
 	DefineConfigOrderOptions,
 	Mutable,
 	OrderGroupInput,
@@ -228,7 +228,7 @@ const createOrder = (options: DefineConfigOrderOptions = {}) => {
  *
  * @returns           Stylelint config fragment for ordering rules.
  */
-const createOrderConfig = (options: DefineConfigOptions): Config => {
+const createOrderConfig = (options: DefineConfigOrderFactoryOptions): Config => {
 	if (!options.order) return {};
 
 	const rules: NonNullable<Config['rules']> = {

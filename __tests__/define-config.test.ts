@@ -43,6 +43,164 @@ describe('defineConfig', () => {
 		});
 	});
 
+	it('Creates scoped targets for mixed repositories', () => {
+		const { defineConfig } = publicApi;
+
+		expect(defineConfig({
+			targets: [
+				{ files: ['*.css'], preset: 'css' },
+				{ files: ['*.scss'], preset: 'scss' },
+			],
+		})).toStrictEqual({
+			overrides: [
+				{
+					files: ['*.css'],
+					extends: ['@morev/stylelint-config/css'],
+				},
+				{
+					files: ['*.scss'],
+					extends: ['@morev/stylelint-config'],
+				},
+			],
+			rules: {},
+		});
+	});
+
+	it('Allows target-local order and BEM options', () => {
+		const { defineConfig } = publicApi;
+		const config = defineConfig({
+			targets: [
+				{
+					files: ['*.scss'],
+					preset: 'scss',
+					order: {
+						mediaQueries: [],
+					},
+					bem: {
+						files: ['src/components/**/*.scss'],
+					},
+				},
+			],
+		});
+
+		expect(config).toMatchObject({
+			overrides: [
+				{
+					files: ['*.scss'],
+					extends: ['@morev/stylelint-config'],
+					rules: {
+						'order/order': [
+							expect.arrayContaining([{ type: 'at-rule', name: 'media' }]),
+							{ severity: 'warning' },
+						],
+					},
+				},
+				{
+					files: ['src/components/**/*.scss'],
+					plugins: ['@morev/stylelint-plugin'],
+					rules: {
+						'@morev/bem/block-variable': [true, expect.objectContaining({
+							firstChild: true,
+							replaceBlockName: true,
+						})],
+					},
+				},
+			],
+			rules: {},
+		});
+	});
+
+	it('Merges additional Stylelint config parts after global BEM options in target configs', () => {
+		const { defineConfig } = publicApi;
+		const config = defineConfig({
+			targets: [
+				{ files: ['*.css'], preset: 'css' },
+				{ files: ['*.scss'], preset: 'scss' },
+			],
+			bem: {
+				files: ['src/components/**/*.scss'],
+			},
+		}, {
+			extends: ['stylelint-config-standard'],
+			overrides: [
+				{
+					files: ['legacy/**/*.scss'],
+					rules: {
+						'color-no-invalid-hex': null,
+					},
+				},
+			],
+			rules: {
+				'selector-max-id': null,
+			},
+		}, {
+			extends: ['stylelint-config-recess-order'],
+			overrides: [
+				{
+					files: ['vendor/**/*.css'],
+					rules: {
+						'selector-class-pattern': null,
+					},
+				},
+			],
+			rules: {
+				'block-no-empty': null,
+			},
+		});
+
+		expect(config).toMatchObject({
+			extends: [
+				'stylelint-config-standard',
+				'stylelint-config-recess-order',
+			],
+			overrides: [
+				{
+					files: ['*.css'],
+					extends: ['@morev/stylelint-config/css'],
+				},
+				{
+					files: ['*.scss'],
+					extends: ['@morev/stylelint-config'],
+				},
+				{
+					files: ['src/components/**/*.scss'],
+					plugins: ['@morev/stylelint-plugin'],
+					rules: {
+						'@morev/bem/block-variable': [true, expect.objectContaining({
+							firstChild: true,
+							replaceBlockName: true,
+						})],
+					},
+				},
+				{
+					files: ['legacy/**/*.scss'],
+					rules: {
+						'color-no-invalid-hex': null,
+					},
+				},
+				{
+					files: ['vendor/**/*.css'],
+					rules: {
+						'selector-class-pattern': null,
+					},
+				},
+			],
+			rules: {
+				'selector-max-id': null,
+				'block-no-empty': null,
+			},
+		});
+	});
+
+	it('Disallows combining preset and targets', () => {
+		const { defineConfig } = publicApi;
+
+		expect(() => defineConfig({
+			preset: 'scss',
+			targets: [],
+		} as never)).toThrow('`preset` and `targets` options are mutually exclusive.');
+	});
+
 	it('Keeps the root entrypoint focused and config defaults on subpaths', async () => {
 		const [cssApi, scssApi] = await Promise.all([
 			import('../dist/configurations/css.js'),

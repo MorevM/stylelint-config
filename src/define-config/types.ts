@@ -1,4 +1,5 @@
 import type { createDefineRules } from '@morev/stylelint-plugin';
+import type { Config } from 'stylelint';
 import type {
 	RulesOrderGroups as OrderGroups,
 	RuleOrderItem as OrderItem,
@@ -196,9 +197,29 @@ type DefineConfigOrderOptions = Partial<{
 }>;
 
 /**
- * Options accepted by `defineConfig`.
+ * Options consumed by the order config factory.
  */
-type DefineConfigOptions = {
+type DefineConfigOrderFactoryOptions = {
+	/**
+	 * Order group overrides merged into the generated `order/order` rule.
+	 */
+	order?: DefineConfigOrderOptions;
+};
+
+/**
+ * Options consumed by the preset config factory.
+ */
+type DefineConfigPresetOptions = {
+	/**
+	 * Base package preset extended by the generated config.
+	 */
+	preset?: DefineConfigPreset;
+};
+
+/**
+ * Options shared by root and target-local `defineConfig` branches.
+ */
+type DefineConfigBaseOptions = {
 	/**
 	 * BEM rules scoped to component files.
 	 */
@@ -207,15 +228,64 @@ type DefineConfigOptions = {
 	 * Order group overrides merged into the generated `order/order` rule.
 	 */
 	order?: DefineConfigOrderOptions;
+};
+
+/**
+ * Options accepted by one scoped `defineConfig` target.
+ */
+type DefineConfigTargetOptions = DefineConfigBaseOptions & {
+	/**
+	 * Style files that should receive this target config.
+	 */
+	files: string | string[];
 	/**
 	 * Base package preset extended by the generated config.
 	 */
 	preset?: DefineConfigPreset;
 };
 
+/**
+ * Options accepted by `defineConfig` for a single-preset project.
+ */
+type DefineConfigSinglePresetOptions = DefineConfigBaseOptions & {
+	/**
+	 * Base package preset extended by the generated config.
+	 */
+	preset?: DefineConfigPreset;
+	/**
+	 * Scoped preset branches for mixed projects.
+	 */
+	targets?: never;
+};
+
+/**
+ * Options accepted by `defineConfig` for a mixed project.
+ */
+type DefineConfigTargetsOptions = DefineConfigBaseOptions & {
+	/**
+	 * Scoped preset branches for mixed projects.
+	 */
+	targets: DefineConfigTargetOptions[];
+	/**
+	 * Single-project preset selection is mutually exclusive with targets.
+	 */
+	preset?: never;
+};
+
+/**
+ * Stylelint override shape used by generated target configs.
+ */
+type DefineConfigStylelintOverride = NonNullable<Config['overrides']>[number];
+
+/**
+ * Options accepted by `defineConfig`.
+ */
+type DefineConfigOptions = DefineConfigSinglePresetOptions | DefineConfigTargetsOptions;
+
 export type {
 	ConfigurableOrderGroupName,
 	DeepReadonly,
+	DefineConfigBaseOptions,
 	DefineConfigBemOptions,
 	DefineConfigBemPluginRules,
 	DefineConfigBemRuleContext,
@@ -228,8 +298,14 @@ export type {
 	DefineConfigBemRuleValue,
 	DefineConfigDefaultBemRuleName,
 	DefineConfigOptions,
+	DefineConfigOrderFactoryOptions,
 	DefineConfigOrderOptions,
 	DefineConfigPreset,
+	DefineConfigPresetOptions,
+	DefineConfigSinglePresetOptions,
+	DefineConfigStylelintOverride,
+	DefineConfigTargetOptions,
+	DefineConfigTargetsOptions,
 	Mutable,
 	OrderGroupInput,
 	OrderGroupInputItem,

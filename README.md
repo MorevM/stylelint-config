@@ -71,23 +71,36 @@ export default defineConfig({ preset: 'css' });
 ```js
 import { defineConfig } from '@morev/stylelint-config';
 
-export default {
-  overrides: [
-    { files: ['*.css'], ...defineConfig({ preset: 'css' }) },
-    { files: ['*.scss'], ...defineConfig({ preset: 'scss' }) },
+export default defineConfig({
+  targets: [
+    { files: ['*.css'], preset: 'css' },
+    { files: ['*.scss'], preset: 'scss' },
   ],
-};
+});
 ```
+
+> [!NOTE]
+> The root `preset` option is for single-preset projects. \
+> Mixed repositories should
+> use `targets`; `preset` and `targets` are mutually exclusive at the root level.
 
 ### Custom order
 
-`defineConfig` accepts project-specific order overrides without redefining the whole
+`defineConfig` accepts project-specific rules order overrides without redefining the whole
 [`order/order`](https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md)
-value. The `order` option intentionally supports only configurable project
-groups: `mixins`, `blockMixins`, `mediaQueries`, and `containerQueries`. Arrays replace
-the default group, and callbacks receive a cloned typed copy of the default group values.
-If the resulting custom group omits its broad matcher, `defineConfig` appends it so
-unmatched at-rules still keep their position.
+value.
+
+The `order` option intentionally supports only configurable project
+groups:
+
+- `mixins`
+- `blockMixins`
+- `mediaQueries`
+- `containerQueries`.
+
+Use it when a project has its own mixins, custom media, or container query conventions
+that should be sorted near the built-in groups while the rest of the package order
+stays managed by this config.
 
 ```js
 import { defineConfig } from '@morev/stylelint-config';
@@ -135,12 +148,12 @@ export default defineConfig({}, {
 
 ### BEM component files
 
-`defineConfig` can enable [`@morev/stylelint-plugin`](https://morevm.github.io/stylelint-plugin/)
-BEM rules only for style files that represent standalone BEM components.
-The `bem.files` option creates a dedicated
-Stylelint override, `separators` are shared by all BEM rules, and `rules` starts from
-the package defaults. Passing a rule value replaces the default; callbacks receive a
-typed helper with the readonly default `value` and a `merge` method for secondary options.
+Use `bem` as a scoped wrapper around
+[`@morev/stylelint-plugin`](https://morevm.github.io/stylelint-plugin/) for BEM component files,
+which usually make up only part of a repository.
+
+> [!NOTE]
+> In mixed CSS/SCSS repositories, the same `bem` option can be configured inside a specific target.
 
 ```js
 import { defineConfig } from '@morev/stylelint-config';
@@ -149,8 +162,8 @@ export default defineConfig({
   preset: 'scss',
   bem: {
     files: [
-      'src/components/**/*.{css,scss}',
-      'src/blocks/**/*.{css,scss}',
+      './src/components/**/*.{css,scss}',
+      './src/blocks/**/*.{css,scss}',
     ],
     separators: {
       element: '__',

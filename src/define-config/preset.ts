@@ -1,5 +1,5 @@
 import type { Config } from 'stylelint';
-import type { DefineConfigOptions, DefineConfigPreset } from './types';
+import type { DefineConfigPreset, DefineConfigPresetOptions } from './types';
 
 /**
  * Package subpath used by each preset value.
@@ -16,7 +16,7 @@ const PRESET_EXTENDS: Record<DefineConfigPreset, string> = {
  *
  * @returns           Stylelint config fragment with package preset extension.
  */
-const createPresetConfig = (options: DefineConfigOptions): Config => ({
+const createPresetConfig = (options: DefineConfigPresetOptions): Config => ({
 	extends: [PRESET_EXTENDS[options.preset ?? 'scss']],
 });
 
