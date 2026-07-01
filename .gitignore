@@ -4,7 +4,6 @@ Thumbs.db
 
 # Artifacts
 coverage
-build
 dist
 
 # Dependencies
@@ -15,4 +14,5 @@ node_modules
 npm-debug.log*
 
 # Misc
+.playground
 todo
