@@ -1,3 +1,8 @@
+
+## [9.0.1](https://github.com/MorevM/stylelint-config/compare/v9.0.0...v9.0.1) (2026-07-01)
+
+No changes, publish config fix.
+
 ## [9.0.0](https://github.com/MorevM/stylelint-config/compare/v8.0.2...v9.0.0) (2026-07-01)
 
 V9 is a major preset and tooling update. The package now has a typed `defineConfig`
