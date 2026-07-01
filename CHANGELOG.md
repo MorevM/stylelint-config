@@ -1,4 +1,48 @@
+## [9.0.0](https://github.com/MorevM/stylelint-config/compare/v8.0.2...v9.0.0) (2026-07-01)
 
+V9 is a major preset and tooling update. The package now has a typed `defineConfig`
+entrypoint for composing CSS, SCSS, mixed-project, order, and BEM configs, while
+the presets themselves were updated for Stylelint 17 and newer plugin versions.
+
+### ⚠ BREAKING CHANGES
+
+- The config now requires Stylelint `17.0.0` or newer.
+- CSS linting is stricter for deprecated syntax, invalid declarations/selectors/media,
+  missing nesting scoping roots, redundant nested style rules, unspaced `calc()`
+  operators, media range notation, and logical flow-relative property mappings.
+- SCSS linting is stricter: duplicate selectors are checked, unused Sass variables
+  are reported by `@morev/sass/no-unused-variables`, and selector/rule ordering was
+  updated around element states, pseudo-classes, media queries, and BEM modifiers.
+
+### Highlights
+
+- Added `defineConfig()` as the recommended public API. It can select `css` or
+  `scss` presets, define mixed-project `targets`, customize configured order groups,
+  enable scoped BEM rules, and merge additional Stylelint config parts.
+- Exported raw `PROPERTIES_ORDER` and `RULES_ORDER` values for advanced overrides.
+- Updated CSS coverage for Stylelint 17 rules: deprecated media/properties/selectors,
+  invalid selectors and position declarations, nesting notation, full `display`
+  syntax, custom property ordering, and multiple whitespace checks.
+- Replaced the stale `stylelint-selector-no-empty` dependency with a local rule
+  implementation and moved `stylelint-at-rule-no-children` coverage to
+  `@morev/stylelint-plugin`.
+- Updated SCSS/Sass coverage for Stylelint SCSS, including better handling for
+  namespaced functions, Sass interpolation in custom properties, selector patterns,
+  standalone declarations inside Sass control structures, and unused variables.
+- Migrated repository internals to TypeScript, `pnpm`, and `tsdown`; expanded tests,
+  README examples, spellchecking, CI/release setup, and issue/PR templates.
+
+### Upgrade notes
+
+- Prefer the new root import for configuration:
+  `import { defineConfig } from '@morev/stylelint-config';`.
+- Use `defineConfig({ preset: 'css' })` for CSS-only projects and `defineConfig()`
+  or `defineConfig({ preset: 'scss' })` for SCSS projects.
+- For mixed CSS/SCSS repositories, use `targets`; root-level `preset` and `targets`
+  are mutually exclusive.
+- Re-run Stylelint after upgrading and review new errors before disabling rules:
+  most of the new reports come from intentional stricter defaults, not from tooling
+  noise.
 
 ## [8.0.2](https://github.com/MorevM/stylelint-config/compare/v8.0.1...v8.0.2) (2025-06-07)
 
