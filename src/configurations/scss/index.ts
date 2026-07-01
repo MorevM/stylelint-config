@@ -1,6 +1,7 @@
 import postcssScss from 'postcss-scss';
 import { processExports } from '#utils';
 import {
+	morevSass,
 	pluginScss,
 	pluginUseNesting,
 } from './plugins';
@@ -17,6 +18,7 @@ export default processExports(
 			'selector-no-invalid': null,
 		},
 	},
+	morevSass,
 	pluginScss,
 	pluginUseNesting,
 );
