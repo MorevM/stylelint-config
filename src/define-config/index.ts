@@ -3,7 +3,6 @@ import { createBemConfig } from './bem';
 import { createOrderConfig } from './order';
 import { createPresetConfig } from './preset';
 import { createTargetsConfig } from './targets';
-import type { PlainObject } from '@morev/utils';
 import type { Config } from 'stylelint';
 import type {
 	DefineConfigBemOptions,
