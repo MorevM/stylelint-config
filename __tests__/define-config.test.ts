@@ -9,6 +9,7 @@ type PublicApi = typeof import('../src');
 let publicApi: PublicApi;
 
 const getOrderRule = (config: Config) => config.rules?.['order/order'] as [RuleOrderItem[], { severity: string }];
+const getBemOverride = (config: Config) => config.overrides?.[0] as NonNullable<Config['overrides']>[number];
 const getAtRules = (order: RuleOrderItem[], name: string, hasBlock?: boolean) =>
 	order.filter((item) =>
 		!isString(item)
@@ -169,6 +170,102 @@ describe('defineConfig', () => {
 		const [order] = orderRule;
 
 		expect(order).toContainEqual({ type: 'rule', selector: '&:hover,?' });
+	});
+
+	it('Adds BEM rules only for configured component files', () => {
+		const { defineConfig } = publicApi;
+		const config = defineConfig({
+			bem: {
+				files: ['src/components/**/*.scss'],
+			},
+		});
+		const bemOverride = getBemOverride(config);
+
+		expect(bemOverride.files).toStrictEqual(['src/components/**/*.scss']);
+		expect(bemOverride.plugins).toStrictEqual(['@morev/stylelint-plugin']);
+		expect(bemOverride.rules?.['@morev/bem/block-variable']).toStrictEqual([true, {
+			name: 'b',
+			interpolation: 'always',
+			firstChild: true,
+			replaceBlockName: true,
+			separators: undefined,
+		}]);
+	});
+
+	it('Allows BEM rule defaults to be replaced directly', () => {
+		const { defineConfig } = publicApi;
+		const config = defineConfig({
+			bem: {
+				files: 'src/components/**/*.scss',
+				rules: {
+					'@morev/bem/match-file-name': null,
+					'@morev/bem/no-side-effects': [true, {
+						ignore: ['.swiper-*'],
+					}],
+					'@morev/sass/no-unused-variables': [true, {
+						checkRoot: true,
+						ignore: ['b'],
+					}],
+				},
+			},
+		});
+		const bemOverride = getBemOverride(config);
+
+		expect(bemOverride.rules?.['@morev/bem/match-file-name']).toStrictEqual([null, {
+			separators: undefined,
+		}]);
+		expect(bemOverride.rules?.['@morev/bem/no-side-effects']).toStrictEqual([true, {
+			ignore: ['.swiper-*'],
+			separators: undefined,
+		}]);
+		expect(bemOverride.rules?.['@morev/sass/no-unused-variables']).toStrictEqual([true, {
+			checkRoot: true,
+			ignore: ['b'],
+		}]);
+	});
+
+	it('Allows BEM rule defaults to be transformed with bound merge helpers', () => {
+		const { defineConfig } = publicApi;
+		const separators = {
+			element: '__',
+			modifier: '--',
+			modifierValue: '_',
+		};
+		const config = defineConfig({
+			bem: {
+				files: 'src/components/**/*.scss',
+				separators,
+				rules: {
+					'@morev/bem/match-file-name': (rule) => {
+						expect(rule.value).toStrictEqual([true, {
+							caseSensitive: true,
+							matchDirectory: false,
+						}]);
+
+						return rule.merge({
+							caseSensitive: false,
+						});
+					},
+					'@morev/bem/no-block-properties': (rule) => rule.merge({
+						allowProperties: ['position'],
+					}),
+				},
+			},
+		});
+		const bemOverride = getBemOverride(config);
+
+		expect(bemOverride.rules?.['@morev/bem/match-file-name']).toStrictEqual([true, {
+			caseSensitive: false,
+			matchDirectory: false,
+			separators,
+		}]);
+
+		expect(bemOverride.rules?.['@morev/bem/no-block-properties']).toStrictEqual([true, {
+			presets: ['EXTERNAL_GEOMETRY', 'CONTEXTUAL', 'POSITIONING'],
+			allowProperties: ['position'],
+			ignoreBlocks: [],
+			separators,
+		}]);
 	});
 
 	it('Merges additional Stylelint config parts after generated values', () => {

@@ -13,6 +13,17 @@ type StylelintResult = {
 	unused: RuleDeclaration[];
 };
 
+// BEM rules are provided by the plugin but are enabled
+// conditionally only through scoped component-file overrides via `defineConfig`.
+const knownUnused = [
+	'@morev/bem/block-variable',
+	'@morev/bem/match-file-name',
+	'@morev/bem/no-block-properties',
+	'@morev/bem/no-chained-entities',
+	'@morev/bem/no-side-effects',
+	'@morev/bem/selector-pattern',
+];
+
 const toHumanReadable = (declarations: RuleDeclaration[]) =>
 	declarations.map((declaration) =>
 		[declaration.name, declaration.url].filter(Boolean).join(' / '));
@@ -33,7 +44,10 @@ describe('Check unused and deprecated props', () => {
 		expect(toHumanReadable(stylelintResult.invalid)).toStrictEqual([]);
 	});
 
-	it('Has no unused rules', async () => {
-		expect(toHumanReadable(stylelintResult.unused)).toStrictEqual([]);
+	it('Has no unknown unused rules', async () => {
+		const unknownUnused = stylelintResult.unused
+			.filter((declaration) => !knownUnused.includes(declaration.name));
+
+		expect(toHumanReadable(unknownUnused)).toStrictEqual([]);
 	});
 });

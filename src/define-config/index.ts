@@ -1,9 +1,11 @@
 import { mergeStylelintConfigs } from '#utils';
+import { createBemConfig } from './bem';
 import { createOrderConfig } from './order';
 import { createPresetConfig } from './preset';
 import type { PlainObject } from '@morev/utils';
 import type { Config } from 'stylelint';
 import type {
+	DefineConfigBemOptions,
 	DefineConfigOptions,
 	DefineConfigOrderOptions,
 	DefineConfigPreset,
@@ -21,11 +23,13 @@ const defineConfig = (options: DefineConfigOptions = {}, ...configParts: Config[
 	mergeStylelintConfigs(
 		createPresetConfig(options) as PlainObject,
 		createOrderConfig(options) as PlainObject,
+		createBemConfig(options.bem) as PlainObject,
 		...configParts as PlainObject[],
 	) as Config;
 
 export {
 	defineConfig,
+	type DefineConfigBemOptions,
 	type DefineConfigOptions,
 	type DefineConfigOrderOptions,
 	type DefineConfigPreset,

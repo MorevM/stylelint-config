@@ -1,7 +1,9 @@
+import type { createDefineRules } from '@morev/stylelint-plugin';
 import type {
 	RulesOrderGroups as OrderGroups,
 	RuleOrderItem as OrderItem,
 } from '#shared';
+import type { DEFAULT_BEM_RULES } from './bem-defaults';
 
 /**
  * Name of any built-in order group.
@@ -56,6 +58,132 @@ type RuntimeOrderGroupConfigValue =
 	| ((configValues: OrderItem[]) => OrderGroupInput | void);
 
 /**
+ * Global options accepted by `@morev/stylelint-plugin` rule helpers.
+ */
+type DefineConfigBemPluginGlobals = Parameters<typeof createDefineRules>[0];
+
+/**
+ * Rule schema accepted by `@morev/stylelint-plugin`.
+ */
+type DefineConfigBemPluginRules = Parameters<ReturnType<typeof createDefineRules>>[0];
+
+/**
+ * Names of BEM rules provided by `@morev/stylelint-plugin`.
+ */
+type DefineConfigBemRuleName = Extract<keyof DefineConfigBemPluginRules, `@morev/bem/${string}`>;
+
+/**
+ * Names of BEM rules with built-in defaults in this config package.
+ */
+type DefineConfigDefaultBemRuleName = Extract<DefineConfigBemRuleName, keyof typeof DEFAULT_BEM_RULES>;
+
+/**
+ * Full config value accepted by a single `@morev/stylelint-plugin` BEM rule.
+ */
+type DefineConfigBemRuleSetting<RuleName extends DefineConfigBemRuleName> =
+	Exclude<Required<DefineConfigBemPluginRules>[RuleName], undefined>;
+
+/**
+ * Rule value tuple that includes secondary options.
+ */
+type DefineConfigBemRuleSettingWithOptions<RuleName extends DefineConfigBemRuleName> =
+	Extract<DefineConfigBemRuleSetting<RuleName>, [unknown, object]>;
+
+/**
+ * Secondary options accepted by a single BEM rule.
+ */
+type DefineConfigBemRuleSecondaryOptions<RuleName extends DefineConfigBemRuleName> =
+	DefineConfigBemRuleSettingWithOptions<RuleName> extends [unknown, infer Options]
+		? Options
+		: never;
+
+/**
+ * Deeply readonly version of values exposed to user callbacks.
+ */
+type DeepReadonly<T> =
+	T extends RegExp
+		? T
+		: T extends (...args: never[]) => unknown
+			? T
+			: T extends readonly unknown[]
+				? { readonly [Key in keyof T]: DeepReadonly<T[Key]> }
+				: T extends object
+					? { readonly [Key in keyof T]: DeepReadonly<T[Key]> }
+					: T;
+
+/**
+ * Readonly rule setting exposed to callbacks.
+ */
+type ReadonlyRuleSetting<T> =
+	T extends [infer Primary, infer Secondary]
+		? readonly [DeepReadonly<Primary>, DeepReadonly<Secondary>]
+		: T extends [infer Primary]
+			? readonly [DeepReadonly<Primary>]
+			: DeepReadonly<T>;
+
+/**
+ * Callback helper for a default BEM rule.
+ */
+type DefineConfigBemRuleContext<RuleName extends DefineConfigDefaultBemRuleName> = {
+	/**
+	 * Merges the provided secondary rule options into this rule's default options.
+	 */
+	merge: (
+		options: DefineConfigBemRuleSecondaryOptions<RuleName>,
+	) => DefineConfigBemRuleSettingWithOptions<RuleName>;
+	/**
+	 * Readonly built-in rule value before user overrides.
+	 */
+	value: (typeof DEFAULT_BEM_RULES)[RuleName];
+};
+
+/**
+ * User-provided value for a BEM rule with built-in defaults.
+ */
+type DefineConfigBemRuleValue<RuleName extends DefineConfigDefaultBemRuleName> =
+	| DefineConfigBemRuleSetting<RuleName>
+	| ReadonlyRuleSetting<DefineConfigBemRuleSetting<RuleName>>
+	| ((
+		rule: DefineConfigBemRuleContext<RuleName>,
+	) => DefineConfigBemRuleSetting<RuleName> | ReadonlyRuleSetting<DefineConfigBemRuleSetting<RuleName>>);
+
+/**
+ * BEM rule overrides accepted by `defineConfig`.
+ */
+type DefineConfigBemRulesOptions = Partial<{
+	[RuleName in DefineConfigDefaultBemRuleName]: DefineConfigBemRuleValue<RuleName>;
+}> & {
+	/**
+	 * Additional Stylelint rules that should be added to the same BEM override.
+	 */
+	[ruleName: string]: unknown;
+};
+
+/**
+ * Options used to create BEM rules without wrapping them into a Stylelint override.
+ */
+type DefineConfigBemRulesFactoryOptions = {
+	/**
+	 * Rule overrides merged over the built-in BEM defaults.
+	 */
+	rules?: DefineConfigBemRulesOptions;
+	/**
+	 * BEM separators shared between every BEM rule from `@morev/stylelint-plugin`.
+	 */
+	separators?: DefineConfigBemPluginGlobals['separators'];
+};
+
+/**
+ * BEM options accepted by `defineConfig`.
+ */
+type DefineConfigBemOptions = DefineConfigBemRulesFactoryOptions & {
+	/**
+	 * Component file globs that should receive BEM-only rules.
+	 */
+	files: string | string[];
+};
+
+/**
  * Built-in preset selected by `defineConfig`.
  */
 type DefineConfigPreset = 'css' | 'scss';
@@ -72,6 +200,10 @@ type DefineConfigOrderOptions = Partial<{
  */
 type DefineConfigOptions = {
 	/**
+	 * BEM rules scoped to component files.
+	 */
+	bem?: DefineConfigBemOptions;
+	/**
 	 * Order group overrides merged into the generated `order/order` rule.
 	 */
 	order?: DefineConfigOrderOptions;
@@ -83,6 +215,18 @@ type DefineConfigOptions = {
 
 export type {
 	ConfigurableOrderGroupName,
+	DeepReadonly,
+	DefineConfigBemOptions,
+	DefineConfigBemPluginRules,
+	DefineConfigBemRuleContext,
+	DefineConfigBemRuleName,
+	DefineConfigBemRuleSecondaryOptions,
+	DefineConfigBemRuleSetting,
+	DefineConfigBemRuleSettingWithOptions,
+	DefineConfigBemRulesFactoryOptions,
+	DefineConfigBemRulesOptions,
+	DefineConfigBemRuleValue,
+	DefineConfigDefaultBemRuleName,
 	DefineConfigOptions,
 	DefineConfigOrderOptions,
 	DefineConfigPreset,
@@ -90,5 +234,6 @@ export type {
 	OrderGroupInput,
 	OrderGroupInputItem,
 	OrderGroupName,
+	ReadonlyRuleSetting,
 	RuntimeOrderGroupConfigValue,
 };

@@ -82,7 +82,8 @@ export default {
 ### Custom order
 
 `defineConfig` accepts project-specific order overrides without redefining the whole
-`order/order` value. The `order` option intentionally supports only configurable project
+[`order/order`](https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md)
+value. The `order` option intentionally supports only configurable project
 groups: `mixins`, `blockMixins`, `mediaQueries`, and `containerQueries`. Arrays replace
 the default group, and callbacks receive a cloned typed copy of the default group values.
 If the resulting custom group omits its broad matcher, `defineConfig` appends it so
@@ -128,6 +129,45 @@ export default defineConfig({}, {
   rules: {
     'order/order': [RULES_ORDER, { severity: 'warning' }],
     'order/properties-order': [PROPERTIES_ORDER, { severity: 'warning' }],
+  },
+});
+```
+
+### BEM component files
+
+`defineConfig` can enable [`@morev/stylelint-plugin`](https://morevm.github.io/stylelint-plugin/)
+BEM rules only for style files that represent standalone BEM components.
+The `bem.files` option creates a dedicated
+Stylelint override, `separators` are shared by all BEM rules, and `rules` starts from
+the package defaults. Passing a rule value replaces the default; callbacks receive a
+typed helper with the readonly default `value` and a `merge` method for secondary options.
+
+```js
+import { defineConfig } from '@morev/stylelint-config';
+
+export default defineConfig({
+  preset: 'scss',
+  bem: {
+    files: [
+      'src/components/**/*.{css,scss}',
+      'src/blocks/**/*.{css,scss}',
+    ],
+    separators: {
+      element: '__',
+      modifier: '--',
+      modifierValue: '--',
+    },
+    rules: {
+      // Extends the default rule: keeps built-in presets and adds a project exception.
+      '@morev/bem/no-block-properties': (rule) => rule.merge({
+        allowProperties: ['position'],
+      }),
+
+      // Replaces the default rule: the value below is used as-is.
+      '@morev/bem/no-side-effects': [true, {
+        ignore: ['.swiper-*'],
+      }],
+    },
   },
 });
 ```
