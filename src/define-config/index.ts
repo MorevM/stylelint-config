@@ -49,22 +49,16 @@ const defineConfig = (options: DefineConfigOptions = {}, ...configParts: Config[
 		throw new Error('`preset` and `targets` options are mutually exclusive.');
 	}
 
-	const generatedConfig = hasTargets(options)
-		? [
-			createTargetsConfig(options.targets) as PlainObject,
-			createOrderConfig(options) as PlainObject,
-			createBemConfig(options.bem) as PlainObject,
-		]
-		: [
-			createPresetConfig(options) as PlainObject,
-			createOrderConfig(options) as PlainObject,
-			createBemConfig(options.bem) as PlainObject,
-		];
+	const baseConfig = hasTargets(options)
+		? createTargetsConfig(options.targets)
+		: createPresetConfig(options);
 
 	return mergeStylelintConfigs(
-		...generatedConfig,
-		...configParts as PlainObject[],
-	) as Config;
+		baseConfig,
+		createOrderConfig(options),
+		createBemConfig(options.bem),
+		...configParts,
+	);
 };
 
 export {
