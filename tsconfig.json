@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"exactOptionalPropertyTypes": false,
+		"lib": ["ES2022"],
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"noEmit": true,
+		"noUncheckedIndexedAccess": false,
+		"paths": {
+			"#constants": ["./src/constants.ts"],
+			"#shared": ["./src/shared/index.ts"],
+			"#utils": ["./src/utils.ts"],
+		},
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ES2022",
+	},
+	"include": [
+		"__tests__/**/*.ts",
+		"src/**/*.ts",
+		"stylelint.config.ts",
+		"tsdown.config.ts",
+		"types/**/*.d.ts",
+		"vitest.config.ts",
+	],
+}

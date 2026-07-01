@@ -31,47 +31,63 @@
 		"build"
 	],
 	"exports": {
-		".": "./build/configurations/scss.js",
-		"./css": "./build/configurations/css.js",
-		"./scss": "./build/configurations/scss.js"
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./css": {
+			"types": "./dist/configurations/css.d.ts",
+			"import": "./dist/configurations/css.js"
+		},
+		"./scss": {
+			"types": "./dist/configurations/scss.d.ts",
+			"import": "./dist/configurations/scss.js"
+		}
 	},
-	"main": "./build/configurations/scss.js",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"prepare": "lefthook install",
+		"spellcheck": "cspell --no-progress --show-suggestions --unique",
 		"vscode-settings": "cp .vscode/settings.template.json .vscode/settings.json",
-		"build": "node utils/build.js",
+		"build": "tsdown",
+		"typecheck": "tsc --noEmit",
 		"test": "vitest",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"release": "release-it --disable-metrics"
 	},
 	"peerDependencies": {
-		"stylelint": "^16.18.0"
+		"stylelint": "^17.0.0"
 	},
 	"dependencies": {
-		"@stylistic/stylelint-plugin": "^3.1.2",
-		"postcss": "^8.5.4",
+		"@morev/stylelint-plugin": "^0.5.0",
+		"@morev/utils": "^3.15.0",
+		"@stylistic/stylelint-plugin": "^5.2.0",
+		"postcss": "^8.5.16",
 		"postcss-scss": "^4.0.9",
-		"stylelint-at-rule-no-children": "^0.4.1",
-		"stylelint-declaration-block-no-ignored-properties": "^2.8.0",
-		"stylelint-high-performance-animation": "^1.11.0",
+		"stylelint-declaration-block-no-ignored-properties": "^3.0.0",
+		"stylelint-high-performance-animation": "^2.0.0",
 		"stylelint-no-nested-media": "^0.1.0",
-		"stylelint-order": "^7.0.0",
-		"stylelint-scss": "^6.12.0",
-		"stylelint-selector-no-empty": "^1.0.9",
-		"stylelint-selector-tag-no-without-class": "^3.0.1",
-		"stylelint-use-nesting": "^6.0.0"
+		"stylelint-order": "^8.1.1",
+		"stylelint-scss": "^7.2.0",
+		"stylelint-selector-tag-no-without-class": "^4.1.0",
+		"stylelint-use-nesting": "^6.0.2"
 	},
 	"devDependencies": {
+		"@cspell/dict-ru_ru": "^2.3.2",
 		"@morev/commitlint-config": "^0.2.2",
-		"@morev/eslint-config": "^38.1.1",
-		"@morev/utils": "^3.12.2",
+		"@morev/eslint-config": "^41.0.0",
 		"@release-it/conventional-changelog": "^8.0.2",
-		"eslint": "9.27.0",
-		"lefthook": "^1.11.13",
-		"release-it": "^19.0.2",
-		"stylelint": "^16.19.1",
-		"stylelint-find-new-rules": "^5.0.0",
-		"vitest": "^3.1.4"
+		"cspell": "^10.0.1",
+		"eslint": "9.39.4",
+		"lefthook": "^2.1.9",
+		"release-it": "^20.2.1",
+		"stylelint": "^17.14.0",
+		"stylelint-define-config": "^17.11.0",
+		"stylelint-find-new-rules": "^6.0.0",
+		"tsdown": "^0.22.3",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.9"
 	}
 }

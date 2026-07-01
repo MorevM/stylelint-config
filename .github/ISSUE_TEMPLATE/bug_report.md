@@ -1,33 +1,38 @@
 ---
 name: Bug report
-about: If something goes wrong...
+about: Report incorrect Stylelint config behavior.
 
 ---
 
-## Actual behavior
+## What happened?
 
-A clear and concise description of what the bug is.
+Describe the false positive, false negative, crash, or generated config issue.
 
-## Expected behavior
+## Minimal reproduction
 
-A clear and concise description of what you expected to happen.
+```js
+// stylelint.config.js / stylelint.config.ts
+import { defineConfig } from '@morev/stylelint-config';
 
-## Steps to Reproduce
+export default defineConfig();
+```
 
-1.
-1.
-1.
+```scss
+/* CSS or SCSS that shows the issue */
+```
 
-## Environment
+## Expected result
 
-* Device: [Desktop, iPhone X, etc.]
-* OS: [Windows 10, iOS 11.1, etc.]
-* Browser: [Chrome 89, iOS Safari 13.7, etc.]
+What should Stylelint report or allow?
 
-## Additional context
+## Actual result
 
-Any other context about the problem here (optional).
+Paste the Stylelint output, stack trace, or rule message.
 
-## Possible solution
+## Affected config
 
-Any ideas of what could be done to resolve the problem (optional).
+- Preset or entrypoint:
+- Rule or plugin, if known:
+- `@morev/stylelint-config` version:
+- `stylelint` version:
+- Node.js version:
