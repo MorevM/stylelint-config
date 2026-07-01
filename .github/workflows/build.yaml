@@ -48,6 +48,9 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/setup
 
+      - name: Build
+        run: pnpm build
+
       - name: Linting
         run: pnpm lint
 
