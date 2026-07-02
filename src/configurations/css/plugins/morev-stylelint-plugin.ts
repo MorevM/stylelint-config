@@ -1,9 +1,9 @@
-import { createDefineRules } from '@morev/stylelint-plugin';
+import morevStylelintPlugin, { createDefineRules } from '@morev/stylelint-plugin';
 
 const defineRules = createDefineRules({});
 
 export default {
-	plugins: ['@morev/stylelint-plugin'],
+	plugins: morevStylelintPlugin,
 	rules: defineRules({
 		// Disallows placing rules (selectors) inside at-rules
 		// https://morevm.github.io/stylelint-plugin/rules/base/no-selectors-in-at-rules.html

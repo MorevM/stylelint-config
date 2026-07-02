@@ -1,4 +1,4 @@
-import { createDefineRules } from '@morev/stylelint-plugin';
+import morevStylelintPlugin, { createDefineRules } from '@morev/stylelint-plugin';
 import { isFunction, isString, mergeObjects } from '@morev/utils';
 import { DEFAULT_BEM_RULES } from './bem-defaults';
 import type { PlainObject } from '@morev/utils';
@@ -139,7 +139,7 @@ const createBemConfig = (options: DefineConfigBemOptions | undefined): Config =>
 		overrides: [
 			{
 				files: options.files,
-				plugins: ['@morev/stylelint-plugin'],
+				plugins: morevStylelintPlugin,
 				rules: createBemRules(options),
 			},
 		],

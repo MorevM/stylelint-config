@@ -1,4 +1,5 @@
 import cp from 'node:child_process';
+import morevStylelintPlugin from '@morev/stylelint-plugin';
 import { isString } from '@morev/utils';
 import type { Config } from 'stylelint';
 import type { RuleOrderItem } from '#shared';
@@ -96,7 +97,7 @@ describe('defineConfig', () => {
 				},
 				{
 					files: ['src/components/**/*.scss'],
-					plugins: ['@morev/stylelint-plugin'],
+					plugins: morevStylelintPlugin,
 					rules: {
 						'@morev/bem/block-variable': [true, expect.objectContaining({
 							firstChild: true,
@@ -163,7 +164,7 @@ describe('defineConfig', () => {
 				},
 				{
 					files: ['src/components/**/*.scss'],
-					plugins: ['@morev/stylelint-plugin'],
+					plugins: morevStylelintPlugin,
 					rules: {
 						'@morev/bem/block-variable': [true, expect.objectContaining({
 							firstChild: true,
@@ -338,15 +339,19 @@ describe('defineConfig', () => {
 		});
 		const bemOverride = getBemOverride(config);
 
-		expect(bemOverride.files).toStrictEqual(['src/components/**/*.scss']);
-		expect(bemOverride.plugins).toStrictEqual(['@morev/stylelint-plugin']);
-		expect(bemOverride.rules?.['@morev/bem/block-variable']).toStrictEqual([true, {
-			name: 'b',
-			interpolation: 'always',
-			firstChild: true,
-			replaceBlockName: true,
-			separators: undefined,
-		}]);
+		expect(bemOverride).toMatchObject({
+			files: ['src/components/**/*.scss'],
+			plugins: morevStylelintPlugin,
+			rules: {
+				'@morev/bem/block-variable': [true, {
+					name: 'b',
+					interpolation: 'always',
+					firstChild: true,
+					replaceBlockName: true,
+					separators: undefined,
+				}],
+			},
+		});
 	});
 
 	it('Allows BEM rule defaults to be replaced directly', () => {

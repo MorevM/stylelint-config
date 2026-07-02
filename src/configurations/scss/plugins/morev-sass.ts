@@ -1,9 +1,9 @@
-import { createDefineRules } from '@morev/stylelint-plugin';
+import morevStylelintPlugin, { createDefineRules } from '@morev/stylelint-plugin';
 
 const defineRules = createDefineRules({});
 
 export default {
-	plugins: ['@morev/stylelint-plugin'],
+	plugins: morevStylelintPlugin,
 	rules: defineRules({
 		// Reports SASS variables that are declared but not used.
 		// https://morevm.github.io/stylelint-plugin/rules/sass/no-unused-variables.html
