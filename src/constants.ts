@@ -4,3 +4,4 @@ export const KEBAB_CASE =  /^([a-z][\da-z]*)(-[\da-z]+)*$/;
 export const KEBAB_CASE_ALLOW_DOT =  /^([a-z][\da-z]*)([-.][\da-z]+)*$/;
 export const KEBAB_CASE_ALLOW_FIRST_UNDERSCORE =  /^_*([a-z][\da-z]*)(-[\da-z]+)*$/;
 export const KEBAB_CASE_ALLOW_DOUBLE = /^([a-z][\da-z]*)(-{1,2}[\da-z]+)*$/;
+export const BEM_CUSTOM_PROPERTY = /^([a-z][\da-z]*)(-[\da-z]+)*(?:__([a-z][\da-z]*)(-[\da-z]+)*)?(?:--([a-z][\da-z]*)(-[\da-z]+)*)*$/;

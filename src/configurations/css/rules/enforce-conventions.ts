@@ -1,4 +1,4 @@
-import { KEBAB_CASE, KEBAB_CASE_ALLOW_DOT, KEBAB_CASE_ALLOW_DOUBLE, WARNING } from '#constants';
+import { BEM_CUSTOM_PROPERTY, KEBAB_CASE, KEBAB_CASE_ALLOW_DOT, WARNING } from '#constants';
 
 export default {
 	rules: {
@@ -462,9 +462,8 @@ export default {
 
 		// Specify a pattern for custom properties
 		// https://stylelint.io/user-guide/rules/list/custom-property-pattern/
-		// TODO: BEM '--layout__gutter'
-		'custom-property-pattern': [KEBAB_CASE_ALLOW_DOUBLE, {
-			message: 'Expected custom property name to be kebab-case',
+		'custom-property-pattern': [BEM_CUSTOM_PROPERTY, {
+			message: 'Expected custom property name to be kebab-case or BEM-like',
 		}],
 
 		// Specify a pattern for keyframe names
