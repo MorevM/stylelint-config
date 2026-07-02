@@ -1,4 +1,19 @@
 
+
+## [9.0.2](https://github.com/MorevM/stylelint-config/compare/v9.0.1...v9.0.2) (2026-07-02)
+
+
+### Chores
+
+* Set actual stylelint version as peerDependency ([5ab31de](https://github.com/MorevM/stylelint-config/commit/5ab31def1d98654e71b5c112269c75d354462eb8))
+
+
+### Bug fixes
+
+* Pass `@morev/stylelint-plugin` as a plugin value ([978cd8b](https://github.com/MorevM/stylelint-config/commit/978cd8b5e62e78d3e75af99a9cde8b828e50773f))
+* **css:** Alllow custom properties in BEM style ([28ff3d2](https://github.com/MorevM/stylelint-config/commit/28ff3d2cde1f809c5e4e34856f276b4224576b99))
+* **scss:** Do not report `corner-shape` property with `scss/property-no-unknown` ([b8da756](https://github.com/MorevM/stylelint-config/commit/b8da75626e70ebb31f86cd826e98aeeeefcb99c7))
+
 ## [9.0.1](https://github.com/MorevM/stylelint-config/compare/v9.0.0...v9.0.1) (2026-07-01)
 
 No changes, publish config fix.
