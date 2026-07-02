@@ -279,8 +279,9 @@ export default {
 
 		// Disallow unknown properties, including nested properties.
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/property-no-unknown/README.md
-		// 'property-no-unknown': null,
-		'scss/property-no-unknown': true,
+		'scss/property-no-unknown': [true, {
+			ignoreProperties: ['corner-shape'], // TODO: Fill an issue
+		}],
 
 		// Specify a pattern for class selectors
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/selector-nest-combinators/README.md
