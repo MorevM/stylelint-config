@@ -42,5 +42,6 @@ hooks:
     - pnpm lint:fix
     - pnpm build
   after:init:
+    - pnpm spellcheck
     - pnpm lint
     - pnpm test
