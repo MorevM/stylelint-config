@@ -1,5 +1,4 @@
-import { describe, expect, it } from 'vitest';
-import { mergeStylelintConfigs, processExports } from '../src/utils';
+import { mergeStylelintConfigs, processExports } from '#utils';
 
 describe(mergeStylelintConfigs, () => {
 	it('Merges Stylelint config parts', () => {

@@ -1,10 +1,9 @@
-import { beforeAll, describe, expect, it } from 'vitest';
 import cp from 'node:child_process';
 import { isString } from '@morev/utils';
 import type { Config } from 'stylelint';
-import type { RuleOrderItem } from '../src/shared';
+import type { RuleOrderItem } from '#shared';
 
-type PublicApi = typeof import('../src');
+type PublicApi = typeof import('#index');
 
 let publicApi: PublicApi;
 

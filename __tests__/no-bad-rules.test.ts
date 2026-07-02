@@ -1,4 +1,3 @@
-import { beforeAll, describe, expect, it } from 'vitest';
 import cp from 'node:child_process';
 import stylelintRules from 'stylelint-find-new-rules';
 
