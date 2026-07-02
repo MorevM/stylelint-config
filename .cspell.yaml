@@ -24,6 +24,7 @@ words:
   - aditayvm
   - unspaced
   - unnamespaced
+  - inversed
   - oxlint
 
 useGitignore: true
