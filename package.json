@@ -78,7 +78,7 @@
 		"@cspell/dict-ru_ru": "^2.3.2",
 		"@morev/commitlint-config": "^0.2.2",
 		"@morev/eslint-config": "^41.0.0",
-		"@release-it/conventional-changelog": "^8.0.2",
+		"@release-it/conventional-changelog": "^11.0.1",
 		"cspell": "^10.0.1",
 		"eslint": "9.39.4",
 		"lefthook": "^2.1.9",
