@@ -140,6 +140,6 @@ const pluginSelectorNoEmpty = {
 	rules: {
 		'plugin/stylelint-selector-no-empty': true,
 	},
-};
+} as const;
 
 export default pluginSelectorNoEmpty;

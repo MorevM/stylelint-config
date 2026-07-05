@@ -391,4 +391,4 @@ export default {
 
 		// #endregion
 	},
-};
+} as const;

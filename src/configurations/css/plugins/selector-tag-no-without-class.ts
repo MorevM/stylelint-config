@@ -5,4 +5,4 @@ export default {
 	rules: {
 		'plugin/selector-tag-no-without-class': ['div', 'span'],
 	},
-};
+} as const;

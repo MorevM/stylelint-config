@@ -5,4 +5,4 @@ export default {
 	rules: {
 		'plugin/declaration-block-no-ignored-properties': true,
 	},
-};
+} as const;
