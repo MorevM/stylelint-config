@@ -81,7 +81,7 @@
 		"@release-it/conventional-changelog": "^8.0.2",
 		"cspell": "^10.0.1",
 		"eslint": "9.39.4",
-		"lefthook": "^2.1.9",
+		"lefthook": "^2.1.10",
 		"release-it": "^20.2.1",
 		"stylelint": "^17.14.0",
 		"stylelint-define-config": "^17.11.0",
