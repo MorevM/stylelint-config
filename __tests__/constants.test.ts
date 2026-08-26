@@ -4,7 +4,7 @@ import {
 	KEBAB_CASE,
 	KEBAB_CASE_ALLOW_DOT,
 	KEBAB_CASE_ALLOW_DOUBLE,
-	KEBAB_CASE_ALLOW_FIRST_UNDERSCORE,
+	KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX,
 	WARNING,
 } from '#constants';
 
@@ -57,23 +57,25 @@ describe('constants', () => {
 		});
 	});
 
-	describe('KEBAB_CASE_ALLOW_FIRST_UNDERSCORE', () => {
-		it('Allows lowercase kebab-case names prefixed with underscores', () => {
+	describe('KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX', () => {
+		it('Allows lowercase kebab-case names with a Sass private prefix', () => {
 			const validNames = [
-				'component',
-				'_component',
-				'__component-name',
+				'control-styles',
+				'-control-styles',
+				'_control-styles',
 			];
 
 			const invalidNames = [
-				'Component',
-				'component_name',
-				'component__name',
-				'_component--name',
+				'--control-styles',
+				'__control-styles',
+				'-_control-styles',
+				'_-control-styles',
+				'control_styles',
+				'ControlStyles',
 			];
 
-			expect(validNames.every((name) => KEBAB_CASE_ALLOW_FIRST_UNDERSCORE.test(name))).toBe(true);
-			expect(invalidNames.some((name) => KEBAB_CASE_ALLOW_FIRST_UNDERSCORE.test(name))).toBe(false);
+			expect(validNames.every((name) => KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX.test(name))).toBe(true);
+			expect(invalidNames.some((name) => KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX.test(name))).toBe(false);
 		});
 	});
 

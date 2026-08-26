@@ -1,4 +1,4 @@
-import { KEBAB_CASE, KEBAB_CASE_ALLOW_FIRST_UNDERSCORE, WARNING } from '#constants';
+import { KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX, WARNING } from '#constants';
 
 export default {
 	plugins: ['stylelint-scss'],
@@ -49,7 +49,7 @@ export default {
 
 		// Specify a pattern for Sass/SCSS-like function names
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-function-pattern/README.md
-		'scss/at-function-pattern': KEBAB_CASE_ALLOW_FIRST_UNDERSCORE,
+		'scss/at-function-pattern': KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX,
 
 		// Require or disallow a newline after the closing brace of `@if` statements (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-if-closing-brace-newline-after/README.md
@@ -91,7 +91,7 @@ export default {
 
 		// Specify a pattern for Sass/SCSS-like mixin names
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-mixin-pattern/README.md
-		'scss/at-mixin-pattern': KEBAB_CASE_ALLOW_FIRST_UNDERSCORE,
+		'scss/at-mixin-pattern': KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX,
 
 		// Disallow parentheses in conditional `@` rules (`if`, `elsif`, `while`) (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/at-rule-conditional-no-parentheses/README.md
@@ -167,7 +167,7 @@ export default {
 
 		// Specify a pattern for `%`-placeholders
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/percent-placeholder-pattern/README.md
-		'scss/percent-placeholder-pattern': KEBAB_CASE,
+		'scss/percent-placeholder-pattern': KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX,
 
 		// Require or disallow an empty line before `//`-comments
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/double-slash-comment-empty-line-before/README.md
