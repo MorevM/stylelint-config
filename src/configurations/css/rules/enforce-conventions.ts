@@ -138,7 +138,11 @@ export default {
 		// Disallow vendor prefixes for properties (autofixable)
 		// https://stylelint.io/user-guide/rules/list/property-no-vendor-prefix/
 		'property-no-vendor-prefix': [true, {
-			ignoreProperties: ['-webkit-text-size-adjust'],
+			ignoreProperties: [
+				'-webkit-text-size-adjust',
+				// Safari before 26.2 (12 December 2025) requires it. TODO(2028-06-12): Remove
+				'-webkit-text-decoration',
+			],
 		}],
 
 		// Rule
