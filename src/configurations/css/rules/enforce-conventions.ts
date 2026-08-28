@@ -244,6 +244,7 @@ export default {
 				'font-family',
 				'/^--/',
 			],
+			ignoreFunctions: ['local'],
 			severity: WARNING,
 		}],
 
