@@ -16,6 +16,7 @@ export default processExports(
 			'no-descending-specificity': null,
 			'no-invalid-position-at-import-rule': null,
 			'selector-no-invalid': null,
+			'relative-selector-nesting-notation': null,
 		},
 	},
 	morevSass,
