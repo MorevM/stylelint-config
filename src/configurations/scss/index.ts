@@ -1,5 +1,5 @@
-import postcssScss from 'postcss-scss';
 import { processExports } from '#utils';
+import { scssBaseConfig } from './base';
 import {
 	morevSass,
 	pluginScss,
@@ -7,18 +7,7 @@ import {
 } from './plugins';
 
 export default processExports(
-	{
-		extends: ['@morev/stylelint-config/css'],
-		customSyntax: postcssScss,
-		rules: {
-			'declaration-property-value-no-unknown': null,
-			'media-query-no-invalid': null,
-			'no-descending-specificity': null,
-			'no-invalid-position-at-import-rule': null,
-			'selector-no-invalid': null,
-			'relative-selector-nesting-notation': null,
-		},
-	},
+	scssBaseConfig,
 	morevSass,
 	pluginScss,
 	pluginUseNesting,
