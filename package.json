@@ -79,7 +79,7 @@
 		"@morev/commitlint-config": "^0.2.2",
 		"@morev/eslint-config": "^41.0.0",
 		"@release-it/conventional-changelog": "^8.0.2",
-		"cspell": "^10.0.1",
+		"cspell": "^10.1.1",
 		"eslint": "9.39.4",
 		"lefthook": "^2.1.9",
 		"release-it": "^20.2.1",
