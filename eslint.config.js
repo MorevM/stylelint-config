@@ -1,7 +1,7 @@
 import { combine, defineConfiguration, defineIgnores } from '@morev/eslint-config';
 
 export default combine([
-	defineIgnores(),
+	defineIgnores({ extraIgnoredGlobs: ['fixtures/consumer/**'] }),
 	defineConfiguration('javascript'),
 	defineConfiguration('typescript'),
 	defineConfiguration('node'),

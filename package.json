@@ -53,6 +53,8 @@
 		"build": "tsdown",
 		"typecheck": "tsc --noEmit",
 		"test": "vitest",
+		"test:package": "node scripts/test-package.mjs",
+		"prepare:consumer": "node scripts/prepare-consumer.mjs",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"release": "release-it --disable-metrics"

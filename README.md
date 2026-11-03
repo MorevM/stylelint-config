@@ -100,13 +100,13 @@ export default defineConfig(definePreset('css', {
 
     // Callbacks are useful when project rules should extend package defaults.
     'font-weight-notation': (rule) => {
-      const [primary, secondary] = rule.value;
+      const [primary] = rule.value;
       const { severity } = rule.stylelintOptions;
       const nextSeverity = severity === 'warning' ? 'error' : 'warning';
 
       return rule
         .setValue([primary, {
-          ignore: [...secondary.ignore, 'named'],
+          ignore: [],
         }])
         .setStylelintOptions({ reportDisables: true })
         .setSeverity(nextSeverity)
@@ -325,3 +325,14 @@ export default defineConfig(
   }),
 );
 ```
+
+## Package verification
+
+The standalone project in [`fixtures/consumer`](./fixtures/consumer) has its own
+package manifest, Stylelint config, TypeScript configs, and test commands.
+Run `pnpm test:package` to build and pack the library, install its tarball in a
+temporary copy of that project, and run the consumer's tests. They check public
+imports, CSS/SCSS/BEM linting, and TypeScript with NodeNext and Bundler resolution.
+
+Run `pnpm prepare:consumer` to install the consumer locally for editor completions
+and type checking. Run it again after library changes to refresh the installed tarball.

@@ -30,4 +30,8 @@
 		"types/**/*.d.ts",
 		"vitest.config.ts",
 	],
+	"exclude": [
+		"fixtures/consumer",
+		"node_modules",
+	],
 }
