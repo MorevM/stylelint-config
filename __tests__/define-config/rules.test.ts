@@ -162,6 +162,184 @@ describe('defineConfig rules', () => {
 		);
 	});
 
+	it('Types primary callbacks and rejects invalid replacement values', () => {
+		const acceptedSource = `
+			import { defineConfig, definePreset } from '../dist/index.js';
+
+			defineConfig(definePreset('css', {
+				rules: {
+					'color-hex-length': (rule) => rule.disable().setPrimary((primary) => {
+						const current: 'long' | 'short' | null = primary;
+						return current === 'long' ? 'short' : 'long';
+					}),
+					'plugin/selector-tag-no-without-class': (rule) => rule.setPrimary((primary) => {
+						if (!Array.isArray(primary)) return;
+						return [...primary, 'section'];
+					}),
+				},
+			}));
+		`;
+		const rejectedSource = `
+			import { defineConfig, definePreset } from '../dist/index.js';
+
+			defineConfig(definePreset('css', {
+				rules: {
+					'color-hex-length': (rule) => rule.setPrimary(() => 'numeric'),
+					'color-named': (rule) => rule.setPrimary(() => null),
+					'font-weight-notation': (rule) => rule.disable().setPrimary((primary) => {
+						const current: string = primary;
+						return 'numeric';
+					}),
+				},
+			}));
+		`;
+		const primaryQuickInfo = getQuickInfo(acceptedSource, 'primary) =>');
+
+		expect(getSemanticDiagnosticMessages(acceptedSource)).toStrictEqual([]);
+		expect(getSemanticDiagnosticMessages(rejectedSource)).toHaveLength(3);
+		expect(primaryQuickInfo.display).toContain('null');
+		expect(primaryQuickInfo.display).not.toContain('any');
+	});
+
+	it('Transforms the current primary while preserving secondary and Stylelint options', () => {
+		const { defineConfig, definePreset } = getPublicApi();
+		const config = defineConfig(definePreset('css', {
+			rules: {
+				'font-weight-notation': (rule) => rule
+					.disableFix()
+					.setPrimary('named-where-possible')
+					.setPrimary((primary) => {
+						expect(primary).toBe('named-where-possible');
+
+						return 'numeric';
+					}),
+			},
+		}));
+
+		expect(config.rules?.['font-weight-notation']).toStrictEqual(['numeric', {
+			ignore: ['relative'],
+			severity: 'warning',
+			disableFix: true,
+		}]);
+	});
+
+	it('Clones primary arrays and nested objects before passing them to callbacks', () => {
+		const { defineConfig, definePreset } = getPublicApi();
+		const config = defineConfig(definePreset('css', {
+			rules: {
+				'plugin/selector-tag-no-without-class': (rule) => rule.setPrimary((primary) => {
+					if (!Array.isArray(primary)) throw new Error('Expected primary array.');
+					primary.push('section');
+					return primary;
+				}),
+				'at-rule-property-required-list': (rule) => rule.setPrimary((primary) => {
+					if (primary === null) throw new Error('Expected primary object.');
+					const properties = primary['font-face'];
+					if (!Array.isArray(properties)) throw new Error('Expected nested primary array.');
+					properties.reverse();
+					return primary;
+				}),
+			},
+		}));
+
+		expect(config.rules?.['plugin/selector-tag-no-without-class']).toStrictEqual(['div', 'span', 'section']);
+		expect(config.rules?.['at-rule-property-required-list']).toStrictEqual({
+			'font-face': ['font-family', 'font-display'],
+		});
+
+		definePreset('css', {
+			rules: {
+				'plugin/selector-tag-no-without-class': (rule) => {
+					expect(rule.value).toStrictEqual([['div', 'span']]);
+				},
+				'at-rule-property-required-list': (rule) => {
+					expect(rule.value).toStrictEqual([{ 'font-face': ['font-display', 'font-family'] }]);
+				},
+			},
+		});
+	});
+
+	it('Passes null to primary callbacks after disabling a rule', () => {
+		const { defineConfig, definePreset } = getPublicApi();
+		const config = defineConfig(definePreset('scss', {
+			rules: {
+				'at-rule-no-unknown': (rule) => rule.setPrimary((primary) => {
+					expect(primary).toBeNull();
+
+					return true;
+				}),
+				'color-hex-length': (rule) => rule.disable().setPrimary((primary) => {
+					expect(primary).toBeNull();
+
+					return 'short';
+				}),
+			},
+		}));
+
+		expect(config.rules?.['at-rule-no-unknown']).toBe(true);
+		expect(config.rules?.['color-hex-length']).toStrictEqual(['short', { severity: 'warning' }]);
+	});
+
+	it('Discards mutations when a primary callback returns no value', () => {
+		const { defineConfig, definePreset } = getPublicApi();
+		const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+		const config = defineConfig(definePreset('css', {
+			rulesDiagnostics: 'error',
+			rules: {
+				'plugin/selector-tag-no-without-class': (rule) => rule.setPrimary((primary) => {
+					if (Array.isArray(primary)) primary.push('section');
+				}),
+				'font-weight-notation': (rule) => rule.setPrimary(() => undefined),
+			},
+		}));
+
+		expect(config.rules?.['plugin/selector-tag-no-without-class']).toStrictEqual(['div', 'span']);
+		expect(config.rules?.['font-weight-notation']).toStrictEqual(['numeric', {
+			ignore: ['relative'],
+			severity: 'warning',
+		}]);
+		expect(warn).not.toHaveBeenCalled();
+
+		warn.mockRestore();
+	});
+
+	it('Warns about redundant primary callback results', () => {
+		const { definePreset } = getPublicApi();
+		const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+
+		definePreset('css', {
+			rules: {
+				'color-hex-length': (rule) => rule.setPrimary((primary) => primary ?? 'long'),
+			},
+		});
+
+		expect(warn).toHaveBeenCalledWith(expect.stringContaining('setPrimary()'));
+
+		warn.mockRestore();
+	});
+
+	it('Allows redundant primary callback diagnostics to be disabled or raised to errors', () => {
+		const { definePreset } = getPublicApi();
+		const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+
+		definePreset('css', {
+			rulesDiagnostics: 'off',
+			rules: {
+				'color-hex-length': (rule) => rule.setPrimary((primary) => primary ?? 'long'),
+			},
+		});
+
+		expect(warn).not.toHaveBeenCalled();
+		expect(() => definePreset('css', {
+			rulesDiagnostics: 'error',
+			rules: {
+				'color-hex-length': (rule) => rule.setPrimary((primary) => primary ?? 'long'),
+			},
+		})).toThrow('setPrimary()');
+
+		warn.mockRestore();
+	});
+
 	it('Types setSecondary replacement objects from concrete rule options', () => {
 		const source = `
 			import { defineConfig, definePreset } from '../dist/index.js';

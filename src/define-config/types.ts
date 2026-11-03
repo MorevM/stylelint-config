@@ -436,6 +436,17 @@ type DefineConfigRuleCallbackSecondary<
 	);
 
 /**
+ * Callback that transforms a copy of the current primary option.
+ * Disabled rules expose `null`; returning no value preserves the current setting.
+ */
+type DefineConfigRulePrimaryCallback<
+	Preset extends DefineConfigRulePreset,
+	RuleName extends DefineConfigRuleName<Preset>,
+> = (
+	primary: DefineConfigRulePrimary<DefineConfigRuleSetting<Preset, RuleName>> | null,
+) => DefineConfigRulePrimary<DefineConfigRuleSetting<Preset, RuleName>> | void;
+
+/**
  * Callback used to transform current rule-specific secondary options.
  */
 type DefineConfigRuleSecondaryCallback<
@@ -507,10 +518,13 @@ type DefineConfigRuleBuilderBase<
 	 */
 	enableFix: () => DefineConfigRuleBuilder<Preset, RuleName>;
 	/**
-	 * Replace the rule primary option.
+	 * Replace the primary option or transform its copy with a callback.
+	 * Returning no value from the callback preserves the current setting.
 	 */
 	setPrimary: (
-		primary: DefineConfigRulePrimary<DefineConfigRuleSetting<Preset, RuleName>>,
+		primary:
+			| DefineConfigRulePrimary<DefineConfigRuleSetting<Preset, RuleName>>
+			| DefineConfigRulePrimaryCallback<Preset, RuleName>,
 	) => DefineConfigRuleBuilder<Preset, RuleName>;
 	/**
 	 * Set the rule severity.

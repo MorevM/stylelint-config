@@ -216,6 +216,9 @@ are available only for rules that define rule-specific secondary options.
 the current rule-specific secondary options. `patchSecondary` accepts a partial
 object and merges it into the current options. Arrays and nested objects are
 replaced entirely; unspecified options are preserved.
+`setPrimary` accepts either a replacement value or a callback that receives a
+deep copy of the current primary option (`null` when the rule is disabled).
+Returning no value from its callback leaves the current setting unchanged.
 Redundant setter calls are reported with `console.warn` by default; set
 `rulesDiagnostics` to `off`, `warn`, or `error` to control that behavior.
 

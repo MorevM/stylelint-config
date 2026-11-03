@@ -1,4 +1,4 @@
-import { deepEqual, isFunction, isPlainObject } from '@morev/utils';
+import { deepClone, deepEqual, isFunction, isPlainObject, isUndefined } from '@morev/utils';
 import type { Config } from 'stylelint';
 import type { DefineConfigRulesDiagnostics } from './types';
 
@@ -114,11 +114,14 @@ class RuleBuilder {
 
 	public setPrimary(primary: unknown) {
 		const [currentPrimary, secondary] = this.#value;
-		if (deepEqual(primary, currentPrimary)) {
+		const nextPrimary = isFunction(primary) ? primary(deepClone(currentPrimary)) : primary;
+		if (isUndefined(nextPrimary)) return this;
+
+		if (deepEqual(nextPrimary, currentPrimary)) {
 			this.reportRedundantSetter('setPrimary');
 		}
 
-		this.#value = secondary === undefined ? [primary] : [primary, secondary];
+		this.#value = secondary === undefined ? [nextPrimary] : [nextPrimary, secondary];
 		return this;
 	}
 
