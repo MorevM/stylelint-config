@@ -14,6 +14,15 @@ importers:
       '@morev/utils':
         specifier: ^3.15.0
         version: 3.15.0
+      '@stylelint-types/stylelint-order':
+        specifier: ^8.1.1
+        version: 8.1.1(stylelint-define-config@17.11.0(stylelint@17.14.0(typescript@6.0.3)))(stylelint@17.14.0(typescript@6.0.3))
+      '@stylelint-types/stylelint-scss':
+        specifier: ^7.0.1
+        version: 7.0.1(stylelint-define-config@17.11.0(stylelint@17.14.0(typescript@6.0.3)))(stylelint@17.14.0(typescript@6.0.3))
+      '@stylelint-types/stylelint-stylistic':
+        specifier: ^5.1.0
+        version: 5.1.0(stylelint-define-config@17.11.0(stylelint@17.14.0(typescript@6.0.3)))(stylelint@17.14.0(typescript@6.0.3))
       '@stylistic/stylelint-plugin':
         specifier: ^5.2.0
         version: 5.2.0(stylelint@17.14.0(typescript@6.0.3))
@@ -26,6 +35,9 @@ importers:
       stylelint-declaration-block-no-ignored-properties:
         specifier: ^3.0.0
         version: 3.0.0(stylelint@17.14.0(typescript@6.0.3))
+      stylelint-define-config:
+        specifier: ^17.11.0
+        version: 17.11.0(stylelint@17.14.0(typescript@6.0.3))
       stylelint-high-performance-animation:
         specifier: ^2.0.0
         version: 2.0.0(stylelint@17.14.0(typescript@6.0.3))
@@ -72,9 +84,6 @@ importers:
       stylelint:
         specifier: ^17.14.0
         version: 17.14.0(typescript@6.0.3)
-      stylelint-define-config:
-        specifier: ^17.11.0
-        version: 17.11.0(stylelint@17.14.0(typescript@6.0.3))
       stylelint-find-new-rules:
         specifier: ^6.0.0
         version: 6.0.0(stylelint@17.14.0(typescript@6.0.3))
@@ -1344,6 +1353,36 @@ packages:
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@stylelint-types/stylelint-order@8.1.1':
+    resolution: {integrity: sha512-jc9elOvmn2UoL+wzzWtHmezhAZPOJn6hWQ9Prct+FOxzY9XafssQEOUcs4T4DJ2RA+rxk9GockujWjbGtqj4FA==}
+    engines: {node: '>=20.19.0', npm: '>=9.0.0', pnpm: '>=9.0.0'}
+    peerDependencies:
+      stylelint: '>=17'
+      stylelint-define-config: '>=17'
+    peerDependenciesMeta:
+      stylelint:
+        optional: true
+
+  '@stylelint-types/stylelint-scss@7.0.1':
+    resolution: {integrity: sha512-9Y+fqGx+eRif0stvQ2Ne1rkcQjq+RsCGNpd5E8EFtT3Tte6pmjlQgwAoidYt9Asf6QSMa5hzepuKRmpDJxDL8w==}
+    engines: {node: '>=20.19.0', npm: '>=9.0.0', pnpm: '>=9.0.0'}
+    peerDependencies:
+      stylelint: '>=17'
+      stylelint-define-config: '>=17'
+    peerDependenciesMeta:
+      stylelint:
+        optional: true
+
+  '@stylelint-types/stylelint-stylistic@5.1.0':
+    resolution: {integrity: sha512-0TTMsiD/upUM5339xYovkWlTD7tN9UMHCD4ul8/qtFOeqwCmttfv7/i8gMQrvGVsZ+EqSxzyQKNn17Rroarwmg==}
+    engines: {node: '>=20.19.0', npm: '>=9.0.0', pnpm: '>=9.0.0'}
+    peerDependencies:
+      stylelint: '>=17'
+      stylelint-define-config: '>=17'
+    peerDependenciesMeta:
+      stylelint:
+        optional: true
 
   '@stylistic/eslint-plugin@5.10.0':
     resolution: {integrity: sha512-nPK52ZHvot8Ju/0A4ucSX1dcPV2/1clx0kLcH5wDmrE4naKso7TUC/voUyU1O9OTKTrR6MYip6LP0ogEMQ9jPQ==}
@@ -6300,6 +6339,24 @@ snapshots:
   '@sindresorhus/merge-streams@4.0.0': {}
 
   '@standard-schema/spec@1.1.0': {}
+
+  '@stylelint-types/stylelint-order@8.1.1(stylelint-define-config@17.11.0(stylelint@17.14.0(typescript@6.0.3)))(stylelint@17.14.0(typescript@6.0.3))':
+    dependencies:
+      stylelint-define-config: 17.11.0(stylelint@17.14.0(typescript@6.0.3))
+    optionalDependencies:
+      stylelint: 17.14.0(typescript@6.0.3)
+
+  '@stylelint-types/stylelint-scss@7.0.1(stylelint-define-config@17.11.0(stylelint@17.14.0(typescript@6.0.3)))(stylelint@17.14.0(typescript@6.0.3))':
+    dependencies:
+      stylelint-define-config: 17.11.0(stylelint@17.14.0(typescript@6.0.3))
+    optionalDependencies:
+      stylelint: 17.14.0(typescript@6.0.3)
+
+  '@stylelint-types/stylelint-stylistic@5.1.0(stylelint-define-config@17.11.0(stylelint@17.14.0(typescript@6.0.3)))(stylelint@17.14.0(typescript@6.0.3))':
+    dependencies:
+      stylelint-define-config: 17.11.0(stylelint@17.14.0(typescript@6.0.3))
+    optionalDependencies:
+      stylelint: 17.14.0(typescript@6.0.3)
 
   '@stylistic/eslint-plugin@5.10.0(eslint@9.39.4(jiti@2.7.0))':
     dependencies:

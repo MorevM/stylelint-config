@@ -42,47 +42,179 @@ pnpm add -d stylelint @morev/stylelint-config
 Create a [Stylelint configuration file](https://stylelint.io/user-guide/configure/)
 (`stylelint.config.ts` for the following instruction) in the package root with the following content:
 
-### SCSS repository (default)
+### SCSS repository
 
 ```js
-import { defineConfig } from '@morev/stylelint-config';
+import { defineConfig, definePreset } from '@morev/stylelint-config';
 
-export default defineConfig();
-```
-
-SCSS preset is used by default. You can also choose it explicitly:
-
-```js
-import { defineConfig } from '@morev/stylelint-config';
-
-export default defineConfig({ preset: 'scss' });
+export default defineConfig(definePreset('scss'));
 ```
 
 ### CSS repository
 
 ```js
-import { defineConfig } from '@morev/stylelint-config';
+import { defineConfig, definePreset } from '@morev/stylelint-config';
 
-export default defineConfig({ preset: 'css' });
+export default defineConfig(definePreset('css'));
 ```
 
 ### Mixed repository
 
 ```js
-import { defineConfig } from '@morev/stylelint-config';
+import { defineConfig, definePreset } from '@morev/stylelint-config';
 
-export default defineConfig({
-  targets: [
-    { files: ['*.css'], preset: 'css' },
-    { files: ['*.scss'], preset: 'scss' },
-  ],
-});
+export default defineConfig(
+  definePreset('css', { files: ['*.css'] }),
+  definePreset('scss', { files: ['*.scss'] }),
+);
 ```
 
-> [!NOTE]
-> The root `preset` option is for single-preset projects. \
-> Mixed repositories should
-> use `targets`; `preset` and `targets` are mutually exclusive at the root level.
+`defineConfig` accepts regular Stylelint config objects and merges them into a
+single config. A config object with a top-level `files` property is treated as a
+flat item and lowered to `overrides`.
+
+### Custom rules
+
+`definePreset` accepts rule overrides in regular Stylelint format. Use callbacks
+only when a project needs to modify package defaults instead of replacing them.
+Each callback receives the current rule value normalized as
+`[primary, secondary?]`. A callback can mutate the builder directly or return it
+for chaining. The callback `secondary` value contains only rule-specific options;
+shared Stylelint options like
+`severity`, `disableFix`, `message`, `reportDisables`, and `url` are exposed
+through `rule.stylelintOptions` and managed by dedicated builder methods.
+
+The available rule names and callback value types follow the selected preset:
+`css` exposes CSS rules, while `scss` exposes CSS rules plus SCSS-specific
+plugin rules.
+
+```js
+import { defineConfig, definePreset } from '@morev/stylelint-config';
+
+export default defineConfig(definePreset('css', {
+  rulesDiagnostics: 'warn',
+  rules: {
+    // Regular Stylelint values replace the package defaults.
+    'selector-type-no-unknown': null,
+    'color-hex-length': ['short', { severity: 'warning' }],
+
+    // Callbacks are useful when project rules should extend package defaults.
+    'font-weight-notation': (rule) => {
+      const [primary, secondary] = rule.value;
+      const { severity } = rule.stylelintOptions;
+      const nextSeverity = severity === 'warning' ? 'error' : 'warning';
+
+      return rule
+        .setValue([primary, {
+          ignore: [...secondary.ignore, 'named'],
+        }])
+        .setStylelintOptions({ reportDisables: true })
+        .setSeverity(nextSeverity)
+        .disableFix();
+    },
+
+    'declaration-block-no-redundant-longhand-properties': (rule) => {
+      const [, secondary] = rule.value;
+
+      return rule
+        .setSecondary({
+          ...secondary,
+          ignoreShorthands: [
+            ...secondary.ignoreShorthands,
+            'columns',
+          ],
+        });
+    },
+
+    'property-no-vendor-prefix': (rule) => {
+      const [, secondary] = rule.value;
+
+      return rule
+        .setSecondary({
+          ...secondary,
+          ignoreProperties: [
+            ...secondary.ignoreProperties,
+            '-webkit-appearance',
+          ],
+        })
+        .setSeverity('error')
+        .enableFix();
+    },
+  },
+}));
+```
+
+The same API is available for SCSS configs:
+
+```js
+import { defineConfig, definePreset } from '@morev/stylelint-config';
+
+export default defineConfig(
+  definePreset('scss', {
+    rules: {
+      // Regular Stylelint values replace SCSS package defaults.
+      'csstools/use-nesting': ['always', {
+        syntax: 'scss',
+        except: [':selection'],
+      }],
+
+      // Callbacks can extend existing SCSS rule options.
+      'scss/at-rule-no-unknown': (rule) => {
+        const [, secondary] = rule.value;
+
+        return rule
+          .setSecondary({
+            ignoreAtRules: [
+              ...secondary.ignoreAtRules,
+              'tailwind',
+            ],
+          })
+          .setSeverity('warning');
+      },
+    },
+  })
+);
+```
+
+Scoped preset items receive rule overrides locally, with CSS items typed as CSS
+and SCSS items typed as SCSS:
+
+```js
+import { defineConfig, definePreset } from '@morev/stylelint-config';
+
+export default defineConfig(
+  definePreset('css', {
+    files: ['*.css'],
+    rules: {
+      'color-hex-length': ['short', { severity: 'warning' }],
+    },
+  }),
+  definePreset('scss', {
+    files: ['*.scss'],
+    rules: {
+      'scss/at-rule-no-unknown': (rule) => {
+        const [, secondary] = rule.value;
+
+        return rule.setSecondary({
+          ...secondary,
+          ignoreAtRules: [
+            ...secondary.ignoreAtRules,
+            'tailwind',
+          ],
+        });
+      },
+    },
+  }),
+);
+```
+
+The builder methods are intentionally explicit: `setValue`, `setPrimary`,
+`setSecondary`, `setStylelintOptions`, `setSeverity`, `disable`, `disableFix`,
+and `enableFix`. The `setSecondary` method is available only for rules that
+define rule-specific secondary options. It accepts either a replacement object
+or a callback that receives the current rule-specific secondary options.
+Redundant setter calls are reported with `console.warn` by default; set
+`rulesDiagnostics` to `off`, `warn`, or `error` to control that behavior.
 
 ### Custom order
 
@@ -103,10 +235,9 @@ that should be sorted near the built-in groups while the rest of the package ord
 stays managed by this config.
 
 ```js
-import { defineConfig } from '@morev/stylelint-config';
+import { defineConfig, definePreset } from '@morev/stylelint-config';
 
-export default defineConfig({
-  preset: 'scss',
+export default defineConfig(definePreset('scss', {
   order: {
     // Arrays replace the default values for the group.
     mixins: ['theme-dark'],
@@ -119,7 +250,7 @@ export default defineConfig({
     ],
     containerQueries: [],
   },
-}, {
+}), {
   // Rest elements can extend the config in Stylelint format.
   rules: {
     'selector-max-id': null,
@@ -138,7 +269,7 @@ import {
   defineConfig,
 } from '@morev/stylelint-config';
 
-export default defineConfig({}, {
+export default defineConfig({
   rules: {
     'order/order': [RULES_ORDER, { severity: 'warning' }],
     'order/properties-order': [PROPERTIES_ORDER, { severity: 'warning' }],
@@ -148,19 +279,16 @@ export default defineConfig({}, {
 
 ### BEM component files
 
-Use `bem` as a scoped wrapper around
+Use `definePreset('bem')` as a scoped wrapper around
 [`@morev/stylelint-plugin`](https://morevm.github.io/stylelint-plugin/) for BEM component files,
 which usually make up only part of a repository.
 
-> [!NOTE]
-> In mixed CSS/SCSS repositories, the same `bem` option can be configured inside a specific target.
-
 ```js
-import { defineConfig } from '@morev/stylelint-config';
+import { defineConfig, definePreset } from '@morev/stylelint-config';
 
-export default defineConfig({
-  preset: 'scss',
-  bem: {
+export default defineConfig(
+  definePreset('scss'),
+  definePreset('bem', {
     files: [
       './src/components/**/*.{css,scss}',
       './src/blocks/**/*.{css,scss}',
@@ -172,15 +300,23 @@ export default defineConfig({
     },
     rules: {
       // Extends the default rule: keeps built-in presets and adds a project exception.
-      '@morev/bem/no-block-properties': (rule) => rule.merge({
-        allowProperties: ['position'],
-      }),
+      '@morev/bem/no-block-properties': (rule) => {
+        const [, secondary] = rule.value;
+
+        return rule.setSecondary({
+          ...secondary,
+          allowProperties: [
+            ...secondary.allowProperties,
+            'position',
+          ],
+        });
+      },
 
       // Replaces the default rule: the value below is used as-is.
       '@morev/bem/no-side-effects': [true, {
         ignore: ['.swiper-*'],
       }],
     },
-  },
-});
+  }),
+);
 ```
