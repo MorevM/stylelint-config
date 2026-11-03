@@ -105,6 +105,13 @@ class RuleBuilder {
 		return this.setStylelintOption('disableFix', false, 'enableFix');
 	}
 
+	public patchSecondary(secondary: object) {
+		return this.setSecondaryOptions({
+			...this.getSecondary(),
+			...secondary,
+		}, 'patchSecondary');
+	}
+
 	public setPrimary(primary: unknown) {
 		const [currentPrimary, secondary] = this.#value;
 		if (deepEqual(primary, currentPrimary)) {
@@ -116,7 +123,6 @@ class RuleBuilder {
 	}
 
 	public setSecondary(secondary: object | ((secondary: SecondaryOptions) => object | void)) {
-		const [primary] = this.#value;
 		const currentSecondary = this.getSecondary();
 		const nextSecondary = isFunction(secondary)
 			? secondary({ ...currentSecondary })
@@ -126,12 +132,7 @@ class RuleBuilder {
 			return this;
 		}
 
-		if (deepEqual(nextSecondary, currentSecondary)) {
-			this.reportRedundantSetter('setSecondary');
-		}
-
-		this.#value = [primary, nextSecondary];
-		return this;
+		return this.setSecondaryOptions(nextSecondary, 'setSecondary');
 	}
 
 	public setSeverity(severity: 'error' | 'warning') {
@@ -197,6 +198,16 @@ class RuleBuilder {
 		}
 
 		console.warn(message);
+	}
+
+	private setSecondaryOptions(secondary: object, methodName: string) {
+		if (deepEqual(secondary, this.getSecondary())) {
+			this.reportRedundantSetter(methodName);
+		}
+
+		const [primary] = this.#value;
+		this.#value = [primary, secondary];
+		return this;
 	}
 
 	private setStylelintOption(key: string, value: unknown, methodName: string) {

@@ -531,15 +531,22 @@ type DefineConfigRuleBuilderBase<
 };
 
 /**
- * Secondary-options helper available only for rules that define rule-specific secondary options.
+ * Secondary-options helpers available only for rules that define rule-specific secondary options.
  */
-type DefineConfigRuleBuilderSetSecondary<
+type DefineConfigRuleBuilderSecondary<
 	Preset extends DefineConfigRulePreset,
 	RuleName extends DefineConfigRuleName<Preset>,
 > =
 	[DefineConfigRuleAvailableSecondary<Preset, RuleName>] extends [never]
 		? object
 		: {
+			/**
+			 * Shallowly merge rule-specific secondary options.
+			 * Arrays and nested objects replace current values.
+			 */
+			patchSecondary: (
+				secondary: Partial<DefineConfigRuleSecondaryReplacement<Preset, RuleName>>,
+			) => DefineConfigRuleBuilder<Preset, RuleName>;
 			/**
 			 * Replace or transform the rule-specific secondary options.
 			 */
@@ -558,7 +565,7 @@ type DefineConfigRuleBuilder<
 	RuleName extends DefineConfigRuleName<Preset>,
 > =
 	DefineConfigRuleBuilderBase<Preset, RuleName>
-	& DefineConfigRuleBuilderSetSecondary<Preset, RuleName>;
+	& DefineConfigRuleBuilderSecondary<Preset, RuleName>;
 
 /**
  * Chainable helper used to transform one configured CSS rule.

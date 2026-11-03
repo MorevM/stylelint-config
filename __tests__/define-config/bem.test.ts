@@ -110,7 +110,7 @@ describe('defineConfig BEM', () => {
 		);
 	});
 
-	it('Exposes BEM secondary option completions in builder setters', () => {
+	it.each(['setSecondary', 'patchSecondary'])('Exposes BEM secondary option completions in %s', (methodName) => {
 		const source = `
 			import { defineConfig, definePreset } from '../dist/index.js';
 
@@ -118,12 +118,12 @@ describe('defineConfig BEM', () => {
 				files: ['./.playground/**/*.{css,scss}'],
 				rules: {
 					'@morev/bem/block-variable': (rule) => {
-						return rule.setSecondary({  });
+						return rule.${methodName}({  });
 					},
 				},
 			}));
 		`;
-		const completions = getCompletions(source, 'setSecondary({ ');
+		const completions = getCompletions(source, `${methodName}({ `);
 
 		expect(completions).toContain('replaceBlockName');
 	});
@@ -143,6 +143,36 @@ describe('defineConfig BEM', () => {
 		`;
 
 		expect(getSemanticDiagnosticMessages(source)).toStrictEqual([]);
+	});
+
+	it('Patches BEM options without replacing unrelated secondary or Stylelint options', () => {
+		const { defineConfig, definePreset } = getPublicApi();
+		const config = defineConfig(definePreset('bem', {
+			files: ['src/components/**/*.scss'],
+			rules: {
+				'@morev/bem/match-file-name': (rule) => rule
+					.setSeverity('warning')
+					.disableFix()
+					.patchSecondary({ caseSensitive: false }),
+				'@morev/bem/no-block-properties': (rule) => rule
+					.patchSecondary({ presets: ['CONTEXTUAL'] }),
+			},
+		}));
+		const bemOverride = getBemOverride(config);
+
+		expect(bemOverride.rules?.['@morev/bem/match-file-name']).toStrictEqual([true, {
+			caseSensitive: false,
+			matchDirectory: false,
+			severity: 'warning',
+			disableFix: true,
+			separators: undefined,
+		}]);
+		expect(bemOverride.rules?.['@morev/bem/no-block-properties']).toStrictEqual([true, {
+			presets: ['CONTEXTUAL'],
+			allowProperties: [],
+			ignoreBlocks: [],
+			separators: undefined,
+		}]);
 	});
 
 	it('Allows BEM rule defaults to be transformed with chainable builders', () => {

@@ -209,10 +209,13 @@ export default defineConfig(
 ```
 
 The builder methods are intentionally explicit: `setValue`, `setPrimary`,
-`setSecondary`, `setStylelintOptions`, `setSeverity`, `disable`, `disableFix`,
-and `enableFix`. The `setSecondary` method is available only for rules that
-define rule-specific secondary options. It accepts either a replacement object
-or a callback that receives the current rule-specific secondary options.
+`setSecondary`, `patchSecondary`, `setStylelintOptions`, `setSeverity`, `disable`,
+`disableFix`, and `enableFix`. The `setSecondary` and `patchSecondary` methods
+are available only for rules that define rule-specific secondary options.
+`setSecondary` accepts either a replacement object or a callback that receives
+the current rule-specific secondary options. `patchSecondary` accepts a partial
+object and merges it into the current options. Arrays and nested objects are
+replaced entirely; unspecified options are preserved.
 Redundant setter calls are reported with `console.warn` by default; set
 `rulesDiagnostics` to `off`, `warn`, or `error` to control that behavior.
 
@@ -303,8 +306,7 @@ export default defineConfig(
       '@morev/bem/no-block-properties': (rule) => {
         const [, secondary] = rule.value;
 
-        return rule.setSecondary({
-          ...secondary,
+        return rule.patchSecondary({
           allowProperties: [
             ...secondary.allowProperties,
             'position',

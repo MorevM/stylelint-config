@@ -212,6 +212,72 @@ describe('defineConfig rules', () => {
 		expect(getSemanticDiagnosticMessages(source)).toStrictEqual([]);
 	});
 
+	it('Types partial secondary patches and rejects unrelated options', () => {
+		const acceptedSource = `
+			import { defineConfig, definePreset } from '../dist/index.js';
+
+			defineConfig(definePreset('scss', {
+				rules: {
+					'scss/at-rule-no-unknown': (rule) => rule.patchSecondary({ ignoreAtRules: ['tailwind'] }),
+				},
+			}));
+			defineConfig(definePreset('bem', {
+				files: ['*.scss'],
+				rules: {
+					'@morev/bem/match-file-name': (rule) => rule.patchSecondary({ caseSensitive: false }),
+				},
+			}));
+		`;
+		const rejectedSource = `
+			import { defineConfig, definePreset } from '../dist/index.js';
+
+			defineConfig(definePreset('css', {
+				rules: {
+					'color-hex-length': (rule) => rule.patchSecondary({}),
+					'font-weight-notation': (rule) => rule.patchSecondary({ ignore: 'named' }),
+				},
+			}));
+			defineConfig(definePreset('scss', {
+				rules: {
+					'scss/at-rule-no-unknown': (rule) => rule.patchSecondary({ severity: 'warning' }),
+				},
+			}));
+		`;
+		const diagnostics = getSemanticDiagnosticMessages(rejectedSource);
+
+		expect(getSemanticDiagnosticMessages(acceptedSource)).toStrictEqual([]);
+		expect(diagnostics).toHaveLength(3);
+		expect(diagnostics.join('\n')).toContain('patchSecondary');
+		expect(diagnostics.join('\n')).toContain('severity');
+	});
+
+	it('Patches CSS secondary arrays and objects and reports redundant patches', () => {
+		const { defineConfig, definePreset } = getPublicApi();
+		const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+		const config = defineConfig(definePreset('css', {
+			rules: {
+				'font-weight-notation': (rule) => rule
+					.patchSecondary({ ignore: ['relative'] })
+					.patchSecondary({ ignore: [] }),
+				'unit-allowed-list': (rule) => rule
+					.setPrimary(['px'])
+					.patchSecondary({ ignoreProperties: { px: ['width'] } })
+					.patchSecondary({ ignoreProperties: { em: ['height'] } }),
+			},
+		}));
+
+		expect(config.rules?.['font-weight-notation']).toStrictEqual(['numeric', {
+			ignore: [],
+			severity: 'warning',
+		}]);
+		expect(config.rules?.['unit-allowed-list']).toStrictEqual([['px'], {
+			ignoreProperties: { em: ['height'] },
+		}]);
+		expect(warn).toHaveBeenCalledWith(expect.stringContaining('patchSecondary()'));
+
+		warn.mockRestore();
+	});
+
 	it('Allows CSS rule defaults to be transformed with chainable builders', () => {
 		const { defineConfig, definePreset } = getPublicApi();
 		const config = defineConfig(definePreset('css', {
