@@ -684,9 +684,7 @@ type DefineConfigBemRuleValue<RuleName extends DefineConfigDefaultBemRuleName> =
 /**
  * BEM rule overrides accepted by `defineConfig`.
  */
-type DefineConfigBemRulesOptions = Partial<{
-	[RuleName in DefineConfigDefaultBemRuleName]: DefineConfigBemRuleValue<RuleName>;
-}> & {
+type DefineConfigBemRulesOptions = DefineConfigRuleOptionsMap<'bem', DefineConfigBemPluginRules> & {
 	/**
 	 * Additional Stylelint rules that should be added to the same BEM override.
 	 */

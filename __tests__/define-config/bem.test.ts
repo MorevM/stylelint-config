@@ -4,6 +4,8 @@ import {
 	getBemOverride,
 	getCompletions,
 	getPublicApi,
+	getQuickInfo,
+	getQuickInfoTagText,
 	getSemanticDiagnosticMessages,
 } from './utils';
 import type { IsAny } from './utils';
@@ -65,6 +67,47 @@ describe('defineConfig BEM', () => {
 			checkRoot: true,
 			ignore: ['b'],
 		}]);
+	});
+
+	it.each([
+		['@morev/bem/selector-pattern', 'Enforces naming patterns for BEM entities.'],
+		[
+			'@morev/bem/no-side-effects',
+			'Disallows selectors that apply styles outside the scope of the current BEM block.',
+		],
+		[
+			'@morev/bem/no-chained-entities',
+			'Disallows splitting BEM entities across multiple chained `&` selectors in SCSS.',
+		],
+		[
+			'@morev/bem/no-block-properties',
+			'Prevents layout-affecting CSS properties within BEM block selectors.',
+		],
+		[
+			'@morev/bem/match-file-name',
+			'Requires the file name to begin with the name of the BEM block it represents.',
+		],
+		[
+			'@morev/bem/block-variable',
+			"Requires the component's root selector to define a variable referencing the block name.",
+		],
+	])('Exposes descriptions and documentation links for %s', (ruleName, description) => {
+		const source = `
+			import { defineConfig, definePreset } from '../dist/index.js';
+
+			defineConfig(definePreset('bem', {
+				files: ['src/components/**/*.scss'],
+				rules: {
+					'${ruleName}': (rule) => rule,
+				},
+			}));
+		`;
+		const ruleQuickInfo = getQuickInfo(source, `'${ruleName}'`);
+
+		expect(ruleQuickInfo.documentation).toBe(description);
+		expect(getQuickInfoTagText(ruleQuickInfo, 'see')).toBe(
+			`https://morevm.github.io/stylelint-plugin/rules/${ruleName.replace('@morev/', '')}.html`,
+		);
 	});
 
 	it('Exposes BEM secondary option completions in builder setters', () => {
