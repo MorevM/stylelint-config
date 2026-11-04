@@ -123,6 +123,12 @@ export default {
 			severity: WARNING,
 		}],
 
+		// https://stylelint-stylistic.github.io/rules/value-slash-space-before
+		'@stylistic/value-slash-space-before': ['always', {
+			ignoreProperties: ['grid-area', /^font/],
+			severity: WARNING,
+		}],
+
 		// #endregion
 
 		// #region Property
