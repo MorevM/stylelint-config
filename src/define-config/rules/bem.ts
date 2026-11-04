@@ -39,7 +39,7 @@ const DEFAULT_BEM_RULES = {
 	// Prevents layout-affecting CSS properties within BEM block selectors.
 	// https://morevm.github.io/stylelint-plugin/rules/bem/no-block-properties.html
 	'@morev/bem/no-block-properties': [true, {
-		presets: ['EXTERNAL_GEOMETRY', 'CONTEXTUAL', 'POSITIONING'],
+		presets: ['EXTERNAL_GEOMETRY', 'CONTEXT_DEPENDENT', 'POSITIONING'],
 		allowProperties: [],
 		ignoreBlocks: [],
 	}],

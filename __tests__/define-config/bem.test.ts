@@ -155,7 +155,7 @@ describe('defineConfig BEM', () => {
 					.disableFix()
 					.patchSecondary({ caseSensitive: false }),
 				'@morev/bem/no-block-properties': (rule) => rule
-					.patchSecondary({ presets: ['CONTEXTUAL'] }),
+					.patchSecondary({ presets: ['CONTEXT_DEPENDENT'] }),
 			},
 		}));
 		const bemOverride = getBemOverride(config);
@@ -168,7 +168,7 @@ describe('defineConfig BEM', () => {
 			separators: undefined,
 		}]);
 		expect(bemOverride.rules?.['@morev/bem/no-block-properties']).toStrictEqual([true, {
-			presets: ['CONTEXTUAL'],
+			presets: ['CONTEXT_DEPENDENT'],
 			allowProperties: [],
 			ignoreBlocks: [],
 			separators: undefined,
@@ -233,7 +233,7 @@ describe('defineConfig BEM', () => {
 		}]);
 
 		expect(bemOverride.rules?.['@morev/bem/no-block-properties']).toStrictEqual([true, {
-			presets: ['EXTERNAL_GEOMETRY', 'CONTEXTUAL', 'POSITIONING'],
+			presets: ['EXTERNAL_GEOMETRY', 'CONTEXT_DEPENDENT', 'POSITIONING'],
 			allowProperties: ['position'],
 			ignoreBlocks: [],
 			separators,
