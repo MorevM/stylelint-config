@@ -1,4 +1,3 @@
-import cp from 'node:child_process';
 import stylelintRules from 'stylelint-find-new-rules';
 
 type RuleDeclaration = {
@@ -31,7 +30,6 @@ describe('Check unused and deprecated props', () => {
 	let stylelintResult: StylelintResult;
 
 	beforeAll(async () => {
-		cp.execSync('pnpm build'); // Actual stylelint config of this repo extends bundled version
 		stylelintResult = await stylelintRules('./dist/configurations/scss.js');
 	});
 

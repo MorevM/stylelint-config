@@ -1,17 +1,17 @@
 import morevStylelintPlugin from '@morev/stylelint-plugin';
 import {
-	buildPublicApi,
 	getBemOverride,
 	getCompletions,
 	getPublicApi,
 	getQuickInfo,
 	getQuickInfoTagText,
 	getSemanticDiagnosticMessages,
+	loadPublicApi,
 } from './utils';
 import type { IsAny } from './utils';
 
 describe('defineConfig BEM', () => {
-	beforeAll(buildPublicApi);
+	beforeAll(loadPublicApi);
 
 	it('Adds BEM rules only for configured component files', () => {
 		const { defineConfig, definePreset } = getPublicApi();

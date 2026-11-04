@@ -1,10 +1,10 @@
 import morevStylelintPlugin from '@morev/stylelint-plugin';
 import stylelint from 'stylelint';
-import { buildPublicApi, getPublicApi } from './utils';
+import { getPublicApi, loadPublicApi } from './utils';
 import type { Config } from 'stylelint';
 
 describe('defineConfig core', () => {
-	beforeAll(buildPublicApi);
+	beforeAll(loadPublicApi);
 
 	it('Creates valid configs with or without a preset', () => {
 		const { defineConfig, definePreset } = getPublicApi();

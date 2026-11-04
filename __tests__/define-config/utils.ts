@@ -1,4 +1,3 @@
-import cp from 'node:child_process';
 import { isString } from '@morev/utils';
 import ts from 'typescript';
 import type { Config } from 'stylelint';
@@ -14,15 +13,9 @@ type RuntimeConfig = {
 };
 
 let publicApi: PublicApi | undefined;
-let publicApiPromise: Promise<PublicApi> | undefined;
 
-const buildPublicApi = async () => {
-	publicApiPromise ??= (async () => {
-		cp.execSync('pnpm build'); // Verify the same public entrypoint consumers import from the package
-		return await import('../../dist/index.js') as PublicApi;
-	})();
-
-	publicApi = await publicApiPromise;
+const loadPublicApi = async () => {
+	publicApi = await import('../../dist/index.js') as PublicApi;
 };
 
 const getPublicApi = () => {
@@ -108,7 +101,6 @@ const getQuickInfoTagText = (info: ReturnType<typeof getQuickInfo>, tagName: str
 	info.tags.find((tag) => tag.name === tagName)?.text?.map((part) => part.text).join('') ?? '';
 
 export {
-	buildPublicApi,
 	getAtRules,
 	getBemOverride,
 	getCompletions,
@@ -117,6 +109,7 @@ export {
 	getQuickInfo,
 	getQuickInfoTagText,
 	getSemanticDiagnosticMessages,
+	loadPublicApi,
 };
 
 export type {

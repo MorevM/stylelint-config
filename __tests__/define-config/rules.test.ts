@@ -1,14 +1,14 @@
 import {
-	buildPublicApi,
 	getPublicApi,
 	getQuickInfo,
 	getQuickInfoTagText,
 	getSemanticDiagnosticMessages,
+	loadPublicApi,
 } from './utils';
 import type { IsAny } from './utils';
 
 describe('defineConfig rules', () => {
-	beforeAll(buildPublicApi);
+	beforeAll(loadPublicApi);
 
 	it('Allows CSS rules to be replaced with regular Stylelint values', () => {
 		const { defineConfig, definePreset } = getPublicApi();

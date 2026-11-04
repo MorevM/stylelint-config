@@ -14,6 +14,7 @@ export default defineConfig({
 		},
 	},
 	test: {
+		globalSetup: './__tests__/global-setup.ts',
 		globals: true,
 		watch: false,
 	},

@@ -1,12 +1,12 @@
 import {
-	buildPublicApi,
 	getAtRules,
 	getOrderRule,
 	getPublicApi,
+	loadPublicApi,
 } from './utils';
 
 describe('defineConfig order', () => {
-	beforeAll(buildPublicApi);
+	beforeAll(loadPublicApi);
 
 	it('Allows order groups to be replaced or transformed', () => {
 		const { defineConfig, definePreset } = getPublicApi();
