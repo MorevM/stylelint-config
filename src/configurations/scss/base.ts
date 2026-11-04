@@ -10,6 +10,8 @@ const scssBaseConfig = {
 		'no-invalid-position-at-import-rule': null,
 		'selector-no-invalid': null,
 		'relative-selector-nesting-notation': null,
+		// Valid Sass expressions such as calc(100% - $gap) are not valid CSS values before compilation.
+		'value-no-invalid': null,
 	},
 };
 

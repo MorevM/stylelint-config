@@ -14,7 +14,6 @@ type StylelintResult = {
 const knownUnused = [
 	// New core rules are reviewed separately before enabling them in shared presets.
 	'declaration-property-custom-property-allowed-list',
-	'value-no-invalid',
 	'value-type-custom-property-required-list',
 
 	// BEM rules are enabled only through scoped component-file overrides via `defineConfig`.

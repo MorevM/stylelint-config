@@ -145,6 +145,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/syntax-string-no-invalid/
 		'syntax-string-no-invalid': true,
 
+		// Disallow invalid values and incompatible operands in CSS math functions
+		// https://stylelint.io/user-guide/rules/value-no-invalid/
+		'value-no-invalid': true,
+
 		// #endregion
 
 		// #region Irregular

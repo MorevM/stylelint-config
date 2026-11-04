@@ -162,6 +162,13 @@ type DefineConfigCssLocalCoreRules = {
 	 * @see https://stylelint.io/user-guide/rules/selector-no-unmatchable/
 	 */
 	'selector-no-unmatchable': RuleConfig<true, [selector: string, resolvedSelector: string, reason: string]>;
+
+	/**
+	 * Disallow invalid values and incompatible operands in CSS math functions.
+	 *
+	 * @see https://stylelint.io/user-guide/rules/value-no-invalid/
+	 */
+	'value-no-invalid': RuleConfig<true, [value: string, reason: string]>;
 };
 
 /**
