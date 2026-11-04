@@ -288,6 +288,9 @@ export default {
 		// https://stylelint-stylistic.github.io/rules/media-feature-slash-space-after
 		'@stylistic/media-feature-slash-space-after': ['always', { severity: WARNING }],
 
+		// https://stylelint-stylistic.github.io/rules/media-feature-slash-space-before
+		'@stylistic/media-feature-slash-space-before': ['always', { severity: WARNING }],
+
 		// Require a single space or disallow whitespace after the colon in media features (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md
 		'@stylistic/media-feature-colon-space-after': ['always', { severity: WARNING }],
