@@ -116,6 +116,10 @@ export default {
 
 		// #region Value slash
 
+		// The space rules below handle both single-line and multi-line values.
+		// https://stylelint-stylistic.github.io/rules/value-slash-newline-after
+		'@stylistic/value-slash-newline-after': null,
+
 		// Require a single space around slashes in values (autofixable)
 		// https://stylelint-stylistic.github.io/rules/value-slash-space-after
 		'@stylistic/value-slash-space-after': ['always', {

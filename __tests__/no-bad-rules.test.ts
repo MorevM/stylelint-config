@@ -21,8 +21,6 @@ const knownUnused = [
 	'@morev/bem/selector-pattern',
 
 	// Stylistic v6 rules are reviewed in the following commits.
-	'@stylistic/value-slash-newline-after',
-	'@stylistic/scss/value-slash-newline-after',
 	'@stylistic/value-slash-newline-before',
 	'@stylistic/scss/value-slash-newline-before',
 ];
