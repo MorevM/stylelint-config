@@ -318,11 +318,6 @@ export default {
 
 		// #region Max & min
 
-		// Limit the number of declarations within a single-line declaration block
-		// https://stylelint.io/user-guide/rules/list/declaration-block-single-line-max-declarations/
-		// Note: Sometimes we can save a lot of vertical spacing using repeating structures
-		'declaration-block-single-line-max-declarations': 3,
-
 		// Limit the number of values for a list of properties within declarations
 		// https://stylelint.io/user-guide/rules/list/declaration-property-max-values/
 		'declaration-property-max-values': null,
