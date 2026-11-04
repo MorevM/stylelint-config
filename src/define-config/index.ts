@@ -8,7 +8,6 @@ import type {
 	DefineConfigBemOptions,
 	DefineConfigCssPresetFactoryOptions,
 	DefineConfigFlatConfig,
-	DefineConfigInputConfig,
 	DefineConfigPreset,
 	DefineConfigPresetName,
 	DefineConfigScssPresetFactoryOptions,
@@ -34,7 +33,7 @@ const hasFiles = (
  *
  * @returns          Stylelint config fragment without a root-level `files` property.
  */
-const normalizeFlatConfig = (config: DefineConfigFlatConfig): DefineConfigInputConfig => {
+const normalizeFlatConfig = (config: DefineConfigFlatConfig) => {
 	if (!hasFiles(config)) return config;
 
 	const { files, overrides, ...overrideConfig } = config;
