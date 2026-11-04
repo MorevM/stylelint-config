@@ -243,8 +243,8 @@ importers:
         specifier: ^17.14.0
         version: 17.14.0(supports-color@10.2.2)(typescript@6.0.3)
       stylelint-find-new-rules:
-        specifier: ^6.0.0
-        version: 6.0.0(stylelint@17.14.0(supports-color@10.2.2)(typescript@6.0.3))
+        specifier: ^6.1.0
+        version: 6.1.0(stylelint@17.14.0(supports-color@10.2.2)(typescript@6.0.3))
       tsdown:
         specifier: ^0.22.3
         version: 0.22.3(typescript@6.0.3)
@@ -334,10 +334,6 @@ packages:
   '@astrojs/compiler-rs@0.5.2':
     resolution: {integrity: sha512-IvwYLB8t1M86rKO4oPdBi9GP4gzXcgrVlNgocjwos1jeeUuEIV8d9Crn1PvYD/5IKteWOxpIHomf7e8iYlkE+Q==}
     engines: {node: '>=22.12.0'}
-
-  '@babel/code-frame@7.29.0':
-    resolution: {integrity: sha512-9NhCeYjq9+3uxgdtp20LSiJXJvN0FeCtNGpJxuMFZ1Kv3cWUNb6DOhJwUvcVCzKGR66cw4njwM6hrJLqgOwbcw==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/code-frame@7.29.7':
     resolution: {integrity: sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==}
@@ -3153,10 +3149,6 @@ packages:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
     engines: {node: 6.* || 8.* || >= 10.*}
 
-  get-east-asian-width@1.5.0:
-    resolution: {integrity: sha512-CQ+bEO+Tva/qlmw24dCejulK5pMzVnUOFOijVogd3KQs07HnRIgp8TGipvCCRT06xeYEbpbgwaCxglFyiuIcmA==}
-    engines: {node: '>=18'}
-
   get-east-asian-width@1.6.0:
     resolution: {integrity: sha512-QRbvDIbx6YklUe6RxeTeleMR0yv3cYH6PsPZHcnVn7xv7zO1BHN8r0XETu8n6Ye3Q+ahtSarc3WgtNWmehIBfA==}
     engines: {node: '>=18'}
@@ -4773,8 +4765,8 @@ packages:
     peerDependencies:
       stylelint: '>=17.0.0'
 
-  stylelint-find-new-rules@6.0.0:
-    resolution: {integrity: sha512-VshJCkfjOkKjvWfetTMaw/Jkuli30h2+Qlmk/IX/qIpGaae1p02nLodTNRv8FWB8IrTXHZrooH1RWeHSJzQmtA==}
+  stylelint-find-new-rules@6.1.0:
+    resolution: {integrity: sha512-N+bn85Dr+QirtvxluIZusPDONafdTeX43qnE2QnDUzt3oqNpFGLRCPN3cPhKmV2qtZn/RjsA5b6+/vczYi2F9g==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -5396,12 +5388,6 @@ snapshots:
   '@astrojs/compiler-rs@0.5.2':
     dependencies:
       '@astrojs/compiler-binding': 0.5.2
-
-  '@babel/code-frame@7.29.0':
-    dependencies:
-      '@babel/helper-validator-identifier': 7.29.7
-      js-tokens: 4.0.0
-      picocolors: 1.1.1
 
   '@babel/code-frame@7.29.7':
     dependencies:
@@ -8301,8 +8287,6 @@ snapshots:
 
   get-caller-file@2.0.5: {}
 
-  get-east-asian-width@1.5.0: {}
-
   get-east-asian-width@1.6.0: {}
 
   get-intrinsic@1.2.4:
@@ -9549,7 +9533,7 @@ snapshots:
 
   parse-json@8.3.0:
     dependencies:
-      '@babel/code-frame': 7.29.0
+      '@babel/code-frame': 7.29.7
       index-to-position: 1.2.0
       type-fest: 4.41.0
 
@@ -10034,7 +10018,7 @@ snapshots:
   string-width@7.2.0:
     dependencies:
       emoji-regex: 10.6.0
-      get-east-asian-width: 1.5.0
+      get-east-asian-width: 1.6.0
       strip-ansi: 7.2.0
 
   string-width@8.2.1:
@@ -10098,7 +10082,7 @@ snapshots:
       csstype: 3.2.3
       stylelint: 17.14.0(supports-color@10.2.2)(typescript@6.0.3)
 
-  stylelint-find-new-rules@6.0.0(stylelint@17.14.0(supports-color@10.2.2)(typescript@6.0.3)):
+  stylelint-find-new-rules@6.1.0(stylelint@17.14.0(supports-color@10.2.2)(typescript@6.0.3)):
     dependencies:
       columnify: 1.6.0
       picocolors: 1.1.1
