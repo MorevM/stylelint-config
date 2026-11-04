@@ -89,7 +89,7 @@ const defineConfig = (...configs: DefineConfigFlatConfig[]): DefineConfigStyleli
 		),
 		// Stylelint validates root rules before applying file overrides.
 		{ rules: {} },
-	) as DefineConfigStylelintConfig;
+	);
 
 function definePreset(preset: 'css', options?: DefineConfigCssPresetFactoryOptions): DefineConfigFlatConfig;
 function definePreset(preset: 'scss', options?: DefineConfigScssPresetFactoryOptions): DefineConfigFlatConfig;
@@ -115,7 +115,7 @@ function definePreset(
 	}
 
 	if (preset === 'bem') {
-		return createBemConfig(options as DefineConfigBemOptions) as DefineConfigFlatConfig;
+		return createBemConfig(options as DefineConfigBemOptions);
 	}
 
 	const exhaustivePreset: never = preset;

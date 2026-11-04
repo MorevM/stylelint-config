@@ -1,5 +1,5 @@
 import morevStylelintPlugin, { createDefineRules } from '@morev/stylelint-plugin';
-import { isString } from '@morev/utils';
+import { isString, isUndefined } from '@morev/utils';
 import { resolveRuleBuilderValue } from './rule-overrides';
 import { DEFAULT_BEM_RULES } from './rules';
 import type { Config } from 'stylelint';
@@ -59,9 +59,8 @@ const resolveBemRules = (
 ) => {
 	const resolvedRules = { ...DEFAULT_BEM_RULES } as Record<string, unknown>;
 
-	for (const ruleName of Object.keys(rules)) {
-		const value = rules[ruleName];
-		if (value === undefined) continue;
+	for (const [ruleName, value] of Object.entries(rules)) {
+		if (isUndefined(value)) continue;
 
 		resolvedRules[ruleName] = isDefaultBemRuleName(ruleName)
 			? resolveBemRuleValue(ruleName, value as DefineConfigBemRuleValue<typeof ruleName>, diagnostics)

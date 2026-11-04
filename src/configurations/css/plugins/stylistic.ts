@@ -1,4 +1,4 @@
-/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable sonarjs/no-duplicate-string -- Rule options intentionally repeat across independent declarations. */
 import { WARNING } from '#constants';
 
 export default {

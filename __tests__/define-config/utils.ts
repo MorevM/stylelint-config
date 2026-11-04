@@ -15,7 +15,7 @@ type RuntimeConfig = {
 let publicApi: PublicApi | undefined;
 
 const loadPublicApi = async () => {
-	publicApi = await import('../../dist/index.js') as PublicApi;
+	publicApi = await import('../../dist/index.js');
 };
 
 const getPublicApi = () => {

@@ -79,6 +79,56 @@ class RuleBuilder {
 		this.#stylelintOptions = stylelintOptions;
 	}
 
+	private getSecondary() {
+		const [, secondary] = this.#value;
+		return isPlainObject(secondary) ? secondary : {};
+	}
+
+	private haveStylelintOptionChanges(stylelintOptions: SecondaryOptions) {
+		return Object.entries(stylelintOptions)
+			.some(([key, value]) => !deepEqual(this.#stylelintOptions[key], value));
+	}
+
+	private reportRedundantSetter(methodName: string) {
+		if (this.#diagnostics === 'off') return;
+
+		const methodLabel = methodName.includes('(') ? methodName : `${methodName}()`;
+		const message = `@morev/stylelint-config: "${this.#ruleName}" rule ${methodLabel} received a value equal to the current config.`;
+		if (this.#diagnostics === 'error') {
+			throw new Error(message);
+		}
+
+		console.warn(message);
+	}
+
+	private setSecondaryOptions(secondary: object, methodName: string) {
+		if (deepEqual(secondary, this.getSecondary())) {
+			this.reportRedundantSetter(methodName);
+		}
+
+		const [primary] = this.#value;
+		this.#value = [primary, secondary];
+		return this;
+	}
+
+	private setStylelintOption(key: string, value: unknown, methodName: string) {
+		if (deepEqual(this.#stylelintOptions[key], value)) {
+			this.reportRedundantSetter(methodName);
+		}
+
+		this.#stylelintOptions = {
+			...this.#stylelintOptions,
+			[key]: value,
+		};
+		return this;
+	}
+
+	private setStylelintOptionsFromSplit(stylelintOptions: SecondaryOptions) {
+		for (const [key, value] of Object.entries(stylelintOptions)) {
+			this.setStylelintOption(key, value, `setValue("${key}")`);
+		}
+	}
+
 	public get value() {
 		return this.#value;
 	}
@@ -179,56 +229,6 @@ class RuleBuilder {
 		return hasOptions(mergedSecondary)
 			? [primary, mergedSecondary] as RuleSetting
 			: primary as RuleSetting;
-	}
-
-	private getSecondary() {
-		const [, secondary] = this.#value;
-		return isPlainObject(secondary) ? secondary : {};
-	}
-
-	private haveStylelintOptionChanges(stylelintOptions: SecondaryOptions) {
-		return Object.entries(stylelintOptions)
-			.some(([key, value]) => !deepEqual(this.#stylelintOptions[key], value));
-	}
-
-	private reportRedundantSetter(methodName: string) {
-		if (this.#diagnostics === 'off') return;
-
-		const methodLabel = methodName.includes('(') ? methodName : `${methodName}()`;
-		const message = `@morev/stylelint-config: "${this.#ruleName}" rule ${methodLabel} received a value equal to the current config.`;
-		if (this.#diagnostics === 'error') {
-			throw new Error(message);
-		}
-
-		console.warn(message);
-	}
-
-	private setSecondaryOptions(secondary: object, methodName: string) {
-		if (deepEqual(secondary, this.getSecondary())) {
-			this.reportRedundantSetter(methodName);
-		}
-
-		const [primary] = this.#value;
-		this.#value = [primary, secondary];
-		return this;
-	}
-
-	private setStylelintOption(key: string, value: unknown, methodName: string) {
-		if (deepEqual(this.#stylelintOptions[key], value)) {
-			this.reportRedundantSetter(methodName);
-		}
-
-		this.#stylelintOptions = {
-			...this.#stylelintOptions,
-			[key]: value,
-		};
-		return this;
-	}
-
-	private setStylelintOptionsFromSplit(stylelintOptions: SecondaryOptions) {
-		for (const [key, value] of Object.entries(stylelintOptions)) {
-			this.setStylelintOption(key, value, `setValue("${key}")`);
-		}
 	}
 }
 
