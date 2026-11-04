@@ -58,7 +58,7 @@
 		"prepare:consumer": "node scripts/prepare-consumer.mjs",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
-		"release": "release-it --disable-metrics"
+		"release": "release-it"
 	},
 	"peerDependencies": {
 		"stylelint": "^17.10.0"
@@ -90,7 +90,7 @@
 		"cspell": "^10.4.0",
 		"eslint": "10.14.0",
 		"lefthook": "^2.2.2",
-		"release-it": "^20.2.1",
+		"release-it": "^21.1.2",
 		"stylelint": "^18.0.0",
 		"stylelint-find-new-rules": "^6.1.0",
 		"tsdown": "^0.23.4",
