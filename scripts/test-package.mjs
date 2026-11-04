@@ -16,7 +16,7 @@ const run = (command, args, cwd = root) => execFileSync(command, args, {
 
 try {
 	run('pnpm', ['build']);
-	run('pnpm', ['pack', '--ignore-scripts', '--out', tarball]);
+	run('pnpm', ['--config.ignore-scripts=true', 'pack', '--out', tarball]);
 	cpSync(new URL('../fixtures/consumer/', import.meta.url), directory, {
 		recursive: true,
 		filter: (source) => !['node_modules', 'pnpm-lock.yaml', 'stylelint-config.tgz'].includes(basename(source)),

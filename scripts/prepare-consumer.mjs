@@ -8,7 +8,7 @@ const directory = join(root, 'fixtures/consumer');
 const run = (args, cwd = root) => execFileSync('pnpm', args, { cwd, stdio: 'inherit' });
 
 run(['build']);
-run(['pack', '--ignore-scripts', '--out', join(directory, 'stylelint-config.tgz')]);
+run(['--config.ignore-scripts=true', 'pack', '--out', join(directory, 'stylelint-config.tgz')]);
 
 // Recreate generated install state so pnpm reads the new tarball at the same path.
 rmSync(join(directory, 'pnpm-lock.yaml'), { force: true });
