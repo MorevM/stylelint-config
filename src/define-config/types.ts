@@ -181,6 +181,30 @@ type DefineConfigCssLocalCoreRules = {
 	 * @see https://stylelint.io/user-guide/rules/value-no-invalid/
 	 */
 	'value-no-invalid': RuleConfig<true, [value: string, reason: string]>;
+
+	/**
+	 * Require custom properties for selected CSS value types.
+	 *
+	 * @see https://stylelint.io/user-guide/rules/value-type-custom-property-required-list/
+	 *
+	 * @experimental
+	 */
+	'value-type-custom-property-required-list': RuleConfig<Arrayable<string>, [value: string, type: string], {
+		/**
+		 * Literal values exempt from custom-property requirements.
+		 */
+		ignoreValues?: Arrayable<RegExpLike>;
+
+		/**
+		 * Functions exempt from requirements, grouped by CSS value type.
+		 */
+		ignoreFunctions?: Record<string, Arrayable<RegExpLike>>;
+
+		/**
+		 * Properties exempt from requirements, grouped by CSS value type.
+		 */
+		ignoreProperties?: Record<string, Arrayable<RegExpLike>>;
+	}>;
 };
 
 /**

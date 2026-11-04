@@ -12,9 +12,6 @@ type StylelintResult = {
 };
 
 const knownUnused = [
-	// New core rules are reviewed separately before enabling them in shared presets.
-	'value-type-custom-property-required-list',
-
 	// BEM rules are enabled only through scoped component-file overrides via `defineConfig`.
 	'@morev/bem/block-variable',
 	'@morev/bem/match-file-name',

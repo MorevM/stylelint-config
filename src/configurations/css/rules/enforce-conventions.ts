@@ -225,6 +225,11 @@ export default {
 
 		// Value
 
+		// Require custom properties for selected CSS value types (experimental)
+		// https://stylelint.io/user-guide/rules/value-type-custom-property-required-list/
+		// Token-only values are a project decision; raw values and Sass variables remain valid choices.
+		'value-type-custom-property-required-list': null,
+
 		// Disallow vendor prefixes for values (autofixable)
 		// https://stylelint.io/user-guide/rules/list/value-no-vendor-prefix/
 		'value-no-vendor-prefix': [true, { severity: WARNING }],
