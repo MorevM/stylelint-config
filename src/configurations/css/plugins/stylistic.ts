@@ -10,6 +10,14 @@ export default {
 		'ruleName' in plugin && /^@stylistic\/[^/]+$/.test(plugin.ruleName)),
 
 	rules: {
+		// #region Aspect ratio
+
+		// Require ratio notation for aspect-ratio values and media features (autofixable)
+		// https://stylelint-stylistic.github.io/rules/aspect-ratio-notation
+		'@stylistic/aspect-ratio-notation': ['ratio', { severity: WARNING }],
+
+		// #endregion
+
 		// #region Color
 
 		// Specify lowercase or uppercase for hex colors (autofixable)

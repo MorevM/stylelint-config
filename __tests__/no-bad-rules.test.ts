@@ -21,8 +21,6 @@ const knownUnused = [
 	'@morev/bem/selector-pattern',
 
 	// Stylistic v6 rules are reviewed in the following commits.
-	'@stylistic/aspect-ratio-notation',
-	'@stylistic/scss/aspect-ratio-notation',
 	'@stylistic/declaration-block-single-line-max-declarations',
 	'@stylistic/scss/declaration-block-single-line-max-declarations',
 	'@stylistic/media-feature-slash-space-after',
