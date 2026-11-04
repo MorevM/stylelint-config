@@ -11,9 +11,15 @@ type StylelintResult = {
 	unused: RuleDeclaration[];
 };
 
-// BEM rules are provided by the plugin but are enabled
-// conditionally only through scoped component-file overrides via `defineConfig`.
 const knownUnused = [
+	// New core rules are reviewed separately before enabling them in shared presets.
+	'at-charset-rule-no-invalid',
+	'declaration-property-custom-property-allowed-list',
+	'selector-no-unmatchable',
+	'value-no-invalid',
+	'value-type-custom-property-required-list',
+
+	// BEM rules are enabled only through scoped component-file overrides via `defineConfig`.
 	'@morev/bem/block-variable',
 	'@morev/bem/match-file-name',
 	'@morev/bem/no-block-properties',
