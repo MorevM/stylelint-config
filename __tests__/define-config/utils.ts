@@ -60,6 +60,7 @@ const createLanguageService = (source: string, fixtureName: string) => {
 		getScriptVersion: () => '0',
 		readDirectory: ts.sys.readDirectory,
 		readFile: (path) => files.get(path) ?? ts.sys.readFile(path),
+		realpath: ts.sys.realpath,
 	};
 
 	return {
