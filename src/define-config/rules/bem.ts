@@ -40,6 +40,12 @@ const DEFAULT_BEM_RULES = {
 	// https://morevm.github.io/stylelint-plugin/rules/bem/no-detached-entity-extensions.html
 	'@morev/bem/no-detached-entity-extensions': true,
 
+	// Prevents BEM entities from having both grouped and separate declarations.
+	// https://morevm.github.io/stylelint-plugin/rules/bem/no-grouped-entities.html
+	'@morev/bem/no-grouped-entities': [true, {
+		strict: false,
+	}],
+
 	// Prevents layout-affecting CSS properties within BEM block selectors.
 	// https://morevm.github.io/stylelint-plugin/rules/bem/no-block-properties.html
 	'@morev/bem/no-block-properties': [true, {

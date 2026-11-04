@@ -18,6 +18,7 @@ const knownUnused = [
 	'@morev/bem/no-block-properties',
 	'@morev/bem/no-chained-entities',
 	'@morev/bem/no-detached-entity-extensions',
+	'@morev/bem/no-grouped-entities',
 	'@morev/bem/no-side-effects',
 	'@morev/bem/selector-pattern',
 ];
