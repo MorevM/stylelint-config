@@ -4,3 +4,4 @@ allowBuilds:
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - '@morev/*'
+  - stylelint@18.0.0
