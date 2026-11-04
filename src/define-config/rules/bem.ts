@@ -54,6 +54,10 @@ const DEFAULT_BEM_RULES = {
 		ignoreBlocks: [],
 	}],
 
+	// Requires relational styles for a BEM entity to be declared within that entity.
+	// https://morevm.github.io/stylelint-plugin/rules/bem/no-misplaced-relational-styles.html
+	'@morev/bem/no-misplaced-relational-styles': true,
+
 	// Disallows selectors that apply styles outside the scope of the current BEM block.
 	// https://morevm.github.io/stylelint-plugin/rules/bem/no-side-effects.html
 	'@morev/bem/no-side-effects': [true, {
