@@ -2,6 +2,8 @@ import type { createDefineRules } from '@morev/stylelint-plugin';
 import type { Config } from 'stylelint';
 import type {
 	Arrayable,
+	CSSFunction,
+	LiteralUnion,
 	RegExpLike,
 	RuleConfig,
 	StylelintConfig,
@@ -148,7 +150,7 @@ type DefineConfigCssRulesDiagnostics = DefineConfigRulesDiagnostics;
 type DefineConfigStylelintSecondaryOptionName = keyof DefineConfigRuleSecondaryOptions;
 
 /**
- * Core rule schemas not yet provided by `stylelint-define-config`.
+ * Core rule schemas missing or incorrectly typed in `stylelint-define-config`.
  */
 type DefineConfigCssLocalCoreRules = {
 	/**
@@ -169,11 +171,27 @@ type DefineConfigCssLocalCoreRules = {
 	>;
 
 	/**
-	 * Disallow valid selectors that can never match an element.
+	 * Disallow units for zero lengths.
 	 *
-	 * @see https://stylelint.io/user-guide/rules/selector-no-unmatchable/
+	 * @see https://stylelint.io/user-guide/rules/length-zero-no-unit/
 	 */
-	'selector-no-unmatchable': RuleConfig<true, [selector: string, resolvedSelector: string, reason: string]>;
+	'length-zero-no-unit': RuleConfig<true, [], {
+		/**
+		 * Ignore zero lengths in custom properties.
+		 */
+		ignore?: Array<LiteralUnion<'custom-properties'>>;
+
+		/**
+		 * Functions exempt from zero-length unit checks.
+		 * Upstream 17.15.0 omits arrays accepted by Stylelint.
+		 */
+		ignoreFunctions?: Arrayable<CSSFunction | RegExp>;
+
+		/**
+		 * At-rule preludes exempt from zero-length unit checks.
+		 */
+		ignorePreludeOfAtRules?: RegExpLike[];
+	}>;
 
 	/**
 	 * Disallow invalid values and incompatible operands in CSS math functions.
@@ -278,7 +296,7 @@ type DefineConfigBemPluginRules = NonNullable<Parameters<ReturnType<typeof creat
  * Rule schemas used as typed/JSDoc sources for the CSS preset.
  */
 type DefineConfigCssRuleSources =
-	& StylelintCoreRules
+	& Omit<StylelintCoreRules, keyof DefineConfigCssLocalCoreRules>
 	& DefineConfigCssLocalCoreRules
 	& StylelintCustomRuleOptions
 	& DefineConfigCssLocalPluginRules
@@ -710,7 +728,7 @@ type DefineConfigScssRuleOptionsMap<Rules extends object> = DefineConfigRuleOpti
  * CSS rule overrides accepted by `defineConfig`.
  */
 type DefineConfigCssRulesOptions =
-	& DefineConfigCssRuleOptionsMap<StylelintCoreRules>
+	& DefineConfigCssRuleOptionsMap<Omit<StylelintCoreRules, keyof DefineConfigCssLocalCoreRules>>
 	& DefineConfigCssRuleOptionsMap<DefineConfigCssLocalCoreRules>
 	& DefineConfigCssRuleOptionsMap<StylelintCustomRuleOptions>
 	& DefineConfigCssRuleOptionsMap<DefineConfigCssLocalPluginRules>
@@ -720,7 +738,7 @@ type DefineConfigCssRulesOptions =
  * SCSS rule overrides accepted by `defineConfig`.
  */
 type DefineConfigScssRulesOptions =
-	& DefineConfigScssRuleOptionsMap<StylelintCoreRules>
+	& DefineConfigScssRuleOptionsMap<Omit<StylelintCoreRules, keyof DefineConfigCssLocalCoreRules>>
 	& DefineConfigScssRuleOptionsMap<DefineConfigCssLocalCoreRules>
 	& DefineConfigScssRuleOptionsMap<StylelintCustomRuleOptions>
 	& DefineConfigScssRuleOptionsMap<DefineConfigCssLocalPluginRules>
