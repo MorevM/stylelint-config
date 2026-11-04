@@ -1,3 +1,5 @@
+import type { DefineConfigBemPluginRules } from '../types';
+
 /**
  * Default `@morev/stylelint-plugin` BEM rules used by `defineConfig`.
  */
@@ -22,6 +24,26 @@ const DEFAULT_BEM_RULES = {
 			modifierValue: 'KEBAB_CASE_NUMERIC',
 		},
 	}],
+
+	// Enforces naming patterns for SASS variables containing BEM selectors.
+	// https://morevm.github.io/stylelint-plugin/rules/bem/selector-variable-pattern.html
+	'@morev/bem/selector-variable-pattern': [true, {
+		resolve: ({ owner, selector, variable }) => {
+			if (selector.block !== owner?.block) return;
+
+			if (owner.depth > 1 && variable.reference === 'self') return 'self';
+
+			if (owner.depth === 1 && selector.modifierName) {
+				return [
+					selector.element ?? 'b',
+					selector.modifierName,
+					selector.modifierValue,
+				].filter(Boolean).join('--');
+			}
+
+			return selector.element;
+		},
+	}] satisfies DefineConfigBemPluginRules['@morev/bem/selector-variable-pattern'],
 
 	// Requires the file name to begin with the name of the BEM block it represents.
 	// https://morevm.github.io/stylelint-plugin/rules/bem/match-file-name.html

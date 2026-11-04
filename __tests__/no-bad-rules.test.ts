@@ -22,6 +22,7 @@ const knownUnused = [
 	'@morev/bem/no-misplaced-relational-styles',
 	'@morev/bem/no-side-effects',
 	'@morev/bem/selector-pattern',
+	'@morev/bem/selector-variable-pattern',
 ];
 
 const toHumanReadable = (declarations: RuleDeclaration[]) =>
