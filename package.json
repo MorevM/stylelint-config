@@ -4,6 +4,7 @@
 	"type": "module",
 	"private": false,
 	"version": "9.0.2",
+	"packageManager": "pnpm@12.16.1",
 	"engines": {
 		"node": ">=22"
 	},
