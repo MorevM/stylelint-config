@@ -36,6 +36,10 @@ const DEFAULT_BEM_RULES = {
 		disallowNestedModifierValues: false,
 	}],
 
+	// Requires extensions of a BEM entity selector to be declared within that entity.
+	// https://morevm.github.io/stylelint-plugin/rules/bem/no-detached-entity-extensions.html
+	'@morev/bem/no-detached-entity-extensions': true,
+
 	// Prevents layout-affecting CSS properties within BEM block selectors.
 	// https://morevm.github.io/stylelint-plugin/rules/bem/no-block-properties.html
 	'@morev/bem/no-block-properties': [true, {

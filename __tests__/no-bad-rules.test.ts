@@ -17,6 +17,7 @@ const knownUnused = [
 	'@morev/bem/match-file-name',
 	'@morev/bem/no-block-properties',
 	'@morev/bem/no-chained-entities',
+	'@morev/bem/no-detached-entity-extensions',
 	'@morev/bem/no-side-effects',
 	'@morev/bem/selector-pattern',
 ];
