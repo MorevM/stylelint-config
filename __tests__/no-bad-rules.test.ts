@@ -21,8 +21,6 @@ const knownUnused = [
 	'@morev/bem/selector-pattern',
 
 	// Stylistic v6 rules are reviewed in the following commits.
-	'@stylistic/media-feature-slash-space-after',
-	'@stylistic/scss/media-feature-slash-space-after',
 	'@stylistic/media-feature-slash-space-before',
 	'@stylistic/scss/media-feature-slash-space-before',
 	'@stylistic/value-slash-space-after',

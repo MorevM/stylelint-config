@@ -284,6 +284,10 @@ export default {
 
 		// #region Media feature
 
+		// Require a single space around slashes in media feature ratios (autofixable)
+		// https://stylelint-stylistic.github.io/rules/media-feature-slash-space-after
+		'@stylistic/media-feature-slash-space-after': ['always', { severity: WARNING }],
+
 		// Require a single space or disallow whitespace after the colon in media features (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md
 		'@stylistic/media-feature-colon-space-after': ['always', { severity: WARNING }],
