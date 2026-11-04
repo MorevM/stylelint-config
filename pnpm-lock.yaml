@@ -177,13 +177,13 @@ importers:
         version: 3.15.0
       '@stylelint-types/stylelint-order':
         specifier: ^8.1.1
-        version: 8.1.1(stylelint-define-config@17.11.0(stylelint@18.0.0))(stylelint@18.0.0)
+        version: 8.1.1(stylelint-define-config@17.15.0(stylelint@18.0.0))(stylelint@18.0.0)
       '@stylelint-types/stylelint-scss':
         specifier: ^7.0.1
-        version: 7.0.1(stylelint-define-config@17.11.0(stylelint@18.0.0))(stylelint@18.0.0)
+        version: 7.0.1(stylelint-define-config@17.15.0(stylelint@18.0.0))(stylelint@18.0.0)
       '@stylelint-types/stylelint-stylistic':
         specifier: ^5.1.0
-        version: 5.1.0(stylelint-define-config@17.11.0(stylelint@18.0.0))(stylelint@18.0.0)
+        version: 5.1.0(stylelint-define-config@17.15.0(stylelint@18.0.0))(stylelint@18.0.0)
       '@stylistic/stylelint-plugin':
         specifier: ^5.2.0
         version: 5.2.0(stylelint@18.0.0)
@@ -197,8 +197,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(stylelint@18.0.0)
       stylelint-define-config:
-        specifier: ^17.11.0
-        version: 17.11.0(stylelint@18.0.0)
+        specifier: ^17.15.0
+        version: 17.15.0(stylelint@18.0.0)
       stylelint-high-performance-animation:
         specifier: ^2.0.0
         version: 2.0.0(stylelint@18.0.0)
@@ -4459,8 +4459,8 @@ packages:
     peerDependencies:
       stylelint: ^17.0.0
 
-  stylelint-define-config@17.11.0:
-    resolution: {integrity: sha512-ZRB5jvaQbvc9V4AT6QvuVdO1uHljpQjd+dk8Uc4zLxonU/AkpUwmvVkPBWMYgr85UMpjV7YtIDrWADCdQ3RRHQ==}
+  stylelint-define-config@17.15.0:
+    resolution: {integrity: sha512-+qN5XMlax1iEOOVEu4/dZx/LSAWiF+a86J5wyM+8UpeFmNvQRaWWwqmZA4glTZ7hmIxOGo1ugDfHoOaNQkbs9w==}
     engines: {node: '>=20.19.0', npm: '>=9', pnpm: '>=10'}
     peerDependencies:
       stylelint: '>=17.0.0'
@@ -6094,21 +6094,21 @@ snapshots:
 
   '@sindresorhus/base62@1.0.0': {}
 
-  '@stylelint-types/stylelint-order@8.1.1(stylelint-define-config@17.11.0(stylelint@18.0.0))(stylelint@18.0.0)':
+  '@stylelint-types/stylelint-order@8.1.1(stylelint-define-config@17.15.0(stylelint@18.0.0))(stylelint@18.0.0)':
     dependencies:
-      stylelint-define-config: 17.11.0(stylelint@18.0.0)
+      stylelint-define-config: 17.15.0(stylelint@18.0.0)
     optionalDependencies:
       stylelint: 18.0.0
 
-  '@stylelint-types/stylelint-scss@7.0.1(stylelint-define-config@17.11.0(stylelint@18.0.0))(stylelint@18.0.0)':
+  '@stylelint-types/stylelint-scss@7.0.1(stylelint-define-config@17.15.0(stylelint@18.0.0))(stylelint@18.0.0)':
     dependencies:
-      stylelint-define-config: 17.11.0(stylelint@18.0.0)
+      stylelint-define-config: 17.15.0(stylelint@18.0.0)
     optionalDependencies:
       stylelint: 18.0.0
 
-  '@stylelint-types/stylelint-stylistic@5.1.0(stylelint-define-config@17.11.0(stylelint@18.0.0))(stylelint@18.0.0)':
+  '@stylelint-types/stylelint-stylistic@5.1.0(stylelint-define-config@17.15.0(stylelint@18.0.0))(stylelint@18.0.0)':
     dependencies:
-      stylelint-define-config: 17.11.0(stylelint@18.0.0)
+      stylelint-define-config: 17.15.0(stylelint@18.0.0)
     optionalDependencies:
       stylelint: 18.0.0
 
@@ -9468,7 +9468,7 @@ snapshots:
     dependencies:
       stylelint: 18.0.0
 
-  stylelint-define-config@17.11.0(stylelint@18.0.0):
+  stylelint-define-config@17.15.0(stylelint@18.0.0):
     dependencies:
       csstype: 3.2.3
       stylelint: 18.0.0
