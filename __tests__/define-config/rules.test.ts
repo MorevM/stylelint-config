@@ -1,3 +1,4 @@
+import stylelint from 'stylelint';
 import {
 	getPublicApi,
 	getQuickInfo,
@@ -9,6 +10,79 @@ import type { IsAny } from './utils';
 
 describe('defineConfig rules', () => {
 	beforeAll(loadPublicApi);
+
+	it('Routes shared Stylistic names through scoped syntax presets', () => {
+		const { defineConfig, definePreset } = getPublicApi();
+		const sharedRules = {
+			'@stylistic/color-hex-case': 'upper',
+			'@stylistic/number-leading-zero': null,
+		} as const;
+		const config = defineConfig(
+			definePreset('css', {
+				files: ['*.css'],
+				rules: {
+					...sharedRules,
+					'@stylistic/indentation': (rule) => rule.setPrimary(2),
+				},
+			}),
+			definePreset('scss', {
+				files: ['*.scss'],
+				rules: {
+					...sharedRules,
+					'@stylistic/indentation': (rule) => {
+						expect(rule.value).toStrictEqual(['tab']);
+
+						return rule.setPrimary(2);
+					},
+				},
+			}),
+		);
+
+		expect(config.overrides).toStrictEqual([
+			{
+				files: ['*.css'],
+				extends: ['@morev/stylelint-config/css'],
+				rules: {
+					...sharedRules,
+					'@stylistic/indentation': [2, { severity: 'warning' }],
+				},
+			},
+			{
+				files: ['*.scss'],
+				extends: ['@morev/stylelint-config'],
+				rules: {
+					'@stylistic/scss/color-hex-case': 'upper',
+					'@stylistic/scss/number-leading-zero': null,
+					'@stylistic/scss/indentation': [2, { severity: 'warning' }],
+				},
+			},
+		]);
+
+		const nativeRules = { '@stylistic/scss/indentation': 4 };
+
+		expect(defineConfig({ rules: nativeRules }).rules).toStrictEqual(nativeRules);
+	});
+
+	it('Applies shared Stylistic callbacks and disabling with Stylelint', async () => {
+		const { defineConfig, definePreset } = getPublicApi();
+		const config = defineConfig(definePreset('scss', {
+			rules: {
+				'@stylistic/color-hex-case': (rule) => rule.setPrimary('upper'),
+				'@stylistic/number-leading-zero': (rule) => rule.disable(),
+			},
+		}));
+		const { code, results: [result] } = await stylelint.lint({
+			code: '$tone: #aabbcc;\n.card { opacity: 0.5; color: $tone; }\n',
+			codeFilename: 'shared-stylistic.scss',
+			config,
+			fix: true,
+		});
+
+		expect(result.invalidOptionWarnings).toStrictEqual([]);
+		expect(code).toContain('#AABBCC');
+		expect(code).toContain('opacity: 0.5');
+		expect(result.warnings).toStrictEqual([]);
+	});
 
 	it('Allows CSS rules to be replaced with regular Stylelint values', () => {
 		const { defineConfig, definePreset } = getPublicApi();
@@ -700,7 +774,7 @@ describe('defineConfig rules', () => {
 				disableFix: true,
 			}],
 			'scss/comment-no-empty': null,
-			'@stylistic/block-closing-brace-newline-after': ['always', {
+			'@stylistic/scss/block-closing-brace-newline-after': ['always', {
 				ignoreAtRules: ['if', 'else', 'while'],
 				severity: 'warning',
 			}],

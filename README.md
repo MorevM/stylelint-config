@@ -85,8 +85,12 @@ shared Stylelint options like
 through `rule.stylelintOptions` and managed by dedicated builder methods.
 
 The available rule names and callback value types follow the selected preset:
-`css` exposes CSS rules, while `scss` exposes CSS rules plus SCSS-specific
-plugin rules.
+`css` exposes CSS rules, while `scss` combines the applicable CSS rules with
+SCSS-specific plugin rules.
+
+Stylistic overrides use the same `@stylistic/*` names in both presets.
+The SCSS preset translates them to `@stylistic/scss/*` in the generated config.
+Stylelint messages and `stylelint-disable` comments use these generated names.
 
 ```js
 import { defineConfig, definePreset } from '@morev/stylelint-config';

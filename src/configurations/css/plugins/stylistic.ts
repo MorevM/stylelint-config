@@ -1,10 +1,14 @@
 /* eslint-disable sonarjs/no-duplicate-string -- Rule options intentionally repeat across independent declarations. */
+import stylisticPlugin from '@stylistic/stylelint-plugin';
 import { WARNING } from '#constants';
 
 export default {
-	plugins: [
-		'@stylistic/stylelint-plugin',
-	],
+	// The plugin exports rules for every syntax.
+	// Register only CSS rules so `stylelint-find-new-rules` does not
+	// report unrelated variants as unused.
+	plugins: stylisticPlugin.filter((plugin) =>
+		'ruleName' in plugin && /^@stylistic\/[^/]+$/.test(plugin.ruleName)),
+
 	rules: {
 		// #region Color
 
@@ -340,7 +344,7 @@ export default {
 
 		// #region Named grid areas
 
-		// Require cell tokens (and optionally ending quotes) within grid-template-areas to be aligned (autofixable)
+		// Require grid area tokens and optionally ending quotes to be aligned (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/named-grid-areas-alignment/README.md
 		// Ma rule :)
 		'@stylistic/named-grid-areas-alignment': [true, { gap: 2, alignQuotes: true, severity: WARNING }],

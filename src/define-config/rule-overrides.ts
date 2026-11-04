@@ -76,7 +76,11 @@ const resolveRules = <Preset extends DefineConfigPreset>(
 		const value = runtimeRules[ruleName];
 		if (value === undefined) continue;
 
-		resolvedRules[ruleName] = resolveRuleValue(preset, ruleName, value, diagnostics);
+		const configuredRuleName = preset === 'scss' && ruleName.startsWith('@stylistic/')
+			? ruleName.replace('@stylistic/', '@stylistic/scss/')
+			: ruleName;
+
+		resolvedRules[configuredRuleName] = resolveRuleValue(preset, ruleName, value, diagnostics);
 	}
 
 	return resolvedRules;

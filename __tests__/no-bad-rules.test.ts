@@ -19,6 +19,24 @@ const knownUnused = [
 	'@morev/bem/no-chained-entities',
 	'@morev/bem/no-side-effects',
 	'@morev/bem/selector-pattern',
+
+	// Stylistic v6 rules are reviewed in the following commits.
+	'@stylistic/aspect-ratio-notation',
+	'@stylistic/scss/aspect-ratio-notation',
+	'@stylistic/declaration-block-single-line-max-declarations',
+	'@stylistic/scss/declaration-block-single-line-max-declarations',
+	'@stylistic/media-feature-slash-space-after',
+	'@stylistic/scss/media-feature-slash-space-after',
+	'@stylistic/media-feature-slash-space-before',
+	'@stylistic/scss/media-feature-slash-space-before',
+	'@stylistic/value-slash-space-after',
+	'@stylistic/scss/value-slash-space-after',
+	'@stylistic/value-slash-space-before',
+	'@stylistic/scss/value-slash-space-before',
+	'@stylistic/value-slash-newline-after',
+	'@stylistic/scss/value-slash-newline-after',
+	'@stylistic/value-slash-newline-before',
+	'@stylistic/scss/value-slash-newline-before',
 ];
 
 const toHumanReadable = (declarations: RuleDeclaration[]) =>

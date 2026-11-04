@@ -1,4 +1,5 @@
 import type { createDefineRules } from '@morev/stylelint-plugin';
+import type { RulesInput as StylisticRulesInput } from '@stylistic/stylelint-plugin';
 import type { Config } from 'stylelint';
 import type {
 	Arrayable,
@@ -293,6 +294,13 @@ type DefineConfigBemPluginGlobals = Parameters<typeof createDefineRules>[0];
 type DefineConfigBemPluginRules = NonNullable<Parameters<ReturnType<typeof createDefineRules>>[0]>;
 
 /**
+ * Native Stylistic settings under the common public names used by both presets.
+ */
+type DefineConfigStylisticRules = {
+	[RuleName in keyof StylisticRulesInput as `@stylistic/${RuleName}`]: StylisticRulesInput[RuleName];
+};
+
+/**
  * Rule schemas used as typed/JSDoc sources for the CSS preset.
  */
 type DefineConfigCssRuleSources =
@@ -300,6 +308,7 @@ type DefineConfigCssRuleSources =
 	& DefineConfigCssLocalCoreRules
 	& StylelintCustomRuleOptions
 	& DefineConfigCssLocalPluginRules
+	& DefineConfigStylisticRules
 	& DefineConfigBemPluginRules;
 
 /**
@@ -701,8 +710,7 @@ type DefineConfigScssRuleValue<RuleName extends DefineConfigScssRuleName> =
  */
 type DefineConfigStylelintTypeAugmentations =
 	& typeof import('@stylelint-types/stylelint-order')
-	& typeof import('@stylelint-types/stylelint-scss')
-	& typeof import('@stylelint-types/stylelint-stylistic');
+	& typeof import('@stylelint-types/stylelint-scss');
 
 /**
  * Rule overrides accepted by `defineConfig`.
@@ -732,6 +740,7 @@ type DefineConfigCssRulesOptions =
 	& DefineConfigCssRuleOptionsMap<DefineConfigCssLocalCoreRules>
 	& DefineConfigCssRuleOptionsMap<StylelintCustomRuleOptions>
 	& DefineConfigCssRuleOptionsMap<DefineConfigCssLocalPluginRules>
+	& DefineConfigCssRuleOptionsMap<DefineConfigStylisticRules>
 	& DefineConfigCssRuleOptionsMap<DefineConfigBemPluginRules>;
 
 /**
@@ -743,6 +752,7 @@ type DefineConfigScssRulesOptions =
 	& DefineConfigScssRuleOptionsMap<StylelintCustomRuleOptions>
 	& DefineConfigScssRuleOptionsMap<DefineConfigCssLocalPluginRules>
 	& DefineConfigScssRuleOptionsMap<DefineConfigScssLocalPluginRules>
+	& DefineConfigScssRuleOptionsMap<DefineConfigStylisticRules>
 	& DefineConfigScssRuleOptionsMap<DefineConfigBemPluginRules>;
 
 /**
