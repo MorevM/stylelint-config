@@ -19,10 +19,6 @@ const knownUnused = [
 	'@morev/bem/no-chained-entities',
 	'@morev/bem/no-side-effects',
 	'@morev/bem/selector-pattern',
-
-	// Stylistic v6 rules are reviewed in the following commits.
-	'@stylistic/value-slash-newline-before',
-	'@stylistic/scss/value-slash-newline-before',
 ];
 
 const toHumanReadable = (declarations: RuleDeclaration[]) =>

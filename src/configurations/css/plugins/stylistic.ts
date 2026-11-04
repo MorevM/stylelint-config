@@ -120,6 +120,9 @@ export default {
 		// https://stylelint-stylistic.github.io/rules/value-slash-newline-after
 		'@stylistic/value-slash-newline-after': null,
 
+		// https://stylelint-stylistic.github.io/rules/value-slash-newline-before
+		'@stylistic/value-slash-newline-before': null,
+
 		// Require a single space around slashes in values (autofixable)
 		// https://stylelint-stylistic.github.io/rules/value-slash-space-after
 		'@stylistic/value-slash-space-after': ['always', {
