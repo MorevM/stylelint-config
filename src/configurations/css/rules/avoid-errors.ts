@@ -195,6 +195,10 @@ export default {
 		// https://stylelint.io/user-guide/rules/selector-anb-no-unmatchable/
 		'selector-anb-no-unmatchable': true,
 
+		// Disallow valid selectors that can never match an element
+		// https://stylelint.io/user-guide/rules/selector-no-unmatchable/
+		'selector-no-unmatchable': true,
+
 		// #endregion
 
 		// #region Unknown

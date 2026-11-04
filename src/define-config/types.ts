@@ -155,6 +155,13 @@ type DefineConfigCssLocalCoreRules = {
 	 * @see https://stylelint.io/user-guide/rules/at-charset-rule-no-invalid/
 	 */
 	'at-charset-rule-no-invalid': RuleConfig<true, [reason: string]>;
+
+	/**
+	 * Disallow valid selectors that can never match an element.
+	 *
+	 * @see https://stylelint.io/user-guide/rules/selector-no-unmatchable/
+	 */
+	'selector-no-unmatchable': RuleConfig<true, [selector: string, resolvedSelector: string, reason: string]>;
 };
 
 /**

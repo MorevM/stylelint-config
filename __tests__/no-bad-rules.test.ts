@@ -14,7 +14,6 @@ type StylelintResult = {
 const knownUnused = [
 	// New core rules are reviewed separately before enabling them in shared presets.
 	'declaration-property-custom-property-allowed-list',
-	'selector-no-unmatchable',
 	'value-no-invalid',
 	'value-type-custom-property-required-list',
 
