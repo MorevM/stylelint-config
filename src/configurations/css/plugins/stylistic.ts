@@ -114,6 +114,17 @@ export default {
 
 		// #endregion
 
+		// #region Value slash
+
+		// Require a single space around slashes in values (autofixable)
+		// https://stylelint-stylistic.github.io/rules/value-slash-space-after
+		'@stylistic/value-slash-space-after': ['always', {
+			ignoreProperties: ['grid-area', /^font/],
+			severity: WARNING,
+		}],
+
+		// #endregion
+
 		// #region Property
 
 		// Specify lowercase or uppercase for properties (autofixable)
