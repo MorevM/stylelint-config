@@ -162,6 +162,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@morev/eslint-disable-autofix@1.1.0': b386c0fcf38a400baefd2999f879e0e1715c0bd3824ec2145411105f1770f010
+
 importers:
 
   .:
@@ -6148,7 +6151,7 @@ snapshots:
       '@eslint/markdown': 8.0.3(supports-color@7.2.0)
       '@html-eslint/eslint-plugin': 0.65.0(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))
       '@html-eslint/parser': 0.65.0
-      '@morev/eslint-disable-autofix': 1.1.0(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))
+      '@morev/eslint-disable-autofix': 1.1.0(patch_hash=b386c0fcf38a400baefd2999f879e0e1715c0bd3824ec2145411105f1770f010)(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))
       '@morev/utils': 3.15.0
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))
       '@vitest/eslint-plugin': 1.6.28(@typescript-eslint/eslint-plugin@8.72.1(@typescript-eslint/parser@8.72.1(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)(vitest@4.1.9(@types/node@20.5.1)(vite@6.2.2(@types/node@20.5.1)(jiti@2.7.0)(yaml@2.9.0)))
@@ -6201,7 +6204,7 @@ snapshots:
       - ts-declaration-location
       - vitest
 
-  '@morev/eslint-disable-autofix@1.1.0(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))':
+  '@morev/eslint-disable-autofix@1.1.0(patch_hash=b386c0fcf38a400baefd2999f879e0e1715c0bd3824ec2145411105f1770f010)(eslint@10.14.0(jiti@2.7.0)(supports-color@7.2.0))':
     dependencies:
       '@morev/utils': 3.15.0
       eslint: 10.14.0(jiti@2.7.0)(supports-color@7.2.0)

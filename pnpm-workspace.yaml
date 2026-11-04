@@ -5,3 +5,5 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - '@morev/*'
   - stylelint@18.0.0
+patchedDependencies:
+  '@morev/eslint-disable-autofix@1.1.0': patches/@morev__eslint-disable-autofix@1.1.0.patch
