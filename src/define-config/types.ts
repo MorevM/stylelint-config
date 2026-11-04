@@ -1,6 +1,8 @@
 import type { createDefineRules } from '@morev/stylelint-plugin';
 import type { Config } from 'stylelint';
 import type {
+	Arrayable,
+	RegExpLike,
 	RuleConfig,
 	StylelintConfig,
 	StyleLintRules as StylelintCoreRules,
@@ -155,6 +157,16 @@ type DefineConfigCssLocalCoreRules = {
 	 * @see https://stylelint.io/user-guide/rules/at-charset-rule-no-invalid/
 	 */
 	'at-charset-rule-no-invalid': RuleConfig<true, [reason: string]>;
+
+	/**
+	 * Specify allowed custom properties for individual CSS properties.
+	 *
+	 * @see https://stylelint.io/user-guide/rules/declaration-property-custom-property-allowed-list/
+	 */
+	'declaration-property-custom-property-allowed-list': RuleConfig<
+		Record<string, Arrayable<RegExpLike>>,
+		[property: string, customProperty: string]
+	>;
 
 	/**
 	 * Disallow valid selectors that can never match an element.

@@ -49,6 +49,11 @@ export default {
 
 		// Declaration
 
+		// Specify allowed custom properties for individual CSS properties
+		// https://stylelint.io/user-guide/rules/declaration-property-custom-property-allowed-list/
+		// Token families and their property mappings belong to the consuming project.
+		'declaration-property-custom-property-allowed-list': null,
+
 		// Disallow `!important` within declarations
 		// https://stylelint.io/user-guide/rules/list/declaration-no-important/
 		// Note: Well, maybe in the next life
