@@ -148,6 +148,10 @@ export default {
 
 		// #region Declaration block
 
+		// Limit compact blocks to three declarations, preserving the former core rule's policy.
+		// https://stylelint-stylistic.github.io/rules/declaration-block-single-line-max-declarations
+		'@stylistic/declaration-block-single-line-max-declarations': 3,
+
 		// Require a newline or disallow whitespace after the semicolons of declaration blocks (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md
 		'@stylistic/declaration-block-semicolon-newline-after': ['always-multi-line', { severity: WARNING }],
