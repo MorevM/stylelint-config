@@ -108,7 +108,7 @@ type DefineConfigPresetName = DefineConfigRulePreset;
 /**
  * Regular Stylelint config accepted and returned by `defineConfig`.
  */
-type DefineConfigStylelintConfig = StylelintConfig;
+type DefineConfigStylelintConfig = Omit<Config, 'rules'> & Pick<StylelintConfig, 'rules'>;
 
 /**
  * Regular Stylelint config accepted by `defineConfig`.

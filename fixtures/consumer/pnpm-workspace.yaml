@@ -1,3 +1,5 @@
 packages:
   - '.'
 nodeLinker: isolated
+minimumReleaseAgeExclude:
+  - stylelint@18.0.0
