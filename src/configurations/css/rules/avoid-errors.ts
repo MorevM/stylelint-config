@@ -93,6 +93,10 @@ export default {
 
 		// #region Invalid
 
+		// Disallow invalid @charset rules
+		// https://stylelint.io/user-guide/rules/at-charset-rule-no-invalid/
+		'at-charset-rule-no-invalid': true,
+
 		// Disallow invalid preludes for at-rules
 		// https://stylelint.io/user-guide/rules/at-rule-prelude-no-invalid/
 		'at-rule-prelude-no-invalid': true,

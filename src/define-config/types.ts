@@ -146,6 +146,18 @@ type DefineConfigCssRulesDiagnostics = DefineConfigRulesDiagnostics;
 type DefineConfigStylelintSecondaryOptionName = keyof DefineConfigRuleSecondaryOptions;
 
 /**
+ * Core rule schemas not yet provided by `stylelint-define-config`.
+ */
+type DefineConfigCssLocalCoreRules = {
+	/**
+	 * Disallow invalid `@charset` rules.
+	 *
+	 * @see https://stylelint.io/user-guide/rules/at-charset-rule-no-invalid/
+	 */
+	'at-charset-rule-no-invalid': RuleConfig<true, [reason: string]>;
+};
+
+/**
  * Rule schemas for CSS plugins that do not publish `stylelint-define-config` typings.
  */
 type DefineConfigCssLocalPluginRules = {
@@ -217,6 +229,7 @@ type DefineConfigBemPluginRules = NonNullable<Parameters<ReturnType<typeof creat
  */
 type DefineConfigCssRuleSources =
 	& StylelintCoreRules
+	& DefineConfigCssLocalCoreRules
 	& StylelintCustomRuleOptions
 	& DefineConfigCssLocalPluginRules
 	& DefineConfigBemPluginRules;
@@ -648,6 +661,7 @@ type DefineConfigScssRuleOptionsMap<Rules extends object> = DefineConfigRuleOpti
  */
 type DefineConfigCssRulesOptions =
 	& DefineConfigCssRuleOptionsMap<StylelintCoreRules>
+	& DefineConfigCssRuleOptionsMap<DefineConfigCssLocalCoreRules>
 	& DefineConfigCssRuleOptionsMap<StylelintCustomRuleOptions>
 	& DefineConfigCssRuleOptionsMap<DefineConfigCssLocalPluginRules>
 	& DefineConfigCssRuleOptionsMap<DefineConfigBemPluginRules>;
@@ -657,6 +671,7 @@ type DefineConfigCssRulesOptions =
  */
 type DefineConfigScssRulesOptions =
 	& DefineConfigScssRuleOptionsMap<StylelintCoreRules>
+	& DefineConfigScssRuleOptionsMap<DefineConfigCssLocalCoreRules>
 	& DefineConfigScssRuleOptionsMap<StylelintCustomRuleOptions>
 	& DefineConfigScssRuleOptionsMap<DefineConfigCssLocalPluginRules>
 	& DefineConfigScssRuleOptionsMap<DefineConfigScssLocalPluginRules>

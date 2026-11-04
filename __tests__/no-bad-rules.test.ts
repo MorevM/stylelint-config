@@ -13,7 +13,6 @@ type StylelintResult = {
 
 const knownUnused = [
 	// New core rules are reviewed separately before enabling them in shared presets.
-	'at-charset-rule-no-invalid',
 	'declaration-property-custom-property-allowed-list',
 	'selector-no-unmatchable',
 	'value-no-invalid',
