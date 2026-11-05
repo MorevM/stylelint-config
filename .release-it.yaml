@@ -9,6 +9,7 @@ npm:
 plugins:
   '@release-it/conventional-changelog':
     infile: CHANGELOG.md
+    header: ''
     preset:
       name: conventionalcommits
       types:
@@ -25,17 +26,17 @@ plugins:
         - type: chore
           section: Chores
         - type: release
-          hidden: true
+          effect: hidden
         - type: revert
-          hidden: true
+          effect: hidden
         - type: build
-          hidden: true
+          effect: hidden
         - type: ci
           section: CI improvements
         - type: wip
-          hidden: true
+          effect: hidden
         - type: nvm
-          hidden: true
+          effect: hidden
 
 hooks:
   before:init:

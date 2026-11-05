@@ -4,5 +4,10 @@ allowBuilds:
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - '@morev/*'
+packageExtensions:
+  # Resolve the release preset independently of the older preset used by commitlint.
+  conventional-changelog-preset-loader@6.0.1:
+    dependencies:
+      conventional-changelog-conventionalcommits: ^10.4.1
 patchedDependencies:
   '@morev/eslint-disable-autofix@1.1.0': patches/@morev__eslint-disable-autofix@1.1.0.patch
