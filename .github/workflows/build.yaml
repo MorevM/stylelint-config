@@ -70,3 +70,6 @@ jobs:
 
       - name: Testing
         run: pnpm test
+
+      - name: Test installed package
+        run: pnpm test:package

@@ -5,4 +5,4 @@ export default {
 	rules: {
 		'pitcher/no-nested-media': true,
 	},
-};
+} as const;

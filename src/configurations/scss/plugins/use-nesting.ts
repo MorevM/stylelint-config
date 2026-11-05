@@ -5,4 +5,4 @@ export default {
 			syntax: 'scss',
 		}],
 	},
-};
+} as const;

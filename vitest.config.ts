@@ -10,9 +10,11 @@ export default defineConfig({
 			'#index': resolveAlias('./src/index.ts'),
 			'#shared': resolveAlias('./src/shared/index.ts'),
 			'#utils': resolveAlias('./src/utils.ts'),
+			'~configurations': resolveAlias('./src/configurations'),
 		},
 	},
 	test: {
+		globalSetup: './__tests__/global-setup.ts',
 		globals: true,
 		watch: false,
 	},

@@ -2,69 +2,133 @@ import { mergeStylelintConfigs } from '#utils';
 import { createBemConfig } from './bem';
 import { createOrderConfig } from './order';
 import { createPresetConfig } from './preset';
-import { createTargetsConfig } from './targets';
-import type { Config } from 'stylelint';
+import { createRulesConfig } from './rule-overrides';
+import type { PlainObject } from '@morev/utils';
 import type {
 	DefineConfigBemOptions,
-	DefineConfigOptions,
-	DefineConfigOrderOptions,
+	DefineConfigCssPresetFactoryOptions,
+	DefineConfigFlatConfig,
 	DefineConfigPreset,
-	DefineConfigTargetOptions,
-	DefineConfigTargetsOptions,
+	DefineConfigPresetName,
+	DefineConfigScssPresetFactoryOptions,
+	DefineConfigStylelintConfig,
 } from './types';
 
 /**
- * Checks whether the config uses scoped mixed-project targets.
+ * Checks whether a config part is a flat Stylelint item scoped to files.
  *
- * @param   options   Public define-config options.
+ * @param   config   Public Stylelint config part.
  *
- * @returns           Whether target generation is enabled.
+ * @returns          Whether the config part should be lowered to `overrides`.
  */
-const hasTargets = (options: DefineConfigOptions): options is DefineConfigTargetsOptions =>
-	'targets' in options && options.targets !== undefined;
+const hasFiles = (
+	config: DefineConfigFlatConfig,
+): config is DefineConfigFlatConfig & Required<Pick<DefineConfigFlatConfig, 'files'>> =>
+	config.files !== undefined;
 
 /**
- * Checks whether the config explicitly selects a root preset.
+ * Converts one flat Stylelint item into a regular Stylelint config fragment.
  *
- * @param   options   Public define-config options.
+ * @param   config   Public Stylelint config part.
  *
- * @returns           Whether root preset generation is enabled.
+ * @returns          Stylelint config fragment without a root-level `files` property.
  */
-const hasPreset = (options: DefineConfigOptions) =>
-	'preset' in options && options.preset !== undefined;
+const normalizeFlatConfig = (config: DefineConfigFlatConfig) => {
+	if (!hasFiles(config)) return config;
+
+	const { files, overrides, ...overrideConfig } = config;
+
+	return {
+		overrides: [
+			{
+				files,
+				...overrideConfig,
+			},
+			...(overrides ?? []),
+		],
+	};
+};
 
 /**
- * Creates a Stylelint configuration from package presets, targets, order overrides, and extra config parts.
+ * Creates a CSS or SCSS preset config item.
  *
- * @param   options       Options for preset selection and order overrides.
- * @param   configParts   Additional Stylelint config parts merged after generated values.
+ * @param   preset    Base package preset.
+ * @param   options   Preset factory options.
  *
- * @returns               Merged Stylelint configuration.
- *
- * @throws                When root-level `preset` and `targets` are combined.
+ * @returns           Flat Stylelint config item accepted by `defineConfig`.
  */
-const defineConfig = (options: DefineConfigOptions = {}, ...configParts: Config[]): Config => {
-	if (hasTargets(options) && hasPreset(options)) {
-		throw new Error('`preset` and `targets` options are mutually exclusive.');
+const createSyntaxPresetConfig = (
+	preset: DefineConfigPreset,
+	options: DefineConfigCssPresetFactoryOptions | DefineConfigScssPresetFactoryOptions = {},
+) => {
+	const { files, ...factoryOptions } = options;
+	const config = mergeStylelintConfigs(
+		createPresetConfig({ preset }),
+		createOrderConfig(factoryOptions),
+		createRulesConfig({ ...factoryOptions, preset }),
+	) as DefineConfigFlatConfig;
+
+	if (files !== undefined) config.files = files;
+
+	return config;
+};
+
+/**
+ * Creates a flat Stylelint config from regular Stylelint config parts.
+ *
+ * @param   configs   Regular Stylelint config parts, optionally scoped with root-level `files`.
+ *
+ * @returns           Merged Stylelint configuration.
+ */
+const defineConfig = (...configs: DefineConfigFlatConfig[]): DefineConfigStylelintConfig =>
+	configs.reduce<PlainObject>(
+		(mergedConfig, config) => mergeStylelintConfigs(
+			mergedConfig,
+			normalizeFlatConfig(config) as PlainObject,
+		),
+		// Stylelint validates root rules before applying file overrides.
+		{ rules: {} },
+	);
+
+function definePreset(preset: 'css', options?: DefineConfigCssPresetFactoryOptions): DefineConfigFlatConfig;
+function definePreset(preset: 'scss', options?: DefineConfigScssPresetFactoryOptions): DefineConfigFlatConfig;
+function definePreset(preset: 'bem', options: DefineConfigBemOptions): DefineConfigFlatConfig;
+/**
+ * Creates a flat Stylelint config item with typed rule callbacks.
+ *
+ * @param   preset    Package preset name.
+ * @param   options   Preset options.
+ *
+ * @returns           Flat Stylelint config item accepted by `defineConfig`.
+ */
+function definePreset(
+	preset: DefineConfigPresetName,
+	options?: DefineConfigBemOptions | DefineConfigCssPresetFactoryOptions | DefineConfigScssPresetFactoryOptions,
+): DefineConfigFlatConfig {
+	if (preset === 'css') {
+		return createSyntaxPresetConfig(preset, options as DefineConfigCssPresetFactoryOptions | undefined);
 	}
 
-	const baseConfig = hasTargets(options)
-		? createTargetsConfig(options.targets)
-		: createPresetConfig(options);
+	if (preset === 'scss') {
+		return createSyntaxPresetConfig(preset, options as DefineConfigScssPresetFactoryOptions | undefined);
+	}
 
-	return mergeStylelintConfigs(
-		baseConfig,
-		createOrderConfig(options),
-		createBemConfig(options.bem),
-		...configParts,
-	);
-};
+	if (preset === 'bem') {
+		return createBemConfig(options as DefineConfigBemOptions);
+	}
+
+	const exhaustivePreset: never = preset;
+	return exhaustivePreset;
+}
 
 export {
 	defineConfig,
+	definePreset,
 	type DefineConfigBemOptions,
-	type DefineConfigOptions,
-	type DefineConfigOrderOptions,
+	type DefineConfigCssPresetFactoryOptions,
+	type DefineConfigFlatConfig,
 	type DefineConfigPreset,
-	type DefineConfigTargetOptions,
+	type DefineConfigPresetName,
+	type DefineConfigScssPresetFactoryOptions,
+	type DefineConfigStylelintConfig,
 };

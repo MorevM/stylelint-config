@@ -19,7 +19,7 @@ export const mergeStylelintConfigs = createMergeObjects((object, key, value, sta
 
 	if (stack === '' && key === 'rules' && isPlainObject(value)) {
 		(object as PlainObject)[key as string] = {
-			...(isPlainObject(currentValue) ? currentValue : {}),
+			...(isPlainObject(currentValue) && currentValue),
 			...value,
 		};
 

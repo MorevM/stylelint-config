@@ -1,0 +1,24 @@
+diff --git a/dist/index.js b/dist/index.js
+index b3dadf32f13f0f475e40e9bc461956e15ad49f75..fb298e4f5b697889664be17d66d45a442f37e7e7 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -239,7 +239,18 @@ var internalDisableAutofix = (options) => {
+   allNoAutofixRules.forEach((fullRuleName) => {
+     const [_, pluginName, ruleName] = fullRuleName.match(/(?:(.*?)\/)?(.*)/);
+     if (pluginName && allPlugins[pluginName]?.rules?.[ruleName]) {
+-      allPlugins[pluginName].rules[ruleName] = createNonFixableRule(allPlugins[pluginName].rules[ruleName]);
++      const plugin = allPlugins[pluginName];
++      // Lazy rule exports can have getter-only properties; wrap a mutable copy.
++      const patchedPlugin = {
++        ...plugin,
++        rules: { ...plugin.rules, [ruleName]: createNonFixableRule(plugin.rules[ruleName]) }
++      };
++      configurations.forEach((configuration) => {
++        if (configuration.plugins?.[pluginName] === plugin) {
++          configuration.plugins[pluginName] = patchedPlugin;
++        }
++      });
++      allPlugins[pluginName] = patchedPlugin;
+       return;
+     }
+     if (eslintRules.has(fullRuleName)) {

@@ -1,0 +1,22 @@
+{
+	"name": "stylelint-config-consumer",
+	"type": "module",
+	"private": true,
+	"engines": {
+		"node": "^22.22.2 || ^24.15.0 || >=26"
+	},
+	"scripts": {
+		"test": "pnpm test:runtime && pnpm typecheck:nodenext && pnpm typecheck:bundler",
+		"test:runtime": "node consumer.mjs",
+		"typecheck:nodenext": "tsc --project tsconfig.nodenext.json",
+		"typecheck:bundler": "tsc --project tsconfig.bundler.json"
+	},
+	"dependencies": {
+		"@morev/stylelint-config": "file:./stylelint-config.tgz",
+		"stylelint": "18.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "24.19.2",
+		"typescript": "6.0.3"
+	}
+}

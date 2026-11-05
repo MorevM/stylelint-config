@@ -93,6 +93,10 @@ export default {
 
 		// #region Invalid
 
+		// Disallow invalid @charset rules
+		// https://stylelint.io/user-guide/rules/at-charset-rule-no-invalid/
+		'at-charset-rule-no-invalid': true,
+
 		// Disallow invalid preludes for at-rules
 		// https://stylelint.io/user-guide/rules/at-rule-prelude-no-invalid/
 		'at-rule-prelude-no-invalid': true,
@@ -140,6 +144,10 @@ export default {
 		// Disallow invalid syntax strings
 		// https://stylelint.io/user-guide/rules/syntax-string-no-invalid/
 		'syntax-string-no-invalid': true,
+
+		// Disallow invalid values and incompatible operands in CSS math functions
+		// https://stylelint.io/user-guide/rules/value-no-invalid/
+		'value-no-invalid': true,
 
 		// #endregion
 
@@ -190,6 +198,10 @@ export default {
 		// Disallow unmatchable `An+B` selectors
 		// https://stylelint.io/user-guide/rules/selector-anb-no-unmatchable/
 		'selector-anb-no-unmatchable': true,
+
+		// Disallow valid selectors that can never match an element
+		// https://stylelint.io/user-guide/rules/selector-no-unmatchable/
+		'selector-no-unmatchable': true,
 
 		// #endregion
 
@@ -263,4 +275,4 @@ export default {
 
 		// #endregion
 	},
-};
+} as const;
