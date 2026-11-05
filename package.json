@@ -92,7 +92,7 @@
 		"release-it": "^21.1.2",
 		"stylelint": "^18.0.0",
 		"stylelint-find-new-rules": "^6.1.0",
-		"tsdown": "^0.23.4",
+		"tsdown": "^0.23.5",
 		"typescript": "^6.0.3",
 		"vitest": "^5.1.0"
 	}
