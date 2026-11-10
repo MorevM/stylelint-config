@@ -2,10 +2,6 @@ import type { createDefineRules } from '@morev/stylelint-plugin';
 import type { RulesInput as StylisticRulesInput } from '@stylistic/stylelint-plugin';
 import type { Config } from 'stylelint';
 import type {
-	Arrayable,
-	CSSFunction,
-	LiteralUnion,
-	RegExpLike,
 	RuleConfig,
 	StylelintConfig,
 	StyleLintRules as StylelintCoreRules,
@@ -151,82 +147,6 @@ type DefineConfigCssRulesDiagnostics = DefineConfigRulesDiagnostics;
 type DefineConfigStylelintSecondaryOptionName = keyof DefineConfigRuleSecondaryOptions;
 
 /**
- * Core rule schemas missing or incorrectly typed in `stylelint-define-config`.
- */
-type DefineConfigCssLocalCoreRules = {
-	/**
-	 * Disallow invalid `@charset` rules.
-	 *
-	 * @see https://stylelint.io/user-guide/rules/at-charset-rule-no-invalid/
-	 */
-	'at-charset-rule-no-invalid': RuleConfig<true, [reason: string]>;
-
-	/**
-	 * Specify allowed custom properties for individual CSS properties.
-	 *
-	 * @see https://stylelint.io/user-guide/rules/declaration-property-custom-property-allowed-list/
-	 */
-	'declaration-property-custom-property-allowed-list': RuleConfig<
-		Record<string, Arrayable<RegExpLike>>,
-		[property: string, customProperty: string]
-	>;
-
-	/**
-	 * Disallow units for zero lengths.
-	 *
-	 * @see https://stylelint.io/user-guide/rules/length-zero-no-unit/
-	 */
-	'length-zero-no-unit': RuleConfig<true, [], {
-		/**
-		 * Ignore zero lengths in custom properties.
-		 */
-		ignore?: Array<LiteralUnion<'custom-properties'>>;
-
-		/**
-		 * Functions exempt from zero-length unit checks.
-		 * Upstream 17.15.0 omits arrays accepted by Stylelint.
-		 */
-		ignoreFunctions?: Arrayable<CSSFunction | RegExp>;
-
-		/**
-		 * At-rule preludes exempt from zero-length unit checks.
-		 */
-		ignorePreludeOfAtRules?: RegExpLike[];
-	}>;
-
-	/**
-	 * Disallow invalid values and incompatible operands in CSS math functions.
-	 *
-	 * @see https://stylelint.io/user-guide/rules/value-no-invalid/
-	 */
-	'value-no-invalid': RuleConfig<true, [value: string, reason: string]>;
-
-	/**
-	 * Require custom properties for selected CSS value types.
-	 *
-	 * @see https://stylelint.io/user-guide/rules/value-type-custom-property-required-list/
-	 *
-	 * @experimental
-	 */
-	'value-type-custom-property-required-list': RuleConfig<Arrayable<string>, [value: string, type: string], {
-		/**
-		 * Literal values exempt from custom-property requirements.
-		 */
-		ignoreValues?: Arrayable<RegExpLike>;
-
-		/**
-		 * Functions exempt from requirements, grouped by CSS value type.
-		 */
-		ignoreFunctions?: Record<string, Arrayable<RegExpLike>>;
-
-		/**
-		 * Properties exempt from requirements, grouped by CSS value type.
-		 */
-		ignoreProperties?: Record<string, Arrayable<RegExpLike>>;
-	}>;
-};
-
-/**
  * Rule schemas for CSS plugins that do not publish `stylelint-define-config` typings.
  */
 type DefineConfigCssLocalPluginRules = {
@@ -304,8 +224,7 @@ type DefineConfigStylisticRules = {
  * Rule schemas used as typed/JSDoc sources for the CSS preset.
  */
 type DefineConfigCssRuleSources =
-	& Omit<StylelintCoreRules, keyof DefineConfigCssLocalCoreRules>
-	& DefineConfigCssLocalCoreRules
+	& StylelintCoreRules
 	& StylelintCustomRuleOptions
 	& DefineConfigCssLocalPluginRules
 	& DefineConfigStylisticRules
@@ -736,8 +655,7 @@ type DefineConfigScssRuleOptionsMap<Rules extends object> = DefineConfigRuleOpti
  * CSS rule overrides accepted by `defineConfig`.
  */
 type DefineConfigCssRulesOptions =
-	& DefineConfigCssRuleOptionsMap<Omit<StylelintCoreRules, keyof DefineConfigCssLocalCoreRules>>
-	& DefineConfigCssRuleOptionsMap<DefineConfigCssLocalCoreRules>
+	& DefineConfigCssRuleOptionsMap<StylelintCoreRules>
 	& DefineConfigCssRuleOptionsMap<StylelintCustomRuleOptions>
 	& DefineConfigCssRuleOptionsMap<DefineConfigCssLocalPluginRules>
 	& DefineConfigCssRuleOptionsMap<DefineConfigStylisticRules>
@@ -747,8 +665,7 @@ type DefineConfigCssRulesOptions =
  * SCSS rule overrides accepted by `defineConfig`.
  */
 type DefineConfigScssRulesOptions =
-	& DefineConfigScssRuleOptionsMap<Omit<StylelintCoreRules, keyof DefineConfigCssLocalCoreRules>>
-	& DefineConfigScssRuleOptionsMap<DefineConfigCssLocalCoreRules>
+	& DefineConfigScssRuleOptionsMap<StylelintCoreRules>
 	& DefineConfigScssRuleOptionsMap<StylelintCustomRuleOptions>
 	& DefineConfigScssRuleOptionsMap<DefineConfigCssLocalPluginRules>
 	& DefineConfigScssRuleOptionsMap<DefineConfigScssLocalPluginRules>
