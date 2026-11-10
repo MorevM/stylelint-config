@@ -49,6 +49,11 @@ export default {
 
 		// Declaration
 
+		// Specify allowed custom properties for individual CSS properties
+		// https://stylelint.io/user-guide/rules/declaration-property-custom-property-allowed-list/
+		// Token families and their property mappings belong to the consuming project.
+		'declaration-property-custom-property-allowed-list': null,
+
 		// Disallow `!important` within declarations
 		// https://stylelint.io/user-guide/rules/list/declaration-no-important/
 		// Note: Well, maybe in the next life
@@ -220,6 +225,11 @@ export default {
 
 		// Value
 
+		// Require custom properties for selected CSS value types (experimental)
+		// https://stylelint.io/user-guide/rules/value-type-custom-property-required-list/
+		// Token-only values are a project decision; raw values and Sass variables remain valid choices.
+		'value-type-custom-property-required-list': null,
+
 		// Disallow vendor prefixes for values (autofixable)
 		// https://stylelint.io/user-guide/rules/list/value-no-vendor-prefix/
 		'value-no-vendor-prefix': [true, { severity: WARNING }],
@@ -317,11 +327,6 @@ export default {
 		// #endregion
 
 		// #region Max & min
-
-		// Limit the number of declarations within a single-line declaration block
-		// https://stylelint.io/user-guide/rules/list/declaration-block-single-line-max-declarations/
-		// Note: Sometimes we can save a lot of vertical spacing using repeating structures
-		'declaration-block-single-line-max-declarations': 3,
 
 		// Limit the number of values for a list of properties within declarations
 		// https://stylelint.io/user-guide/rules/list/declaration-property-max-values/
@@ -551,4 +556,4 @@ export default {
 
 		// #endregion
 	},
-};
+} as const;

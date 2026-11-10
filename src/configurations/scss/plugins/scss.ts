@@ -3,11 +3,6 @@ import { KEBAB_CASE_ALLOW_SASS_PRIVATE_PREFIX, WARNING } from '#constants';
 export default {
 	plugins: ['stylelint-scss'],
 	rules: {
-		// // Works incorrect with SASS rgba()
-		// 'color-function-notation': null,
-		// // SASS imports may be everywhere
-		// 'no-invalid-position-at-import-rule': null,
-
 		// Disallow redundant `@at-root` rule (autofixable)
 		// https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-root-no-redundant
 		'scss/at-root-no-redundant': [true, { severity: WARNING }],
@@ -334,4 +329,4 @@ export default {
 		// https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/no-unused-private-members/README.md
 		'scss/no-unused-private-members': true,
 	},
-};
+} as const;

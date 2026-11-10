@@ -9,4 +9,4 @@ export default {
 			severity: WARNING,
 		}],
 	},
-};
+} as const;

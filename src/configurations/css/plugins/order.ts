@@ -9,4 +9,4 @@ export default {
 		'order/properties-order': [PROPERTIES_ORDER, { severity: WARNING }],
 		'order/order': [RULES_ORDER, { severity: WARNING }],
 	},
-};
+} as const;

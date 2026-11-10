@@ -119,8 +119,8 @@ const createSelectorNoEmptyPlugin = (stylelintApi: typeof stylelint) => {
 		});
 	};
 
-	const rule = Object.assign((enabled: boolean) => {
-		if (!enabled) return () => {};
+	const rule = Object.assign((isEnabled: boolean) => {
+		if (!isEnabled) return () => {};
 
 		return checkRoot.bind(null, reportError);
 	}, {
@@ -140,6 +140,6 @@ const pluginSelectorNoEmpty = {
 	rules: {
 		'plugin/stylelint-selector-no-empty': true,
 	},
-};
+} as const;
 
 export default pluginSelectorNoEmpty;

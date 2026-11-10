@@ -1,11 +1,23 @@
-/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable sonarjs/no-duplicate-string -- Rule options intentionally repeat across independent declarations. */
+import stylisticPlugin from '@stylistic/stylelint-plugin';
 import { WARNING } from '#constants';
 
 export default {
-	plugins: [
-		'@stylistic/stylelint-plugin',
-	],
+	// The plugin exports rules for every syntax.
+	// Register only CSS rules so `stylelint-find-new-rules` does not
+	// report unrelated variants as unused.
+	plugins: stylisticPlugin.filter((plugin) =>
+		'ruleName' in plugin && /^@stylistic\/[^/]+$/.test(plugin.ruleName)),
+
 	rules: {
+		// #region Aspect ratio
+
+		// Require ratio notation for aspect-ratio values and media features (autofixable)
+		// https://stylelint-stylistic.github.io/rules/aspect-ratio-notation
+		'@stylistic/aspect-ratio-notation': ['ratio', { severity: WARNING }],
+
+		// #endregion
+
 		// #region Color
 
 		// Specify lowercase or uppercase for hex colors (autofixable)
@@ -102,6 +114,30 @@ export default {
 
 		// #endregion
 
+		// #region Value slash
+
+		// The space rules below handle both single-line and multi-line values.
+		// https://stylelint-stylistic.github.io/rules/value-slash-newline-after
+		'@stylistic/value-slash-newline-after': null,
+
+		// https://stylelint-stylistic.github.io/rules/value-slash-newline-before
+		'@stylistic/value-slash-newline-before': null,
+
+		// Require a single space around slashes in values (autofixable)
+		// https://stylelint-stylistic.github.io/rules/value-slash-space-after
+		'@stylistic/value-slash-space-after': ['always', {
+			ignoreProperties: ['grid-area', /^font/],
+			severity: WARNING,
+		}],
+
+		// https://stylelint-stylistic.github.io/rules/value-slash-space-before
+		'@stylistic/value-slash-space-before': ['always', {
+			ignoreProperties: ['grid-area', /^font/],
+			severity: WARNING,
+		}],
+
+		// #endregion
+
 		// #region Property
 
 		// Specify lowercase or uppercase for properties (autofixable)
@@ -135,6 +171,10 @@ export default {
 		// #endregion
 
 		// #region Declaration block
+
+		// Limit compact blocks to three declarations, preserving the former core rule's policy.
+		// https://stylelint-stylistic.github.io/rules/declaration-block-single-line-max-declarations
+		'@stylistic/declaration-block-single-line-max-declarations': 3,
 
 		// Require a newline or disallow whitespace after the semicolons of declaration blocks (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md
@@ -268,6 +308,13 @@ export default {
 
 		// #region Media feature
 
+		// Require a single space around slashes in media feature ratios (autofixable)
+		// https://stylelint-stylistic.github.io/rules/media-feature-slash-space-after
+		'@stylistic/media-feature-slash-space-after': ['always', { severity: WARNING }],
+
+		// https://stylelint-stylistic.github.io/rules/media-feature-slash-space-before
+		'@stylistic/media-feature-slash-space-before': ['always', { severity: WARNING }],
+
 		// Require a single space or disallow whitespace after the colon in media features (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md
 		'@stylistic/media-feature-colon-space-after': ['always', { severity: WARNING }],
@@ -340,7 +387,7 @@ export default {
 
 		// #region Named grid areas
 
-		// Require cell tokens (and optionally ending quotes) within grid-template-areas to be aligned (autofixable)
+		// Require grid area tokens and optionally ending quotes to be aligned (autofixable)
 		// https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/named-grid-areas-alignment/README.md
 		// Ma rule :)
 		'@stylistic/named-grid-areas-alignment': [true, { gap: 2, alignQuotes: true, severity: WARNING }],
@@ -391,4 +438,4 @@ export default {
 
 		// #endregion
 	},
-};
+} as const;

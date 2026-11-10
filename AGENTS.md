@@ -10,3 +10,4 @@
 - CSS plugin configs live in `src/configurations/css/plugins`; SCSS/Sass plugin configs live in `src/configurations/scss/plugins`.
 - The SCSS config extends the CSS config and uses `postcss-scss`; keep SCSS syntax adaptations in the SCSS config.
 - Built public entrypoints are emitted to `dist`; API-contract tests should prefer built public entrypoints over source aliases.
+- Tests should cover new mechanics, not merely which rules or dependencies the package contains.

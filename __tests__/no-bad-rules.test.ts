@@ -1,4 +1,3 @@
-import cp from 'node:child_process';
 import stylelintRules from 'stylelint-find-new-rules';
 
 type RuleDeclaration = {
@@ -12,15 +11,18 @@ type StylelintResult = {
 	unused: RuleDeclaration[];
 };
 
-// BEM rules are provided by the plugin but are enabled
-// conditionally only through scoped component-file overrides via `defineConfig`.
 const knownUnused = [
+	// BEM rules are enabled only through scoped component-file overrides via `defineConfig`.
 	'@morev/bem/block-variable',
 	'@morev/bem/match-file-name',
 	'@morev/bem/no-block-properties',
 	'@morev/bem/no-chained-entities',
+	'@morev/bem/no-detached-entity-extensions',
+	'@morev/bem/no-grouped-entities',
+	'@morev/bem/no-misplaced-relational-styles',
 	'@morev/bem/no-side-effects',
 	'@morev/bem/selector-pattern',
+	'@morev/bem/selector-variable-pattern',
 ];
 
 const toHumanReadable = (declarations: RuleDeclaration[]) =>
@@ -31,7 +33,6 @@ describe('Check unused and deprecated props', () => {
 	let stylelintResult: StylelintResult;
 
 	beforeAll(async () => {
-		cp.execSync('pnpm build'); // Actual stylelint config of this repo extends bundled version
 		stylelintResult = await stylelintRules('./dist/configurations/scss.js');
 	});
 
