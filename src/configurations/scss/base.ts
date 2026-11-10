@@ -4,6 +4,7 @@ const scssBaseConfig = {
 	extends: ['@morev/stylelint-config/css'],
 	customSyntax: postcssScss,
 	rules: {
+		'at-rule-prelude-no-invalid': null,
 		'declaration-property-value-no-unknown': null,
 		'media-query-no-invalid': null,
 		'no-descending-specificity': null,
